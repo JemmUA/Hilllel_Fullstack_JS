@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Реєстрація</title>
+  <link rel="stylesheet" href="../css_styles/general_car-shop.css">
+</head>
+<body>
+
+  <hr>
+  <a class="menu_text" href="../index.html" target="_self" >Головна</a>
+  <a class="menu_text" href="catalog_cars.html" target="_self">Каталог машин</a>
+  <a class="menu_text" href="photo_gallery.html" target="_self"> Галерея</a>
+  <a class="menu_text" href="road_fables.html" target="_self">Дорожні байки</a>
+  <a class="menu_text" href="about_us.html" target="_self">Про нас</a>
+  <a class="menu_text" href="sign_in.html" target="_self">Увійти</a>
+  <hr>
+
+  <h1 class="page_title">Реєстрація</h1>
+  <div>
+  <!--    <form action="" method="post">-->
+    <form>
+      <fieldset>
+        <legend class="label">усі поля вимагають заповнення</legend>
+
+        <label class="label" for="second_name">Прізвище:</label>
+        <input type="text" id="second_name" name="second_name">
+        <br>
+
+        <label class="label" for="first_name">Ім'я:</label>
+        <input type="text" id="first_name" name="first_name">
+        <br>
+
+        <label class="label" for="bd">День народження</label>
+        <input id="bd" type="date" name="bd">
+        <br>
+
+        <label class="label" for="age">Вік:</label>
+        <input type="number" id="age" name="age" min="16" max="99">
+        <br>
+
+        <label class="label" for="sex">Стать: </label>
+        <input id="sex" type="radio" name="gender" value="male">Чоловік
+        <input type="radio" name="gender" value="female">Жінка
+        <br>
+
+        <label class="label" for="higher_education">Вища освіта:</label>
+        <select id="higher_education" name="h_education">
+          <option value="yes">Так</option>
+          <option value="no">Ні</option>
+          <option value="not_finished">Не закінчена</option>
+        </select>
+        <br>
+
+        <label class="label" for="telephon">Телефон:</label>
+        <input type="tel" id="telephon" name="tel">
+        <br>
+
+        <label class="label" for="email_address">Електронна пошта:</label>
+        <input type="email" id="email_address" name="email">
+        <br>
+
+        <label class="label" for="password">Пароль:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <label class="label" for="confirm_password">Підтвердження паролю:</label>
+        <input type="password" id="confirm_password" name="confirm_password">
+        <br>
+
+        <textarea id="additional_info" name="add_info" rows="3" cols="50">Додаткова інформація</textarea>
+        <br>
+
+        <input type="checkbox" id="news" name="news" value="yes">
+        <label class="label" for="news">Отримувати новини </label>
+        <br>
+
+        <!--      <input type="submit" value="Зареєструватися">-->
+        <button type="reset">Скинути</button>
+        <br>
+
+        <button type="submit">Зареєструватися</button>
+
+      </fieldset>
+    </form>
+  </div>
+</body>
+</html>

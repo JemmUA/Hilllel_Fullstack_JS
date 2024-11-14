@@ -1,0 +1,77 @@
+body {
+    background-color: #111111;
+}
+
+.menu_text {
+    color: #a1a103;
+    font-size: 1.5rem;
+    margin-left: 15pt;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+h4 {
+    color: white;
+}
+
+h5 {
+    color: white;
+}
+
+h6 {
+    color: white;
+}
+
+p, ul, ol, li, dl,dt,dd {
+    color: #777777;
+    font-size:1.5rem;
+}
+
+.page_title {
+    color: #bfa644;
+    font-size: 3rem;
+    font-family: Verdana, Tahoma, sans-serif;
+
+}
+
+.advertisement_1 {
+    color:red;
+    font-size: 7rem;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-variant: all-petite-caps;
+
+}
+
+.advertisement_2 {
+    color:red;
+    font-size: 5rem;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.label {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.registration {
+    font-size: 1.5rem;
+    color: magenta;
+}
+
+.hot-img {
+    border:solid 5px white;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 3px;
+
+}

@@ -5,49 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9df00ed-ea08-4e9a-972a-3776df6173fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/audio/breathe_in_the_air_-_Marooned_(Pink_Floyd_cover).mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/catalog/ferrari_f40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/catalog/honda_hr-v.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/catalog/hyundai_accent.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/catalog/mercedes-amg_gt_43_coupe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/catalog/subaru_forester.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/acura_rdx.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/audi_r8_gt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/ferrari-296-gtb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/honda_accord_sedan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/hyundai_tucson.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/mclaren_720s.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/mercedes-benz-amg_gle_53_4matic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/nissan_ariya_long_range_2wd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/peugeot_3008.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/porsche_macan_r4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/renault_captur.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/gallery/subaru_impreza_22b_sti.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/main/gar_prop_1200.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/main/gar_prop_1920.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/main/gar_prop_800.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/about_us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/catalog_cars.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/acura_rdx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/audi_r8_gt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/ferrari-296-gtb.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/honda_accord_sedan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/hyundai_tucson.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/mclaren_720s.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/mercedes-benz-amg_gle_53_4matic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/nissan_ariya_long_range_2wd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/peugeot_3008.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/porsche_macan_r4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/renault_captur.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/gallery_pages/subaru_impreza_22b_sti.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/photo_gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/road_fables.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/sign_in.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/pages/sign_up.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_02/images/css_styles/style_car-shop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/audio/breathe_in_the_air_-_Marooned_(Pink_Floyd_cover).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/css_styles/about_us_car-shop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/css_styles/general_car-shop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/css_styles/photo_gallery_car-shop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/catalog/ferrari_f40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/catalog/honda_hr-v.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/catalog/hyundai_accent.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/catalog/mercedes-amg_gt_43_coupe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/catalog/subaru_forester.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/acura_rdx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/audi_r8_gt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/ferrari-296-gtb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/honda_accord_sedan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/hyundai_tucson.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/mclaren_720s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/mercedes-benz-amg_gle_53_4matic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/nissan_ariya_long_range_2wd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/peugeot_3008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/porsche_macan_r4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/renault_captur.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/gallery/subaru_impreza_22b_sti.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/main/gar_prop_1200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/main/gar_prop_1920.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/images/main/gar_prop_800.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/about_us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/catalog_cars.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/acura_rdx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/audi_r8_gt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/ferrari-296-gtb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/honda_accord_sedan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/hyundai_tucson.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/mclaren_720s.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/mercedes-benz-amg_gle_53_4matic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/nissan_ariya_long_range_2wd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/peugeot_3008.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/porsche_macan_r4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/renault_captur.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/gallery_pages/subaru_impreza_22b_sti.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/photo_gallery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/road_fables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/sign_in.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_03/pages/sign_up.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hillel_fullstack_homework_01/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hillel_fullstack_homework_01/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +60,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -84,6 +87,7 @@
     &quot;JavaScript Debug.sign_up.html.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -124,7 +128,11 @@
       <workItem from="1731177867678" duration="14002000" />
       <workItem from="1731225054800" duration="10300000" />
       <workItem from="1731242018402" duration="35403000" />
-      <workItem from="1731317691593" duration="7511000" />
+      <workItem from="1731317691593" duration="8761000" />
+      <workItem from="1731584594376" duration="24000" />
+      <workItem from="1731584636904" duration="19031000" />
+      <workItem from="1731612529966" duration="35000" />
+      <workItem from="1731613453383" duration="11438000" />
     </task>
     <servers />
   </component>
