@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9df00ed-ea08-4e9a-972a-3776df6173fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_04/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_04/styles/general_styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hillel_fullstack_homework_04/styles/style_selector_rules.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hillel_fullstack_homework_04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hillel_fullstack_homework_04/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +90,7 @@
       <workItem from="1731584636904" duration="19031000" />
       <workItem from="1731612529966" duration="35000" />
       <workItem from="1731613453383" duration="15216000" />
-      <workItem from="1731749170609" duration="45676000" />
+      <workItem from="1731749170609" duration="46643000" />
     </task>
     <servers />
   </component>
