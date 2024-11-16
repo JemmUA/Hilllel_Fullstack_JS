@@ -1,0 +1,60 @@
+/*4-th homework*/
+
+p {
+    color: grey;
+}
+
+p b {
+    color: green;
+}
+
+p b i {
+    color: lightgreen;
+}
+
+p i b {
+    color: lightcoral;
+}
+
+div p {
+    color: blue;
+}
+
+p>sup {
+    color: green;
+}
+
+h3+p {
+    color: violet;
+}
+
+h4~p {
+    color: seagreen;
+}
+
+p[title="use :hover and ::first-letter"]:hover::first-letter {
+    color: red;
+    font-size: 300%;
+}
+ul>li {
+    list-style: none;
+    color: aqua;
+    background-color: darkblue;
+}
+
+ul>li:nth-child(even) {
+    background-color: blue;
+}
+
+p[title="text3"] {
+    color: cyan;
+}
+/*У цьому домашньому завданні використання id, !important, inline-стилю є виключно з метою демонстрації,*/
+/*і не є ігноруванням правил та вимог до написання коду.*/
+#text_demo {
+    color: #c89575;
+}
+
+.impo {
+    color: #805e14 !important;
+}

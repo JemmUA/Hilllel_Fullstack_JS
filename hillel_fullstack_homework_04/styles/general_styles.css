@@ -1,0 +1,11 @@
+.table_base {
+    width:320px;
+    background-color: black;
+}
+.table_head {
+    background-color: cornflowerblue;
+}
+.table_data {
+    background-color: skyblue;
+    text-align: right;
+}
