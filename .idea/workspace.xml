@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9df00ed-ea08-4e9a-972a-3776df6173fa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/hillel_fullstack_homework_04/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hillel_fullstack_homework_04/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="a9df00ed-ea08-4e9a-972a-3776df6173fa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +88,7 @@
       <workItem from="1731584636904" duration="19031000" />
       <workItem from="1731612529966" duration="35000" />
       <workItem from="1731613453383" duration="15216000" />
-      <workItem from="1731749170609" duration="46643000" />
+      <workItem from="1731749170609" duration="46787000" />
     </task>
     <servers />
   </component>

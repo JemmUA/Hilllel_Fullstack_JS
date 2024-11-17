@@ -32,7 +32,7 @@ h4~p {
     color: seagreen;
 }
 
-p[title="use :hover and ::first-letter"]:hover::first-letter {
+p[title="Using :hover and ::first-letter"]:hover::first-letter {
     color: red;
     font-size: 300%;
 }
