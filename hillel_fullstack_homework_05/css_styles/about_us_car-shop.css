@@ -1,0 +1,44 @@
+.table_grid {
+    width: 32%;
+    background-color: #333333
+}
+
+.table_head-text {
+    color: #165aa3;
+    font-size:1.5rem;
+    text-align: center;
+    background-color: #111111;
+    padding: 3px;
+}
+.table_text_work {
+    color: green;
+    font-size:1.5rem;
+    text-align: center;
+    background-color: #111111;
+    padding: 3px;
+}
+
+.table_text_dont_work {
+    color: red;
+    font-size:1.5rem;
+    text-align: center;
+    background-color: #111111;
+    padding: 3px;
+}
+
+.services, ul li::before  {
+    color: lightcoral;
+    font-size:1.5rem;
+    list-style-type: none;
+    content: "🚗";
+}
+
+.address {
+    color: #a3a337;
+    font-size:1.5rem;
+}
+
+.phone {
+    color: cornflowerblue;
+    font-size:1.5rem;
+}

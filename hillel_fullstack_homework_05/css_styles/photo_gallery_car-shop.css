@@ -1,0 +1,10 @@
+.gallery-img {
+    border:solid 5px white;
+    padding: 5px;
+    width: 10%;
+    margin: 3px;
+}
+
+.gallery-item {
+    width: 100px;
+}
