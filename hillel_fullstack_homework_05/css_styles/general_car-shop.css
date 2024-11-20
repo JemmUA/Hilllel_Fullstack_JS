@@ -8,29 +8,10 @@ body {
     margin-left: 15pt;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-h2 {
-    color: white;
-}
-
-h3 {
-    color: white;
-}
-
-h4 {
-    color: white;
-}
-
-h5 {
-    color: white;
-}
-
-h6 {
-    color: white;
-}
 
 p, ul, ol, li, dl,dt,dd {
     color: #777777;
