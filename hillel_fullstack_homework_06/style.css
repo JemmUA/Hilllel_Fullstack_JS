@@ -1,0 +1,106 @@
+.table_base {
+    border-collapse:collapse;
+    width: 800px;
+    height: 800px;
+}
+tbody td {
+    border: 10px solid black;
+}
+
+.table_cell_white {
+    background-color:white;
+}
+.table_cell_yellow {
+    background-color:yellow;
+}
+.table_cell_red {
+    background-color:red;
+}
+.table_cell_black {
+    background-color:black;
+}
+.table_cell_blue {
+    background-color:blue;
+}
+
+.cell_1-1 {
+    background-color:white;
+    width:26.25%;
+    height:12.5%;
+}
+
+.cell_1-3 {
+    width:38.75%;
+}
+
+.cell_1-5 {
+    width:26.25%;
+}
+
+.cell_1-7 {
+    width:6.25%;
+}
+
+.cell_2-1 {
+    width:12.5%;
+}
+
+.cell_3-1 {
+    width:12.5%;
+}
+
+.cell_5-1 {
+    width:12.5%;
+}
+
+
+
+/*.cell_1-1 {*/
+/*    background-color:white;*/
+/*    border: 10px solid black;*/
+/*    width:26.25%;*/
+/*    height:12.5%;*/
+/*}*/
+
+/*.cell_1-3 {*/
+/*    background-color:white;*/
+/*    border: 10px solid black;*/
+/*    width:38.75%;*/
+/*    height:12.5%;*/
+/*}*/
+
+/*.cell_1-5 {*/
+/*    background-color:yellow;*/
+/*    border: 10px solid black;*/
+/*    width:26.25%;*/
+/*    height:12.5%;*/
+/*}*/
+
+/*.cell_1-7 {*/
+/*    background-color:white;*/
+/*    border: 10px solid black;*/
+/*    width:6.25%;*/
+/*    height:78.75%;*/
+/*}*/
+
+/*.cell_2-1 {*/
+/*    background-color:white;*/
+/*    border: 10px solid black;*/
+/*    width:12.5%;*/
+/*    height:25%;*/
+/*}*/
+
+/*.cell_3-1 {*/
+/*    background-color:white;*/
+/*    border: 10px solid black;*/
+/*    width:12.5%;*/
+/*    height:38.75%;*/
+/*}*/
+
+/*.cell_5-1 {*/
+/*    background-color:yellow;*/
+/*    border: 10px solid black;*/
+/*    width:12.5%;*/
+/*    height:27.5%;*/
+/*}*/
+
