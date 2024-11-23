@@ -42,26 +42,38 @@ tbody td {
 }
 
 .cell_1-3 {
+    background-color:white;
     width:38.75%;
 }
 
 .cell_1-5 {
+    background-color:yellow;
     width:26.25%;
 }
 
 .cell_1-7 {
+    background-color:white;
     width:6.25%;
 }
 
 .cell_2-1 {
-    width:12.5%;
+    background-color:white;
+    height:25%;
 }
 
 .cell_3-1 {
-    width:12.5%;
+    background-color:white;
+    height:37.5%;
 }
 
 .cell_5-1 {
+    background-color:yellow;
     width:12.5%;
+}
+
+.cell_7-4 {
+    background-color:white;
+    width:50%;
+    height:6.25%;
 }
 
