@@ -77,3 +77,19 @@ tbody td {
     height:6.25%;
 }
 
+.cell_3-5 {
+    background-color:white;
+    height:25%;
+}
+
+.cell_6-4 {
+    background-color:black;
+    height:6.25%;
+}
+
+
+.cell_4-2 {
+    background-color:black;
+    width:25%;
+}
+
