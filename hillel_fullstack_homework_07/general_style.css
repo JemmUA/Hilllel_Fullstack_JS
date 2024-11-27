@@ -6,3 +6,49 @@
 .cell {
     border: 3px solid green;
 }
+
+.emphasis_1 {
+    font-family: Verdana, Geneva, sans-serif;
+    color: red;
+    font-size: 3rem;
+}
+
+.emphasis_2 {
+    color: grey;
+    font-style: italic;
+}
+
+
+.div_1 {
+    background-color: aqua;
+}
+
+.div_2 {
+    background-color: skyblue;
+}
+
+.div_3 {
+    background-color: lightgreen;
+}
+
+.div_inside {
+    /*background-color: coral;*/
+    border: 3px solid blue;
+    width:100px;
+    height: 20px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.div_inside::first-letter {
+
+    font-weight: bold;
+    color: purple;
+}
+
+.div_n::first-letter {
+
+    font-weight: bold;
+    color: purple;
+}
+
