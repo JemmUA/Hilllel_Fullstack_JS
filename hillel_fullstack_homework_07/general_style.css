@@ -1,0 +1,8 @@
+.text_box {
+    background-color: skyblue;
+    width: 10%;
+}
+
+.cell {
+    border: 3px solid green;
+}
