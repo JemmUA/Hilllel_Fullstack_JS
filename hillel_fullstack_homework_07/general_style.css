@@ -18,17 +18,26 @@
     font-style: italic;
 }
 
+.emphasis_3 {
+    color: magenta;
+    font-style: italic;
+}
 
 .div_1 {
+    max-width:30%;
     background-color: aqua;
+    padding: 5px;
 }
 
 .div_2 {
-    background-color: skyblue;
+    max-width:30%;
+    background-color: yellow;
+    padding: 5px;
 }
 
 .div_3 {
     background-color: lightgreen;
+    padding: 5px;
 }
 
 .div_inside {
@@ -43,7 +52,9 @@
 .div_inside::first-letter {
 
     font-weight: bold;
-    color: purple;
+    font-size: 1.2rem;
+    font-variant-caps: all-petite-caps;
+    color: blue;
 }
 
 .div_n::first-letter {
