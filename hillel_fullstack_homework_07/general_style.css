@@ -23,6 +23,10 @@
     font-style: italic;
 }
 
+.image-letter {
+    width: 1rem;
+}
+
 .div_1 {
     max-width:30%;
     background-color: aqua;
@@ -57,9 +61,52 @@
     color: blue;
 }
 
-.div_n::first-letter {
-
+.block {
+    display: block;
     font-weight: bold;
-    color: purple;
+    font-size: 2rem;
+    width:200px;
+    height: 200px;
+    margin: 20px;
+    padding: 5px;
+    border: 3px solid black;
+    background-color: green;
+    color: white;
 }
 
+.inline {
+    display: inline;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 3px solid black;
+    margin: 0;
+    padding:5px;
+    background-color: yellow;
+    color: black;
+}
+
+.inline-block {
+    display: inline-block;
+    width:300px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 3px solid black;
+    margin: 5px;
+    padding:5px;
+    background-color: blue;
+    color: cyan;
+}
+
+.flex {
+    display: flex;
+    width:300px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 3px solid black;
+    margin: 5px;
+    padding:5px;
+    background-color: purple;
+    color: magenta;
+}
