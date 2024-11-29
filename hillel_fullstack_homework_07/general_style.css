@@ -251,19 +251,56 @@
 }
 
 .pos_abs {
-    background-color: indianred;
+    background-color: deepskyblue;
     position:absolute;
-    top:620px;
-    bottom:20px;
-    left: 20px;
-    right:20px;
+    top:145px;
+    bottom:5px;
+    left: 5px;
+    right:5px;
+    z-index:-2000;
 
 }
 
 .pos_fixed {
+    width:200px;
+    height:30px;
+    background-color: green;
+    position: fixed;
+    left: 570px;
+    top: 10px;
 
 }
+.z-index_moreover {
+    position: fixed;
+    right: 220px;
+    top: 30px;
+    z-index:10000;
+}
+.z-index_more {
+    position: fixed;
+    right: 70px;
+    top: 40px;
+    z-index:1000;
+}
 
+.z-index-zero {
+    position: fixed;
+    right: 120px;
+    top: 90px;
+    z-index:0;
+}
+
+.z-index_less {
+    position: fixed;
+    right: 170px;
+    top: 140px;
+    z-index:-1000;
+}
 .pos_sticky {
-
+    width:100px;
+    height:30px;
+    background-color: yellow;
+    position: sticky;
+    left: 20px;
+    top: 100px;
 }
