@@ -192,7 +192,11 @@
 .float_clear {
     clear:both;
 }
-
+.float_clear_after::after {
+    content: "";
+    display: block;
+    clear: both;
+}
 .overflow_container {
     width:200px;
     height:200px;
@@ -253,11 +257,13 @@
 .pos_abs {
     background-color: deepskyblue;
     position:absolute;
-    top:145px;
+    top:5px;
     bottom:5px;
     left: 5px;
     right:5px;
+    padding:10px;
     z-index:-2000;
+    text-align:right;
 
 }
 
@@ -267,40 +273,45 @@
     background-color: green;
     position: fixed;
     left: 570px;
-    top: 10px;
+    top: 70px;
 
 }
 .z-index_moreover {
     position: fixed;
     right: 220px;
-    top: 30px;
+    top: 80px;
     z-index:10000;
 }
 .z-index_more {
     position: fixed;
     right: 70px;
-    top: 40px;
+    top: 190px;
     z-index:1000;
 }
 
 .z-index-zero {
     position: fixed;
     right: 120px;
-    top: 90px;
+    top: 140px;
     z-index:0;
 }
 
 .z-index_less {
     position: fixed;
     right: 170px;
-    top: 140px;
+    top: 190px;
     z-index:-1000;
 }
 .pos_sticky {
     width:100px;
     height:30px;
-    background-color: yellow;
+    background-color: orangered;
+    top: 20px;
     position: sticky;
-    left: 20px;
-    top: 100px;
+}
+
+.menu {
+    font-family: Ariar, Verdana, Geneva, sans-serif;
+    color:red;
+    font-size:20px;
 }
