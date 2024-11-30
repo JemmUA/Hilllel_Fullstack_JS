@@ -1,0 +1,35 @@
+
+
+.father_container {
+    width: 98%;
+    box-sizing: border-box;
+    height: 100px;
+    margin: 1%;
+    padding: 8px;
+    background-color: lightgrey;
+    border: 2px solid black;
+}
+
+.child_box_left_float {
+    /*float:left;*/
+    width: 20%;
+    height: 76px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+
+.child_box_right_float {
+    float:right;
+    width: 20%;
+    height: 76px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+
+.clear_float {
+    clear:both;
+}
+
+.clear_after::after {
+    clear: both;
+}
