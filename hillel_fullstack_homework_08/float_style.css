@@ -1,35 +1,108 @@
-
-
-.father_container {
-    width: 98%;
+.container {
     box-sizing: border-box;
+    width: 98%;
     height: 100px;
-    margin: 1%;
-    padding: 8px;
+    margin: 6px;
+    /*padding: 6px;*/
     background-color: lightgrey;
     border: 2px solid black;
 }
 
-.child_box_left_float {
-    /*float:left;*/
-    width: 20%;
-    height: 76px;
+.container__double__height {
+    box-sizing: border-box;
+    width: 98%;
+    height: 200px;
+    margin: 6px;
+    /*padding: 6px;*/
+    background-color: lightgrey;
+    border: 2px solid black;
+}
+
+.box__left__row {
+    float:left;
+    width: 15%;
+    /*height: 80px;*/
+    height: calc(100px - (2*2px) - (2*6px) - (2*2px));
+    /*У даному випадку внутрішні скобки не обов'язкові -
+    діють звичайні закони математики: спочатку множення та ділення,
+    потім віднімання і додавання, весь розрахунок - просто демонстрація обчислення.
+    Можна просто поставити: height: calc(100px - 2*2px - 2*6px - 2*2px);
+    або взагалі (якщо не потрібен хід розрахунків, то зекономимо ресурс машини) - height: 80px;
+    Також можна вставляти calc() в calc(), це відповідає просто () і не має якогось особливого сенсу,
+    окрім візуального.*/
+    margin: 6px;
     background-color: darkgrey;
     border: 2px solid black;
 }
 
-.child_box_right_float {
+.box__right__row {
     float:right;
     width: 20%;
-    height: 76px;
+    height: 80px;
+    margin: 6px;
     background-color: darkgrey;
     border: 2px solid black;
 }
 
-.clear_float {
-    clear:both;
+.box__left__column {
+    float:right;
+    width: 20%;
+    height: 80px;
+    margin: 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
 }
 
-.clear_after::after {
+.box__right__column {
+    float:right;
+    width: 20%;
+    height: 80px;
+    margin: 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+
+.box__right__double__height__row {
+    float:right;
+    width: 20%;
+    height: 176px;
+    margin: 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+
+.box__left__double__height__row {
+    float:left;
+    width: 20%;
+    height: 176px;
+    margin: 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+
+.box__left__double__height__column {
+    float:left;
+    width: 20%;
+    height: 176px;
+    margin: 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+
+.box__left__column,
+.box__right__column,
+.box__left__double__height__column,
+.box__right__double__height__column {
+    content: "";
+    display: block;
     clear: both;
+}
+
+.box__right__double__height__column__minus__y {
+    float:right;
+    width: 20%;
+    height: 176px;
+    margin: -90px 6px 6px 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
 }
