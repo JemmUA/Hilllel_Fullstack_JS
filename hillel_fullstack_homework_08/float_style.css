@@ -89,13 +89,13 @@
     border: 2px solid black;
 }
 
-.box__left__column,
-.box__right__column,
-.box__left__double__height__column,
 .box__right__double__height__column {
-    content: "";
-    display: block;
-    clear: both;
+    float:right;
+    width: 20%;
+    height: 176px;
+    margin: 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
 }
 
 .box__right__double__height__column__minus__y {
@@ -105,4 +105,24 @@
     margin: -90px 6px 6px 6px;
     background-color: darkgrey;
     border: 2px solid black;
+}
+
+.box__center__column {
+    float:right;
+    width: 20%;
+    height: 80px;
+    margin: 6px calc(50% - 20%) 6px 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+
+
+.box__left__column,
+.box__right__column,
+.box__left__double__height__column,
+.box__right__double__height__column,
+.box__center__column{
+    content: "";
+    display: block;
+    clear: both;
 }
