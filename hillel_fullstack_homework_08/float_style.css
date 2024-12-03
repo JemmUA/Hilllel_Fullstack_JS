@@ -116,9 +116,37 @@
     border: 2px solid black;
 }
 
+.additional__container__center__column {
+    /*position:absolute;*/
+    overflow: hidden;
+    /*margin: 0 auto;*/
+    /*right: auto;*/
+    /*left: auto;*/
+    background-color: tomato;
+    opacity: .7;
+}
+
+.box__right__column__fixed_size {
+    float:right;
+    width: 150px;
+    height: 80px;
+    margin: 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+
+.box__right__double__height__column__fixed_size__minus__y {
+    float:right;
+    width: 150px;
+    height: 176px;
+    margin: -90px 6px 6px 6px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
 
 .box__left__column,
 .box__right__column,
+.box__right__column__fixed_size,
 .box__left__double__height__column,
 .box__right__double__height__column,
 .box__center__column{
