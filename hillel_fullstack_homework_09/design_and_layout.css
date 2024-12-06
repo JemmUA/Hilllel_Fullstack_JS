@@ -1,0 +1,17 @@
+:root {
+    --color-major: #34547A;
+    --color-minor: #EEEFF1;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+caption {
+    font-family: "Roboto", serif;
+    color: darkblue;
+    font-size: 70px;
+    font-weight: bold;
+    margin: 30px;
+}
