@@ -6,6 +6,7 @@
 :root {
     --color-major: #34547A;
     --color-minor: #EEEFF1;
+    --color-text: #727272;
     --font-main: Roboto;
 }
 
@@ -19,7 +20,14 @@ h1 {
     line-height: 78px;
 }
 
-.global-container {
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.global-frame {
     max-width: calc(1920px - 20px);
     margin: 0 auto;
 
@@ -34,12 +42,17 @@ h1 {
 }
 
 .header__container {
-    height: 700px;
+    box-sizing: border-box;
+    padding-top: 79px;
+    padding-bottom: 141px;
+    padding-left: 399px;
+    margin-bottom: 112px;
 }
 
 .header-menu__container {
     display: flex;
     gap: 42px;
+    padding-bottom: 162px;
 }
 
 .header-menu__list__item a{
@@ -50,10 +63,52 @@ h1 {
     line-height: 26px;
     text-decoration: none;
     text-transform: uppercase;
-    /*font-variant-caps: titling-caps;*/
-    /*letter-spacing: 10;*/
+    letter-spacing: 0.1em;
 }
 
 .header-menu__list__item:hover a{
     color: var(--color-major);
+}
+
+.header-title__primary {
+    margin-bottom: 60px;
+}
+
+.header-text__description {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: var(--color-text);
+    width: 540px;
+    height: 67px;
+    margin-bottom: 65px;
+}
+.header-button__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 225px;
+    height: 65px;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.main-about-me__title {
+    margin-bottom: 50px;
+}
+
+.main-about-me__description {
+    width: 540px;
+    margin: 0 auto;
+
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
 }
