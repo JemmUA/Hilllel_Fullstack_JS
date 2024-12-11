@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ДЗ №9. "Simple Site" за макетом Figma</title>
+  <title>ДЗ №10. Адаптація "Simple Site" до респонсивного дизайну</title>
   <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="media.css">
   <link rel="stylesheet" href="design_and_layout.css">
 </head>
 <body>
+<!--  Media remarks-->
+<div class="container">
+  <div class="media__all media__0">media less 375</div>
+  <div class="media__all media__375">break point: 375</div>
+  <div class="media__all media__800">break point: 800</div>
+  <div class="media__all media__1024">break point: 1024</div>
+</div>
+<!--  Media remarks-->
+
   <header class="global-frame header__container background-color__minor">
     <nav>
       <ul class="header-nav-bar__container">
@@ -21,8 +31,9 @@
     <h1 class="header-title__primary" id="base">Дизайн и верстка</h1>
 
     <div class="header-text__description">
-      Lorem Ipsum - это текст-"рыба", часто используемый в печати и <br>вэб-дизайне. Lorem Ipsum является стандартной
-      "рыбой" для текстов на латинице с начала XVI века.
+      Lorem Ipsum - это текст-"рыба", часто используемый в печати и <br>вэб-дизайне.
+      Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI
+      века.
     </div>
 
     <div class="header-button__container background-color__major">Написать мне</div>
@@ -31,8 +42,8 @@
   <main>
     <div class="global-frame main-about-me__container background-color__weak">
       <h2 class="main-text-content__title" id="about-me">Обо мне</h2>
-      <div class="main-text-content__description">Lorem Ipsum - это текст-"рыба", часто используемый в печати и <br>
-        вэб-дизайне. Lorem Ipsum является стандартной
+      <div class="main-text-content__description">Lorem Ipsum - это текст-"рыба",
+        часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной
         "рыбой" для текстов на латинице с начала XVI века.
       </div>
     </div>
@@ -64,8 +75,8 @@
         Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
         Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
       </div>
-        <iframe width="1100" height="600  " src="https://www.youtube.com/embed/jfKfPfyJRdk?si=N9vE-vUHmbfQAuK7"
-                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+        <iframe width="1100" height="600" src="https://www.youtube.com/embed/jfKfPfyJRdk?si=N9vE-vUHmbfQAuK7"
+                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write;
                   encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
