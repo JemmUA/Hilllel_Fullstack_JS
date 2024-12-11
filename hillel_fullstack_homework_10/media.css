@@ -1,0 +1,52 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.media {
+    color: red;
+    text-align: center;
+    font-family: Serif, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    position: absolute;
+    top: 1px;
+}
+
+@media  (max-width: 374px){
+    .media {
+        display: none;
+    }
+    .media__0 {
+        display: initial;
+    }
+}
+
+@media  (min-width: 375px){
+    .media {
+        display: none;
+    }
+    .media__ms375 {
+        display: initial;
+    }
+}
+
+@media  (min-width: 800px){
+    .media {
+        display: none;
+    }
+    .media__800 {
+        display: initial;
+    }
+}
+
+@media  (min-width: 1024px) {
+    .media {
+        display: none;
+    }
+    .media__1024 {
+        display: initial;
+    }
+}
