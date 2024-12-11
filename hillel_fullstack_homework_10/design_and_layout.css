@@ -34,7 +34,6 @@ h2 {
 }
 
 .global-frame {
-    /*width: calc(100% - 20px);*/
     width: 100%;
     margin: 0 auto;
 }
