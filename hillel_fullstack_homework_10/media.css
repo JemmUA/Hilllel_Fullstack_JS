@@ -51,9 +51,9 @@
 @media  (min-width: 1024px) {
     .media__all {
         display: none;
-        color: green;
     }
     .media__1024 {
         display: initial;
+        color: green;
     }
 }
