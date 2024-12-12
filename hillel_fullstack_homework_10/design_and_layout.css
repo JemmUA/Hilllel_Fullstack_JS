@@ -133,14 +133,13 @@ h2 {
     /*width: 540px;*/
     max-width: 540px;
     margin: 0 auto 0 auto;
-
     color: var(--color-text);
-    font-size: 16px;
+    /*font-size: 16px;*/
+    font-size: 1rem;
     font-weight: 400;
     line-height: 26px;
     text-align: center;
 }
-
 .main-projects__container {
     display: flex;
     flex-wrap: wrap;
@@ -172,15 +171,12 @@ h2 {
     font-weight: 400;
     color: white;
 }
-
 .job__text {
     padding-bottom: 50px;
 }
-
 .job__video {
     margin: 0 auto 0 auto;
 }
-
 .footer__container {
     box-sizing: border-box;
     padding: 50px 33% 50px 33%;
@@ -192,7 +188,6 @@ h2 {
     font-weight: bold;
     color: white;
 }
-
 .footer__text__copyright {
     /*font-size: 13px;*/
     font-size: 0.8125rem;
