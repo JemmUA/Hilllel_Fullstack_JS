@@ -44,6 +44,7 @@ body {
 .kf__image_10:hover {
     animation-play-state: paused;
     cursor: grab;
+    z-index: 1000;
 }
 
 .kf__image_01:active,
