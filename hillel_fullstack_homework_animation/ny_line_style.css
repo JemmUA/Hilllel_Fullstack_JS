@@ -1,0 +1,14 @@
+.image__small {
+    width: 100px;
+    height: 80px;
+}
+
+.image__normal {
+    width: 400px;
+    height: 320px;
+}
+
+.image__normal:hover {
+    cursor: grab;
+    /*cursor: pointer;*/
+}
