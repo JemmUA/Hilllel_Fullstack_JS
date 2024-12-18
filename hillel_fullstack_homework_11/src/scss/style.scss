@@ -1,15 +1,19 @@
 @use "reset";
 @use "media";
-:root {
-  --color-major: #34547A;
-  --color-minor: #EEEFF1;
-  --color-weak: #F9F9F9;
-  --color-text: #727272;
-  --font-main: Roboto;
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Hilllel_Fullstack_JS/hillel_fullstack_homework_11/assets/fonts/Roboto-Regular.ttf") format("truetype");
 }
 
+  $color-major: #34547A;
+  $color-minor: #EEEFF1;
+  $color-weak: #F9F9F9;
+  $color-text: #727272;
+  $font-main: Roboto;
+
 body {
-  font-family: var(--font-main), Verdana, Tahoma, sans-serif;
+  font-family: $font-main, Verdana, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -35,15 +39,15 @@ h2 {
 }
 
 .background-color__major {
-  background-color: var(--color-major);
+  background-color: $color-major;
 }
 
 .background-color__minor {
-  background-color: var(--color-minor);
+  background-color: $color-minor;
 }
 
 .background-color__weak {
-  background-color: var(--color-weak);
+  background-color: $color-weak;
 }
 
 .header__container {
@@ -62,20 +66,25 @@ h2 {
   padding-bottom: 162px;
 }
 
-.header-nav-bar__list__item a{
-  color: black;
-  list-style-type: none;
-  /*font-size: 16px;*/
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 26px;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.header-nav-bar__list__item{
+  a {
+    color: black;
+    list-style-type: none;
+    /*font-size: 16px;*/
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 26px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
 }
 
-.header-nav-bar__list__item:hover a{
-  color: var(--color-major);
+.header-nav-bar__list__item{
+  &:hover;
+  a {
+    color: $color-major;
+  }
 }
 
 .header-title__primary {
@@ -87,7 +96,7 @@ h2 {
   font-size: 1rem;
   line-height: 26px;
   font-weight: 400;
-  color: var(--color-text);
+  color: $color-text;
   /*width: 540px;*/
   max-width: 540px;
   /*width: 50%;*/
@@ -129,7 +138,7 @@ h2 {
   /*width: 540px;*/
   max-width: 540px;
   margin: 0 auto 0 auto;
-  color: var(--color-text);
+  color: $color-text;
   /*font-size: 16px;*/
   font-size: 1rem;
   font-weight: 400;
@@ -148,7 +157,7 @@ h2 {
 .main-projects__item {
   /*width: 141px;*/
   height: 50px;
-  background: left no-repeat url("images/project.svg");
+  background: left no-repeat url("Hilllel_Fullstack_JS/hillel_fullstack_homework_11/assets/images/project.svg");
   padding: 10px 0 10px 70px;
 }
 

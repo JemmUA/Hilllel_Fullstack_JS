@@ -37,9 +37,11 @@
     h2 {
         font-size: .65rem;
     }
-    .header-nav-bar__list__item a {
-        font-size: 0.33rem;
-        line-height: 9px;
+    .header-nav-bar__list__item {
+        a {
+            font-size: 0.33rem;
+            line-height: 9px;
+        }
     }
     .header-text__description {
         font-size: 0.33rem;
@@ -116,8 +118,10 @@
     h2 {
         font-size: 1rem;
     }
-    .header-nav-bar__list__item a {
-        font-size: 0.5rem;
+    .header-nav-bar__list__item {
+        a {
+            font-size: 0.5rem;
+        }
     }
     .header-text__description {
         font-size: 0.5rem;
@@ -198,8 +202,10 @@
     h2 {
         font-size: 1.6rem;
     }
-    .header-nav-bar__list__item a {
-        font-size: 0.8rem;
+    .header-nav-bar__list__item {
+        a {
+            font-size: 0.8rem;
+        }
     }
     .header-text__description {
         font-size: 0.8rem;
@@ -284,8 +290,10 @@
     h2 {
         font-size: 2rem;
     }
-    .header-nav-bar__list__item a {
-        font-size: 1rem;
+    .header-nav-bar__list__item{
+        a {
+            font-size: 1rem;
+        }
     }
     .header-text__description {
         font-size: 1rem;

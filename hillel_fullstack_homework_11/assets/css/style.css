@@ -68,16 +68,12 @@ table{
   position:fixed;
   top:33px;
 }
-:root{
-  --color-major:#34547A;
-  --color-minor:#EEEFF1;
-  --color-weak:#F9F9F9;
-  --color-text:#727272;
-  --font-main:Roboto;
+@font-face{
+  font-family:"Roboto";
+  src:url("Hilllel_Fullstack_JS/hillel_fullstack_homework_11/assets/fonts/Roboto-Regular.ttf") format("truetype");
 }
-
 body{
-  font-family:var(--font-main), Verdana, Tahoma, sans-serif;
+  font-family:Roboto, Verdana, Tahoma, sans-serif;
   margin:0;
   padding:0;
 }
@@ -101,15 +97,15 @@ h2{
 }
 
 .background-color__major{
-  background-color:var(--color-major);
+  background-color:#34547A;
 }
 
 .background-color__minor{
-  background-color:var(--color-minor);
+  background-color:#EEEFF1;
 }
 
 .background-color__weak{
-  background-color:var(--color-weak);
+  background-color:#F9F9F9;
 }
 
 .header__container{
@@ -142,7 +138,7 @@ h2{
 }
 
 .header-nav-bar__list__item:hover a{
-  color:var(--color-major);
+  color:#34547A;
 }
 
 .header-title__primary{
@@ -153,7 +149,7 @@ h2{
   font-size:1rem;
   line-height:26px;
   font-weight:400;
-  color:var(--color-text);
+  color:#727272;
   max-width:540px;
   margin-bottom:65px;
 }
@@ -200,7 +196,7 @@ h2{
 .main-text-content__description{
   max-width:540px;
   margin:0 auto 0 auto;
-  color:var(--color-text);
+  color:#727272;
   font-size:1rem;
   font-weight:400;
   line-height:26px;
@@ -225,7 +221,7 @@ h2{
 
 .main-projects__item{
   height:50px;
-  background:left no-repeat url("images/project.svg");
+  background:left no-repeat url(../images/project.svg);
   padding:10px 0 10px 70px;
 }
 
