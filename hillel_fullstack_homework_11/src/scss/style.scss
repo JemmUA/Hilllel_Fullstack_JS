@@ -81,9 +81,10 @@ h2 {
 }
 
 .header-nav-bar__list__item{
-  &:hover;
-  a {
-    color: $color-major;
+    a {
+      &:hover {
+        color: yellow;
+    }
   }
 }
 

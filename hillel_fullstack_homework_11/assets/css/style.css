@@ -137,8 +137,8 @@ h2{
   letter-spacing:0.1em;
 }
 
-.header-nav-bar__list__item:hover a{
-  color:#34547A;
+.header-nav-bar__list__item a:hover{
+  color:yellow;
 }
 
 .header-title__primary{
@@ -286,8 +286,10 @@ h2{
   h2{
     font-size:1rem;
   }
-  .header-nav-bar__list__item a{
-    font-size:0.5rem;
+  .header-nav-bar__list__item{
+    a{
+      font-size:0.5rem;
+    }
   }
   .header-text__description{
     font-size:0.5rem;
@@ -364,8 +366,10 @@ h2{
   h2{
     font-size:1.6rem;
   }
-  .header-nav-bar__list__item a{
-    font-size:0.8rem;
+  .header-nav-bar__list__item{
+    a{
+      font-size:0.8rem;
+    }
   }
   .header-text__description{
     font-size:0.8rem;
@@ -446,8 +450,10 @@ h2{
   h2{
     font-size:2rem;
   }
-  .header-nav-bar__list__item a{
-    font-size:1rem;
+  .header-nav-bar__list__item{
+    a{
+      font-size:1rem;
+    }
   }
   .header-text__description{
     font-size:1rem;
@@ -519,9 +525,11 @@ h2{
   h2{
     font-size:0.65rem;
   }
-  .header-nav-bar__list__item a{
-    font-size:0.33rem;
-    line-height:9px;
+  .header-nav-bar__list__item{
+    a{
+      font-size:0.33rem;
+      line-height:9px;
+    }
   }
   .header-text__description{
     font-size:0.33rem;
