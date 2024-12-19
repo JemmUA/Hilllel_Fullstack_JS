@@ -55,7 +55,6 @@ table{
       -ms-flex-pack:center;
           justify-content:center;
 }
-
 .media__all{
   color:black;
   background-color:white;
@@ -137,7 +136,7 @@ h2{
   letter-spacing:0.1em;
 }
 
-.header-nav-bar__list__item a:hover{
+.header-nav-bar__list__item:hover a{
   color:#34547A;
 }
 
@@ -268,6 +267,69 @@ h2{
 }
 
 @media (min-width: 375px){
+  iframe{
+    width:614.4px;
+    height:345.6px;
+  }
+  h1{
+    font-size:1.8rem;
+    line-height:46.8px;
+  }
+  h2{
+    font-size:1.2rem;
+  }
+  .header-nav-bar__list__item a{
+    font-size:0.6rem;
+  }
+  .header-text__description{
+    font-size:0.6rem;
+  }
+  .header-button__container{
+    font-size:0.6rem;
+    height:39px;
+  }
+  .main-text-content__description{
+    font-size:0.6rem;
+  }
+  .footer__text__author{
+    font-size:0.6rem;
+    line-height:14.4px;
+  }
+  .footer__text__copyright{
+    font-size:0.4875rem;
+    line-height:12px;
+  }
+  .header__container{
+    padding-top:47.4px;
+    padding-bottom:84.6px;
+  }
+  .header-nav-bar__container{
+    padding-bottom:97.2px;
+  }
+  .header-title__primary{
+    margin-bottom:36px;
+  }
+  .header-text__description{
+    margin-bottom:39px;
+  }
+  .main-about-me__container{
+    padding:67.2px 0 60px 0;
+  }
+  .main-text-content__title{
+    margin-bottom:30px;
+  }
+  .main-projects__container{
+    padding:60px 0;
+  }
+  .main-projects__item{
+    padding:6px 0 6px 70px;
+  }
+  .job__text{
+    padding-bottom:30px;
+  }
+  .footer__container{
+    padding:30px 33% 30px 33%;
+  }
   .media__all{
     display:none;
   }
@@ -275,91 +337,16 @@ h2{
     display:initial;
     color:brown;
   }
-  iframe{
-    width:375px;
-    height:211px;
-  }
-  h1{
-    font-size:1.5rem;
-    line-height:39px;
-  }
-  h2{
-    font-size:1rem;
-  }
-  .header-nav-bar__list__item a{
-    font-size:0.5rem;
-  }
-  .header-text__description{
-    font-size:0.5rem;
-    line-height:13px;
-  }
-  .header-button__container{
-    font-size:0.5rem;
-    height:32px;
-  }
-  .main-text-content__description{
-    font-size:0.5rem;
-    line-height:13px;
-  }
-  .footer__text__author{
-    font-size:0.5rem;
-    line-height:12px;
-  }
-  .footer__text__copyright{
-    font-size:0.4rem;
-    line-height:11px;
-  }
-  .header__container{
-    padding-top:39px;
-    padding-bottom:70px;
-  }
-  .header-nav-bar__container{
-    padding-bottom:81px;
-  }
-  .header-title__primary{
-    margin-bottom:30px;
-  }
-  .header-text__description{
-    margin-bottom:32px;
-  }
-  .header-button__container{
-    height:32px;
-  }
-  .main-about-me__container{
-    padding:56px 0 50px 0;
-  }
-  .main-text-content__title{
-    margin-bottom:25px;
-  }
-  .main-projects__container{
-    padding:50px 0;
-  }
-  .main-projects__item{
-    padding:5px 0 5px 70px;
-  }
-  .job__text{
-    padding-bottom:25px;
-  }
-  .footer__container{
-    padding:25px 33% 25px 33%;
-  }
 }
 
 @media (min-width: 800px){
-  .media__all{
-    display:none;
-  }
-  .media__800{
-    display:initial;
-    color:blue;
-  }
   iframe{
-    width:800px;
-    height:450px;
+    width:819.2px;
+    height:460.8px;
   }
   h1{
     font-size:2.4rem;
-    line-height:62px;
+    line-height:62.4px;
   }
   h2{
     font-size:1.6rem;
@@ -369,33 +356,28 @@ h2{
   }
   .header-text__description{
     font-size:0.8rem;
-    line-height:21px;
   }
   .header-button__container{
     font-size:0.8rem;
     height:52px;
   }
-  .header-button__container{
-    font-size:0.8rem;
-  }
   .main-text-content__description{
     font-size:0.8rem;
-    line-height:21px;
   }
   .footer__text__author{
     font-size:0.8rem;
-    line-height:19px;
+    line-height:19.2px;
   }
   .footer__text__copyright{
     font-size:0.65rem;
     line-height:16px;
   }
   .header__container{
-    padding-top:63px;
-    padding-bottom:113px;
+    padding-top:63.2px;
+    padding-bottom:112.8px;
   }
   .header-nav-bar__container{
-    padding-bottom:130px;
+    padding-bottom:129.6px;
   }
   .header-title__primary{
     margin-bottom:48px;
@@ -403,12 +385,8 @@ h2{
   .header-text__description{
     margin-bottom:52px;
   }
-  .header-button__container{
-    font-size:0.8rem;
-    height:52px;
-  }
   .main-about-me__container{
-    padding:90px 0 80px 0;
+    padding:89.6px 0 80px 0;
   }
   .main-text-content__title{
     margin-bottom:40px;
@@ -425,16 +403,16 @@ h2{
   .footer__container{
     padding:40px 33% 40px 33%;
   }
-}
-
-@media (min-width: 1024px){
   .media__all{
     display:none;
   }
-  .media__1024{
+  .media__800{
     display:initial;
-    color:green;
+    color:blue;
   }
+}
+
+@media (min-width: 1024px){
   iframe{
     width:1024px;
     height:576px;
@@ -498,80 +476,84 @@ h2{
   .footer__container{
     padding:50px 33% 50px 33%;
   }
+  .media__all{
+    display:none;
+  }
+  .media__1024{
+    display:initial;
+    color:blue;
+  }
 }
 
 @media (max-width: 374px){
+  iframe{
+    width:409.6px;
+    height:230.4px;
+  }
+  h1{
+    font-size:1.2rem;
+    line-height:31.2px;
+  }
+  h2{
+    font-size:0.8rem;
+  }
+  .header-nav-bar__list__item a{
+    font-size:0.4rem;
+  }
+  .header-text__description{
+    font-size:0.4rem;
+  }
+  .header-button__container{
+    font-size:0.4rem;
+    height:26px;
+  }
+  .main-text-content__description{
+    font-size:0.4rem;
+  }
+  .footer__text__author{
+    font-size:0.4rem;
+    line-height:9.6px;
+  }
+  .footer__text__copyright{
+    font-size:0.325rem;
+    line-height:8px;
+  }
+  .header__container{
+    padding-top:31.6px;
+    padding-bottom:56.4px;
+  }
+  .header-nav-bar__container{
+    padding-bottom:64.8px;
+  }
+  .header-title__primary{
+    margin-bottom:24px;
+  }
+  .header-text__description{
+    margin-bottom:26px;
+  }
+  .main-about-me__container{
+    padding:44.8px 0 40px 0;
+  }
+  .main-text-content__title{
+    margin-bottom:20px;
+  }
+  .main-projects__container{
+    padding:40px 0;
+  }
+  .main-projects__item{
+    padding:4px 0 4px 70px;
+  }
+  .job__text{
+    padding-bottom:20px;
+  }
+  .footer__container{
+    padding:20px 33% 20px 33%;
+  }
   .media__all{
     display:none;
   }
   .media__0{
     display:initial;
     color:red;
-  }
-  iframe{
-    width:166px;
-    height:93px;
-  }
-  h1{
-    font-size:1rem;
-    line-height:25px;
-  }
-  h2{
-    font-size:0.65rem;
-  }
-  .header-nav-bar__list__item a{
-    font-size:0.33rem;
-    line-height:9px;
-  }
-  .header-text__description{
-    font-size:0.33rem;
-    line-height:9px;
-  }
-  .header-button__container{
-    font-size:0.33rem;
-    height:21px;
-  }
-  .main-text-content__description{
-    font-size:0.33rem;
-    line-height:9px;
-  }
-  .footer__text__author{
-    font-size:0.33rem;
-    line-height:9px;
-  }
-  .footer__text__copyright{
-    font-size:0.3rem;
-    line-height:8px;
-  }
-  .header__container{
-    padding-top:27px;
-    padding-bottom:47px;
-  }
-  .header-nav-bar__container{
-    padding-bottom:54px;
-  }
-  .header-title__primary{
-    margin-bottom:20px;
-  }
-  .header-text__description{
-    margin-bottom:22px;
-  }
-  .main-about-me__container{
-    padding:37px 0 33px 0;
-  }
-  .main-text-content__title{
-    margin-bottom:17px;
-  }
-  .main-projects__container{
-    padding:33px 0;
-  }
-  .main-projects__item{
-    padding:3px 0 3px 70px;
-  }
-  .job__text{
-    padding-bottom:17px;
-  }
-  .footer__container{
-    padding:17px 33% 17px 33%;
   }
 }

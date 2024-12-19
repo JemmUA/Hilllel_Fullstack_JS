@@ -6,17 +6,11 @@
   src: url("Hilllel_Fullstack_JS/hillel_fullstack_homework_11/assets/fonts/Roboto-Regular.ttf") format("truetype");
 }
 
-  $color-major: #34547A;
-  $color-minor: #EEEFF1;
-  $color-weak: #F9F9F9;
-  $color-text: #727272;
-  $font-main: Roboto;
-
-/*=== mixin start*/
-//.mq-ratio($ratio) {
-//
-//}
-/*=== mixin end*/
+$color-major: #34547A;
+$color-minor: #EEEFF1;
+$color-weak: #F9F9F9;
+$color-text: #727272;
+$font-main: Roboto;
 
 body {
   font-family: $font-main, Verdana, Tahoma, sans-serif;
@@ -72,8 +66,8 @@ h2 {
   padding-bottom: 162px;
 }
 
-.header-nav-bar__list__item{
-  a {
+.header-nav-bar__list__item {
+  a{
     color: black;
     list-style-type: none;
     /*font-size: 16px;*/
@@ -86,10 +80,10 @@ h2 {
   }
 }
 
-.header-nav-bar__list__item{
-    a {
-      &:hover {
-        color: $color-major;
+.header-nav-bar__list__item {
+  &:hover {
+    a{
+      color: $color-major;
     }
   }
 }

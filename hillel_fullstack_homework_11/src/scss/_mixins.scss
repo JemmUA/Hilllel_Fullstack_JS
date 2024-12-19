@@ -1,0 +1,80 @@
+@mixin media-query-ratio ($ratio) {
+
+  iframe {
+    width: $ratio * 1024px;
+    height: $ratio * 576px;
+  }
+
+  h1 {
+    font-size: $ratio * 3rem;
+    line-height: $ratio * 78px;
+  }
+  h2 {
+    font-size: $ratio * 2rem;
+  }
+  .header-nav-bar__list__item{
+    a {
+      font-size: $ratio * 1rem;
+    }
+  }
+  .header-text__description {
+    font-size: $ratio * 1rem;
+  }
+  .header-button__container {
+    font-size: $ratio * 1rem;
+    height: $ratio * 65px;
+  }
+  .main-text-content__description{
+    font-size: $ratio * 1rem;
+  }
+  .footer__text__author {
+    font-size: $ratio * 1rem;
+    line-height: $ratio * 24px;
+  }
+  .footer__text__copyright {
+    font-size: $ratio * 0.8125rem;
+    line-height: $ratio * 20px
+  }
+
+  .header__container {
+    padding-top: $ratio * 79px;
+    padding-bottom: $ratio * 141px;
+  }
+  .header-nav-bar__container {
+    padding-bottom: $ratio * 162px;
+  }
+  .header-title__primary {
+    margin-bottom: $ratio * 60px;
+  }
+  .header-text__description {
+    margin-bottom: $ratio * 65px;
+  }
+  .main-about-me__container {
+    padding: ($ratio * 112px) 0 ($ratio * 100px) 0;
+  }
+  .main-text-content__title {
+    margin-bottom: $ratio * 50px;
+  }
+  .main-projects__container {
+    padding: ($ratio * 100px) 0;
+  }
+  .main-projects__item {
+    padding: ($ratio * 10px) 0 ($ratio * 10px) 70px;
+  }
+  .job__text {
+    padding-bottom: $ratio * 50px;
+  }
+  .footer__container {
+    padding: ($ratio * 50px) 33% ($ratio * 50px) 33%;
+  }
+}
+
+@mixin media-breakpoint ($breakpoint) {
+  .media__all {
+    display: none;
+  }
+  .media__char($breakpoint) {
+  display: initial;
+  color: red;
+}
+}
