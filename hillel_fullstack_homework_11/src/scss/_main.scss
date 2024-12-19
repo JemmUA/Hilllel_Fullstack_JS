@@ -1,0 +1,65 @@
+@use "variables" as *;
+
+.main-about-me__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 112px 0 100px 0;
+}
+
+.main-text-content__title {
+  margin-bottom: 50px;
+}
+
+.main-text-content__description {
+  /*width: 540px;*/
+  max-width: 540px;
+  margin: 0 auto 0 auto;
+  color: $color-text;
+  /*font-size: 16px;*/
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+}
+
+.main-projects__container {
+  display: flex;
+  flex-wrap: wrap;
+  /*gap: 49px;*/
+  gap: 3.55%;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+}
+
+.main-projects__item {
+  /*width: 141px;*/
+  height: 50px;
+  background: left no-repeat url("Hilllel_Fullstack_JS/hillel_fullstack_homework_11/assets/images/project.svg");
+  padding: 10px 0 10px 70px;
+}
+
+.main-projects__big__text {
+  /*font-size: 21px;*/
+  font-size: 1.3rem;
+  line-height: 24px;
+  font-weight: 400;
+  color: white;
+}
+
+.main-projects__small__text {
+  /*font-size: 16px;*/
+  font-size: 1rem;
+  line-height: 26px;
+  font-weight: 400;
+  color: white;
+}
+
+.job__text {
+  padding-bottom: 50px;
+}
+
+.job__video {
+  margin: 0 auto 0 auto;
+}

@@ -55,6 +55,7 @@ table{
       -ms-flex-pack:center;
           justify-content:center;
 }
+
 .media__all{
   color:black;
   background-color:white;
@@ -67,14 +68,14 @@ table{
   position:fixed;
   top:33px;
 }
-@font-face{
-  font-family:"Roboto";
-  src:url("Hilllel_Fullstack_JS/hillel_fullstack_homework_11/assets/fonts/Roboto-Regular.ttf") format("truetype");
-}
 body{
   font-family:Roboto, Verdana, Tahoma, sans-serif;
   margin:0;
   padding:0;
+}
+
+.container{
+  width:100%;
 }
 
 h1{
@@ -163,11 +164,10 @@ h2{
   -webkit-box-align:center;
       -ms-flex-align:center;
           align-items:center;
-  max-width:225px;
-  min-width:38.5%;
+  width:15%;
   height:65px;
   color:white;
-  font-size:1rem;
+  font-size:0.8rem;
   font-weight:400;
   letter-spacing:0.1em;
   text-align:center;
@@ -266,10 +266,15 @@ h2{
   color:white;
 }
 
+@font-face{
+  font-family:"Roboto";
+  src:url("Hilllel_Fullstack_JS/hillel_fullstack_homework_11/assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
 @media (min-width: 375px){
   iframe{
-    width:614.4px;
-    height:345.6px;
+    width:90vw;
+    height:50vw;
   }
   h1{
     font-size:1.8rem;
@@ -283,21 +288,12 @@ h2{
   }
   .header-text__description{
     font-size:0.6rem;
+    margin-bottom:39px;
   }
   .header-button__container{
-    font-size:0.6rem;
-    height:39px;
-  }
-  .main-text-content__description{
-    font-size:0.6rem;
-  }
-  .footer__text__author{
-    font-size:0.6rem;
-    line-height:14.4px;
-  }
-  .footer__text__copyright{
-    font-size:0.4875rem;
-    line-height:12px;
+    font-size:0.6vw;
+    width:7.2vw;
+    height:3vw;
   }
   .header__container{
     padding-top:47.4px;
@@ -309,8 +305,8 @@ h2{
   .header-title__primary{
     margin-bottom:36px;
   }
-  .header-text__description{
-    margin-bottom:39px;
+  .main-text-content__description{
+    font-size:0.6rem;
   }
   .main-about-me__container{
     padding:67.2px 0 60px 0;
@@ -330,6 +326,14 @@ h2{
   .footer__container{
     padding:30px 33% 30px 33%;
   }
+  .footer__text__author{
+    font-size:0.6rem;
+    line-height:14.4px;
+  }
+  .footer__text__copyright{
+    font-size:0.4875rem;
+    line-height:12px;
+  }
   .media__all{
     display:none;
   }
@@ -341,8 +345,8 @@ h2{
 
 @media (min-width: 800px){
   iframe{
-    width:819.2px;
-    height:460.8px;
+    width:90vw;
+    height:50vw;
   }
   h1{
     font-size:2.4rem;
@@ -356,21 +360,12 @@ h2{
   }
   .header-text__description{
     font-size:0.8rem;
+    margin-bottom:52px;
   }
   .header-button__container{
-    font-size:0.8rem;
-    height:52px;
-  }
-  .main-text-content__description{
-    font-size:0.8rem;
-  }
-  .footer__text__author{
-    font-size:0.8rem;
-    line-height:19.2px;
-  }
-  .footer__text__copyright{
-    font-size:0.65rem;
-    line-height:16px;
+    font-size:0.8vw;
+    width:9.6vw;
+    height:4vw;
   }
   .header__container{
     padding-top:63.2px;
@@ -382,8 +377,8 @@ h2{
   .header-title__primary{
     margin-bottom:48px;
   }
-  .header-text__description{
-    margin-bottom:52px;
+  .main-text-content__description{
+    font-size:0.8rem;
   }
   .main-about-me__container{
     padding:89.6px 0 80px 0;
@@ -403,6 +398,14 @@ h2{
   .footer__container{
     padding:40px 33% 40px 33%;
   }
+  .footer__text__author{
+    font-size:0.8rem;
+    line-height:19.2px;
+  }
+  .footer__text__copyright{
+    font-size:0.65rem;
+    line-height:16px;
+  }
   .media__all{
     display:none;
   }
@@ -414,8 +417,8 @@ h2{
 
 @media (min-width: 1024px){
   iframe{
-    width:1024px;
-    height:576px;
+    width:90vw;
+    height:50vw;
   }
   h1{
     font-size:3rem;
@@ -429,21 +432,12 @@ h2{
   }
   .header-text__description{
     font-size:1rem;
+    margin-bottom:65px;
   }
   .header-button__container{
-    font-size:1rem;
-    height:65px;
-  }
-  .main-text-content__description{
-    font-size:1rem;
-  }
-  .footer__text__author{
-    font-size:1rem;
-    line-height:24px;
-  }
-  .footer__text__copyright{
-    font-size:0.8125rem;
-    line-height:20px;
+    font-size:1vw;
+    width:12vw;
+    height:5vw;
   }
   .header__container{
     padding-top:79px;
@@ -455,8 +449,8 @@ h2{
   .header-title__primary{
     margin-bottom:60px;
   }
-  .header-text__description{
-    margin-bottom:65px;
+  .main-text-content__description{
+    font-size:1rem;
   }
   .main-about-me__container{
     padding:112px 0 100px 0;
@@ -476,19 +470,27 @@ h2{
   .footer__container{
     padding:50px 33% 50px 33%;
   }
+  .footer__text__author{
+    font-size:1rem;
+    line-height:24px;
+  }
+  .footer__text__copyright{
+    font-size:0.8125rem;
+    line-height:20px;
+  }
   .media__all{
     display:none;
   }
   .media__1024{
     display:initial;
-    color:blue;
+    color:green;
   }
 }
 
 @media (max-width: 374px){
   iframe{
-    width:409.6px;
-    height:230.4px;
+    width:90vw;
+    height:50vw;
   }
   h1{
     font-size:1.2rem;
@@ -502,21 +504,12 @@ h2{
   }
   .header-text__description{
     font-size:0.4rem;
+    margin-bottom:26px;
   }
   .header-button__container{
-    font-size:0.4rem;
-    height:26px;
-  }
-  .main-text-content__description{
-    font-size:0.4rem;
-  }
-  .footer__text__author{
-    font-size:0.4rem;
-    line-height:9.6px;
-  }
-  .footer__text__copyright{
-    font-size:0.325rem;
-    line-height:8px;
+    font-size:0.4vw;
+    width:4.8vw;
+    height:2vw;
   }
   .header__container{
     padding-top:31.6px;
@@ -528,8 +521,8 @@ h2{
   .header-title__primary{
     margin-bottom:24px;
   }
-  .header-text__description{
-    margin-bottom:26px;
+  .main-text-content__description{
+    font-size:0.4rem;
   }
   .main-about-me__container{
     padding:44.8px 0 40px 0;
@@ -548,6 +541,14 @@ h2{
   }
   .footer__container{
     padding:20px 33% 20px 33%;
+  }
+  .footer__text__author{
+    font-size:0.4rem;
+    line-height:9.6px;
+  }
+  .footer__text__copyright{
+    font-size:0.325rem;
+    line-height:8px;
   }
   .media__all{
     display:none;

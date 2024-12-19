@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+body {
+  font-family: $font-main, Verdana, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width:100%;
+}
+
+h1 {
+  /*font-size: 48px;*/
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 78px;
+  overflow: auto;
+}
+
+h2 {
+  /*font-size: 32px;*/
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.global-frame {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.background-color__major {
+  background-color: $color-major;
+}
+
+.background-color__minor {
+  background-color: $color-minor;
+}
+
+.background-color__weak {
+  background-color: $color-weak;
+}

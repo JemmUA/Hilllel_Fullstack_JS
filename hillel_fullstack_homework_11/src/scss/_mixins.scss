@@ -1,10 +1,9 @@
 @mixin media-query-ratio ($ratio) {
-
   iframe {
-    width: $ratio * 1024px;
-    height: $ratio * 576px;
+    //width: $ratio * 1024px;
+    width: 90vw;
+    height: 50vw;
   }
-
   h1 {
     font-size: $ratio * 3rem;
     line-height: $ratio * 78px;
@@ -19,23 +18,13 @@
   }
   .header-text__description {
     font-size: $ratio * 1rem;
+    margin-bottom: $ratio * 65px;
   }
   .header-button__container {
-    font-size: $ratio * 1rem;
-    height: $ratio * 65px;
+    font-size: $ratio * 1vw;
+    width: $ratio * 12vw;
+    height: $ratio * 5vw;
   }
-  .main-text-content__description{
-    font-size: $ratio * 1rem;
-  }
-  .footer__text__author {
-    font-size: $ratio * 1rem;
-    line-height: $ratio * 24px;
-  }
-  .footer__text__copyright {
-    font-size: $ratio * 0.8125rem;
-    line-height: $ratio * 20px
-  }
-
   .header__container {
     padding-top: $ratio * 79px;
     padding-bottom: $ratio * 141px;
@@ -46,8 +35,8 @@
   .header-title__primary {
     margin-bottom: $ratio * 60px;
   }
-  .header-text__description {
-    margin-bottom: $ratio * 65px;
+  .main-text-content__description{
+    font-size: $ratio * 1rem;
   }
   .main-about-me__container {
     padding: ($ratio * 112px) 0 ($ratio * 100px) 0;
@@ -67,14 +56,12 @@
   .footer__container {
     padding: ($ratio * 50px) 33% ($ratio * 50px) 33%;
   }
-}
-
-@mixin media-breakpoint ($breakpoint) {
-  .media__all {
-    display: none;
+  .footer__text__author {
+    font-size: $ratio * 1rem;
+    line-height: $ratio * 24px;
   }
-  .media__char($breakpoint) {
-  display: initial;
-  color: red;
-}
+  .footer__text__copyright {
+    font-size: $ratio * 0.8125rem;
+    line-height: $ratio * 20px
+  }
 }

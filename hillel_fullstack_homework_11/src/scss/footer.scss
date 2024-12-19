@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+.footer__container {
+  box-sizing: border-box;
+  padding: 50px 33% 50px 33%;
+}
+
+.footer__text__author {
+  /*font-size: 16px;*/
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.footer__text__copyright {
+  /*font-size: 13px;*/
+  font-size: 0.8125rem;
+  line-height: 21px;
+  font-weight: 400;
+  color: white;
+}
