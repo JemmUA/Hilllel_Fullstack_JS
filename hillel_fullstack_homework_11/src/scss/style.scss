@@ -12,6 +12,12 @@
   $color-text: #727272;
   $font-main: Roboto;
 
+/*=== mixin start*/
+//.mq-ratio($ratio) {
+//
+//}
+/*=== mixin end*/
+
 body {
   font-family: $font-main, Verdana, Tahoma, sans-serif;
   margin: 0;
@@ -83,7 +89,7 @@ h2 {
 .header-nav-bar__list__item{
     a {
       &:hover {
-        color: yellow;
+        color: $color-major;
     }
   }
 }
