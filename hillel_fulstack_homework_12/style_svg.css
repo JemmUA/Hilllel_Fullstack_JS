@@ -1,0 +1,14 @@
+.ellipse__animated {
+  fill: #777777;
+  stroke-width: 10px;
+  stroke: darkgrey;
+  transition: 1s;
+}
+
+.ellipse__animated {
+  &:hover {
+    fill: greenyellow;
+    stroke-width: 100px;
+    stroke: darkgreen;
+  }
+}
