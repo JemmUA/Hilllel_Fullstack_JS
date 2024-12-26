@@ -1,3 +1,7 @@
+:root {
+  --bs-primary: rgb(100, 0, 255);
+}
+
 .logo_best {
   width: 70px;
   /*height: 70px;*/
@@ -5,5 +9,5 @@
 }
 
 .carousel-text-color {
-  color: orange;
+  color: var(--bs-primary);
 }
