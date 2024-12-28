@@ -8,6 +8,12 @@
   margin: 10px;
 }
 
+.menu_name {
+  font-family: sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: red;
+}
 .carousel-text-color {
   color: var(--bs-primary);
 }
