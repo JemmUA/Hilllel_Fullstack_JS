@@ -15,5 +15,6 @@
   color: red;
 }
 .carousel-text-color {
-  color: var(--bs-primary);
+  color: cyan;
+  text-weight: bold;
 }
