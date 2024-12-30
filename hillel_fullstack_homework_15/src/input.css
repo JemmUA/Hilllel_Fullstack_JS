@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background__primary {
+  /*width: 90%;*/
+  opacity: 0.1;
+  background: left  repeat url("../images/snowflake.svg");
+}
