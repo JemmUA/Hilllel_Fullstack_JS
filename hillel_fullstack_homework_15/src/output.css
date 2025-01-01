@@ -568,6 +568,18 @@ video {
   padding: 1.75rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -587,6 +599,11 @@ video {
   line-height: 1;
 }
 
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -598,8 +615,10 @@ video {
 
 .background__primary {
   /*width: 90%;*/
-  opacity: 0.1;
-  background: left  repeat url("../images/snowflake.svg");
+  /*opacity: 0.1;*/
+  /*background: left  repeat url("../images/snowflake.svg");*/
+  /*background: top repeat url("../images/snowflake2.svg");*/
+  background: linear-gradient(180deg, rgb(10, 10, 50) 50%, rgb(10, 10, 250) 100%);
 }
 
 .hover\:bg-red-500:hover {

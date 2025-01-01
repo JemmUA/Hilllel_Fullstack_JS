@@ -4,6 +4,8 @@
 
 .background__primary {
   /*width: 90%;*/
-  opacity: 0.1;
-  background: left  repeat url("../images/snowflake.svg");
+  /*opacity: 0.1;*/
+  /*background: left  repeat url("../images/snowflake.svg");*/
+  /*background: top repeat url("../images/snowflake2.svg");*/
+  background: linear-gradient(180deg, rgb(10, 10, 50) 50%, rgb(10, 10, 250) 100%);
 }
