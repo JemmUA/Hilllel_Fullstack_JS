@@ -2,10 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.background__primary {
+.background__header {
   /*width: 90%;*/
   /*opacity: 0.1;*/
   /*background: left  repeat url("../images/snowflake.svg");*/
-  /*background: top repeat url("../images/snowflake2.svg");*/
   background: linear-gradient(180deg, rgb(10, 10, 50) 50%, rgb(10, 10, 250) 100%);
+}
+
+.nav-bar__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12.5%;
+}
+.nav-bar__item {
+  list-style-type: none;
+}
+
+.nav-bar__item a{
+  color: cyan;
+  list-style-type: none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-bar__item:hover a{
+  color: red;
 }

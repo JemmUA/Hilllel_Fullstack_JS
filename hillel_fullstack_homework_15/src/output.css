@@ -559,44 +559,42 @@ video {
   background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1));
 }
 
-.bg-green-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(20 83 45 / var(--tw-bg-opacity, 1));
-}
-
-.p-7 {
-  padding: 1.75rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-20 {
   padding: 5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .text-left {
   text-align: left;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
 }
 
 .text-9xl {
@@ -613,12 +611,32 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity, 1));
 }
 
-.background__primary {
+.background__header {
   /*width: 90%;*/
   /*opacity: 0.1;*/
   /*background: left  repeat url("../images/snowflake.svg");*/
-  /*background: top repeat url("../images/snowflake2.svg");*/
   background: linear-gradient(180deg, rgb(10, 10, 50) 50%, rgb(10, 10, 250) 100%);
+}
+
+.nav-bar__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12.5%;
+}
+
+.nav-bar__item {
+  list-style-type: none;
+}
+
+.nav-bar__item a{
+  color: cyan;
+  list-style-type: none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-bar__item:hover a{
+  color: red;
 }
 
 .hover\:bg-red-500:hover {
