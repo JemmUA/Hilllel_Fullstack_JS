@@ -23,8 +23,7 @@
   list-style-type: none;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.nav-bar__item:hover a{
-  color: red;
+  &:hover {
+    color: yellow;
+  }
 }
