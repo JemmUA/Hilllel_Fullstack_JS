@@ -9,11 +9,6 @@
   background: linear-gradient(180deg, rgb(10, 10, 50) 50%, rgb(10, 10, 250) 100%);
 }
 
-.nav-bar__container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12.5%;
-}
 .nav-bar__item {
   list-style-type: none;
 }
