@@ -13,3 +13,7 @@
   border-4 border-green-500 rounded-lg bg-green-100  hover:bg-amber-300 hover:border-red-800
   sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl;
 }
+
+.nav__li {
+  @apply 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl sm:text-2xl font-bold uppercase py-5 text-cyan-500 hover:text-orange-400;
+}
