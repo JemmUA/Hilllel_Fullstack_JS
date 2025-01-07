@@ -553,3 +553,23 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+
+.hover\:bg-amber-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(180 83 9 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-color__garland:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 51 255 / var(--tw-bg-opacity, 1));
+}
+
+.active\:bg-yellow-400:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
+}
+
+.active\:bg-color__gift:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 85 51 / var(--tw-bg-opacity, 1));
+}
