@@ -27,7 +27,7 @@ console.log("Warm air:", airIsWarm);
 let floorIsCold = false;
 console.log("Cold floor:", floorIsCold);
 
-const neighbour = {
+let neighbour = {
     name: "Ruslan",
     age: 40,
     gender: "Male",
