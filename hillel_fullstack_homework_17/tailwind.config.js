@@ -4,9 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        color__gift: "#ff5533",
-        color__tree: "#33ff33",
-        color__garland: "#3333ff",
+        color__main: "#FF6336",
+        color__main__dark: "#B93811",
       },
     },
   },

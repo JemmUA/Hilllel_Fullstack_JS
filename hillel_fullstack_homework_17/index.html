@@ -10,18 +10,41 @@
 <body>
 <!--  <div class="hover:bg-amber-700 active:bg-yellow-400">Hello world!!!!!))</div>-->
 <!--  <div class="hover:bg-color__garland active:bg-color__gift">We love you!!!!!))</div>-->
-  <header class="flex gap-x-10 border-b-2">
-    <img class="logo_nav" src="assets/images/lokalize+g.svg" title="Lokalize logo" alt="Lokalize logo">
-    <ul class="flex flex-wrap content-center gap-10 text-xs text__nav">
-      <li>Product</li>
-      <li>Features</li>
-      <li>Pricing</li>
-      <li>Case&nbsp;studies</li>
-      <li>Resources</li>
-    </ul>
-    <button class="text-black hover:bg-gray-300 font-bold text-xs">Log in</button>
-    <button class="text-white bg-orange-500 hover:bg-orange-700 font-bold text-xs">Try it free</button>
+  <header class="flex flex-wrap gap-x-1 border-b-2">
+    <img class="h-auto 2xl:w-48 xl:w-42 lg:w-36 md:w-24 sm:w-16 p-2" src="assets/images/lokalize+g.svg" title="Lokalize logo" alt="Lokalize logo">
+    <button class="sm:hidden">
+        <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true"
+             xmlns="http://www.w3.org/2000/svg"
+             width="10" height="10" fill="none" viewBox="0 0 25 25   ">
+          <path stroke="gray" stroke-linecap="round" stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"/>
+        </svg>
+    </button>
+    <nav class="hidden sm:block">
+      <ul class="flex justify-around py-2 gap-x-7 text__nav">
+<!--        <ul class="flex flex-wrap content-center gap-x-5 text-xs lg:text-xl xl:text-2xl font__nav">-->
+        <li>Product</li>
+        <li>Features</li>
+        <li>Pricing</li>
+        <li>Case&nbsp;studies</li>
+        <li>Resources</li>
+      </ul>
+    </nav>
+    <div>
+      <button class="text-black px-4 py-2 hover:bg-gray-400 font-bold text__nav">Log in</button>
+      <button class="text-white px-4 py-2 bg-color__main hover:bg-color__main__dark font-bold text__nav">Try it free</button>
+    </div>
   </header>
+
+  <main>
+<!--    <div class="grid grid-cols-2 gap-2 bg-yellow-400">-->
+<!--      <div class="bg-orange-900">1</div>-->
+<!--      <div class="bg-orange-900">2</div>-->
+<!--      <div class="bg-orange-900">3</div>-->
+<!--      <div class="bg-orange-900">4</div>-->
+<!--    </div>-->
+  </main>
+
 </body>
 </html>
 
