@@ -20,6 +20,10 @@
   /*width: 110px;*/
   padding: 1vw;
 }
-.text__nav {
+.font__nav {
   font-family: var(--font-main), Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text__nav {
+  @apply text-xs lg:text-xl xl:text-2xl font__nav;
 }
