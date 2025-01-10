@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Graphiklweb";
+  src: url("../fonts/graphiklcweb_medium.ttf") format("truetype");
+}
+
+:root {
+  --color-main: #FF6336;
+;
+  --font-main: Graphiklweb;
+}
+
+.logo_nav {
+  width: 10%;
+  /*width: 110px;*/
+  padding: 1vw;
+}
+.text__nav {
+  font-family: var(--font-main), Verdana, Geneva, Tahoma, sans-serif;
+}
