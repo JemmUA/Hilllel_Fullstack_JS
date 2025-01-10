@@ -14,7 +14,9 @@
 }
 
 .logo_nav {
-  width: 10%;
+  /*width: 15%;*/
+  min-width: 100px;
+  max-width: 180px;
   /*width: 110px;*/
   padding: 1vw;
 }

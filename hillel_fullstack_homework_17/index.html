@@ -10,18 +10,35 @@
 <body>
 <!--  <div class="hover:bg-amber-700 active:bg-yellow-400">Hello world!!!!!))</div>-->
 <!--  <div class="hover:bg-color__garland active:bg-color__gift">We love you!!!!!))</div>-->
-  <header class="flex gap-x-10 border-b-2">
+  <header class="flex flex-wrap content-center gap-x-5 border-b-2">
     <img class="logo_nav" src="assets/images/lokalize+g.svg" title="Lokalize logo" alt="Lokalize logo">
-    <ul class="flex flex-wrap content-center gap-10 text-xs text__nav">
-      <li>Product</li>
-      <li>Features</li>
-      <li>Pricing</li>
-      <li>Case&nbsp;studies</li>
-      <li>Resources</li>
-    </ul>
-    <button class="text-black hover:bg-gray-300 font-bold text-xs">Log in</button>
-    <button class="text-white bg-orange-500 hover:bg-orange-700 font-bold text-xs">Try it free</button>
+    <button class="sm:hidden">
+        <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true"
+             xmlns="http://www.w3.org/2000/svg"
+             width="10" height="10" fill="none" viewBox="0 0 25 25   ">
+          <path stroke="gray" stroke-linecap="round" stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"/>
+        </svg>
+    </button>
+    <nav class="hidden sm:block">
+      <ul class="bg-yellow-400 flex items-center gap-x-8 text-xs lg:text-xl xl:text-2xl text__nav">
+<!--        <ul class="flex flex-wrap content-center gap-x-5 text-xs lg:text-xl xl:text-2xl text__nav">-->
+        <li>Product</li>
+        <li>Features</li>
+        <li>Pricing</li>
+        <li>Case&nbsp;studies</li>
+        <li>Resources</li>
+      </ul>
+    </nav>
+
+    <button class="text-black hover:bg-gray-400 font-bold text-xs">Log in</button>
+    <button class="text-white bg-color__main hover:bg-color__main__dark font-bold text-xs">Try it free</button>
   </header>
+
+  <main>
+
+  </main>
+
 </body>
 </html>
 
