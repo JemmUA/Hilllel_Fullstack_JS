@@ -10,19 +10,19 @@
 <body>
 <!--  <div class="hover:bg-amber-700 active:bg-yellow-400">Hello world!!!!!))</div>-->
 <!--  <div class="hover:bg-color__main active:bg-color__main__light">We love you!!!!!))</div>-->
-  <header class="flex justify-between items-center border-b-2">
+  <header class="flex max-sm:flex-wrap sm:flex-nowrap justify-between items-center border-b-2">
     <div class="flex flex-wrap gap-4">
-      <img class="h-auto 2xl:w-48 xl:w-42 lg:w-36 md:w-30 sm:w-24 p-2" src="assets/images/lokalize+g.svg" title="Lokalize logo" alt="Lokalize logo">
+      <img class="h-auto 2xl:w-48 xl:w-42 lg:w-36 md:w-30 sm:w-24 max-sm:w-22 p-2" src="assets/images/lokalize+g.svg" title="Lokalize logo" alt="Lokalize logo">
       <button class="sm:hidden hover:bg-color__main__light active:bg-color__main__dark">
           <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true"
                xmlns="http://www.w3.org/2000/svg"
-               width="10" height="10" fill="none" viewBox="0 0 25 25   ">
+               width="10" height="10" fill="none" viewBox="0 0 25 25">
             <path stroke="gray" stroke-linecap="round" stroke-width="2"
                   d="M5 7h14M5 12h14M5 17h14"/>
           </svg>
       </button>
       <nav class="hidden sm:block">
-        <ul class="flex justify-around py-2 gap-x-5 text__nav">
+        <ul class="flex justify-around py-2 gap-x-3 text__nav">
   <!--        <ul class="flex flex-wrap content-center gap-x-5 text-xs lg:text-xl xl:text-2xl font__nav">-->
           <li>Product</li>
           <li>Features</li>
@@ -33,28 +33,28 @@
       </nav>
     </div>
     <div class="flex flex-wrap justify-around gap-4">
-      <button class="text-black px-4 py-2 hover:bg-gray-400 border-2 font-bold text__nav m-2">Log in</button>
-      <button class="text-white px-4 py-2 bg-color__main hover:bg-color__main__dark font-bold text__nav m-2">Try it free</button>
+      <button class="text-black px-4 py-2 hover:bg-gray-400 border-2 text__button m-2">Log in</button>
+      <button class="text-white px-4 py-2 bg-color__main hover:bg-color__main__dark text__button m-2">Try it free</button>
     </div>
   </header>
 
   <main>
 
-    <div class="grid justify-center md:flex pt-16">
+    <div class="grid justify-center md:flex pt-16 pb-16 m-12">
       <div class="block-accelerate order-2 md:order-1 items-center">
-        <div class="font-bold 2xl:text-8xl xl:text-5xl lg:text-2xl md:text-xl sm:text-md max-sm:text-sm pt-4">
+        <div class="text__main__title">
           Accelerate localization from code to delivery
         </div>
-        <div class="2xl:text-4xl xl:text-2xl lg:text-xl md:text-md sm:text-sm max-sm:text-xs pt-2 pb-4">
+        <div class="text__main__content">
           A localization and translation management platform for agile teams.
           Embrace automation, workflow transparency,
           and fast project delivery.
         </div>
         <div class="flex justify-center flex-wrap gap-x-4">
-          <button class="text-black px-4 py-2 hover:bg-gray-400 border-2 font-bold text__nav m-2">Log in</button>
-          <button class="text-white px-4 py-2 bg-color__main hover:bg-color__main__dark font-bold text__nav m-2">Try it free</button>
+          <button class="text-black px-4 py-2 hover:bg-gray-400 border-2 text__button m-2">Log in</button>
+          <button class="text-white px-4 py-2 bg-color__main hover:bg-color__main__dark text__button m-2">Try it free</button>
         </div>
-        <div class="2xl:text-2xl xl:text-xl lg:text-sm md:text-sm sm:text-sm max-sm:text-xs ">
+        <div class="text__bottom">
           Try all features for 14 days · No credit card required
         </div>
       </div>
@@ -63,8 +63,20 @@
       </div>
     </div>
 
-    <div class="bg-color__main__light text-center">
-      The preferred localization tool of 1500+ companies
+    <div class="bg-color__main__light">
+      <div class="text-center text__main__title">
+        The preferred localization<br>tool of 1500+ companies
+      </div>
+      <img class="flex content-center" src="assets/images/logos_row.svg" title="Logos" alt="Logos">
+
+<!--      <div class="flex flex-row justify-center">-->
+<!--        <img src="assets/images/logo_specialized.svg" title="Logo Specialized" alt="Logo Specialized">-->
+<!--        <img src="assets/images/logo_virgin.svg" title="Logo Virgin" alt="Logo Virgin">-->
+<!--        <img src="assets/images/logo_tidal.svg" title="Logo Tidal" alt="Logo Tidal">-->
+<!--        <img src="assets/images/logo_revolut.svg" title="Logo Revolut" alt="Logo Revolut">-->
+<!--        <img src="assets/images/logo_yelp.svg" title="Logo Yelp" alt="Logo Yelp">-->
+<!--        <img src="assets/images/logo_daimler.svg" title="Logo Daimler" alt="Logo Daimler">-->
+<!--      </div>-->
     </div>
   </main>
 

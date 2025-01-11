@@ -25,11 +25,24 @@
 }
 
 .text__nav {
-  @apply text-xs lg:text-xl xl:text-2xl font__nav;
+  /*@apply 2xl:text-4xl xl:text-2xl lg:text-xl md:text-base sm:text-base max-sm:text-sm font__nav;*/
+  @apply 2xl:text-4xl xl:text-2xl lg:text-xl md:text-base sm:text-xs max-sm:text-sm font__nav;
+  /*@apply sm:gap-x-0 md:gap-x-5;*/
+}
+.text__button {
+  @apply font-bold text-xs 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-xs max-sm:text-xs font__nav;
 }
 
 .text__main__title {
-  @apply font-bold 2xl:text-8xl xl:text-5xl lg:text-2xl md:text-xl sm:text-md max-sm:text-sm pt-4;
+  @apply font-bold 2xl:text-8xl xl:text-6xl lg:text-4xl md:text-2xl sm:text-xl max-sm:text-lg pt-4;
+}
+
+.text__main__content {
+  @apply 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-sm;
+}
+
+.text__bottom {
+  @apply 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm max-sm:text-xs pt-2 pb-4;
 }
 
 .block-accelerate {
