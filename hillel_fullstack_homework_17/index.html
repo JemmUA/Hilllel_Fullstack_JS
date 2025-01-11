@@ -9,11 +9,11 @@
 </head>
 <body>
 <!--  <div class="hover:bg-amber-700 active:bg-yellow-400">Hello world!!!!!))</div>-->
-<!--  <div class="hover:bg-color__garland active:bg-color__gift">We love you!!!!!))</div>-->
+<!--  <div class="hover:bg-color__main active:bg-color__main__light">We love you!!!!!))</div>-->
   <header class="flex justify-between items-center border-b-2">
     <div class="flex flex-wrap gap-4">
-      <img class="h-auto 2xl:w-48 xl:w-42 lg:w-36 md:w-24 sm:w-16 p-2" src="assets/images/lokalize+g.svg" title="Lokalize logo" alt="Lokalize logo">
-      <button class="sm:hidden">
+      <img class="h-auto 2xl:w-48 xl:w-42 lg:w-36 md:w-30 sm:w-24 p-2" src="assets/images/lokalize+g.svg" title="Lokalize logo" alt="Lokalize logo">
+      <button class="sm:hidden hover:bg-color__main__light active:bg-color__main__dark">
           <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true"
                xmlns="http://www.w3.org/2000/svg"
                width="10" height="10" fill="none" viewBox="0 0 25 25   ">
@@ -22,7 +22,7 @@
           </svg>
       </button>
       <nav class="hidden sm:block">
-        <ul class="flex justify-around py-2 gap-x-7 text__nav">
+        <ul class="flex justify-around py-2 gap-x-5 text__nav">
   <!--        <ul class="flex flex-wrap content-center gap-x-5 text-xs lg:text-xl xl:text-2xl font__nav">-->
           <li>Product</li>
           <li>Features</li>
@@ -32,22 +32,45 @@
         </ul>
       </nav>
     </div>
-    <div class="flex justify-around gap-4">
-      <button class="text-black px-4 py-2 hover:bg-gray-400 font-bold text__nav">Log in</button>
-      <button class="text-white px-4 py-2 bg-color__main hover:bg-color__main__dark font-bold text__nav">Try it free</button>
+    <div class="flex flex-wrap justify-around gap-4">
+      <button class="text-black px-4 py-2 hover:bg-gray-400 border-2 font-bold text__nav m-2">Log in</button>
+      <button class="text-white px-4 py-2 bg-color__main hover:bg-color__main__dark font-bold text__nav m-2">Try it free</button>
     </div>
   </header>
 
   <main>
-<!--    <div class="grid grid-cols-2 gap-2 bg-yellow-400">-->
-<!--      <div class="bg-orange-900">1</div>-->
-<!--      <div class="bg-orange-900">2</div>-->
-<!--      <div class="bg-orange-900">3</div>-->
-<!--      <div class="bg-orange-900">4</div>-->
-<!--    </div>-->
+    <div class="flex sm:grid p-7">
+      <div class="block-accelerate order-2 sm:order-1">
+        <div class="font-bold 2xl:text-5xl xl:text-3xl lg:text-xl md:text-md ">
+          Accelerate localization from code to delivery
+        </div>
+        <div>
+          A localization and translation management platform for agile teams.
+          Embrace automation, workflow transparency,
+          and fast project delivery.
+        </div>
+        <div class="flex justify-center flex-wrap gap-x-4">
+          <button class="text-black px-4 py-2 hover:bg-gray-400 border-2 font-bold text__nav m-2">Log in</button>
+          <button class="text-white px-4 py-2 bg-color__main hover:bg-color__main__dark font-bold text__nav m-2">Try it free</button>
+        </div>
+      </div>
+      <div class="block-accelerate order-1 sm:order-2">
+        <img src="assets/images/code-delivery.png">
+      </div>
+    </div>
+
   </main>
 
 </body>
+
+<footer>
+<!--      <div class="grid grid-cols-2 gap-2 bg-color__main">-->
+<!--        <div class="bg-color__main__light text-center">1</div>-->
+<!--        <div class="bg-color__main__dark text-center">2</div>-->
+<!--        <div class="bg-color__second text-center">3</div>-->
+<!--        <div class="bg-color__second__light text-center">4</div>-->
+<!--      </div>-->
+</footer>
 </html>
 
 
