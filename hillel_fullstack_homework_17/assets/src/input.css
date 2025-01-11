@@ -28,6 +28,10 @@
   @apply text-xs lg:text-xl xl:text-2xl font__nav;
 }
 
+.text__main__title {
+  @apply font-bold 2xl:text-8xl xl:text-5xl lg:text-2xl md:text-xl sm:text-md max-sm:text-sm pt-4;
+}
+
 .block-accelerate {
   width: 50vw;
 }
