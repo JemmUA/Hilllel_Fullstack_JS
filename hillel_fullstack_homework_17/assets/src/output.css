@@ -590,6 +590,14 @@ video {
   align-content: center;
 }
 
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
 .justify-around {
   justify-content: space-around;
 }
@@ -598,9 +606,8 @@ video {
   gap: 0.5rem;
 }
 
-.gap-x-1 {
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-x-5 {
