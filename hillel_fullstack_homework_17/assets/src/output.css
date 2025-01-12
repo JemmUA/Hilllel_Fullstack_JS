@@ -696,12 +696,12 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
-}
-
 .pb-16 {
   padding-bottom: 4rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .text-center {
@@ -987,8 +987,14 @@ video {
   }
 }
 
-.block-accelerate {
-  width: 50vw;
+.block-inside {
+  width: 83.333333%;
+}
+
+@media (min-width: 768px) {
+  .block-inside {
+    width: 50%;
+  }
 }
 
 .hover\:bg-amber-700:hover {
