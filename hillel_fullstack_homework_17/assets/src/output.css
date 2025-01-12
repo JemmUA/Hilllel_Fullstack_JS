@@ -598,10 +598,6 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -632,6 +628,10 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .gap-x-3 {
@@ -696,12 +696,8 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
-}
-
-.pb-16 {
-  padding-bottom: 4rem;
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 
 .text-center {
@@ -726,6 +722,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @font-face {
@@ -802,6 +803,11 @@ video {
   /*@apply sm:gap-x-0 md:gap-x-5;*/
 }
 
+.item__nav {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity, 1));
+}
+
 .text__button {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -848,6 +854,18 @@ video {
   .text__button {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+}
+
+.vert__padding__media {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .vert__padding__media {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -987,8 +1005,27 @@ video {
   }
 }
 
-.block-accelerate {
-  width: 50vw;
+.block__inside {
+  width: 83.333333%;
+}
+
+@media (min-width: 768px) {
+  .block__inside {
+    width: 50%;
+  }
+}
+
+.logo__preferred {
+  /*width: 10vw;*/
+  width: 3rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .logo__preferred {
+    width: 8.333333%;
+    flex-wrap: nowrap;
+  }
 }
 
 .hover\:bg-amber-700:hover {
@@ -1011,9 +1048,23 @@ video {
   background-color: rgb(255 156 125 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-color__main__light\/20:hover {
+  background-color: rgb(255 156 125 / 0.2);
+}
+
 .hover\:bg-gray-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:text-blue-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity, 1));
+}
+
+.hover\:grayscale-0:hover {
+  --tw-grayscale: grayscale(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .active\:bg-color__main__dark:active {
@@ -1066,6 +1117,10 @@ video {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:content-center {
+    align-content: center;
   }
 }
 

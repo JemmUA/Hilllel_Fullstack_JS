@@ -29,8 +29,17 @@
   @apply 2xl:text-4xl xl:text-2xl lg:text-xl md:text-base sm:text-xs max-sm:text-sm font__nav;
   /*@apply sm:gap-x-0 md:gap-x-5;*/
 }
+
+.item__nav {
+  @apply text-blue-700;
+}
+
 .text__button {
   @apply font-bold text-xs 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-xs max-sm:text-xs font__nav;
+}
+
+.vert__padding__media {
+  @apply pt-2 pb-2 md:pt-16 md:pb-16;
 }
 
 .text__main__title {
@@ -45,6 +54,11 @@
   @apply 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm max-sm:text-xs pt-2 pb-4;
 }
 
-.block-accelerate {
-  width: 50vw;
+.block__inside {
+  @apply w-5/6 md:w-1/2;
+}
+
+.logo__preferred {
+  /*width: 10vw;*/
+  @apply flex-wrap w-12 md:flex-nowrap md:w-1/12;
 }
