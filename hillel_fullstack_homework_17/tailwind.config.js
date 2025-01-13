@@ -9,6 +9,7 @@ module.exports = {
         color__main__light: "#FF9C7D",
         color__second: "#DABC98",
         color__second__light: "#FFF8E4",
+        color__third: "#C9E8F2",
       },
     },
   },
