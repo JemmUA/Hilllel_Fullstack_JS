@@ -8,8 +8,6 @@
 }
 
 :root {
-  --color-main: #FF6336;
-;
   --font-main: Graphiklweb;
 }
 
@@ -25,9 +23,7 @@
 }
 
 .text__nav {
-  /*@apply 2xl:text-4xl xl:text-2xl lg:text-xl md:text-base sm:text-base max-sm:text-sm font__nav;*/
   @apply 2xl:text-4xl xl:text-2xl lg:text-xl md:text-base sm:text-xs max-sm:text-sm font__nav;
-  /*@apply sm:gap-x-0 md:gap-x-5;*/
 }
 
 .item__nav {
@@ -35,19 +31,50 @@
 }
 
 .text__button {
-  @apply font-bold text-xs 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-xs max-sm:text-xs font__nav;
+  @apply font-medium text-xs 2xl:text-xl xl:text-xl lg:text-lg md:text-base sm:text-xs max-sm:text-xs font__nav;
 }
 
-.vert__padding__media {
-  @apply pt-2 pb-2 md:pt-16 md:pb-16;
+.py__big__block {
+  @apply py-8 md:py-16 px-4 md:px-8;
 }
 
-.text__main__title {
+.py__main__text {
+  @apply py-2 md:py-8;
+}
+
+.text__title__biggest {
   @apply font-bold 2xl:text-8xl xl:text-6xl lg:text-4xl md:text-2xl sm:text-xl max-sm:text-lg pt-4;
 }
 
-.text__main__content {
+.text__title__bigger {
+  @apply font-bold 2xl:text-7xl xl:text-5xl lg:text-3xl md:text-xl sm:text-lg max-sm:text-base pt-4 pb-5;
+}
+
+.text__title__big {
+  @apply font-bold 2xl:text-6xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg max-sm:text-base pt-4;
+}
+
+.text__content__medium {
+  @apply 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm max-sm:text-xs;
+}
+
+.text__content__general {
   @apply 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-sm;
+}
+
+.text__block__title {
+  @apply font-bold text-center 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-sm;
+}
+.text__block__title__left {
+  @apply font-bold text-left 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-sm;
+}
+
+.text__block__lokalize__content {
+  @apply text-center 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-sm max-sm:text-xs;
+}
+
+.text__block__boost__content {
+  @apply text-left 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-sm max-sm:text-xs;
 }
 
 .text__bottom {
@@ -59,6 +86,9 @@
 }
 
 .logo__preferred {
-  /*width: 10vw;*/
   @apply flex-wrap w-12 md:flex-nowrap md:w-1/12;
+}
+
+.link__highlight {
+  @apply hover:text-blue-700 hover:bg-color__main__light/20;
 }
