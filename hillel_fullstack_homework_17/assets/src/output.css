@@ -582,10 +582,6 @@ video {
   margin: 0.5rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
-}
-
 .inline {
   display: inline;
 }
@@ -642,8 +638,12 @@ video {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-cols-\[20\%_80\%\] {
-  grid-template-columns: 20% 80%;
+.grid-cols-\[20\%_75\%\] {
+  grid-template-columns: 20% 75%;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -696,10 +696,6 @@ video {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-1 {
-  gap: 0.25rem;
 }
 
 .gap-x-1 {
@@ -767,10 +763,6 @@ video {
   padding: 1rem;
 }
 
-.p-7 {
-  padding: 1.75rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -783,10 +775,6 @@ video {
 
 .pb-2 {
   padding-bottom: 0.5rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
 }
 
 .text-center {
@@ -1114,7 +1102,8 @@ video {
 
 @media not all and (min-width: 640px) {
   .text__content__medium {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
@@ -1202,7 +1191,8 @@ video {
 
 @media not all and (min-width: 640px) {
   .text__block__title {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
@@ -1248,7 +1238,8 @@ video {
 
 @media not all and (min-width: 640px) {
   .text__block__title__left {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
@@ -1293,7 +1284,8 @@ video {
 
 @media not all and (min-width: 640px) {
   .text__block__lokalize__content {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
@@ -1938,24 +1930,12 @@ video {
     order: 2;
   }
 
-  .max-sm\:w-1\/5 {
-    width: 20%;
-  }
-
-  .max-sm\:w-1\/6 {
-    width: 16.666667%;
+  .max-sm\:w-1\/2 {
+    width: 50%;
   }
 
   .max-sm\:w-12 {
     width: 3rem;
-  }
-
-  .max-sm\:w-1 {
-    width: 0.25rem;
-  }
-
-  .max-sm\:w-10 {
-    width: 2.5rem;
   }
 
   .max-sm\:w-24 {
@@ -1964,6 +1944,14 @@ video {
 
   .max-sm\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .max-sm\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .max-sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .max-sm\:flex-col {
@@ -2019,10 +2007,6 @@ video {
 
   .sm\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .sm\:grid-cols-\[20\%_80\%\] {
-    grid-template-columns: 20% 80%;
   }
 
   .sm\:flex-nowrap {
