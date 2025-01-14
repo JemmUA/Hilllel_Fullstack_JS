@@ -74,7 +74,7 @@
 }
 
 .text__block__boost__content {
-  @apply text-left 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-sm max-sm:text-[0.3rem];
+  @apply text-left 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-sm max-sm:text-[0.5rem];
 }
 
 .text__bottom {
