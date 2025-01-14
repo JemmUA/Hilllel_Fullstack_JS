@@ -582,6 +582,10 @@ video {
   margin: 0.5rem;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .inline {
   display: inline;
 }
@@ -694,6 +698,10 @@ video {
   gap: 2rem;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-x-1 {
   -moz-column-gap: 0.25rem;
        column-gap: 0.25rem;
@@ -759,6 +767,10 @@ video {
   padding: 1rem;
 }
 
+.p-7 {
+  padding: 1.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -771,6 +783,10 @@ video {
 
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .text-center {
@@ -2003,6 +2019,10 @@ video {
 
   .sm\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-\[20\%_80\%\] {
+    grid-template-columns: 20% 80%;
   }
 
   .sm\:flex-nowrap {
