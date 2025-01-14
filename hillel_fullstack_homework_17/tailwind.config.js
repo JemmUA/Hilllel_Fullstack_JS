@@ -10,6 +10,7 @@ module.exports = {
         color__second: "#DABC98",
         color__second__light: "#FFF8E4",
         color__third: "#C9E8F2",
+        color__forth: "#eeeeee",
       },
     },
   },
