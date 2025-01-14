@@ -722,7 +722,12 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
-.bg-color__forth {
+.bg-color__additional {
+  --tw-bg-opacity: 1;
+  background-color: rgb(201 232 242 / var(--tw-bg-opacity, 1));
+}
+
+.bg-color__extra {
   --tw-bg-opacity: 1;
   background-color: rgb(238 238 238 / var(--tw-bg-opacity, 1));
 }
@@ -742,19 +747,14 @@ video {
   background-color: rgb(255 156 125 / var(--tw-bg-opacity, 1));
 }
 
-.bg-color__second {
+.bg-color__minor {
   --tw-bg-opacity: 1;
   background-color: rgb(218 188 152 / var(--tw-bg-opacity, 1));
 }
 
-.bg-color__second__light {
+.bg-color__minor__light {
   --tw-bg-opacity: 1;
   background-color: rgb(255 248 228 / var(--tw-bg-opacity, 1));
-}
-
-.bg-color__third {
-  --tw-bg-opacity: 1;
-  background-color: rgb(201 232 242 / var(--tw-bg-opacity, 1));
 }
 
 .bg-red-500 {
@@ -1766,7 +1766,7 @@ video {
 
 @media (min-width: 1536px) {
   .text__block__studies__title {
-    font-size: 6rem;
+    font-size: 4.5rem;
     line-height: 1;
   }
 }

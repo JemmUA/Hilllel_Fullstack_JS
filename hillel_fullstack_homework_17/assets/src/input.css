@@ -118,7 +118,7 @@
 }
 
 .text__block__studies__title {
-  @apply font-bold text-left 2xl:text-8xl xl:text-4xl lg:text-2xl md:text-xl sm:text-base max-sm:text-[0.5rem];
+  @apply font-bold text-left 2xl:text-7xl xl:text-4xl lg:text-2xl md:text-xl sm:text-base max-sm:text-[0.5rem];
 }
 
 .text__block__studies__title__small {
