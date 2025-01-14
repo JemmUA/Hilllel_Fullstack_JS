@@ -31,10 +31,10 @@
 }
 
 .text__button {
-  @apply font-medium text-xs 2xl:text-xl xl:text-xl lg:text-lg md:text-base sm:text-xs max-sm:text-xs font__nav;
+  @apply font-medium text-xs 2xl:text-xl xl:text-xl lg:text-lg md:text-base sm:text-xs max-sm:text-[0.2rem] font__nav;
 }
 
-.py__big__block {
+.p__big__block {
   @apply py-8 md:py-16 px-4 md:px-8;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .text__title__bigger {
-  @apply font-bold 2xl:text-7xl xl:text-5xl lg:text-3xl md:text-xl sm:text-lg max-sm:text-base pt-4 pb-5;
+  @apply font-bold 2xl:text-7xl xl:text-5xl lg:text-3xl md:text-xl sm:text-lg max-sm:text-xs pt-4 pb-5;
 }
 
 .text__title__big {
@@ -63,10 +63,10 @@
 }
 
 .text__block__title {
-  @apply font-bold text-center 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-sm;
+  @apply font-bold text-center 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-xs;
 }
 .text__block__title__left {
-  @apply font-bold text-left 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-sm;
+  @apply font-bold text-left 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-xs;
 }
 
 .text__block__lokalize__content {
@@ -74,11 +74,11 @@
 }
 
 .text__block__boost__content {
-  @apply text-left 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-sm max-sm:text-xs;
+  @apply text-left 2xl:text-xl xl:text-lg lg:text-base md:text-sm sm:text-sm max-sm:text-[0.5rem];
 }
 
 .text__bottom {
-  @apply 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm max-sm:text-xs pt-2 pb-4;
+  @apply text-center 2xl:text-2xl xl:text-xl lg:text-lg md:text-base sm:text-sm max-sm:text-xs pt-2 pb-4;
 }
 
 .block__inside {
@@ -91,4 +91,44 @@
 
 .link__highlight {
   @apply hover:text-blue-700 hover:bg-color__main__light/20;
+}
+
+.text__block__revolut__content {
+  @apply text-left 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-sm max-sm:text-[0.5rem];
+}
+
+.text__block__revolut__signature {
+  @apply text-left 2xl:text-base xl:text-base lg:text-sm md:text-sm sm:text-xs max-sm:text-[0.5rem]  pt-4 pb-2;
+}
+
+.logo__revolut {
+  @apply 2xl:w-[115px] xl:w-[110px] lg:w-[90px] md:w-[70px] sm:w-[70px] max-sm:w-[50px] ;
+}
+
+.text__block__translation {
+  @apply font-bold text-left 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-xs;
+}
+
+.text__tools__title {
+  @apply font-bold text-center 2xl:text-8xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg max-sm:text-sm;
+}
+
+.text__tools__content {
+  @apply text-center 2xl:text-4xl xl:text-2xl lg:text-xl md:text-lg sm:text-base max-sm:text-[0.5rem];
+}
+
+.text__block__studies__title {
+  @apply font-bold text-left 2xl:text-7xl xl:text-4xl lg:text-2xl md:text-xl sm:text-base max-sm:text-[0.5rem];
+}
+
+.text__block__studies__title__small {
+  @apply font-bold text-left 2xl:text-6xl xl:text-xl lg:text-lg md:text-base sm:text-sm max-sm:text-[0.3rem];
+}
+
+.text__block__studies__content__small {
+  @apply font-normal text-left 2xl:text-4xl xl:text-xl lg:text-lg md:text-base sm:text-sm max-sm:text-[0.3rem];
+}
+
+.text__footer {
+  @apply font-normal text-left 2xl:text-sm xl:text-sm lg:text-xs md:text-xs sm:text-xs max-sm:text-[0.5rem];
 }

@@ -18,7 +18,7 @@ let pictures = ["Mandalorian", "Egyptian signs",
     "Boat on coast", "Happy pig", "Cute cat"];
 // console.log("Pictures:", pictures);
 for (let pictN = 0; pictN < 5; pictN++) {
-    console.log("Картина", pictN + 1, ":", pictures[pictN]);
+    console.log("Painting", pictN + 1, ":", pictures[pictN]);
 }
 let carModelsAmount= 3 + 9 + 12 + 1;
 console.log("Amount of car models:", carModelsAmount);
