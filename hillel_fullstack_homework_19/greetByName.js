@@ -19,3 +19,4 @@ console.log(greetByName('Hi', 'John')); // Hi, John
 function greetByName(msg, name) {
   return `${msg}, ${name}`;
   // return msg + ", " + name; // variant
+}
