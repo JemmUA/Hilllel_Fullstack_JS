@@ -12,8 +12,8 @@ console.log('#3. JavaScript homework example file')
  */
 
 const userObj = {
-    firstName: "Сергій",
-    lastName: "Петренко",
+    firstName: "Iulius",
+    lastName: "Caesar",
     age: 27,
 }
 
@@ -48,7 +48,7 @@ console.log(userObj.fullName()) // John Smith
  * При виконанні завдання не використовуйте оператор if, потрібен розв'язок із логічним оператором ||.
  */
 function defUpperStr (text) {
-    let textForUpper = text || "DEFAULT TEXT";
+    const textForUpper = text || "DEFAULT TEXT";
     // return text ? text.toUpperCase() : "DEFAULT TEXT";
     return textForUpper.toUpperCase();
 }
@@ -72,7 +72,7 @@ console.log(defUpperStr())             // DEFAULT TEXT
  * evenFn(20) → [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
  */
 function evenFn(n) {
-    let resultEvenArray = [];
+    const resultEvenArray = [];
     for (let i = 1; i <= n; i++) {
         if ((i) && (i % 2 === 0)) {
             resultEvenArray.push(i);
@@ -229,13 +229,13 @@ console.log(oddFn(15)) // [1, 3, 5, 7, 9, 11, 13, 15]
 console.log(oddFn(20)) // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 function oddFn(n) {
-    cycleloop = 1;
-    let resultOddArray = [];
-    while (cycleloop <= n) {
-        if ((cycleloop <= n) && ((cycleloop % 2) === 1)) {
-            resultOddArray.push(cycleloop);
+    let currentLoop = 1;
+    const resultOddArray = [];
+    while (currentLoop <= n) {
+        if ((currentLoop <= n) && ((currentLoop % 2) === 1)) {
+            resultOddArray.push(currentLoop);
         }
-        cycleloop = cycleloop + 1;
+        currentLoop = currentLoop + 1;
     }
     return resultOddArray;
 }
@@ -251,8 +251,13 @@ function oddFn(n) {
  *
  * Реалізуйте перевірку: якщо третім параметром передається не функція, потрібно повернути false.
  */
-
-// function mainFunc(a, b, cb) { }
+function mainFunc(a, b, cb) {
+    if (typeof cb === "function") {
+        return cb(a, b);
+    } else {
+        return false;
+    }
+}
 
 /*
  * Реалізуйте callback функції (cbRandom, cbPow, cbAdd) до основної функції (mainFunc), що повертатимуть відповідні результати обчислень.
@@ -261,13 +266,19 @@ function oddFn(n) {
 
 // cbRandom(a, b) - обчислює і повертає довільне ціле число в діапазоні між a і b включно.
 // function cbRandom(min, max) { }
-
+function cbRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 // cbPow(a, b) - обчислює і повертає результат піднесення числа a у ступінь b.
 // function cbPow(num, pow) { }
-
+function cbPow(num, pow) {
+    return Math.pow(num, pow);
+}
 // cbAdd(a, b) - обчислює і повертає суму двох чисел a і b.
 // function cbAdd(a, b) { }
-
+function cbAdd(a, b) {
+    return a + b;
+}
 /*
  * mainFunc() повинна повертати результат роботи переданої їй поворотної функції, наприклад:
  * mainFunc(2, 5, cbRandom) → випадково від 2 до 5 включно
@@ -277,7 +288,7 @@ function oddFn(n) {
  * mainFunc(2, 5, 'not a func') → false
  */
 
-// console.log(mainFunc(2, 5, cbRandom)) // цілі числа в діапазоні 2..5
-// console.log(mainFunc(2, 5, cbPow)) // 32
-// console.log(mainFunc(2, 5, cbAdd)) // 7
-// console.log(mainFunc(2, 5, 'not a func')) // false
+console.log(mainFunc(2, 5, cbRandom)) // цілі числа в діапазоні 2..5
+console.log(mainFunc(2, 5, cbPow)) // 32
+console.log(mainFunc(2, 5, cbAdd)) // 7
+console.log(mainFunc(2, 5, 'not a func')) // false
