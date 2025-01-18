@@ -170,8 +170,7 @@ function ageClassification(n) {
 }
 
 console.log("    -1 :", ageClassification(-1)) // -1 : null
-console.log("    -1 :", ageClassification(-1)) // -1 : null
-console.log("     0 :", ageClassification(0)) // 0 : null
+console.log("     0 :", ageClassification(0)) // 0 : Дитинство
 console.log("     1 :", ageClassification(1)) // 1 : Дитинство
 console.log("    24 :", ageClassification(24)) // 24 : Дитинство
 console.log(" 24.01 :", ageClassification(24.01)) // 24.01 : Молодість
@@ -191,7 +190,7 @@ console.log("   150 :", ageClassification(150)) // 150 : null
  Блок тестирования, везде должны быть true:
  */
  console.log("    -1 :", ageClassification(-1) === null); // -1 : null
- console.log("     0 :", ageClassification(0) === null) // 0 : null
+ console.log("     0 :", ageClassification(0) === 'Дитинство') // 0 : Дитинство
  console.log("     1 :", ageClassification(1) === 'Дитинство'); // 1 : Дитинство
  console.log("    24 :", ageClassification(24) === 'Дитинство'); // 24 : Дитинство
  console.log(" 24.01 :", ageClassification(24.01) === 'Молодість'); // 24.01 : Молодість
