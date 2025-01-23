@@ -1,3 +1,4 @@
+"use strict";
 /*
  Ваше завдання - створити функцію greet в JavaScript. Ця функція повинна приймати два аргументи:
 
@@ -8,12 +9,12 @@
 
  Ось приклад використання цієї функції:
 */
- console.log(greetByName('Вітаннячка', 'Олексій')); // Hi, John
+console.log(greetByName('Вітаннячка', 'Олексій')); // Hi, John
 console.log(greetByName('Greetings', 'Hillel')); // Hello, Mary
 console.log(greetByName('Hi', 'John')); // Hi, John
- console.log(greetByName('Hey', 'Bob')); // Hey, Bob
- console.log(greetByName('Hello', 'Mary')); // Hello, Mary
- console.log(greetByName('Hello', 'world')); // Hello, Mary
+console.log(greetByName('Hey', 'Bob')); // Hey, Bob
+console.log(greetByName('Hello', 'Mary')); // Hello, Mary
+console.log(greetByName('Hello', 'world')); // Hello, Mary
 
 
 function greetByName(msg, name) {

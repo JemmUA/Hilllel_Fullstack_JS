@@ -1,3 +1,4 @@
+"use strict";
 console.log('Домашнє завдання №18. JavaScript ')
 
 /*
@@ -16,8 +17,8 @@ const myBool = true;
 const myArr = [1, 2, 3, 4, 5];
 // ім'я змінної myObj, значення: first: 'First Name', last: 'Last Name'
 const myObj = {
-    first: "First Name",
-    last: "Last Name"
+  first: "First Name",
+  last: "Last Name"
 }
 
 /*
@@ -82,7 +83,7 @@ console.log("myPow = ", myPow);
  * Присвойте ключу str рядок тексту "Мама мыла раму, рама мыла маму", ключу length встановіть довжину цього рядка.
  */
 const strObj = {
-    str: "Мама мыла раму, рама мыла маму",
+  str: "Мама мыла раму, рама мыла маму",
 }
 strObj.length = strObj.str.length;
 console.log("strObj = ", strObj);
