@@ -1,4 +1,13 @@
 'use strict';
+import {checkImport}  from './functions.js';
+
+checkImport();
+checkImport();
+checkImport();
+
+
+
+
 
 // #1 Реалізуйте функцію generateKey(length, characters), яка повертає рядок випадкових символів із набору characters довжиною length
 // Функцію треба покласти в файл functions.js та імпортувати за допомогою import
