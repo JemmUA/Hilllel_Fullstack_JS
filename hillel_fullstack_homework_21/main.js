@@ -1,29 +1,24 @@
 'use strict';
-import {checkImport}  from './functions.js';
+import {checkImport}  from "./functions.js";
+import {generateKey}  from "./functions.js";
 
-checkImport();
-checkImport();
-checkImport();
-
-
-
-
+checkImport("Perfect!!!");
 
 // #1 Реалізуйте функцію generateKey(length, characters), яка повертає рядок випадкових символів із набору characters довжиною length
 // Функцію треба покласти в файл functions.js та імпортувати за допомогою import
 
-function generateKey(keyLength, symbols) {
+// function generateKey(keyLength, symbols) {
 
-}
+// }
 
 // Check:
-// const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-// const key = generateKey(16, characters);
-// console.log(key); // eg599gb60q926j8i - випадкові символи з набору characters
+const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+const key = generateKey(16, characters);
+console.log("Generated symbolic key (16):", key); // eg599gb60q926j8i - випадкові символи з набору characters
 //
-// const numbersOnly = '0123456789';
-// const numberKey = generateKey(25, numbersOnly);
-// console.log(numberKey); // 3847501826482930485728394 - випадкові символи з набору numbersOnly
+const numbersOnly = '0123456789';
+const numberKey = generateKey(25, numbersOnly);
+console.log("Generated digital key (25):", numberKey); // 3847501826482930485728394 - випадкові символи з набору numbersOnly
 
 // ============================================
 
