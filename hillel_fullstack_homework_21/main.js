@@ -1,6 +1,5 @@
 'use strict';
-import {checkImport}  from "./functions.js";
-import {generateKey}  from "./functions.js";
+import {checkImport,generateKey,average,showDeepArray}  from "./functions.js";
 
 checkImport("Perfect!!!");
 
@@ -27,13 +26,13 @@ console.log("Generated digital key (25):", numberKey); // 3847501826482930485728
 // або елементів, які можуть бути приведені до number (включно з 0 та '5')
 // Заборонено використовувати for. Користуватися тільки методами масиву.
 
-function average(mixed) {
-
-}
+// function average(mixed) {
+//
+// }
 
 // Check:
-// console.log(average(['hello', 12, 'hi', 3, 4, 'another hell', 1, '5', 7, 'end', 0, 'you again?', 8])); // 5
-// console.log(average([34, 'call me', 23, 'no, call me!', '11', 48, null, 51, {}, 37, undefined, 20, [], 26])); // 25
+console.log(average(['hello', 12, 'hi', 3, 4, 'another hell', 1, '5', 7, 'end', 0, 'you again?', 8])); // 5
+console.log(average([34, 'call me', 23, 'no, call me!', '11', 48, null, 51, {}, 37, undefined, 20, [], 26])); // 25
 
 // ============================================
 
@@ -41,11 +40,11 @@ function average(mixed) {
 // кожна цифра у своєму рядку
 // Заборонено використовувати for та [].flat()
 
-function showDeepArray(deep) {
+// function showDeepArray(deep) {
+//
+// }
 
-}
-
-
+console.log("Deep array with recursion")
 const myArray = [1, 2, 3, [31, 32, 33], 4, 5, 6, 7, [71, 72, [721, 722, 723, [7231, 7232, 7233], 724]], 8, 9];
 showDeepArray(myArray);
 

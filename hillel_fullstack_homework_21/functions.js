@@ -1,7 +1,7 @@
 "use strict";
 
 export function checkImport (estimate) {
-  console.log("Check Import:", estimate);
+  console.log("Check import:", estimate);
 }
 
 
@@ -14,8 +14,41 @@ export function generateKey(keyLength, symbols) {
 }
 
 
+// // Варіант average #1
+// export function average(mixed) {
+//   let sumOfElements = 0;
+//   let elementsAmount = 0;
+//   mixed.forEach(element => {
+//     const elementNumbered = Number(element);
+//     if (!isNaN(elementNumbered)) {
+//       sumOfElements = sumOfElements + elementNumbered;
+//       elementsAmount = elementsAmount + 1;
+//     }
+//   });
+//   // console.log(`Середнє арифметичне числових елементів масиву: ${sumOfElements} / ${elementsAmount} = ${sumOfElements/elementsAmount}`);
+//   return sumOfElements/elementsAmount;
+// }
+
+// Варіант average #2
 export function average(mixed) {
-  console.log(mixed);
+  const arrayForCountFiltered = mixed.map((element) => Number(element)).filter(element => !isNaN(element));
+  // const arrayForCount = mixed.map((element) => Number(element)); // варіант переводу: + element
+  // const arrayForCountFiltered = arrayForCount.filter(element => !isNaN(element));
+  const sumOfElements = arrayForCountFiltered.reduce((accumulator, currentElement) => accumulator + currentElement);
+  console.log(`Середнє арифметичне числових елементів масиву: (${arrayForCountFiltered.join(" + ")} = 
+  ${sumOfElements}), ${sumOfElements} / ${arrayForCountFiltered.length} = ${sumOfElements/arrayForCountFiltered.length}`);
+  return sumOfElements/arrayForCountFiltered.length;
 }
 
-average(['hello', 12, 'hi', 3, 4, 'another hell', 1, '5', 7, 'end', 0, 'you again?', 8]);
+
+export function showDeepArray(deep) {
+  if (Array.isArray(deep)) {
+    deep.forEach(element => {
+      if (!Array.isArray(element)) {
+        console.log(element)
+      } else {
+        showDeepArray(element);
+      }
+    });
+  }
+}
