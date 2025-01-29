@@ -1,6 +1,5 @@
-"use strict"
 console.log('#5. JavaScript homework example file')
-console.log("Homework 22")
+
 /*
  * #1
  *
@@ -10,26 +9,35 @@ console.log("Homework 22")
  * якщо ні - то лічба триває
  */
 
-// const counter = function() {}
-function counter(n) {
+const counter = function() {
   let counterValue = 0;
-  function increment (n) {
-    counterValue = counterValue + 1;
-    console.log("Counter =", couterValue);
+  function incValue(n){
+    if (typeof(n) == 'number') {
+      counterValue = n;
+      return counterValue;
+    }
+      counterValue = counterValue + 1;
+    return counterValue;
   }
-}
+  return incValue;
+}()
+// counter();
+// counter();
+// counter();
+// console.log(counter());
+// console.log(counter());
 
-// console.log(counter()) // 0
-// console.log(counter()) // 1
-// console.log(counter(100)) // 100
-// console.log(counter()) // 101
-// console.log(counter()) // 102
-// console.log(counter(500)) // 500
-// console.log(counter()) // 501
-// console.log(counter()) // 502
-// console.log(counter(0)) // 0
-// console.log(counter()) // 0
-// console.log(counter()) // 1
+console.log(counter()) // 0
+console.log(counter()) // 1
+console.log(counter(100)) // 100
+console.log(counter()) // 101
+console.log(counter()) // 102
+console.log(counter(500)) // 500
+console.log(counter()) // 501
+console.log(counter()) // 502
+console.log(counter(0)) // 0
+console.log(counter()) // 0
+console.log(counter()) // 1
 
 /*
  * #2
