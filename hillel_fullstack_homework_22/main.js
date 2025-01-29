@@ -13,20 +13,14 @@ const counter = function() {
   let counterValue = 0;
   function incValue(n){
     if (typeof(n) == 'number') {
-      counterValue = n;
-      return counterValue;
+      return counterValue = n;
     }
       counterValue = counterValue + 1;
     return counterValue;
   }
   return incValue;
-}()
-// counter();
-// counter();
-// counter();
-// console.log(counter());
-// console.log(counter());
-
+}();
+console.log("Task #1");
 console.log(counter()) // 0
 console.log(counter()) // 1
 console.log(counter(100)) // 100
@@ -50,22 +44,45 @@ console.log(counter()) // 1
  * counterFactory.decrement() - зменшує значення лічильника на 1
  */
 
-// const counterFactory = function () {}
+const counterFactory = function () {
+  let counterValue = 0;
+  function valueIs (n) {
+    if (typeof(n) == 'number') {
+      return counterValue = n;
+    } else {
+      return counterValue;
+    }
+  }
+  function incValue() {
+    // console.log(counterValue + 1);
+    return counterValue = counterValue + 1;
+  }
+  function decValue() {
+    return counterValue = counterValue - 1;
+  }
+  const counterObject = {
+    value: valueIs,
+    increment: incValue,
+    decrement: decValue,
+  }
+  return counterObject;
+}();
 
-// console.log(counterFactory.value()) // 0
-// counterFactory.increment()
-// counterFactory.increment()
-// counterFactory.increment()
-// console.log(counterFactory.value()) // 3
-// counterFactory.decrement()
-// counterFactory.decrement()
-// console.log(counterFactory.value()) // 1
-// console.log(counterFactory.value(100)) // 100
-// counterFactory.decrement()
-// console.log(counterFactory.value()) // 99
-// console.log(counterFactory.value(200)) // 200
-// counterFactory.increment()
-// console.log(counterFactory.value()) // 201
+console.log("Task #2");
+console.log(counterFactory.value()) // 0
+counterFactory.increment()
+counterFactory.increment()
+counterFactory.increment()
+console.log(counterFactory.value()) // 3
+counterFactory.decrement()
+counterFactory.decrement()
+console.log(counterFactory.value()) // 1
+console.log(counterFactory.value(100)) // 100
+counterFactory.decrement()
+console.log(counterFactory.value()) // 99
+console.log(counterFactory.value(200)) // 200
+counterFactory.increment()
+console.log(counterFactory.value()) // 201
 
 /*
  * #3
