@@ -114,37 +114,57 @@ console.log(counterFactory.value()) // 201
  * У реалізації функції має бути застосовано метод Math.max() і apply().
  */
 
-// const list = [12, 23, 100, 34, 56, 9, 233]
+const list = [12, 23, 100, 34, 56, 9, 233]
 // const myMax = () => {}
+const myMax = (l) => {
+  let maxValue = l[0];
+  let maxOfTwo;
+  for (let i = 0; i < l.length - 1; i++) {
+    maxOfTwo = Math.max.apply(l, [l[i], l[i + 1]]);
+    maxValue = maxValue > maxOfTwo ? maxValue : maxValue = maxOfTwo;
+  }
+  return maxValue;
+}
 
-// console.log(myMax(list)); // 233
+console.log("Task #4");
+console.log(myMax(list)); // 233
 
 /*
  * #5
  *
  * Створіть функцію myMul(a, b), яка буде множити числа а і b, повертаючи результат.
  */
-
-// const myMul = () => {}
-
+const myMul = (a, b) => a * b;
 /*
  * Створіть функції myDouble(n), яка приймає один параметр і подвоює його.
  * Використовувати множення або інші математичні операції всередині функції - заборонено, тільки bind() і myMul().
  * Функція повертає результат обчислення.
  */
 
-// const myDouble
+const multObj = { // створюю об'єкт, для використання bind(),
+  // і додаю в об'єкт поля з множниками, чому б і ні :))
+  multDouble : 2,
+  multTriple : 3
+}
 
-// console.log(myDouble(3)) // = myMul(2, 3) = 6
-// console.log(myDouble(4)) // = myMul(2, 4) = 8
-// console.log(myDouble(5)) // = myMul(2, 5) = 10
+// const myDouble
+const myDouble = myMul.bind(multObj, multObj.multDouble);
+// const myTriple = myMul.bind(multObj, 2);
+
+console.log("Task #5");
+console.log("My doubles:");
+console.log(myDouble(3)) // = myMul(2, 3) = 6
+console.log(myDouble(4)) // = myMul(2, 4) = 8
+console.log(myDouble(5)) // = myMul(2, 5) = 10
 
 // Аналогічним чином створюємо функцію myTriple(n), яка потроює параметр, що приймає, повертаючи результат.
 
 // const myTriple
+const myTriple = myMul.bind(multObj, multObj.multTriple);
 
-// console.log(myTriple(3)) // = myMul(3, 3) = 9
-// console.log(myTriple(4)) // = myMul(3, 4) = 12
-// console.log(myTriple(5)) // = myMul(3, 5) = 15
+console.log("My triples:");
+console.log(myTriple(3)) // = myMul(3, 3) = 9
+console.log(myTriple(4)) // = myMul(3, 4) = 12
+console.log(myTriple(5)) // = myMul(3, 5) = 15
 
 // export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }
