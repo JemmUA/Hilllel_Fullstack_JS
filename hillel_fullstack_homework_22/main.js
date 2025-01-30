@@ -1,4 +1,4 @@
-console.log('#5. JavaScript homework example file')
+console.log("#5. JavaScript homework example file")
 
 /*
  * #1
@@ -12,7 +12,7 @@ console.log('#5. JavaScript homework example file')
 const counter = function() {
   let counterValue = 0;
   function incValue(n){
-    if (typeof(n) == 'number') {
+    if (typeof n === "number") {
       return counterValue = n;
     }
       counterValue = counterValue + 1;
@@ -47,18 +47,19 @@ console.log(counter()) // 1
 const counterFactory = function () {
   let counterValue = 0;
   function valueIs (n) {
-    if (typeof(n) == 'number') {
+    if (typeof n === "number") {
       return counterValue = n;
     } else {
       return counterValue;
     }
   }
   function incValue() {
-    // console.log(counterValue + 1);
-    return counterValue = counterValue + 1;
+    counterValue = counterValue + 1;
+    return counterValue;
   }
   function decValue() {
-    return counterValue = counterValue - 1;
+    counterValue = counterValue - 1;
+    return counterValue;
   }
   const counterObject = {
     value: valueIs,
@@ -88,7 +89,7 @@ console.log(counterFactory.value()) // 201
  * #3
  *
  * Створіть функцію myPow(a, b, myPrint). Всередині реалізуйте рекурсію для підрахунку результату піднесення числа a до ступеня b.
- * - Функція myPrint(a, b, res) - глобальна функція, що має генерувати з параметрів a, b, res рядок вигляду 'a^b=res' і повертати його.
+ * - Функція myPrint(a, b, res) - глобальна функція, що має генерувати з параметрів a, b, res рядок вигляду "a^b=res" і повертати його.
  * - myPrint() має бути передана в myPow() як параметр і викликана всередині як callback-функція.
  * - функція myPow() як значення, що повертається, приймає результат myPrint().
  * Наприклад:
@@ -114,17 +115,9 @@ console.log(counterFactory.value()) // 201
  * У реалізації функції має бути застосовано метод Math.max() і apply().
  */
 
-const list = [12, 23, 100, 34, 56, 9, 233]
+const list = [12, 23, 100, 34, 56, 9, 233];
 // const myMax = () => {}
-const myMax = (l) => {
-  let maxValue = l[0];
-  let maxOfTwo;
-  for (let i = 0; i < l.length - 1; i++) {
-    maxOfTwo = Math.max.apply(l, [l[i], l[i + 1]]);
-    maxValue = maxValue > maxOfTwo ? maxValue : maxValue = maxOfTwo;
-  }
-  return maxValue;
-}
+const myMax = l => Math.max.apply(null, l);
 
 console.log("Task #4");
 console.log(myMax(list)); // 233
@@ -141,15 +134,8 @@ const myMul = (a, b) => a * b;
  * Функція повертає результат обчислення.
  */
 
-const multObj = { // створюю об'єкт, для використання bind(),
-  // і додаю в об'єкт поля з множниками, чому б і ні :))
-  multDouble : 2,
-  multTriple : 3
-}
-
 // const myDouble
-const myDouble = myMul.bind(multObj, multObj.multDouble);
-// const myTriple = myMul.bind(multObj, 2);
+const myDouble = myMul.bind(null, 2);
 
 console.log("Task #5");
 console.log("My doubles:");
@@ -160,7 +146,7 @@ console.log(myDouble(5)) // = myMul(2, 5) = 10
 // Аналогічним чином створюємо функцію myTriple(n), яка потроює параметр, що приймає, повертаючи результат.
 
 // const myTriple
-const myTriple = myMul.bind(multObj, multObj.multTriple);
+const myTriple = myMul.bind(null, 3);
 
 console.log("My triples:");
 console.log(myTriple(3)) // = myMul(3, 3) = 9
