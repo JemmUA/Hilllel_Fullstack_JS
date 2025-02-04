@@ -1,4 +1,5 @@
 import {SkillsManager} from "./SkillsManager.js";
+import {DateCalculator} from "./DateCalculator.js";
 
 /*
  * #1
@@ -28,7 +29,7 @@ function doubleArrayElements(numbers) {
 }
 
 // Використання функції
-const exampleArrayTwin = [1, 2, 3, 4, 5]; // масив 'exampleArray' уже був створений вище, я дав інше ім'я
+const exampleArrayTwin = [1, 2, 3, 4, 5]; // масив 'exampleArray' уже був створений вище, я зробив інший
 const doubledArray = doubleArrayElements(exampleArrayTwin);
 console.log('Подвоєні елементи масиву:', doubledArray); // Виведення подвоєних елементів
 
@@ -93,11 +94,11 @@ console.log(skillsManager.getAllSkills());
 // }
 
 // Демонстрація використання
-// const dateCalculator = new DateCalculator('2023-01-01')
-// dateCalculator.addDays(5)
-// console.log(dateCalculator.getResult()) // Виводить нову дату після додавання днів
+const dateCalculator = new DateCalculator('2023-01-01')
+dateCalculator.addDays(5)
+console.log(dateCalculator.getResult()) // Виводить нову дату після додавання днів
 //
-// dateCalculator.subtractDays(3)
-// console.log(dateCalculator.getResult()) // Виводить нову дату після віднімання днів
+dateCalculator.subtractDays(3)
+console.log(dateCalculator.getResult()) // Виводить нову дату після віднімання днів
 
 // export { doubleArrayElements, sumArray, SkillsManager, DateCalculator }
