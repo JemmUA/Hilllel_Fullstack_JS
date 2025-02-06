@@ -80,38 +80,44 @@ const users = [
 // Написати функції для наступних дій:
 
 // #1 Повернути масив телефонних номерів користувачів, у яких баланс менше ніж 2000 доларів.
-  const lowBalanceUsersPhones = users
-    .filter(user => parseFloat(user.balance
-      .substring(1).replace(",", "")) < 2000)
-    .map(user => user.phone);
-  console.log("Телефони користувачів, у яких баланc менше 2000$:");
-  lowBalanceUsersPhones.forEach(phone => console.log(phone));
+const lowBalanceUsersPhones = users
+  .filter(user => parseFloat(user.balance
+    .substring(1).replace(",", "")) < 2000)
+  .map(user => user.phone);
+console.log("Телефони користувачів, у яких баланc менше $2000:");
+lowBalanceUsersPhones.forEach(phone => console.log(phone));
 
-  // #2 Знайти суму всіх балансів користувачів
-  const usersBalances = users.map(user => parseFloat(user
-    .balance.substring(1).replace(",", "")));
-  console.log("Сума балансів усіх користувачів: ",usersBalances
-    .reduce((acc, balance) => acc + balance)
-    .toFixed(2));
+// #2 Знайти суму всіх балансів користувачів
+const usersBalances = users.map(user => parseFloat(user
+  .balance.substring(1).replace(",", "")));
+console.log("Сума балансів усіх користувачів: $", usersBalances
+  .reduce((acc, balance) => acc + balance)
+  .toFixed(2));
 
-  // #3 Знайти користувача з максімальним балансом, вивести його
-  let richestUser = null;
-  let maxCount = 0;
-  users.forEach(user => {
-      if(parseFloat(user.balance.substring(1).replace(",", "")) > maxCount) {
-        maxCount = parseFloat(user.balance.substring(1).replace(",", ""));
-        richestUser = user;
-      }
-    })
-  console.log(`Користувач ${richestUser.name} має найвищий баланс: ${richestUser.balance}`);
+// #3 Знайти користувача з максімальним балансом, вивести його
+let richestUser = null;
+let maxCount = 0;
+users.forEach(user => {
+  if (parseFloat(user.balance.substring(1).replace(",", "")) > maxCount) {
+    maxCount = parseFloat(user.balance.substring(1).replace(",", ""));
+    richestUser = user;
+  }
+})
+console.log(`Користувач ${richestUser.name} має найвищий баланс: ${richestUser.balance}`);
 
-  // #4 Вивести користувачів з повторюючимися іменами
+// #4 Вивести користувачів з повторюючимися іменами
+const userNames = users.map(user => user.name.split(" ")[0]);
 
+console.log("Імена користувачів, що повторюються (forEach):");
+userNames.forEach((name, index, arrayUsers) => {
+  if (arrayUsers.indexOf(name) !== index) {
+    console.log(name);
+  }
+});
 
-
-
-
-
-
+console.log("Імена користувачів, що повторюються (filter):");
+const twins = userNames
+  .filter((userName, index, array) => array.indexOf(userName) !== index);
+twins.forEach(twin => console.log(twin));
 
 
