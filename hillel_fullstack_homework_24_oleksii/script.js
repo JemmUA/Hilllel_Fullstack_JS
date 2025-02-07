@@ -105,7 +105,7 @@ console.log(`Користувач ${richestUser.name} має найвищий б
 
 // #4 Вивести користувачів з повторюючимися іменами
 const matchedNameUsers = [];
-users.filter((user, index, array) => {
+users.forEach((user, index, array) => {
   const twinkArr = array.filter((u, i) =>  u.name === user.name && i !== index);
   if (twinkArr.length) {matchedNameUsers.push(twinkArr[0]);}
 });
