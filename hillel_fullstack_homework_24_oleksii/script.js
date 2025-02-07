@@ -81,15 +81,13 @@ const users = [
 
 // #1 Повернути масив телефонних номерів користувачів, у яких баланс менше ніж 2000 доларів.
 const lowBalanceUsersPhones = users
-  .filter(user => parseFloat(user.balance
-    .substring(1).replace(",", "")) < 2000)
+  .filter(user => balanceStrToNum(user.balance) < 2000)
   .map(user => user.phone);
 console.log("Телефони користувачів, у яких баланc менше $2000:");
 lowBalanceUsersPhones.forEach(phone => console.log(phone));
 
 // #2 Знайти суму всіх балансів користувачів
-const usersBalances = users.map(user => parseFloat(user
-  .balance.substring(1).replace(",", "")));
+const usersBalances = users.map(user => balanceStrToNum(user.balance));
 console.log("Сума балансів усіх користувачів: $", usersBalances
   .reduce((acc, balance) => acc + balance)
   .toFixed(2));
@@ -98,26 +96,25 @@ console.log("Сума балансів усіх користувачів: $", us
 let richestUser = null;
 let maxCount = 0;
 users.forEach(user => {
-  if (parseFloat(user.balance.substring(1).replace(",", "")) > maxCount) {
-    maxCount = parseFloat(user.balance.substring(1).replace(",", ""));
+  if (balanceStrToNum(user.balance) > maxCount) {
+    maxCount = balanceStrToNum(user.balance);
     richestUser = user;
   }
 })
 console.log(`Користувач ${richestUser.name} має найвищий баланс: ${richestUser.balance}`);
 
 // #4 Вивести користувачів з повторюючимися іменами
-const userNames = users.map(user => user.name.split(" ")[0]);
-
-console.log("Імена користувачів, що повторюються (forEach):");
-userNames.forEach((name, index, arrayUsers) => {
-  if (arrayUsers.indexOf(name) !== index) {
-    console.log(name);
-  }
+const matchedNameUsers = [];
+users.filter((user, index, array) => {
+  const twinkArr = array.filter((u, i) =>  u.name === user.name && i !== index);
+  if (twinkArr.length) {matchedNameUsers.push(twinkArr[0]);}
 });
 
-console.log("Імена користувачів, що повторюються (filter):");
-const twins = userNames
-  .filter((userName, index, array) => array.indexOf(userName) !== index);
-twins.forEach(twin => console.log(twin));
+function balanceStrToNum(strBalance) {
+  return parseFloat(strBalance
+    .substring(1)
+    .replace(",", ""));
+}
 
-
+console.log("Користувачі, у яких повторюються імена:")
+console.log(matchedNameUsers.forEach(userObj => console.log(userObj)));
