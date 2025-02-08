@@ -1,18 +1,5 @@
 // Це stairs (сходи) – об'єкт, який дозволяє підніматися вгору та спускатися (не замикання, просто обʼєкт):
 
-// const stairs = {
-//   step: 0,
-//   up: function () {
-//     this.step++;
-//   },
-//   down: function () {
-//     this.step--;
-//   },
-//   showStep: function () { // показує поточну сходинку
-//     console.log(this.step);
-//   }
-// };
-
 const stairs = {
   step: 0,
   up () {
@@ -29,6 +16,8 @@ const stairs = {
   }
 };
 
+
+console.log("Task: \"Stairs\"")
 // Тепер, якщо нам потрібно зробити кілька послідовних викликів, ми можемо виконати це так:
 
 stairs.up();
