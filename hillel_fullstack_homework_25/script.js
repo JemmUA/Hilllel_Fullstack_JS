@@ -4,7 +4,8 @@ console.log('#8. JavaScript homework example file')
  * #1
  *
  * Задача: Створення та додавання DOM-елемента до вказаного контейнера
- * Мета: Розробити функцію createDomElement, яка приймає назву тега, текстовий вміст та контейнер, до якого потрібно додати новий елемент. Функція створює новий елемент з вказаним тегом та текстовим вмістом і додає цей елемент до заданого контейнера.
+ * Мета: Розробити функцію createDomElement, яка приймає назву тега, текстовий вміст та контейнер, до якого потрібно додати новий елемент.
+ * Функція створює новий елемент з вказаним тегом та текстовим вмістом і додає цей елемент до заданого контейнера.
  *
  * Вимоги:
  * 1. Функція має приймати три параметри:
@@ -19,11 +20,15 @@ console.log('#8. JavaScript homework example file')
 
 function createDomElement(tagName, textContent, container) {
   // code here
+  const element = document.createElement(tagName);
+  element.innerText = textContent;
+  container.appendChild(element);
+  return element;
 }
 
 // Демонстрація використання функції
-// const container = document.body // В якості прикладу використовуємо body як контейнер
-// console.log(createDomElement('p', 'This paragraph has been added to the specified container.', container));
+const container = document.body // В якості прикладу використовуємо body як контейнер
+console.log(createDomElement('p', 'This paragraph has been added to the specified container.', container));
 
 /*
  * #2
@@ -43,7 +48,22 @@ function createDomElement(tagName, textContent, container) {
  */
 
 function setLocalStorageInfo(key, value, timeout) {
-  // code here
+  if (key && value) {
+    if (typeof value !== "string") {
+      value = JSON.stringify(value);
+    }
+    localStorage.setItem(key, value);
+    console.log(`Успішно збережено в Local Storage: ${key}=${value};`)
+  } else {
+    console.error("Дані неповні, запис в Local Storage не виконано.")
+  }
+  if (timeout) {
+    window.setTimeout(function() {
+      localStorage.removeItem(key);
+      console.log(`Видалено з Local Storage: ${key}=${value};`);
+      // alert(`Параметр ${key}=${value} було видалено з Local Storage.`);
+    }, timeout);
+  }
 }
 
 const userNames = ['Oleksii', 'Oleksandr', 'Anna', 'Dmytro'];
@@ -55,9 +75,9 @@ const person = {
 }
 
 // Демонстрація використання функції
-// setLocalStorageInfo('language', 'en');
-// setLocalStorageInfo('userNames', userNames, 30);
-// setLocalStorageInfo('user', person);
+setLocalStorageInfo('language', 'en');
+setLocalStorageInfo('userNames', userNames, 30);
+setLocalStorageInfo('user', person);
 
 /*
 * #3
@@ -75,13 +95,22 @@ const person = {
 */
 
 function getLocalStorageInfo(key) {
-  // code here
+  // const value = localStorage.getItem(JSON.parse(key));
+  const value = localStorage.getItem(key);
+  if (value) {
+    console.log("Зчитано:",value);
+    // console.log(`Успішно зчитано з Local Storage: \'${key}=${value}\"`);
+    return key;
+  } else {
+    console.log("undefined");
+    return "undefined";
+  }
 }
 
-// getLocalStorageInfo('language'); // en
-// getLocalStorageInfo('userNames'); // ['Oleksii', 'Oleksandr', 'Anna', 'Dmytro']
-// getLocalStorageInfo('user'); // обʼєкт персони John Wick
-// getLocalStorageInfo('nonExistentVariable'); // undefined
+getLocalStorageInfo('language'); // en
+getLocalStorageInfo('userNames'); // ['Oleksii', 'Oleksandr', 'Anna', 'Dmytro']
+getLocalStorageInfo('user'); // обʼєкт персони John Wick
+getLocalStorageInfo('nonExistentVariable'); // undefined
 // 
 
 export { createDomElement, setLocalStorageInfo, getLocalStorageInfo }
