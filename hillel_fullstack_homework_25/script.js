@@ -48,8 +48,8 @@ console.log(createDomElement('p', 'This paragraph has been added to the specifie
  */
 
 function setLocalStorageInfo(key, value, timeout) {
+  timeout = timeout * 1000; // переводимо мілісекунди в секунди
   if (key && value) {
-    timeout = timeout * 1000; // переводимо мілісекунди в секунди
     if (typeof value !== "string") {
       value = JSON.stringify(value);
     }
@@ -63,7 +63,7 @@ function setLocalStorageInfo(key, value, timeout) {
       localStorage.removeItem(key);
       console.log(`Видалено з Local Storage: ${key}=${value};`);
       // alert(`Параметр ${key}=${value} було видалено з Local Storage.`);
-    }, timeout);
+    }, timeout * 1000);
   }
 }
 
