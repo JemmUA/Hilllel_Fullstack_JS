@@ -62,7 +62,7 @@ function setLocalStorageInfo(key, value, timeout) {
       localStorage.removeItem(key);
       console.log(`Видалено з Local Storage: ${key}=${value};`);
       // alert(`Параметр ${key}=${value} було видалено з Local Storage.`);
-    }, timeout);
+    }, timeout * 1000);
   }
 }
 
