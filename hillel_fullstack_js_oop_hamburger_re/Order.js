@@ -21,9 +21,9 @@ export class Order {
     return this.#name = name;
   }
   set price(price){
-    this.#price = price;
+    return this.#price = price;
   }
   set calories(calories){
-    this.#calories = calories;
+    return this.#calories = calories;
   }
 }
