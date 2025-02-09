@@ -38,20 +38,21 @@ class Poll {
       return accumulator;
     }), 0);
     // const optionMaxLength = this.votes.reduce((acc, val) => acc < val.length ? val.length : acc, 0); // або так
-
     this.votes.forEach((element, index) => {
       console.log(element, " ".repeat(optionMaxLength - element.length), "*".repeat(this.counters.get(element)));
     });
   }
-
+  iterate(callback) {
+    this.counters.forEach(callback);
+  }
 }
 
-console.log("Task: \"Votes\"")
+console.log("\nTask: \"Votes\"")
 
 const poll = new Poll(['chrome', 'firefox', 'OPERA', 'safari', 'edge']);
 
-// console.log(poll.vote(''));
-// console.log(poll.vote(' '));
+console.log(poll.vote());
+console.log(poll.vote(' '));
 console.log(poll.vote('chrome'));
 console.log(poll.vote('chrome'));
 console.log(poll.vote('chrome'));
@@ -73,9 +74,9 @@ poll.showVotes();
   edge    *
  */
 
-// poll.iterate((option, count) => {
-//   console.log(`${option} -> ${count}`);
-// });
+poll.iterate((count, option) => {
+  console.log(`${option} -> ${count}`);
+});
 
 /*
   chrome -> 5
