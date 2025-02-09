@@ -18,12 +18,12 @@ export class Order {
     return this.#calories;
   }
   set name(name){
-    return this.#name = name;
+    this.#name = name;
   }
   set price(price){
-    return this.#price = price;
+    this.#price = price;
   }
-  set calories(calories){
-    return this.#calories = calories;
+  secalories(calories){
+    this.#calories = calories;
   }
 }
