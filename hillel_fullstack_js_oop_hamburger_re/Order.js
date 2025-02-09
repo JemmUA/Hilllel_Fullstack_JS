@@ -8,7 +8,6 @@ export class Order {
     this.#calories = calories;
   }
   get name() {
-    console.log(this.#name)
     return this.#name;
   }
   get price() {
