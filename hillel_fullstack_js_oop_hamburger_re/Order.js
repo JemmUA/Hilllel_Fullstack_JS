@@ -22,7 +22,7 @@ export class Order {
   set price(price){
     this.#price = price;
   }
-  secalories(calories){
+  set calories(calories){
     this.#calories = calories;
   }
 }
