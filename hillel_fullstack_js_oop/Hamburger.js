@@ -19,13 +19,13 @@ export class Hamburger {
   calculate(){
     return this.orderSet
       .map(order => order[1])
-      .reduce((total, price) => total + price);
+      .reduce((total, calories) => total + calories);
   }
 
   calculatePrice(){
     return this.orderSet
       .map(order => order[0])
-      .reduce((total, calories) => total + calories);
+      .reduce((total, price) => total + price);
   }
 
 }
