@@ -11,7 +11,7 @@ export class Hamburger {
 
   constructor(...orderSet) {
     this.orderSet = orderSet;
-    console.log("Hello! Yours hamburger is waiting for You.\nWould you like to increase deliciousness?\nWe have many different fillings.")
+    console.log("Hello! Your hamburger is waiting for You.\nWould you like to increase deliciousness?\nWe have many different fillings.")
   }
 
   addTopping(topping) {
