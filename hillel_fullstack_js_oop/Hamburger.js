@@ -23,7 +23,6 @@ export class Hamburger {
   }
 
   calculatePrice(){
-    const costs = this.orderSet.map(order => order[0])
     return this.orderSet
       .map(order => order[0])
       .reduce((total, calories) => total + calories);
