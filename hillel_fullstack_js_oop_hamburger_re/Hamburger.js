@@ -13,18 +13,19 @@ export class Hamburger {
     this.orderSet = orderSet;
     console.log("Hello! Yours hamburger is waiting for You.\nWould you like ro increase deliciousness?\nWe have many different fillings.")
   }
-  addTopping(topping){
+
+  addTopping(topping) {
     if (topping) this.orderSet.push(topping);
     console.log(`\"${topping.name}\" filling is added.`);
   }
 
-  calculate(){
+  calculate() {
     return this.orderSet
       .map(order => order.calories)
       .reduce((total, calories) => total + calories);
   }
 
-  calculatePrice(){
+  calculatePrice() {
     return this.orderSet
       .map(order => order.price)
       .reduce((total, price) => total + price);

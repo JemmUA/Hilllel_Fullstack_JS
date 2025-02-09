@@ -7,9 +7,6 @@ export class Order {
     this.#price = price;
     this.#calories = calories;
   }
-  set name(name){
-    return this.#name = name;
-  }
   get name() {
     console.log(this.#name)
     return this.#name;
@@ -20,8 +17,9 @@ export class Order {
   get calories() {
     return this.#calories;
   }
-
-
+  set name(name){
+    return this.#name = name;
+  }
   set price(price){
     this.#price = price;
   }
