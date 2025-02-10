@@ -14,10 +14,8 @@ export class Hamburger {
     this.orderSetString = orderSet.map(order => order = order.name).join(" plus ");
     console.log(`Your order \"Hamburger: ${this.orderSetString}\" is already waiting for You.`);
     console.log(`Would you like to increase deliciousness? Please take a look at our suggestions:`)
-    // Object.values(Hamburger).forEach(suggestion => console.log(`Suggestion: ${suggestion.name}: ${suggestion.price} tugriks, ${suggestion.calories} calories`));
-    // Object.keys(Hamburger).forEach(suggestion => console.log(`Option's name to make an order - ${suggestion}`));
     Object.keys(Hamburger).forEach(suggestion => console
-      .log(`   ● \"${Hamburger[suggestion].name}\":`.padEnd(18), ` Option's name: ${suggestion}`.padEnd(33), `${Hamburger[suggestion].calories} calories `.padEnd(30, "."), `${Hamburger[suggestion].price} tugriks`));
+      .log(`   ● \"${Hamburger[suggestion].name}\":`.padEnd(18), ` Option's name: ${suggestion}`.padEnd(33), `${Hamburger[suggestion].calories}`.padStart(3," "), `calories`, `${Hamburger[suggestion].price}`.padStart(15,"."), `tugriks`));
 
   }
 
@@ -25,7 +23,7 @@ export class Hamburger {
 
   addTopping(topping) {
     if (topping) this.orderSet.push(topping);
-    console.log(`\"${topping.name}\" filling is added.`);
+    console.log(`\"${topping.name}\" filling has been added.`);
   }
 
   calculate() {
