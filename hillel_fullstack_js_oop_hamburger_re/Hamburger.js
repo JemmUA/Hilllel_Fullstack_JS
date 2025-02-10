@@ -11,8 +11,17 @@ export class Hamburger {
 
   constructor(...orderSet) {
     this.orderSet = orderSet;
-    console.log("Hello! Your hamburger is waiting for You.\nWould you like to increase deliciousness?\nWe have many different fillings.")
+    this.orderSetString = orderSet.map(order => order = order.name).join(" plus ");
+    console.log(`Your order \"Hamburger: ${this.orderSetString}\" is already waiting for You.`);
+    console.log(`Would you like to increase deliciousness? Please take a look at our suggestions:`)
+    // Object.values(Hamburger).forEach(suggestion => console.log(`Suggestion: ${suggestion.name}: ${suggestion.price} tugriks, ${suggestion.calories} calories`));
+    // Object.keys(Hamburger).forEach(suggestion => console.log(`Option's name to make an order - ${suggestion}`));
+    Object.keys(Hamburger).forEach(suggestion => console
+      .log(`   ● \"${Hamburger[suggestion].name}\":`.padEnd(18), ` Option's name: ${suggestion}`.padEnd(33), `${Hamburger[suggestion].calories} calories `.padEnd(30, "."), `${Hamburger[suggestion].price} tugriks`));
+
   }
+
+
 
   addTopping(topping) {
     if (topping) this.orderSet.push(topping);

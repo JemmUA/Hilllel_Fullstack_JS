@@ -39,4 +39,4 @@ hamburger.addTopping(Hamburger.TOPPING_SAUCE);
 // А скільки тепер коштує?
 console.log('Price with sauce: ', hamburger.calculatePrice());
 
-console.log("Bon appetit! :)))")
+console.log("Bon appetit and come again! :)))")
