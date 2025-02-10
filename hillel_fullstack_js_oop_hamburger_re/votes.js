@@ -39,7 +39,7 @@ class Poll {
     }), 0);
     // const optionMaxLength = this.votes.reduce((acc, val) => acc < val.length ? val.length : acc, 0); // або так
     this.votes.forEach(element => console
-        .log(element.padEnd(optionMaxLength, " "), "*".repeat(this.counters.get(element))));
+        .log(element.padEnd(optionMaxLength), "*".repeat(this.counters.get(element))));
   }
   iterate(callback) {
     this.counters.forEach(callback);
