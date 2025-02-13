@@ -1,4 +1,4 @@
-console.log('#9. JavaScript homework example file')
+console.log('#9. JavaScript homework example file');
 
 /*
  * #1
