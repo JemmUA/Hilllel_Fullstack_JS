@@ -43,7 +43,7 @@ function trackMousePosition() {
   });
 }
 
-console.log(trackMousePosition())
+console.log(trackMousePosition());
 
 /*
  * #3
