@@ -75,7 +75,7 @@ function setupEventDelegation(selector) {
       if (event.target.matches('#testList>li')) {
         console.log(event.target.innerText);
       }
-    }))
+    }));
 };
 
 setupEventDelegation('#testList');
