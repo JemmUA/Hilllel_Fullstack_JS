@@ -76,7 +76,7 @@ function setupEventDelegation(selector) {
         console.log(event.target.innerText);
       }
     }));
-};
+}
 
 setupEventDelegation('#testList');
 
