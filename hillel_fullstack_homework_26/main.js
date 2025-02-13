@@ -81,4 +81,4 @@ function setupEventDelegation(selector) {
 setupEventDelegation('#testList');
 
 // Експорт функції для використання та тестування
-//   export {handleButtonClick, trackMousePosition, setupEventDelegation}
+export {handleButtonClick, trackMousePosition, setupEventDelegation}
