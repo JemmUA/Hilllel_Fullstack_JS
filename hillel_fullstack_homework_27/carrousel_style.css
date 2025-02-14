@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+.carrousel-container {
+  display: flex;
+  justify-content: space-between;
+  width: 38vw;
+  height: 18vw;
+}
+
+.previous, .next {
+  font-size: 2rem;
+  /*color: rgb(230, 230, 230);*/
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3vw;
+  background-color: #777777;
+}
+
+.previous, .next {
+  &:hover {
+    cursor: grab;
+    color: yellow;
+  }
+  &:active {
+    cursor: grabbing;
+    color: rgb(0 ,250 ,0);
+  }
+}
+#demonstrator{
+  width: 32vw;
+  display: flex;
+  overflow:hidden;
+
+}
+
+img {
+  height: 100%;
+  /*transform: translate(-300px);*/
+  transition: transform 1s;
+  /*margin: auto -100px;*/
+}
