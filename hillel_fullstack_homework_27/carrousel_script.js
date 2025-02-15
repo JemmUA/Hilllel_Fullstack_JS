@@ -48,7 +48,6 @@ function moveRight() {
     demonstratingImage = imageElements.length - 1;
   }
   if (demonstratingImage === imageElements.length - 1) {
-    console.log(demonstratingImage, "!!!!!!!!");
   }
   console.log("Image now:", demonstratingImage);
   imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
