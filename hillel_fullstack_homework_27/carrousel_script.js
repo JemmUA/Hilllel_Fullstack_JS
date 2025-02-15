@@ -4,11 +4,11 @@ const moverLeftElement = document.getElementById("moverLeft");
 const moverRightElement = document.getElementById("moverRight");
 // console.log(moverLeftElement, moverLeftElement.offsetWidth);
 // console.log(moverRightElement, moverRightElement.offsetWidth);
-const moveLeftEvent = moverLeftElement.addEventListener("click", moveLeft);
-const moveRightEvent = moverRightElement.addEventListener("click", moveRight);
+moverLeftElement.addEventListener("click", moveLeft);
+moverRightElement.addEventListener("click", moveRight);
 
 const demonstratorElement = document.getElementById("demonstrator");
-console.log("Demonstrator:", demonstratorElement, "wsidth =", demonstratorElement.offsetWidth);
+console.log("Demonstrator:", demonstratorElement, "wsidth =", demonstratorElement.getBoundingClientRect().width);
 
 const imagesContainerElement = document.getElementById("images-container")
 console.log("Images container", imagesContainerElement, imagesContainerElement.offsetWidth);
@@ -19,6 +19,7 @@ console.log("Images amount = ", imageElements.length, "width = ", imageElements[
 function moveLeft() {
   console.log("moving left");
   if (demonstratingImage === imageElements.length - 1) {
+    setTimeout(moveLeft, 0);
     imagesContainerElement.style.transition = 'transform 0s';
   } else {
     imagesContainerElement.style.transition = 'transform 1s';
@@ -29,14 +30,15 @@ function moveLeft() {
     demonstratingImage = 0;
   }
   console.log("Image now:", demonstratingImage);
-  imagesContainerElement.style.transform = `translate(${- demonstratingImage * demonstratorElement.offsetWidth}px`;
-  console.log("Images container coords:", - demonstratingImage * demonstratorElement.offsetWidth);
+  imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
+  console.log("Images container coords:", - demonstratingImage * demonstratorElement.getBoundingClientRect().width);
 }
 
 function moveRight() {
   console.log("moving right");
   if (demonstratingImage === 0) {
     imagesContainerElement.style.transition = 'transform 0s';
+    setTimeout(moveRight, 0);
   } else {
     imagesContainerElement.style.transition = 'transform 1s';
   }
@@ -45,9 +47,12 @@ function moveRight() {
   } else {
     demonstratingImage = imageElements.length - 1;
   }
+  if (demonstratingImage === imageElements.length - 1) {
+    console.log(demonstratingImage, "!!!!!!!!");
+  }
   console.log("Image now:", demonstratingImage);
-  imagesContainerElement.style.transform = `translate(${- demonstratingImage * demonstratorElement.offsetWidth}px`;
-  console.log("Images container coords:", - demonstratingImage * demonstratorElement.offsetWidth);
+  imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
+  console.log/("Images container coords:", - demonstratingImage * demonstratorElement.getBoundingClientRect().width);
 }
 
 const switcherElements = document.getElementsByClassName("switcher");
@@ -55,8 +60,12 @@ const switcherEvents = [...switcherElements].forEach((switcher, index) => switch
 
 
 function onSwitcher(switcherNumber) {
-  console.log("Switcher event:", switcherNumber)
-  switcherElements[switcherNumber].style.backgroundColor = "green";
+  // console.log("Switcher event:", switcherNumber)
+  switcherElements[switcherNumber].style.backgroundColor = "orange";
   demonstratingImage = switcherNumber;
-  imagesContainerElement.style.transform = `translate(${- demonstratingImage * demonstratorElement.offsetWidth}px`;
+  imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
+}
+
+function performAnimation(numberOfImage, widthOfImage) {
+  return imagesContainerElement.style.transform = `translate(${- numberOfImage * widthOfImage}px`;
 }
