@@ -6,21 +6,17 @@
   display: flex;
   justify-content: space-between;
   width: 38vw;
-  height: 18vw;
+  /*height: 18vw;*/
 }
 
 .previous, .next {
   font-size: 2rem;
-  /*color: rgb(230, 230, 230);*/
   color: red;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 3vw;
   background-color: #777777;
-}
-
-.previous, .next {
   &:hover {
     cursor: grab;
     color: yellow;
@@ -30,16 +26,31 @@
     color: rgb(0 ,250 ,0);
   }
 }
-#demonstrator{
-  width: 32vw;
-  display: flex;
-  overflow:hidden;
 
+#demonstrator {
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  width: 32vw;
+  /*height: 18vw;*/
+  overflow: hidden;
+  /*transition: transform 1s;*/
+
+  /*margin-left: 200px;*/
 }
 
-img {
-  height: 100%;
+#images-container{
+  /*width: 32vw;*/
+  height: 18vw;
+  display: flex;
   /*transform: translate(-300px);*/
   transition: transform 1s;
-  /*margin: auto -100px;*/
+  /*margin-left: -800px;*/
 }
+
+/*img {*/
+/*  height: 100%;*/
+  /*transform: translate(-300px);*/
+  /*transition: transform 1s;*/
+  /*margin: auto -100px;*/
+/*}*/

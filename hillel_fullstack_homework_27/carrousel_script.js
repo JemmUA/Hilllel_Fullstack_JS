@@ -1,41 +1,55 @@
-let imageDemonstratingNumber = 0;
-
+let demonstratingImage = 0;
 
 const moverLeftElement = document.getElementById("moverLeft");
 const moverRightElement = document.getElementById("moverRight");
-console.log(moverLeftElement, moverLeftElement.offsetWidth);
-console.log(moverRightElement, moverRightElement.offsetWidth);
+// console.log(moverLeftElement, moverLeftElement.offsetWidth);
+// console.log(moverRightElement, moverRightElement.offsetWidth);
+const moveLeftEvent = moverLeftElement.addEventListener("click", moveLeft);
+const moveRightEvent = moverRightElement.addEventListener("click", moveRight);
 
 const demonstratorElement = document.getElementById("demonstrator");
 console.log(demonstratorElement, demonstratorElement.offsetWidth);
 
-const imagesElement = document.getElementsByTagName("img");
-console.log("Image width = ", imagesElement.width, "imagesElement = ", imagesElement.length);
+const imagesContainerElement = document.getElementById("images-container")
+console.log(imagesContainerElement, imagesContainerElement.offsetWidth);
 
-const moveLeftEvent = moverLeftElement.addEventListener("click", moveLeft);
-const moveRightEvent = moverRightElement.addEventListener("click", moveRight);
-
+const imageElements = document.getElementsByTagName("img");
+console.log("imagesElement = ", imageElements.length);
+// [imageElements].push([imageElements][0]);
+// console.log("imagesElement = ", imageElements.length);
 
 function moveLeft() {
   console.log("move left");
-  if (imageDemonstratingNumber  < imagesElement.length - 1) {
-    imageDemonstratingNumber++;
+  if (demonstratingImage === imageElements.length - 1) {
+    imagesContainerElement.style.transition = 'transform 0s';
   } else {
-    imageDemonstratingNumber = 0;
+    imagesContainerElement.style.transition = 'transform 1s';
   }
-    console.log(imageDemonstratingNumber);
-    imagesElement[imageDemonstratingNumber].style.transform = `translate(${- imageDemonstratingNumber * demonstratorElement.offsetWidth}px`;
-
+  if (demonstratingImage  < imageElements.length - 1) {
+    demonstratingImage++;
+  } else {
+    demonstratingImage = 0;
+  }
+    console.log(demonstratingImage);
+  imagesContainerElement.style.transform = `translate(${- demonstratingImage * demonstratorElement.offsetWidth}px`;
+  console.log(- demonstratingImage * demonstratorElement.offsetWidth);
 }
 
 function moveRight() {
   console.log("move right");
-  if (imageDemonstratingNumber > 0) {
-    imageDemonstratingNumber--;
+  console.log(demonstratingImage);
+  if (demonstratingImage === 0) {
+    imagesContainerElement.style.transition = 'transform 0s';
   } else {
-    imageDemonstratingNumber = imagesElement.length - 1;
+    imagesContainerElement.style.transition = 'transform 1s';
   }
-    console.log(imageDemonstratingNumber);
-    imagesElement[imageDemonstratingNumber].style.transform = `translate(${imageDemonstratingNumber * demonstratorElement.offsetWidth}px`;
-
+  if (demonstratingImage > 0) {
+    demonstratingImage--;
+  } else {
+    demonstratingImage = imageElements.length - 1;
+  }
+    console.log(demonstratingImage);
+  imagesContainerElement.style.transform = `translate(${- demonstratingImage * demonstratorElement.offsetWidth}px`;
+  // imagesContainerElement.style.transform = `translate(${-4669}px`;
+  console.log(demonstratingImage * demonstratorElement.offsetWidth);
 }
