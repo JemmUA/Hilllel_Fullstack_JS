@@ -50,12 +50,13 @@ function moveRight() {
   console.log("Images container coords:", - demonstratingImage * demonstratorElement.offsetWidth);
 }
 
-const switchers = document.getElementsByClassName("switcher");
-const switcherEvents = [switchers].forEach((switcher, index) => switcher.addEventListener("click", onSwitcher(index)));
+const switcherElements = document.getElementsByClassName("switcher");
+const switcherEvents = [...switcherElements].forEach((switcher, index) => switcher.addEventListener("click", onSwitcher(index)));
 
 
 function onSwitcher(switcherNumber) {
-  [switchers][switcherNumber].style.backgroundColor = "red";
+  console.log("Switcher event:", switcherNumber)
+  switcherElements[switcherNumber].style.backgroundColor = "green";
   demonstratingImage = switcherNumber;
   imagesContainerElement.style.transform = `translate(${- demonstratingImage * demonstratorElement.offsetWidth}px`;
 }
