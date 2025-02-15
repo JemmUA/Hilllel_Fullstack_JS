@@ -55,12 +55,11 @@ function moveRight() {
 }
 
 const switcherElements = document.getElementsByClassName("switcher");
-const switcherEvents = [...switcherElements].forEach((switcher, index) => switcher.addEventListener("click", onSwitcher(index)));
+const switcherEvents = [...switcherElements].forEach((switcher, index) => switcher.addEventListener("click", onSwitcher.bind(null, index)));
 
 
 function onSwitcher(switcherNumber) {
-  // console.log("Switcher event:", switcherNumber)
-  switcherElements[switcherNumber].style.backgroundColor = "orange";
+  console.log("Switcher event:", switcherNumber)
   demonstratingImage = switcherNumber;
   imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
 }
