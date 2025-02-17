@@ -1,9 +1,23 @@
 let demonstratingImage = 0;
+const filePathImg = "sources/images/";
+const imageFileNames = [
+  "acura_rdx.jpg",
+  "audi_r8_gt.jpg",
+  "ferrari-296-gtb.jpg",
+  "honda_accord_sedan.jpg",
+  "hyundai_tucson.jpg",
+  "mclaren_720s.jpg",
+  "mercedes-benz-amg_gle_53_4matic.jpg",
+  "nissan_ariya_long_range_2wd.jpg",
+  "peugeot_3008.jpg",
+  "porsche_macan_r4.jpg",
+  "renault_captur.jpg",
+  "subaru_impreza_22b_sti.jpg"
+];
+
 
 const moverLeftElement = document.getElementById("moverLeft");
 const moverRightElement = document.getElementById("moverRight");
-// console.log(moverLeftElement, moverLeftElement.offsetWidth);
-// console.log(moverRightElement, moverRightElement.offsetWidth);
 moverLeftElement.addEventListener("click", moveLeft);
 moverRightElement.addEventListener("click", moveRight);
 
@@ -12,6 +26,9 @@ console.log("Demonstrator:", demonstratorElement, "wsidth =", demonstratorElemen
 
 const imagesContainerElement = document.getElementById("images-container")
 console.log("Images container", imagesContainerElement, imagesContainerElement.getBoundingClientRect().width);
+
+generateImagesForHtml();
+// generateImgElements();
 
 const imageElements = document.getElementsByTagName("img");
 console.log("Images amount = ", imageElements.length, "width = ", imageElements[demonstratingImage].getBoundingClientRect().width);
@@ -56,9 +73,10 @@ function moveLeft() {
   switcherTurnOn(demonstratingImage);
 }
 
+// create switchers by images amount
 [...imageElements].forEach((element, index) => {
   if (index !== imageElements.length - 1) {
-    createSwitcher("div", "switcher", document.getElementsByClassName("switchers-container")[0]);
+    createSwitcherElement("div", "switcher", document.getElementsByClassName("switchers-container")[0]);
   }
 });
 
@@ -73,13 +91,14 @@ function onSwitcher(switcherNumber) {
   demonstratingImage = switcherNumber;
   imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
   switcherTurnOn(demonstratingImage);
+  console.log("Switcher. Image now:", demonstratingImage);
 }
 
 function performAnimation(numberOfImage, widthOfImage) {
   return imagesContainerElement.style.transform = `translate(${- numberOfImage * widthOfImage}px`;
 }
 
-function createSwitcher(tagName, switcherClass, container) {
+function createSwitcherElement(tagName, switcherClass, container) {
   const element = document.createElement(tagName);
   element.classList.add(switcherClass);
   container.appendChild(element);
@@ -95,5 +114,34 @@ function switcherTurnOn (switcherNumber) {
     element.classList.add("switcher");
   });
   // console.log("Switcher Element:", switcherElements[switcherNumber]);
+  // console.log("Switcher:", switcherNumber);
   switcherElements[switcherNumber].classList.add("switcherTurnedOn");
+}
+
+// generateImagesForHtml();
+function generateImagesForHtml() {
+  let imagesForHtml = "<div id=\"images-container\">";
+  imageFileNames.forEach(fileNameImg => {
+    imagesForHtml += `<img src="${filePathImg}${fileNameImg}" title="${fileNameImg.slice(0, -4)}" alt="${fileNameImg.slice(0, -4)}">`;
+  });
+  imageFileNames.forEach((fileNameImg,index) => {
+    if (index === 0) {
+      imagesForHtml += `<img src="${filePathImg}${fileNameImg}" title="${fileNameImg.slice(0, -4)}" alt="${fileNameImg.slice(0, -4)}">`;
+    }
+  });
+  imagesForHtml += "</div>";
+  console.log(imagesForHtml);
+  imagesContainerElement.innerHTML = imagesForHtml;
+  // return imagesForHtml;
+}
+
+// generateImgElements();
+function generateImgElements () {
+  const docFragment = document.createDocumentFragment();
+  imageFileNames.forEach(fileNameImg => {
+    const imgElement = document.createElement("img");
+    imgElement.src = `${filePathImg}${fileNameImg}`;
+    docFragment.appendChild(imgElement);
+  });
+  document.getElementById("images-container").appendChild(docFragment);
 }
