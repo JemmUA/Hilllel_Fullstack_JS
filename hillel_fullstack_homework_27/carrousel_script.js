@@ -3,6 +3,7 @@ const filePathImg = "sources/images/";
 const imageFileNames = [
   "acura_rdx.jpg",
   "audi_r8_gt.jpg",
+  "chevrolet-corvette.jpg",
   "ferrari-296-gtb.jpg",
   "Ford_Mustang.jpg",
   "honda_accord_sedan.jpg",
@@ -16,27 +17,24 @@ const imageFileNames = [
   "renault_captur.jpg",
   "subaru_impreza_22b_sti.jpg"
 ];
-
+let isAutoplaying = false;
+let autoplayingInterval;
+const moveTime = 1;
 
 const moverLeftElement = document.getElementById("moverLeft");
 const moverRightElement = document.getElementById("moverRight");
 moverLeftElement.addEventListener("click", moveLeft);
 moverRightElement.addEventListener("click", moveRight);
-
 const demonstratorElement = document.getElementById("demonstrator");
-console.log("Demonstrator:", demonstratorElement, "wsidth =", demonstratorElement.getBoundingClientRect().width);
-
 const imagesContainerElement = document.getElementById("images-container")
-console.log("Images container", imagesContainerElement, imagesContainerElement.getBoundingClientRect().width);
+const autoplayRunElement = document.getElementsByClassName("run-container")[0];
+autoplayRunElement.addEventListener("click", autoplay);
+const autoplayStopElement = document.getElementsByClassName("stop-container")[0];
+autoplayStopElement.addEventListener("click", autoplay);
 
-generateImagesForHtml();
-// generateImgElements();
-
+generateImgElements();
 const imageElements = document.getElementsByTagName("img");
-console.log("Images amount = ", imageElements.length, "width = ", imageElements[demonstratingImage].getBoundingClientRect().width);
-
 function moveRight() {
-  console.log("moving left");
   if (demonstratingImage === imageElements.length - 1) {
     setTimeout(moveRight, 0);
     imagesContainerElement.style.transition = 'transform 0s';
@@ -48,14 +46,11 @@ function moveRight() {
   } else {
     demonstratingImage = 0;
   }
-  console.log("Image now:", demonstratingImage);
   imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
-  // console.log("Images container coords:", - demonstratingImage * demonstratorElement.getBoundingClientRect().width);
   switcherTurnOn(demonstratingImage);
 }
 
 function moveLeft() {
-  console.log("moving right");
   if (demonstratingImage === 0) {
     imagesContainerElement.style.transition = 'transform 0s';
     setTimeout(moveLeft, 0);
@@ -69,13 +64,10 @@ function moveLeft() {
   }
   if (demonstratingImage === imageElements.length - 1) {
   }
-  console.log("Image now:", demonstratingImage);
   imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
-  // console.log/("Images container coords:", - demonstratingImage * demonstratorElement.getBoundingClientRect().width);
   switcherTurnOn(demonstratingImage);
 }
 
-// create switchers by images amount
 [...imageElements].forEach((element, index) => {
   if (index !== imageElements.length - 1) {
     createSwitcherElement("div", "switcher", document.getElementsByClassName("switchers-container")[0]);
@@ -89,11 +81,9 @@ const switcherElements = document.getElementsByClassName("switcher");
 switcherTurnOn(demonstratingImage);
 
 function onSwitcher(switcherNumber) {
-  // console.log("Switcher event:", switcherNumber)
   demonstratingImage = switcherNumber;
   imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
   switcherTurnOn(demonstratingImage);
-  console.log("Switcher. Image now:", demonstratingImage);
 }
 
 function performAnimation(numberOfImage, widthOfImage) {
@@ -115,33 +105,43 @@ function switcherTurnOn (switcherNumber) {
     element.classList.remove("switcherTurnedOn");
     element.classList.add("switcher");
   });
-  // console.log("Switcher Element:", switcherElements[switcherNumber]);
-  // console.log("Switcher:", switcherNumber);
   switcherElements[switcherNumber].classList.add("switcherTurnedOn");
 }
 
-// generateImagesForHtml();
-function generateImagesForHtml() {
-  let imagesForHtml = "<div id=\"images-container\">";
-  imageFileNames.forEach(fileNameImg => {
-    imagesForHtml += `<img src="${filePathImg}${fileNameImg}" title="${fileNameImg.slice(0, -4)}" alt="${fileNameImg.slice(0, -4)}">`;
-  });
-  imageFileNames.forEach((fileNameImg,index) => {
+function generateImgElements() {
+  let imagesForHtml = `<${imagesContainerElement.tagName.toLowerCase()} id="${imagesContainerElement.id}">`;
+  let firstImageForDuplication = "";
+  imageFileNames.forEach((fileNameImg, index) => {
     if (index === 0) {
-      imagesForHtml += `<img src="${filePathImg}${fileNameImg}" title="${fileNameImg.slice(0, -4)}" alt="${fileNameImg.slice(0, -4)}">`;
+      firstImageForDuplication = `<img src="${filePathImg}${fileNameImg}" title="${fileNameImg.
+      slice(0, -4)}" alt="${fileNameImg.slice(0, -4)}">`;
     }
+    imagesForHtml += `<img src="${filePathImg}${fileNameImg}" title="${fileNameImg.
+    slice(0, -4)}" alt="${fileNameImg.slice(0, -4)}">`;
   });
+    imagesForHtml += firstImageForDuplication;
   imagesForHtml += "</div>";
-  console.log(imagesForHtml);
   imagesContainerElement.innerHTML = imagesForHtml;
 }
 
-// function generateImgElements () {
-//   const docFragment = document.createDocumentFragment();
-//   imageFileNames.forEach(fileNameImg => {
-//     const imgElement = document.createElement("img");
-//     imgElement.src = `${filePathImg}${fileNameImg}`;
-//     docFragment.appendChild(imgElement);
-//   });
-//   document.getElementById("images-container").appendChild(docFragment);
-// }
+function autoplay(){
+  isAutoplaying = !isAutoplaying;
+    if (isAutoplaying) {
+      autoplayRunElement.classList.add("deactivated");
+      autoplayRunElement.classList.remove("activated");
+      autoplayStopElement.classList.add("activated");
+      autoplayStopElement.classList.remove("deactivated");
+    } else {
+      autoplayRunElement.classList.remove("deactivated");
+      autoplayRunElement.classList.add("activated");
+      autoplayStopElement.classList.remove("activated");
+      autoplayStopElement.classList.add("deactivated");
+    }
+
+  if (isAutoplaying) {
+    autoplayingInterval = setInterval(moveRight, moveTime * 1000);
+  } else {
+    clearInterval(autoplayingInterval);
+    autoplayingInterval = null;
+  }
+}
