@@ -134,16 +134,14 @@ function generateImagesForHtml() {
   imagesForHtml += "</div>";
   console.log(imagesForHtml);
   imagesContainerElement.innerHTML = imagesForHtml;
-  // return imagesForHtml;
 }
 
-// generateImgElements();
-function generateImgElements () {
-  const docFragment = document.createDocumentFragment();
-  imageFileNames.forEach(fileNameImg => {
-    const imgElement = document.createElement("img");
-    imgElement.src = `${filePathImg}${fileNameImg}`;
-    docFragment.appendChild(imgElement);
-  });
-  document.getElementById("images-container").appendChild(docFragment);
-}
+// function generateImgElements () {
+//   const docFragment = document.createDocumentFragment();
+//   imageFileNames.forEach(fileNameImg => {
+//     const imgElement = document.createElement("img");
+//     imgElement.src = `${filePathImg}${fileNameImg}`;
+//     docFragment.appendChild(imgElement);
+//   });
+//   document.getElementById("images-container").appendChild(docFragment);
+// }
