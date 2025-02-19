@@ -34,6 +34,7 @@ autoplayStopElement.addEventListener("click", autoplay);
 
 generateImgElements();
 const imageElements = document.getElementsByTagName("img");
+
 function moveRight() {
   if (demonstratingImage === imageElements.length - 1) {
     setTimeout(moveRight, 0);
@@ -46,7 +47,9 @@ function moveRight() {
   } else {
     demonstratingImage = 0;
   }
+
   imagesContainerElement.style.transform = performAnimation(demonstratingImage, demonstratorElement.getBoundingClientRect().width);
+
   switcherTurnOn(demonstratingImage);
 }
 
@@ -127,14 +130,14 @@ function generateImgElements() {
 function autoplay(){
   isAutoplaying = !isAutoplaying;
     if (isAutoplaying) {
-      autoplayRunElement.classList.add("deactivated");
       autoplayRunElement.classList.remove("activated");
-      autoplayStopElement.classList.add("activated");
       autoplayStopElement.classList.remove("deactivated");
+      autoplayRunElement.classList.add("deactivated");
+      autoplayStopElement.classList.add("activated");
     } else {
       autoplayRunElement.classList.remove("deactivated");
-      autoplayRunElement.classList.add("activated");
       autoplayStopElement.classList.remove("activated");
+      autoplayRunElement.classList.add("activated");
       autoplayStopElement.classList.add("deactivated");
     }
 
