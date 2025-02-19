@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrousel</title>
+  <link rel="stylesheet" href="carrousel_style.css">
+  <link rel="stylesheet" href="media_queries.css">
+</head>
+<body>
+  <h1>ДЗ 27.1. Розробка повнофункціонального слайдера на чистому JavaScript з використання
+    функціонального підходу</h1>
+
+  <div class="common-container">
+    <div class="carrousel-container">
+      <div id="moverLeft" class="previous">◄</div>
+      <div id="demonstrator">
+        <div id="images-container"></div>
+      </div>
+      <div id="moverRight" class="next">►</div>
+    </div>
+
+    <div class="autoplay-container">
+      <div class="run-container activated">
+        <svg fill="#ffffff" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g
+            id="SVGRepo_iconCarrier"><path d="M11.303 8l11.394 7.997L11.303 24z"></path></g>
+        </svg>
+      </div>
+        <div class="stop-container deactivated">
+        <svg class="stop-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+            fill="none" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+            id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g
+            id="SVGRepo_iconCarrier"><path fill="#ffffff"
+            d="M3.25 1A2.25 2.25 0 001 3.25v9.5A2.25 2.25 0 003.25 15h9.5A2.25 2.25 0 0015
+            12.75v-9.5A2.25 2.25 0 0012.75 1h-9.5z"></path></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="switchers-container"></div>
+
+    <div class="empty-box"></div>
+
+  </div>
+  <script type="module" src="carrousel_script.js"></script>
+</body>
+</html>
