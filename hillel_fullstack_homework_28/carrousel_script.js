@@ -21,19 +21,19 @@ let isAutoplaying = false;
 let autoplayingInterval;
 const moveTime = 1;
 
-const moverLeftElement = document.getElementById("moverLeft");
-const moverRightElement = document.getElementById("moverRight");
+const moverLeftElement = document.querySelector("#common-container #moverLeft");
+const moverRightElement = document.querySelector("#common-container #moverRight");
 moverLeftElement.addEventListener("click", moveLeft);
 moverRightElement.addEventListener("click", moveRight);
-const demonstratorElement = document.getElementById("demonstrator");
-const imagesContainerElement = document.getElementById("images-container")
-const autoplayRunElement = document.getElementsByClassName("run-container")[0];
+const demonstratorElement = document.querySelector("#common-container #demonstrator");
+const imagesContainerElement = document.querySelector("#common-container #images-container")
+const autoplayRunElement = document.querySelector("#common-container .run-container");
 autoplayRunElement.addEventListener("click", autoplay);
-const autoplayStopElement = document.getElementsByClassName("stop-container")[0];
+const autoplayStopElement = document.querySelector("#common-container .stop-container");
 autoplayStopElement.addEventListener("click", autoplay);
 
 generateImgElements();
-const imageElements = document.getElementsByTagName("img");
+const imageElements = document.querySelectorAll("#common-container img");
 function moveRight() {
   if (demonstratingImage === imageElements.length - 1) {
     setTimeout(moveRight, 0);
@@ -70,11 +70,11 @@ function moveLeft() {
 
 [...imageElements].forEach((element, index) => {
   if (index !== imageElements.length - 1) {
-    createSwitcherElement("div", "switcher", document.getElementsByClassName("switchers-container")[0]);
+    createSwitcherElement("div", "switcher", document.querySelectorAll("#common-container .switchers-container")[0]);
   }
 });
 
-const switcherElements = document.getElementsByClassName("switcher");
+const switcherElements = document.querySelectorAll("#common-container .switcher");
 
 [...switcherElements].forEach((switcher, index) => switcher.addEventListener("click", onSwitcher.bind(null, index)));
 
