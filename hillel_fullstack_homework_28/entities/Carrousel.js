@@ -38,7 +38,7 @@ export class Carrousel {
         // console.log("Images count:", this.switcherElements.length);
         [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(null, index)));
         // this.switcherTurnOn(this.demonstratingImage);
-        this.onSwitcher(this.demonstratingImage)
+        this.onSwitcher(this.demonstratingImage);
     }
 
     moveLeft() {
@@ -100,7 +100,7 @@ export class Carrousel {
     }
 
     onSwitcher(switcherNumber) {
-        console.log("this.demonstratingImage, switcherNumber:", this.demonstratingImage, switcherNumber);
+        // console.log("this.demonstratingImage, switcherNumber:", this.demonstratingImage, switcherNumber);
         this.demonstratingImage = switcherNumber;
         this.imagesContainerElement.style.transform = this.performAnimation(this.demonstratingImage, this.imageWidth);
         this.switcherTurnOn(this.demonstratingImage);
