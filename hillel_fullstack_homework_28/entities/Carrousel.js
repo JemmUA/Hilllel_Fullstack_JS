@@ -102,8 +102,8 @@ export class Carrousel {
     onSwitcher(switcherNumber) {
         console.log("this.demonstratingImage, switcherNumber:", this.demonstratingImage, switcherNumber);
         this.demonstratingImage = switcherNumber;
-        this.imagesContainerElement.style.transform = performAnimation(this.demonstratingImage, this.imageWidth);
-        switcherTurnOn(this.demonstratingImage);
+        this.imagesContainerElement.style.transform = this.performAnimation(this.demonstratingImage, this.imageWidth);
+        this.switcherTurnOn(this.demonstratingImage);
     }
 
     performAnimation(numberOfImage, widthOfImage) {
