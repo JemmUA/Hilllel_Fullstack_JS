@@ -22,8 +22,8 @@ export class Carrousel {
     }
 
     startEngine() {
-        document.querySelector("#common-container #moverLeft").addEventListener("click", this.moveLeft.bind(this));
-        document.querySelector("#common-container #moverRight").addEventListener("click", this.moveRight.bind(this));
+        document.querySelector("#common-container .previous").addEventListener("click", this.moveLeft.bind(this));
+        document.querySelector("#common-container .next").addEventListener("click", this.moveRight.bind(this));
         this.imagesContainerElement = document.querySelector("#common-container #images-container")
         this.autoplayRunElement = document.querySelector("#common-container .run-container");
         this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
