@@ -55,11 +55,11 @@ const moveTime = 1;
 // const carrousel = new Carrousel(imageFileCars, filePathCars);
 // carrousel.test();
 
-// const carrousel2 = new Carrousel(imageFileNamesMac, filePathImgMac);
+const carrousel2 = new Carrousel(imageFileNamesMac, filePathImgMac);
 // carrousel2.test();
 //
-const carrousel3 = new Carrousel(imageFileNameAnimals, filePathAnimals);
-carrousel3.test();
+// const carrousel3 = new Carrousel(imageFileNameAnimals, filePathAnimals);
+// carrousel3.test();
 
 // document.querySelector("#common-container #moverLeft").addEventListener("click", moveLeft);
 // document.querySelector("#common-container #moverRight").addEventListener("click", moveRight);
