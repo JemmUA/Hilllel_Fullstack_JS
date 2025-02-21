@@ -76,7 +76,8 @@ export class Carrousel {
     }
 
     generateImgElements() {
-        let imagesForHtml = `<${this.imagesContainerElement.tagName.toLowerCase()} id="${this.imagesContainerElement.id}">`;
+        // let imagesForHtml = `<${this.imagesContainerElement.tagName.toLowerCase()} id="${this.imagesContainerElement.id}">`;
+        let imagesForHtml = "";
         let firstImageForDuplication = "";
         this.images.forEach((fileNameImg, index) => {
             if (index === 0) {
@@ -87,7 +88,7 @@ export class Carrousel {
             slice(0, -4)}" alt="${fileNameImg.slice(0, -4)}">`;
         });
         imagesForHtml += firstImageForDuplication;
-        imagesForHtml += "</div>";
+        // imagesForHtml += "</div>";
         this.imagesContainerElement.innerHTML = imagesForHtml;
     }
 
