@@ -36,8 +36,7 @@ export class Carrousel {
         this.generateSwitchers();
         this.switcherElements = document.querySelectorAll("#common-container .switcher");
         // console.log("Images count:", this.switcherElements.length);
-        [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(null, index)));
-        // this.switcherTurnOn(this.demonstratingImage);
+        [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
         this.onSwitcher(this.demonstratingImage);
     }
 
