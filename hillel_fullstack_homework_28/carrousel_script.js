@@ -55,8 +55,8 @@ const moveTime = 1;
 // const carrousel = new Carrousel(imageFileCars, filePathCars);
 // carrousel.test();
 
-const carrousel2 = new Carrousel(imageFileNamesMac, filePathImgMac);
+// const carrousel2 = new Carrousel(imageFileNamesMac, filePathImgMac);
 // carrousel2.test();
 //
-// const carrousel3 = new Carrousel(imageFileNameAnimals, filePathAnimals);
+const carrousel3 = new Carrousel(imageFileNameAnimals, filePathAnimals);
 // carrousel3.test();

@@ -34,12 +34,12 @@
   }
 }
 
-#demonstrator {
+.demonstrator {
   width: 64vw;
   overflow: hidden;
 }
 
-#images-container{
+.images-container{
   height: 36vw;
   display: flex;
   transition: transform 1s;

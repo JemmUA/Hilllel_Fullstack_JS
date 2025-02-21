@@ -24,12 +24,13 @@ export class Carrousel {
     startEngine() {
         document.querySelector("#common-container .previous").addEventListener("click", this.moveLeft.bind(this));
         document.querySelector("#common-container .next").addEventListener("click", this.moveRight.bind(this));
-        this.imagesContainerElement = document.querySelector("#common-container #images-container")
+        this.imagesContainerElement = document.querySelector("#common-container .images-container");
+        console.log(this.imagesContainerElement);
         this.autoplayRunElement = document.querySelector("#common-container .run-container");
         this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
         this.autoplayStopElement = document.querySelector("#common-container .stop-container");
         this.autoplayStopElement.addEventListener("click", this.autoplay.bind(this));
-        this.imageWidth = document.querySelector("#common-container #demonstrator").getBoundingClientRect().width;
+        this.imageWidth = document.querySelector("#common-container .demonstrator").getBoundingClientRect().width;
         this.generateImgElements();
         this.imageElements = document.querySelectorAll("#common-container img");
         this.imageElementsAmount = this.imageElements.length;
