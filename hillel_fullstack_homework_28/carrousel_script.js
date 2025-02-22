@@ -43,13 +43,6 @@ const imageFileNameAnimals = [
     "animal_10.jpg"
     ]
 
-// let demonstratingImage = 0;
-// let imageElementsAmount = 0;
-// let imageWidth;
-// let isAutoplaying = false;
-// let autoplayingInterval;
-// const moveTime = 1;
-
 const carrousel = new Carrousel({
     sliderId: `cars-slider`,
     images: imageFileCars,
@@ -61,6 +54,11 @@ const carrouselSuper = new Carrousel({
     sliderId: `animals-slider`,
     images: imageFileNameAnimals,
     filePathImg: filePathAnimals,
+    moveDuration: 2,
+    disableSwitchers: true,
+    disableAutoplay: false,
+    moveDirection: "left"
+
     }
 );
 
@@ -74,9 +72,3 @@ const carrouselExtra = new Carrousel({
     moveDirection: "right"
     }
 );
-
-
-// const carrousel = new Carrousel("cars-slider", imageFileCars, filePathCars);
-// const carrousel2 = new Carrousel("animals-slider", imageFileNameAnimals, filePathAnimals,
-//     true, 2, "left", false);
-// const carrousel3 = new Carrousel("mac-slider", imageFileNamesMac, filePathImgMac, true, 1.5, "right", true);

@@ -12,9 +12,6 @@ export class Carrousel {
     autoplayingInterval;
     imagesContainerElement;
 
-    // constructor(sliderId, images, filePathImg, disableSwitchers=false, moveDuration= 1,
-    //             moveDirection = "right", disableAutoplay = false) {
-
     constructor(parameters) {
         if(!parameters.sliderId) {
             throw new Error ("Slider ID is required");
@@ -34,22 +31,10 @@ export class Carrousel {
             moveDirection: "right"
         }
 
-        // this.sliderId = `#${sliderId}`;
-        // this.imageElementsAmount = images.length;
-        // this.filePathImg = filePathImg;
-        // this.images = images;
-        // this.moveDuration = moveDuration;
-        // this.disableSwitchers = disableSwitchers;
-        // this.disableAutoplay = disableAutoplay;
-        // this.moveDirection = moveDirection;
-
         const options = {
             ...defaultParameters,
             ...parameters
         }
-
-
-        console.log(options);
 
         this.sliderId = `#${options.sliderId}`;
         this.imageElementsAmount = options.images.length;
@@ -141,7 +126,6 @@ export class Carrousel {
     }
 
     generateImgElements() {
-        // let imagesForHtml = `<${this.imagesContainerElement.tagName.toLowerCase()} id="${this.imagesContainerElement.id}">`;
         let imagesForHtml = "";
         let firstImageForDuplication = "";
         this.images.forEach((fileNameImg, index) => {
@@ -153,7 +137,6 @@ export class Carrousel {
             slice(0, -4)}" alt="${fileNameImg.slice(0, -4)}">`;
         });
         imagesForHtml += firstImageForDuplication;
-        // imagesForHtml += "</div>";
         this.imagesContainerElement.innerHTML = imagesForHtml;
     }
 
@@ -167,7 +150,6 @@ export class Carrousel {
     }
 
     onSwitcher(switcherNumber) {
-        // console.log("this.demonstratingImage, switcherNumber:", this.demonstratingImage, switcherNumber);
         this.demonstratingImage = switcherNumber;
         this.imagesContainerElement.style.transform = this.performAnimation(this.demonstratingImage, this.imageWidth);
         this.switcherTurnOn(this.demonstratingImage);
