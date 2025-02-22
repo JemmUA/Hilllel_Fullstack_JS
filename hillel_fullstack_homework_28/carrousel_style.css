@@ -2,6 +2,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-slider-background: #777777;
+  --color-slider: red;
+  --color-slider-hover: yellow;
+  --color-slider-active: green;
+  --color-button-run: green;
+  --color-button-stop: red;
+  --color-switcher: grey;
+  --color-switcher-turnedOn: orange;
+  --color-switcher-active: red;
+}
+
 .common-container{
   display: flex;
   flex-wrap: wrap;
@@ -18,19 +30,19 @@
 
 .previous, .next {
   font-size: 1rem;
-  color: red;
+  color: var(--color-slider);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 6vw;
-  background-color: #777777;
+  background-color: var(--color-slider-background);
   &:hover {
     cursor: grab;
-    color: yellow;
+    color: var(--color-slider-hover);
   }
   &:active {
     cursor: grabbing;
-    color: rgb(0 ,250 ,0);
+    color: var(--color-slider-active);
   }
 }
 
@@ -42,7 +54,6 @@
 .images-container{
   height: 36vw;
   display: flex;
-  transition: transform 1s;
 }
 
 .switchers-container {
@@ -58,14 +69,14 @@
   width: 1vw;
   height: 1vw;
   border-radius: 50%;
-  background-color: grey;
+  background-color: var(--color-switcher);
   cursor: pointer;
   &:hover {
     width: 1.6vw;
     height: 1.6vw;
   }
   &:active {
-    background-color: red;
+    background-color: var(--color-switcher-active);
   }
 }
 
@@ -73,7 +84,7 @@
   width: 1.6vw;
   height: 1.6vw;
   border-radius: 50%;
-  background-color: orange;
+  background-color: var(--color-switcher-turnedOn);
 }
 
 .autoplay-container {
@@ -88,7 +99,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: green;
+  background-color: var(--color-button-run);
   width: 4.4vw;
   height: 4.4vw;
   border-radius: 50%;
@@ -105,7 +116,7 @@
   align-items: center;
   width: 4.4vw;
   height: 4.4vw;
-  background-color: red;
+  background-color: var(--color-button-stop);
   border-radius: 50%
 }
 
