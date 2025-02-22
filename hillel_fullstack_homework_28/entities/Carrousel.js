@@ -3,6 +3,7 @@ export class Carrousel {
     imageElementsAmount = 0;
     moveDuration;
     disableSwitchers;
+    disableAutoplay;
     moveDirection;
 
     demonstratingImage = 0;
@@ -12,7 +13,7 @@ export class Carrousel {
     imagesContainerElement;
 
     constructor(sliderId, images, filePathImg, disableSwitchers=false, moveDuration= 1,
-                moveDirection = "right"){
+                moveDirection = "right", disableAutoplay = false) {
         if(!Array.isArray(images) || !images.length) {
             throw new Error ("There are no images provided");
         }
@@ -23,6 +24,7 @@ export class Carrousel {
         this.images = images;
         this.moveDuration = moveDuration;
         this.disableSwitchers = disableSwitchers;
+        this.disableAutoplay = disableAutoplay;
         this.moveDirection = moveDirection;
 
         this.startEngine();
@@ -45,7 +47,7 @@ export class Carrousel {
         this.imageElements = document.querySelectorAll(`${this.sliderId} img`);
         this.imageElementsAmount = this.imageElements.length;
 
-        if (this.disableSwitchers) {
+        if (!this.disableSwitchers) {
             this.generateSwitchers();
             this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
             [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
@@ -68,7 +70,7 @@ export class Carrousel {
         if (this.demonstratingImage === this.imageElementsAmount - 1) {
         }
         this.imagesContainerElement.style.transform = this.performAnimation(this.demonstratingImage, this.imageWidth);
-        if (this.disableSwitchers) {
+        if (!this.disableSwitchers) {
             this.switcherTurnOn(this.demonstratingImage);
         }
     }
@@ -86,7 +88,7 @@ export class Carrousel {
             this.demonstratingImage = 0;
         }
         this.imagesContainerElement.style.transform = this.performAnimation(this.demonstratingImage, this.imageWidth);
-        if (this.disableSwitchers) {
+        if (!this.disableSwitchers) {
             this.switcherTurnOn(this.demonstratingImage);
         }
     }
