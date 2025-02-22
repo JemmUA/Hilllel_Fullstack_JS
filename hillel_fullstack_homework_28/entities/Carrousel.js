@@ -2,6 +2,8 @@ export class Carrousel {
     images = [];
     imageElementsAmount = 0;
     moveDuration;
+    disableSwitchers;
+    moveDirection;
 
     demonstratingImage = 0;
     imageWidth = 0;
@@ -9,7 +11,8 @@ export class Carrousel {
     autoplayingInterval;
     imagesContainerElement;
 
-    constructor(sliderId, images, filePathImg, disableSwitchers=false, moveDuration= 1){
+    constructor(sliderId, images, filePathImg, disableSwitchers=false, moveDuration= 1,
+                moveDirection = "right"){
         if(!Array.isArray(images) || !images.length) {
             throw new Error ("There are no images provided");
         }
@@ -19,6 +22,8 @@ export class Carrousel {
         this.filePathImg = filePathImg;
         this.images = images;
         this.moveDuration = moveDuration;
+        this.disableSwitchers = disableSwitchers;
+        this.moveDirection = moveDirection;
 
         this.startEngine();
     }
@@ -40,10 +45,12 @@ export class Carrousel {
         this.imageElements = document.querySelectorAll(`${this.sliderId} img`);
         this.imageElementsAmount = this.imageElements.length;
 
-        this.generateSwitchers();
-        this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
-        [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
-        this.onSwitcher(this.demonstratingImage);
+        if (this.disableSwitchers) {
+            this.generateSwitchers();
+            this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
+            [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
+            this.onSwitcher(this.demonstratingImage);
+        }
     }
 
     moveLeft() {
@@ -61,7 +68,9 @@ export class Carrousel {
         if (this.demonstratingImage === this.imageElementsAmount - 1) {
         }
         this.imagesContainerElement.style.transform = this.performAnimation(this.demonstratingImage, this.imageWidth);
-        this.switcherTurnOn(this.demonstratingImage);
+        if (this.disableSwitchers) {
+            this.switcherTurnOn(this.demonstratingImage);
+        }
     }
 
     moveRight() {
@@ -77,7 +86,9 @@ export class Carrousel {
             this.demonstratingImage = 0;
         }
         this.imagesContainerElement.style.transform = this.performAnimation(this.demonstratingImage, this.imageWidth);
-        this.switcherTurnOn(this.demonstratingImage);
+        if (this.disableSwitchers) {
+            this.switcherTurnOn(this.demonstratingImage);
+        }
     }
 
     generateImgElements() {
@@ -150,7 +161,11 @@ export class Carrousel {
         }
 
         if (this.isAutoplaying) {
-            this.autoplayingInterval = setInterval(this.moveRight.bind(this), this.moveDuration * 1000);
+            if (this.moveDirection === "right") {
+                this.autoplayingInterval = setInterval(this.moveRight.bind(this), this.moveDuration * 1000);
+            } else {
+                this.autoplayingInterval = setInterval(this.moveLeft.bind(this), this.moveDuration * 1000);
+            }
         } else {
             clearInterval(this.autoplayingInterval);
             this.autoplayingInterval = null;
