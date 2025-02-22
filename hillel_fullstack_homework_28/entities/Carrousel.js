@@ -36,30 +36,40 @@ export class Carrousel {
 
         this.imagesContainerElement = document.querySelector(`${this.sliderId} .images-container`);
 
-        if (!this.disableAutoplay) {
-            this.autoplayRunElement = document.querySelector(`${this.sliderId} .run-container`);
-            this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
-
-            this.autoplayStopElement = document.querySelector(`${this.sliderId} .stop-container`);
-            this.autoplayStopElement.addEventListener("click", this.autoplay.bind(this));
-        } else {
-            document.querySelector(`${this.sliderId} .run-container`).remove();
-            document.querySelector(`${this.sliderId} .stop-container`).remove();
-        }
-
         this.imageWidth = document.querySelector(`${this.sliderId} .demonstrator`).getBoundingClientRect().width;
         this.generateImgElements();
         this.imageElements = document.querySelectorAll(`${this.sliderId} img`);
         this.imageElementsAmount = this.imageElements.length;
 
-        if (!this.disableSwitchers) {
-            this.generateSwitchers();
-            this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
-            [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
-            this.onSwitcher(this.demonstratingImage);
-        }
+        this.elementsManaging();
     }
 
+elementsManaging() {
+    if (!this.disableAutoplay) {
+        this.autoplayRunElement = document.querySelector(`${this.sliderId} .run-container`);
+        this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
+
+        this.autoplayStopElement = document.querySelector(`${this.sliderId} .stop-container`);
+        this.autoplayStopElement.addEventListener("click", this.autoplay.bind(this));
+    } else {
+        document.querySelector(`${this.sliderId} .run-container`).remove();
+        document.querySelector(`${this.sliderId} .stop-container`).remove();
+    }
+
+    if (!this.disableSwitchers) {
+        this.generateSwitchers();
+        this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
+        [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
+        this.onSwitcher(this.demonstratingImage);
+    }
+
+    if (this.disableSwitchers && this.disableAutoplay) {
+        document.querySelector(`${this.sliderId} .autoplay-container`).remove();
+        document.querySelector(`${this.sliderId} .switchers-container`).remove();
+        document.querySelector(`${this.sliderId} .empty-box`).remove();
+    }
+
+}
     moveLeft() {
         if (this.demonstratingImage === 0) {
             this.imagesContainerElement.style.transition = 'transform 0s';
