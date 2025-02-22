@@ -1,7 +1,7 @@
 export class Carrousel {
     images = [];
     imageElementsAmount = 0;
-    moveDuration = 1;
+    moveDuration;
 
     demonstratingImage = 0;
     imageWidth = 0;
