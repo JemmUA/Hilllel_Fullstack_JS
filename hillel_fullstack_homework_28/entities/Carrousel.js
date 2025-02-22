@@ -9,11 +9,12 @@ export class Carrousel {
     autoplayingInterval;
     imagesContainerElement;
 
-    constructor(images, filePathImg){
+    constructor(sliderId, images, filePathImg){
         if(!Array.isArray(images) || !images.length) {
             throw new Error ("There are no images provided");
         }
 
+        this.sliderId = `#${sliderId}`;
         this.imageElementsAmount = images.length;
         this.filePathImg = filePathImg;
         this.images = images;
@@ -22,22 +23,27 @@ export class Carrousel {
     }
 
     startEngine() {
-        document.querySelector("#common-container .previous").addEventListener("click", this.moveLeft.bind(this));
-        document.querySelector("#common-container .next").addEventListener("click", this.moveRight.bind(this));
-        this.imagesContainerElement = document.querySelector("#common-container .images-container");
-        console.log(this.imagesContainerElement);
-        this.autoplayRunElement = document.querySelector("#common-container .run-container");
+        document.querySelector(`${this.sliderId} .previous`).addEventListener("click", this.moveLeft.bind(this));
+        document.querySelector(`${this.sliderId} .next`).addEventListener("click", this.moveRight.bind(this));
+
+        this.imagesContainerElement = document.querySelector(`${this.sliderId} .images-container`);
+
+        this.autoplayRunElement = document.querySelector(`${this.sliderId} .run-container`);
         this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
-        this.autoplayStopElement = document.querySelector("#common-container .stop-container");
+
+        this.autoplayStopElement = document.querySelector(`${this.sliderId} .stop-container`);
         this.autoplayStopElement.addEventListener("click", this.autoplay.bind(this));
-        this.imageWidth = document.querySelector("#common-container .demonstrator").getBoundingClientRect().width;
+
+        this.imageWidth = document.querySelector(`${this.sliderId} .demonstrator`).getBoundingClientRect().width;
         this.generateImgElements();
-        this.imageElements = document.querySelectorAll("#common-container img");
+
+        this.imageElements = document.querySelectorAll(`${this.sliderId} img`);
         this.imageElementsAmount = this.imageElements.length;
         this.generateSwitchers();
-        this.switcherElements = document.querySelectorAll("#common-container .switcher");
-        // console.log("Images count:", this.switcherElements.length);
+
+        this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
         [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
+
         this.onSwitcher(this.demonstratingImage);
     }
 
@@ -95,7 +101,8 @@ export class Carrousel {
     generateSwitchers(){
         [...this.imageElements].forEach((_, index) => {
             if (index !== this.imageElementsAmount - 1) {
-                this.createSwitcherElement("div", "switcher", document.querySelectorAll("#common-container .switchers-container")[0]);
+                this.createSwitcherElement("div", "switcher", document
+                    .querySelectorAll(`${this.sliderId} .switchers-container`)[0]);
             }
         });
     }
@@ -152,6 +159,6 @@ export class Carrousel {
     }
 
     test() {
-        console.log("Test. Demo image number:", this.demonstratingImage);
+        console.log("Test. Start image number:", this.demonstratingImage);
     }
 }
