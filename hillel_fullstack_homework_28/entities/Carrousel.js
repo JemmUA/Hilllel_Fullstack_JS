@@ -12,22 +12,56 @@ export class Carrousel {
     autoplayingInterval;
     imagesContainerElement;
 
-    constructor(sliderId, images, filePathImg, disableSwitchers=false, moveDuration= 1,
-                moveDirection = "right", disableAutoplay = false) {
-        if(!Array.isArray(images) || !images.length) {
+    // constructor(sliderId, images, filePathImg, disableSwitchers=false, moveDuration= 1,
+    //             moveDirection = "right", disableAutoplay = false) {
+
+    constructor(parameters) {
+        if(!parameters.sliderId) {
+            throw new Error ("Slider ID is required");
+        }
+        if(!Array.isArray(parameters.images) || !parameters.images.length) {
             throw new Error ("There are no images provided");
         }
 
-        this.sliderId = `#${sliderId}`;
-        this.imageElementsAmount = images.length;
-        this.filePathImg = filePathImg;
-        this.images = images;
-        this.moveDuration = moveDuration;
-        this.disableSwitchers = disableSwitchers;
-        this.disableAutoplay = disableAutoplay;
-        this.moveDirection = moveDirection;
+        const defaultParameters = {
+            sliderId: ``,
+            images: [],
+            filePathImg: ``,
+            imageElementsAmount: this.images.length,
+            moveDuration: 1,
+            disableSwitchers: false,
+            disableAutoplay: false,
+            moveDirection: "right"
+        }
+
+        // this.sliderId = `#${sliderId}`;
+        // this.imageElementsAmount = images.length;
+        // this.filePathImg = filePathImg;
+        // this.images = images;
+        // this.moveDuration = moveDuration;
+        // this.disableSwitchers = disableSwitchers;
+        // this.disableAutoplay = disableAutoplay;
+        // this.moveDirection = moveDirection;
+
+        const options = {
+            ...defaultParameters,
+            ...parameters
+        }
+
+
+        console.log(options);
+
+        this.sliderId = `#${options.sliderId}`;
+        this.imageElementsAmount = options.images.length;
+        this.filePathImg = options.filePathImg;
+        this.images = options.images;
+        this.moveDuration = options.moveDuration;
+        this.disableSwitchers = options.disableSwitchers;
+        this.disableAutoplay = options.disableAutoplay;
+        this.moveDirection = options.moveDirection;
 
         this.startEngine();
+        this.managingElements();
     }
 
     startEngine() {
@@ -40,11 +74,9 @@ export class Carrousel {
         this.generateImgElements();
         this.imageElements = document.querySelectorAll(`${this.sliderId} img`);
         this.imageElementsAmount = this.imageElements.length;
-
-        this.elementsManaging();
     }
 
-elementsManaging() {
+    managingElements() {
     if (!this.disableAutoplay) {
         this.autoplayRunElement = document.querySelector(`${this.sliderId} .run-container`);
         this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
