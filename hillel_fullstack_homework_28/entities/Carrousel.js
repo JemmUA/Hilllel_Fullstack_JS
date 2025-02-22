@@ -5,6 +5,7 @@ export class Carrousel {
     disableSwitchers;
     disableAutoplay;
     moveDirection;
+    colorSliderBackground;
 
     demonstratingImage = 0;
     imageWidth = 0;
@@ -28,7 +29,8 @@ export class Carrousel {
             moveDuration: 1,
             disableSwitchers: false,
             disableAutoplay: false,
-            moveDirection: "right"
+            moveDirection: "right",
+            colorSliderBackground: "#777777",
         }
 
         const options = {
@@ -44,9 +46,11 @@ export class Carrousel {
         this.disableSwitchers = options.disableSwitchers;
         this.disableAutoplay = options.disableAutoplay;
         this.moveDirection = options.moveDirection;
+        this.colorSliderBackground = options.colorSliderBackground;
 
         this.startEngine();
         this.managingElements();
+        this.colorizeElements();
     }
 
     startEngine() {
@@ -62,31 +66,34 @@ export class Carrousel {
     }
 
     managingElements() {
-    if (!this.disableAutoplay) {
-        this.autoplayRunElement = document.querySelector(`${this.sliderId} .run-container`);
-        this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
+        if (!this.disableAutoplay) {
+            this.autoplayRunElement = document.querySelector(`${this.sliderId} .run-container`);
+            this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
 
-        this.autoplayStopElement = document.querySelector(`${this.sliderId} .stop-container`);
-        this.autoplayStopElement.addEventListener("click", this.autoplay.bind(this));
-    } else {
-        document.querySelector(`${this.sliderId} .run-container`).remove();
-        document.querySelector(`${this.sliderId} .stop-container`).remove();
+            this.autoplayStopElement = document.querySelector(`${this.sliderId} .stop-container`);
+            this.autoplayStopElement.addEventListener("click", this.autoplay.bind(this));
+        } else {
+            document.querySelector(`${this.sliderId} .run-container`).remove();
+            document.querySelector(`${this.sliderId} .stop-container`).remove();
+        }
+        if (!this.disableSwitchers) {
+            this.generateSwitchers();
+            this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
+            [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
+            this.onSwitcher(this.demonstratingImage);
+        }
+        if (this.disableSwitchers && this.disableAutoplay) {
+            document.querySelector(`${this.sliderId} .autoplay-container`).remove();
+            document.querySelector(`${this.sliderId} .switchers-container`).remove();
+            document.querySelector(`${this.sliderId} .empty-box`).remove();
+        }
     }
 
-    if (!this.disableSwitchers) {
-        this.generateSwitchers();
-        this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
-        [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
-        this.onSwitcher(this.demonstratingImage);
+    colorizeElements() {
+        document.querySelector(`${this.sliderId} .previous`).style.backgroundColor = this.colorSliderBackground;
+        document.querySelector(`${this.sliderId} .next`).style.backgroundColor = this.colorSliderBackground;
     }
 
-    if (this.disableSwitchers && this.disableAutoplay) {
-        document.querySelector(`${this.sliderId} .autoplay-container`).remove();
-        document.querySelector(`${this.sliderId} .switchers-container`).remove();
-        document.querySelector(`${this.sliderId} .empty-box`).remove();
-    }
-
-}
     moveLeft() {
         if (this.demonstratingImage === 0) {
             this.imagesContainerElement.style.transition = 'transform 0s';
@@ -201,9 +208,5 @@ export class Carrousel {
             clearInterval(this.autoplayingInterval);
             this.autoplayingInterval = null;
         }
-    }
-
-    test() {
-        console.log("Test. Images:", this.images);
     }
 }

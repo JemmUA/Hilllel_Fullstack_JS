@@ -28,7 +28,6 @@ const imageFileNamesMac = [
   "mac_5.jpg",
 ]
 
-
 const filePathAnimals = "sources/images/animals/";
 const imageFileNameAnimals = [
     "animal_01.jpg",
@@ -47,9 +46,9 @@ const carrousel = new Carrousel({
     sliderId: `cars-slider`,
     images: imageFileCars,
     filePathImg: filePathCars,
+    colorSliderBackground: "#777777"
     }
 );
-carrousel.test();
 
 const carrouselSuper = new Carrousel({
     sliderId: `animals-slider`,
@@ -57,11 +56,10 @@ const carrouselSuper = new Carrousel({
     filePathImg: filePathAnimals,
     moveDuration: 2,
     disableSwitchers: true,
-    moveDirection: "left"
-
+    moveDirection: "left",
+    colorSliderBackground: "cyan"
     }
 );
-carrouselSuper.test();
 
 const carrouselExtra = new Carrousel({
     sliderId: `mac-slider`,
@@ -71,7 +69,6 @@ const carrouselExtra = new Carrousel({
     disableSwitchers: true,
     disableAutoplay: true,
     moveDirection: "right",
-    autoPlayFromStart: true
+    colorSliderBackground: "blue"
     }
 );
-carrouselExtra.test();
