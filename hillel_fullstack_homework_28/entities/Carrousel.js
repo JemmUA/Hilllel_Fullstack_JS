@@ -36,11 +36,16 @@ export class Carrousel {
 
         this.imagesContainerElement = document.querySelector(`${this.sliderId} .images-container`);
 
-        this.autoplayRunElement = document.querySelector(`${this.sliderId} .run-container`);
-        this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
+        if (!this.disableAutoplay) {
+            this.autoplayRunElement = document.querySelector(`${this.sliderId} .run-container`);
+            this.autoplayRunElement.addEventListener("click", this.autoplay.bind(this));
 
-        this.autoplayStopElement = document.querySelector(`${this.sliderId} .stop-container`);
-        this.autoplayStopElement.addEventListener("click", this.autoplay.bind(this));
+            this.autoplayStopElement = document.querySelector(`${this.sliderId} .stop-container`);
+            this.autoplayStopElement.addEventListener("click", this.autoplay.bind(this));
+        } else {
+            document.querySelector(`${this.sliderId} .run-container`).remove();
+            document.querySelector(`${this.sliderId} .stop-container`).remove();
+        }
 
         this.imageWidth = document.querySelector(`${this.sliderId} .demonstrator`).getBoundingClientRect().width;
         this.generateImgElements();
