@@ -49,6 +49,7 @@ const carrousel = new Carrousel({
     filePathImg: filePathCars,
     }
 );
+carrousel.test();
 
 const carrouselSuper = new Carrousel({
     sliderId: `animals-slider`,
@@ -56,19 +57,21 @@ const carrouselSuper = new Carrousel({
     filePathImg: filePathAnimals,
     moveDuration: 2,
     disableSwitchers: true,
-    disableAutoplay: false,
     moveDirection: "left"
 
     }
 );
+carrouselSuper.test();
 
 const carrouselExtra = new Carrousel({
     sliderId: `mac-slider`,
     images: imageFileNamesMac,
     filePathImg: filePathImgMac,
-    moveDuration: 1.5,
+    moveDuration: 1,
     disableSwitchers: true,
     disableAutoplay: true,
-    moveDirection: "right"
+    moveDirection: "right",
+    autoPlayFromStart: true
     }
 );
+carrouselExtra.test();

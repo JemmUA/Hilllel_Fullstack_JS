@@ -204,6 +204,6 @@ export class Carrousel {
     }
 
     test() {
-        console.log("Test. Start image number:", this.demonstratingImage);
+        console.log("Test. Images:", this.images);
     }
 }
