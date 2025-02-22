@@ -51,11 +51,6 @@ let autoplayingInterval;
 const moveTime = 1;
 
 const carrousel = new Carrousel("cars-slider", imageFileCars, filePathCars);
-carrousel.test();
-
-const carrousel2 = new Carrousel("animals-slider", imageFileNameAnimals, filePathAnimals);
-carrousel2.test();
-
-const carrousel3 = new Carrousel("mac-slider", imageFileNamesMac, filePathImgMac);
-carrousel3.test();
+const carrousel2 = new Carrousel("animals-slider", imageFileNameAnimals, filePathAnimals, true, 2);
+const carrousel3 = new Carrousel("mac-slider", imageFileNamesMac, filePathImgMac, false, 1.5);
 //

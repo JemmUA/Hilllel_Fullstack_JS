@@ -1,7 +1,7 @@
 export class Carrousel {
     images = [];
     imageElementsAmount = 0;
-    moveTime = 1;
+    moveDuration = 1;
 
     demonstratingImage = 0;
     imageWidth = 0;
@@ -9,7 +9,7 @@ export class Carrousel {
     autoplayingInterval;
     imagesContainerElement;
 
-    constructor(sliderId, images, filePathImg){
+    constructor(sliderId, images, filePathImg, disableSwitchers=false, moveDuration= 1){
         if(!Array.isArray(images) || !images.length) {
             throw new Error ("There are no images provided");
         }
@@ -18,6 +18,7 @@ export class Carrousel {
         this.imageElementsAmount = images.length;
         this.filePathImg = filePathImg;
         this.images = images;
+        this.moveDuration = moveDuration;
 
         this.startEngine();
     }
@@ -36,14 +37,12 @@ export class Carrousel {
 
         this.imageWidth = document.querySelector(`${this.sliderId} .demonstrator`).getBoundingClientRect().width;
         this.generateImgElements();
-
         this.imageElements = document.querySelectorAll(`${this.sliderId} img`);
         this.imageElementsAmount = this.imageElements.length;
-        this.generateSwitchers();
 
+        this.generateSwitchers();
         this.switcherElements = document.querySelectorAll(`${this.sliderId} .switcher`);
         [...this.switcherElements].forEach((switcher, index) => switcher.addEventListener("click", this.onSwitcher.bind(this, index)));
-
         this.onSwitcher(this.demonstratingImage);
     }
 
@@ -151,7 +150,7 @@ export class Carrousel {
         }
 
         if (this.isAutoplaying) {
-            this.autoplayingInterval = setInterval(this.moveRight.bind(this), this.moveTime * 1000);
+            this.autoplayingInterval = setInterval(this.moveRight.bind(this), this.moveDuration * 1000);
         } else {
             clearInterval(this.autoplayingInterval);
             this.autoplayingInterval = null;
