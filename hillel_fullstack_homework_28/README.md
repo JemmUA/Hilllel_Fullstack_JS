@@ -25,7 +25,7 @@
 
 ### Приклад HTML коду:
 
-  <div id="slider" class="common-container">
+   <div id="slider" class="common-container">
 
     <div class="carrousel-container">
       <div class="moverLeft previous">◄</div>

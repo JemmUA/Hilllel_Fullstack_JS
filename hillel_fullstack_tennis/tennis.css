@@ -1,0 +1,77 @@
+* {
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: lightgray;
+}
+.grass {
+    width: 100vw;
+    height:100vh;
+    margin: 10px;
+    /*overflow: hidden;*/
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003300;
+    z-index: -1000;
+}
+
+.ball {
+    position: absolute;
+    top: 50vh;
+    left: 10vw;
+    background-color: tomato;
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    z-index: 500;
+}
+
+.batLeft {
+    position: absolute;
+    width: 2vw;
+    height: 10vw;
+    background-color: blue;
+    top: 50vh;
+    left: 3vw;
+    z-index: 100;
+}
+
+.batRight {
+    position: absolute;
+    width: 2vw;
+    height: 10vw;
+    background-color: yellow;
+    top: 50vh;
+    right: 3vw;
+    z-index: 101;
+}
+
+.net{
+    width: 1vw;
+    height: 100vh;
+    z-index: 0;
+    background-color: lightgrey;
+}
+
+.border__line__vertical {
+    width: 1vw;
+    height: 100vh;
+    z-index: 0;
+    background-color: lightgrey;
+}
+
+.border__line__horizontal {
+    width: 100vw;
+    height: 1.5vh;
+    z-index: 0;
+    background-color: lightgrey;
+}
