@@ -1,3 +1,11 @@
+:root {
+    --color-ball: tomato;
+    --color-grass: #003300;
+    --color-markup: lightgray;
+    --color-leftBat: blue;
+    --color-rightBat: yellow;
+}
+
 * {
     box-sizing: content-box;
     padding: 0;
@@ -5,9 +13,9 @@
 }
 
 body {
-    background: lightgray;
+    background: var(--color-markup);
 }
-.grass {
+.lawn {
     width: 100vw;
     height:100vh;
     margin: 10px;
@@ -20,7 +28,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #003300;
+    background-color: var(--color-grass);
     z-index: -1000;
 }
 
@@ -28,7 +36,7 @@ body {
     position: absolute;
     top: 50vh;
     left: 10vw;
-    background-color: tomato;
+    background-color: var(--color-ball);
     border-radius: 50%;
     width: 2vw;
     height: 2vw;
@@ -39,7 +47,7 @@ body {
     position: absolute;
     width: 2vw;
     height: 10vw;
-    background-color: blue;
+    background-color: var(--color-leftBat);
     top: 50vh;
     left: 3vw;
     z-index: 100;
@@ -49,7 +57,7 @@ body {
     position: absolute;
     width: 2vw;
     height: 10vw;
-    background-color: yellow;
+    background-color: var(--color-rightBat);
     top: 50vh;
     right: 3vw;
     z-index: 101;
@@ -59,19 +67,6 @@ body {
     width: 1vw;
     height: 100vh;
     z-index: 0;
-    background-color: lightgrey;
+    background-color: var(--color-markup);
 }
 
-.border__line__vertical {
-    width: 1vw;
-    height: 100vh;
-    z-index: 0;
-    background-color: lightgrey;
-}
-
-.border__line__horizontal {
-    width: 100vw;
-    height: 1.5vh;
-    z-index: 0;
-    background-color: lightgrey;
-}

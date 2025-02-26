@@ -3,8 +3,8 @@
 // clearTimeout(timeoutFunc);
 // clearInterval(intervalFunc);
 
-const frequency = 10;
-const borderSize = 35;
+const frequency = 0;
+const borderSize = 0;
 let xLeftBatPosition = 3;
 let yLeftBatPosition = 50;
 let xRightBatPosition = 3;
@@ -13,8 +13,8 @@ const xBatDelta = 2;
 const yBatDelta = 2;
 let xBallPosition = 100;
 let yBallPosition = 100;
-let xBallDelta = 2;
-let yBallDelta = 2;
+let xBallDelta = 1;
+let yBallDelta = 1;
 const topLimit = 3;
 const bottomLimit = 97;
 
@@ -22,8 +22,8 @@ const ball = document.getElementById("theBall");
 const leftBatElement = document.getElementById("theLeftBat");
 const rightBatElement = document.getElementById("theRightBat");
 document.addEventListener("keydown", moveBat);
-// document.addEventListener("keydown", moveRightBat);
 const interval = setInterval(runMainEngine, frequency);
+// clearTimeout(interval);
 
 function runMainEngine () {
     // console.log("moveBall");
