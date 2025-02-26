@@ -15,6 +15,7 @@
 body {
     background: var(--color-markup);
 }
+
 .lawn {
     width: 100vw;
     height:100vh;
