@@ -2,7 +2,7 @@ const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
 
 let isPaused = false;
-const frequency = 5;
+const frequency = 0;
 const borderSize = 10;
 const batHeight = 15;
 const batWidth = 2
@@ -25,25 +25,26 @@ const bottomLimit = 97;
 const ball = document.getElementById("theBall");
 const leftBatElement = document.getElementById("theLeftBat");
 const rightBatElement = document.getElementById("theRightBat");
+const pauseElement = document.getElementById("thePause");
+let leftPlayerCount = document.getElementById("leftCount");
+leftPlayerCount.textContent = 0;
+let rightPlayerCount = document.getElementById("rightCount");
+rightPlayerCount.textContent = 0;
 document.addEventListener("keydown", moveBat);
 document.addEventListener("keydown", checkPause);
 let interval = setInterval(runMainEngine, frequency);
-// clearTimeout(interval);
 
 function runMainEngine () {
-    // console.log("moveBall");
     xBallPosition+=xBallDelta;
     yBallPosition+=yBallDelta;
     ball.style.top = `${yBallPosition}px`;
     ball.style.left = `${xBallPosition}px`;
-    // console.log("collision");
-    // countCoords();
     collisionsWalls(xBallPosition, yBallPosition);
     collisionsBats();
+    // countCoords();
 }
 
 function moveBat(event) {
-    // console.log(event);
     //Left Bat
     if (event.key.startsWith("w")) {
         // console.log("caught w");
@@ -77,15 +78,16 @@ function moveBat(event) {
 }
 
 function collisionsWalls (posX, posY) {
-    // console.log(posX, posY, xDelta, yDelta);
     if (posX < borderSize) {
         xBallDelta = -xBallDelta;
+        rightPlayerCount.textContent++;
     }
     if (posY < borderSize) {
         yBallDelta = -yBallDelta;
     }
     if (posX >= windowWidth - borderSize) {
         xBallDelta = -xBallDelta;
+        leftPlayerCount.textContent++;
     }
     if (posY >= windowHeight - borderSize) {
         yBallDelta = -yBallDelta;
@@ -94,14 +96,17 @@ function collisionsWalls (posX, posY) {
 
 function checkPause(event) {
     if (event.key.startsWith(" ")) { // space
-        // console.log("caught Space");
+        // console.log(event);
         if (!isPaused) {
             clearInterval(interval);
+            pauseElement.classList.toggle("unpaused");
+            pauseElement.classList.toggle("paused");
         } else {
             interval = setInterval(runMainEngine, frequency);
+            pauseElement.classList.toggle("unpaused");
+            pauseElement.classList.toggle("paused");
         }
         isPaused = !isPaused;
-        // console.log("Pause:", isPaused);
     }
 }
 
@@ -120,10 +125,6 @@ function collisionsBats() {
     }
 
     // Right bat
-    // console.log("l", (xLeftBatPosition + 5) * yHwToPx);
-    // console.log("r", (xRightBatPosition + 5) * yHwToPx);
-    console.log("ball:", xBallPosition);
-    console.log("left bat:", windowWidth - Math.floor((xRightBatPosition + batWidth + 5) * yHwToPx));
     if (
         xBallDelta > 0
         && xBallPosition >= windowWidth - Math.floor((xRightBatPosition + batWidth + 5) * yHwToPx)

@@ -4,6 +4,8 @@
     --color-markup: lightgray;
     --color-leftBat: blue;
     --color-rightBat: yellow;
+    --color-pause: brown;
+    --color-count: grey;
 }
 
 * {
@@ -12,8 +14,8 @@
     margin: 0;
 }
 
-body {
-    background: var(--color-markup);
+.body {
+    background-color: var(--color-markup);
 }
 
 .lawn {
@@ -27,7 +29,7 @@ body {
     left:0;
     right:0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--color-grass);
     z-index: -1000;
@@ -71,3 +73,22 @@ body {
     background-color: var(--color-markup);
 }
 
+.paused {
+    position: absolute;
+    top: 40vh;
+    display: initial;
+    color: var(--color-pause);
+    font-size: 11vw;
+    font-weight: bold;
+    z-index: 1500;
+}
+
+.unpaused {
+    display: none;
+}
+
+#leftCount, #rightCount {
+    font-size: 20vw;
+    color: var(--color-count);
+    opacity: 30%;
+}
