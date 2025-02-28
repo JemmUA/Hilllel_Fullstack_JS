@@ -1,11 +1,15 @@
 let isPaused = false;
-const frequency = 10;
-const borderSize = 0;
+const frequency = 5;
+const borderSize = 10;
+const batHeight = 15;
+const batWidth = 2
+const ballSize = 2;
+
 let xLeftBatPosition = 3;
 let yLeftBatPosition = 50;
 let xRightBatPosition = 3;
 let yRightBatPosition = 50;
-// const xBatDelta = 2;
+const xBatDelta = 2;
 const yBatDelta = 2;
 let xBallPosition = 100;
 let yBallPosition = 100;
@@ -13,6 +17,7 @@ let xBallDelta = 1;
 let yBallDelta = 1;
 const topLimit = 3;
 const bottomLimit = 97;
+
 
 const ball = document.getElementById("theBall");
 const leftBatElement = document.getElementById("theLeftBat");
@@ -29,14 +34,16 @@ function runMainEngine () {
     ball.style.top = `${yBallPosition}px`;
     ball.style.left = `${xBallPosition}px`;
     // console.log("collision");
+    // countCoords();
     collisionsWalls(xBallPosition, yBallPosition);
     collisionsBats();
 }
 
 function moveBat(event) {
+    // console.log(event);
     //Left Bat
     if (event.key.startsWith("w")) {
-        console.log("caught w");
+        // console.log("caught w");
         if (yLeftBatPosition > topLimit ) {
         yLeftBatPosition -= yBatDelta;
         }
@@ -44,21 +51,21 @@ function moveBat(event) {
     }
     if (event.key.startsWith("s")) {
         if (yLeftBatPosition < bottomLimit) {
-        console.log("caught s");
+        // console.log("caught s");
         yLeftBatPosition += yBatDelta;
         }
         leftBatElement.style.top = `${yLeftBatPosition}vh`;
     }
     //Right Bat
     if (event.key.startsWith("ArrowUp")) {
-        console.log("caught ArrowUp");
+        // console.log("caught ArrowUp");
         if (yRightBatPosition > topLimit ) {
             yRightBatPosition -= yBatDelta;
         }
         rightBatElement.style.top = `${yRightBatPosition}vh`;
     }
     if (event.key.startsWith("ArrowDown")) {
-        console.log("caught ArrowDown");
+        // console.log("caught ArrowDown");
         if (yRightBatPosition < bottomLimit) {
             yRightBatPosition += yBatDelta;
         }
@@ -96,31 +103,51 @@ function checkPause(event) {
 }
 
 function collisionsBats() {
-    let vwCoefficient = window.innerWidth/100;
-    if ((xBallPosition <= ((xLeftBatPosition + 2) * vwCoefficient)) && (yBallPosition >= (yLeftBatPosition - 15) * vwCoefficient) && (yBallPosition <= (yLeftBatPosition - 5) * vwCoefficient)) {
+    // Left bat
+    let xVwToPx = window.innerWidth / 100;
+    let yHwToPx = window.innerHeight / 100;
+
+    if (xBallDelta < 0
+        && xBallPosition <= (Math.floor((xLeftBatPosition + 6) * yHwToPx))
+        && (yBallPosition >= yLeftBatPosition * yHwToPx
+        && yBallPosition <= (yLeftBatPosition * yHwToPx) + (batHeight * yHwToPx)
+        )
+    ) {
         xBallDelta = -xBallDelta;
-        console.log("Лівий відбив!");
     }
-    if ((xBallPosition <= ((xRightBatPosition - 2) * vwCoefficient)) && (yBallPosition >= (yRightBatPosition + 15) * vwCoefficient) && (yBallPosition <= (yRightBatPosition + 5) * vwCoefficient)) {
-        xBallDelta = -xBallDelta;
-        console.log("Правий відбив!");
-    }
-        // console.log(xBallPosition);
-    // if (xBallPosition >= window.innerWidth - ((xRightBatPosition + 2) * vwCoefficient)) {
-    //     xBallDelta = -xBallDelta;
-    // }
-    // if (yBallPosition < yLeftBatPosition * vwCoefficient) {
-    //     console.log("Y");
-    //     console.log(yBallPosition);
-    // } else {
-    //     console.log("N");
-    // }
-    // if ((yBallPosition >= (yLeftBatPosition -15) * vwCoefficient) && (yBallPosition <= (yLeftBatPosition -5) * vwCoefficient))  {
-    //     // console.log("Y");
-    //     // console.log(yBallPosition);
-    //     // console.log(((yLeftBatPosition - 5) * vwCoefficient));
-    // } else {
-    //     // console.log("N");
-    // }
+
+    // Right bat
+
 }
 
+// function countCoords() {
+//     let xVwToPx = window.innerWidth/100;
+//     let yHwToPx = window.innerHeight/100;
+//
+//     // Top of Bat
+//     // if (yBallPosition >= yLeftBatPosition * yHwToPx) {
+//     //     // xBallDelta = -xBallDelta;
+//     //     console.log("Y ball:", yBallPosition, "Y bat:", yLeftBatPosition * yHwToPx);
+//     //     clearInterval(interval);
+//     // }
+//
+//     // Bottom of Bat
+//     // if (yBallPosition >= (yLeftBatPosition * yHwToPx) + ((batHeight) * yHwToPx)) {
+//     // console.log(yLeftBatPosition + batHeight);
+//     //     xBallDelta = -xBallDelta;
+//     //     console.log("Y ball:", yBallPosition, "Y bat:", yLeftBatPosition * yHwToPx);
+//     //     clearInterval(interval);
+//     // }
+//
+//     // if (
+//     //     yBallPosition >= yLeftBatPosition * yHwToPx
+//     //     &&
+//     //     yBallPosition <= (yLeftBatPosition * yHwToPx) + (batHeight * yHwToPx)
+//     // ) {
+//     // console.log("yBall:", yBallPosition, "yBat:", (yLeftBatPosition * yHwToPx), "bat height:", (batHeight * yHwToPx) );
+//     // // if (yBallPosition <= (yLeftBatPosition * yHwToPx) + (batHeight * yHwToPx)) {
+//     //     ball.style.backgroundColor = "green";
+//     // } else {
+//     //     ball.style.backgroundColor = "red ";
+//     // }
+// }
