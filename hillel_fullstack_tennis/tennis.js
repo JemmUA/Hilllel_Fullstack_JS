@@ -108,7 +108,7 @@ function collisionsBats() {
     let yHwToPx = window.innerHeight / 100;
 
     if (xBallDelta < 0
-        && xBallPosition <= (Math.floor((xLeftBatPosition + 6) * yHwToPx))
+        && xBallPosition <= (Math.floor((xLeftBatPosition + 5) * yHwToPx))
         && (yBallPosition >= yLeftBatPosition * yHwToPx
         && yBallPosition <= (yLeftBatPosition * yHwToPx) + (batHeight * yHwToPx)
         )
