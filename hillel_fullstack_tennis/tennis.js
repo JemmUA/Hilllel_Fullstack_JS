@@ -103,10 +103,10 @@ function checkPause(event) {
 }
 
 function collisionsBats() {
-    // Left bat
     let xVwToPx = window.innerWidth / 100;
     let yHwToPx = window.innerHeight / 100;
 
+    // Left bat
     if (xBallDelta < 0
         && xBallPosition <= (Math.floor((xLeftBatPosition + 5) * yHwToPx))
         && (yBallPosition >= yLeftBatPosition * yHwToPx
@@ -117,6 +117,14 @@ function collisionsBats() {
     }
 
     // Right bat
+    // if (xBallDelta < 0
+    //     && xBallPosition <= (Math.floor((xLeftBatPosition + 5) * yHwToPx))
+    //     && (yBallPosition >= yLeftBatPosition * yHwToPx
+    //         && yBallPosition <= (yLeftBatPosition * yHwToPx) + (batHeight * yHwToPx)
+    //     )
+    // ) {
+    //     xBallDelta = -xBallDelta;
+    // }
 
 }
 
