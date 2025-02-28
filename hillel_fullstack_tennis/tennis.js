@@ -1,3 +1,6 @@
+const windowWidth = window.innerWidth;
+const windowHeight = window.innerHeight;
+
 let isPaused = false;
 const frequency = 5;
 const borderSize = 10;
@@ -81,10 +84,10 @@ function collisionsWalls (posX, posY) {
     if (posY < borderSize) {
         yBallDelta = -yBallDelta;
     }
-    if (posX >= window.innerWidth -borderSize) {
+    if (posX >= windowWidth - borderSize) {
         xBallDelta = -xBallDelta;
     }
-    if (posY >= window.innerHeight -borderSize) {
+    if (posY >= windowHeight - borderSize) {
         yBallDelta = -yBallDelta;
     }
 }
@@ -103,7 +106,7 @@ function checkPause(event) {
 }
 
 function collisionsBats() {
-    let xVwToPx = window.innerWidth / 100;
+    let xVwToPx = windowWidth / 100;
     let yHwToPx = window.innerHeight / 100;
 
     // Left bat
@@ -117,19 +120,23 @@ function collisionsBats() {
     }
 
     // Right bat
-    // if (xBallDelta < 0
-    //     && xBallPosition <= (Math.floor((xLeftBatPosition + 5) * yHwToPx))
-    //     && (yBallPosition >= yLeftBatPosition * yHwToPx
-    //         && yBallPosition <= (yLeftBatPosition * yHwToPx) + (batHeight * yHwToPx)
-    //     )
-    // ) {
-    //     xBallDelta = -xBallDelta;
-    // }
+    // console.log("l", (xLeftBatPosition + 5) * yHwToPx);
+    // console.log("r", (xRightBatPosition + 5) * yHwToPx);
+    console.log("ball:", xBallPosition);
+    console.log("left bat:", windowWidth - Math.floor((xRightBatPosition + batWidth + 5) * yHwToPx));
+    if (
+        xBallDelta > 0
+        && xBallPosition >= windowWidth - Math.floor((xRightBatPosition + batWidth + 5) * yHwToPx)
+        && (yBallPosition >= yRightBatPosition * yHwToPx)
+        && yBallPosition <= (yRightBatPosition * yHwToPx) + (batHeight * yHwToPx)
+    ) {
+        xBallDelta = -xBallDelta;
+    }
 
 }
 
 // function countCoords() {
-//     let xVwToPx = window.innerWidth/100;
+//     let xVwToPx = windowWidth/100;
 //     let yHwToPx = window.innerHeight/100;
 //
 //     // Top of Bat
