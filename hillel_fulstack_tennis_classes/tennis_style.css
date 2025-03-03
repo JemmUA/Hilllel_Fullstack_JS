@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+#mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: darkgreen;
+    font-size: 15rem;
+    color: yellow;
+}
