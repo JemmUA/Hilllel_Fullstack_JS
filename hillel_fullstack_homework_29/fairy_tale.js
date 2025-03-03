@@ -1,12 +1,6 @@
 export function isFairyTale(assertion) {
-
-    return assertion !== "undefined";
-
-    if (assertion === true) {
-        return true;
-    }
-
-    if (typeof(assertion) !== "boolean") {
-        return false;
-    }
+    console.log("Assertion:", assertion);
+    return assertion !== "boolean" || assertion === "undefined";
 }
+
+isFairyTale("Good story");

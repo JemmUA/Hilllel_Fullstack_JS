@@ -1,6 +1,14 @@
-import {weekFn} from "./week.js";
+import {weekFn} from "./../week.js";
 
 describe("function weekFn", () => {
+
+    beforeAll(() => {
+        console.log("beforeAll performs before all test in describe")
+    });
+
+    afterAll(() => {
+        console.log("afterAll performs after all test in describe")
+    });
 
     it("5 - should to return 'П'ятниця'", () => {
         expect(weekFn(5)).toBe("П'ятниця");
@@ -35,7 +43,7 @@ describe("function weekFn", () => {
     });
 
     it("null - should to return null", () => {
-        () => expect(null).toThrow("argument is null");
+        () => expect(weekFn(null)).toThrow("argument is null");
     });
 });
 

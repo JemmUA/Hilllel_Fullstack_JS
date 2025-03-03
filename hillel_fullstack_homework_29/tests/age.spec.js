@@ -1,4 +1,4 @@
-import {ageClassification} from "./age.js";
+import {ageClassification} from "./../age.js";
 
 describe("function ageClassification", () => {
 
@@ -30,8 +30,11 @@ describe("function ageClassification", () => {
       expect(ageClassification()).toBeNull();
    });
 
-   it("new Object() - should to return ''", () => {
-      expect(ageClassification(new Object)).toBe('');
+   it("object - should to return ''", () => {
+      expect(ageClassification({
+         name: "Bob",
+         age: 10
+      })).toBe('');
    });
 
    it("null - should to throw error 'Argument is null'", () => {
