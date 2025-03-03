@@ -1,8 +1,7 @@
-class Element {
-    constructor(xPos, yPos, width, height, roundCorner,
-                backgroundColor, color, fontSize, textContent,
-                opacity = 1,
-                position = "absolute", ) {
+export class Element {
+    constructor(
+        xPos, yPos, width, height, roundCorner, backgroundColor, color, fontSize, textContent,
+        opacity = 1, position = "absolute", ) {
         this.xPos = xPos;
         this.yPos = yPos;
         this.width = width;
@@ -22,7 +21,6 @@ class Element {
         container.appendChild(element);
         return element;
     }
-
 
     moveElement(xOffset, yOffset) {
         this.xPos += xOffset;
