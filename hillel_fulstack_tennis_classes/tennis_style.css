@@ -14,8 +14,7 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color: darkgreen;
-    opacity: 1;
+    /*background-color: darkgreen;*/
     font-size: 15rem;
     color: yellow;
 }
