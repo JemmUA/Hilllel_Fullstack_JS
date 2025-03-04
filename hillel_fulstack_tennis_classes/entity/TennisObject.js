@@ -1,15 +1,16 @@
-export class Element {
+export class TennisObject {
     constructor(
-        xPos, yPos, width, height, roundCorner, backgroundColor, color, fontSize, textContent,
-        opacity = 1, position = "absolute", ) {
+        xPos, yPos, width, height, borderRadius, backgroundColor, color, fontSize, zIndex,
+        textContent, opacity = 1, position = "absolute") {
         this.xPos = xPos;
         this.yPos = yPos;
         this.width = width;
-        this.heigt = height;
-        this.roundCorner = roundCorner;
-        this.bckgroundColor = backgroundColor;
+        this.height = height;
+        this.borderRadius = borderRadius;
+        this.backgroundColor = backgroundColor;
         this.color = color;
         this.fontSize = fontSize;
+        this.zIndex = zIndex;
         this.textContent = textContent;
         this.opacity = opacity;
         this.position = position;

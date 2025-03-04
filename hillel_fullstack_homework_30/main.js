@@ -10,7 +10,7 @@ console.log('#11. JavaScript homework example file')
 
 function isValidEmail(email) {
   // code here
-    const regExEmail = /[a-z0-9]{2,}@[a-z]{2,}\.[a-z]{2,8}/;
+    const regExEmail = /^[a-z0-9]{2,}@[a-z]{2,}\.[a-z]{2,5}$/;
     return regExEmail.test(email);
 }
 
@@ -31,7 +31,7 @@ console.log(isValidEmail('invalid-email'))       // Повинно вивест�
 
 function isValidUrl(url) {
   // code here
-    const regExUrl = /[htp|htps]:\/\/w{3}\.[a-z0-9]{2,}\.[a-z]{2,8}/;
+    const regExUrl = /^http|https:\/\/w{3}\.[a-z0-9]{2,}\.[a-z]{2,8}$/;
     return regExUrl.test(url);
 }
 
