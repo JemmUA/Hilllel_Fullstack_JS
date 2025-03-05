@@ -30,7 +30,8 @@ export class TennisObject {
         domElement.style.height = `${this.height}px`;
         domElement.style.borderRadius = `${this.borderRadius}%`;
         domElement.style.zIndex = `${this.zIndex}`;
-        domElement.style.display = `${this.position}`;
+        domElement.style.opacity = `${this.opacity}`;
+        domElement.style.display = `${this.display}`;
         domElement.style.position = `${this.position}`;
         domElement.style.top = `${this.yPos}px`;
         domElement.style.left = `${this.xPos}px`;
