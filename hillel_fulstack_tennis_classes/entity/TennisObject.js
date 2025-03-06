@@ -1,8 +1,9 @@
 export class TennisObject {
     constructor(
-        xPos, yPos, xWidthPos, yHeightPos, width, height, borderRadius, backgroundColor,
+        tagName, xPos, yPos, xWidthPos, yHeightPos, width, height, borderRadius, backgroundColor,
         color, fontSize, textAlign, zIndex, textContent, opacity = 1,
         display="initial", position = "absolute") {
+        this.tagName = tagName;
         this.xPos = xPos;
         this.yPos = yPos;
         this.xWidthPos = xWidthPos;
@@ -28,9 +29,9 @@ export class TennisObject {
         return element;
     }
 
-    domElementFromObject (textContent, container) {
+    domElementFromObject (tagName, textContent, container) {
 
-        const domElement = this.createDomElement("div", "", container);
+        const domElement = this.createDomElement(tagName, "", container);
 
         domElement.style.width = `${this.width}px`;
         domElement.style.height = `${this.height}px`;
