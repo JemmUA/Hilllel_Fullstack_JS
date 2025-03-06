@@ -23,9 +23,10 @@ let markupWidth = windowHeight/33;
 const mainContainer = document.querySelector("#mainContainer");
 
 const tennisObjects = buildScene(mainContainer);
-console.log(tennisObjects);
+// console.log(tennisObjects);
 drawScene(tennisObjects, mainContainer);
-// let interval = setInterval(mainEngine, frequency);
+
+let interval = setInterval(mainEngine, frequency);
 
 // addEventListener("resize", (event) => {
 //     clearScene();
@@ -40,91 +41,95 @@ function buildScene (mainContainer) {
     const tennisSceneObjects = [];
     //ball
     const ball = new TennisObject((
-        windowWidth/2)-120,(windowHeight/2)-130, ballSize, ballSize, 50,
-        "tomato", "", "", "1000", "", 1,
+        windowWidth/2)-120,(windowHeight/2)-130, "", "", ballSize, ballSize, 50,
+        "tomato", "", "", "", "1000", "", 1,
         "absolute");
     tennisSceneObjects.push(ball);
-    // const ballElement = ball.createDomElementFromObject("", mainContainer);
+    // const ballElement = ball.domElementFromObject("", mainContainer);
 
     //left bat
     const leftBat = new TennisObject(
-        markupWidth + (batWidth/2), windowHeight/2 - batHeight/2, batWidth, batHeight, 0, colorLeftBat,
-        "white", 10, 100, "", 1, "initial", "absolute" );
+        markupWidth + (batWidth/2), windowHeight/2 - batHeight/2, "", "",  batWidth, batHeight, 0, colorLeftBat,
+        "white", 10, "", 100, "", 1, "initial", "absolute" );
     tennisSceneObjects.push(leftBat);
-    // const leftBatElement = leftBat.createDomElementFromObject("leftBat", mainContainer);
+    // const leftBatElement = leftBat.domElementFromObject("leftBat", mainContainer);
 
     //right bat
     const rightBat = new TennisObject(
-        windowWidth - markupWidth - (batWidth * 1.5) , windowHeight/2 - batHeight/2, batWidth, batHeight, 0, colorRightBat,
-        "white", 10,100, "", 1, "initial", "absolute" );
+        "", windowHeight/2 - batHeight/2, markupWidth + (batWidth/2), "",  batWidth, batHeight, 0, colorRightBat,
+        "white", 10, "",100, "", 1, "initial", "absolute" );
     tennisSceneObjects.push(rightBat);
-    // const rightBatElement = rightBat.createDomElementFromObject("rightBat", mainContainer);
+    // const rightBatElement = rightBat.domElementFromObject("rightBat", mainContainer);
 
     //lawn
     const lawn = new TennisObject(
-        0, 0, windowWidth, windowHeight, 0, colorLawn, "white", 10,
-        -1000, "", 1, "initial", "absolute" );
+        0, 0,  "", "", windowWidth, windowHeight, 0,
+        colorLawn, "white", 10,  "", -1000, "", 1,
+        "initial", "absolute" );
     tennisSceneObjects.push(lawn);
-    // const lawnElement = lawn.createDomElementFromObject("lawn", mainContainer);
+    // const lawnElement = lawn.domElementFromObject("lawn", mainContainer);
 
     //top markup
     const topMarkup = new TennisObject(
-      0, 0, windowWidth, windowHeight/33, 0, colorMarkup,
-        "white", "", 1, "", "absolute");
+      0, 0, "", "",  windowWidth, windowHeight/33, 0,
+        colorMarkup, "white", "",  "",1, "", "absolute");
     tennisSceneObjects.push(topMarkup);
-    // const topMarkupElement = topMarkup.createDomElementFromObject("", mainContainer);
+    // const topMarkupElement = topMarkup.domElementFromObject("", mainContainer);
 
     //bottom markup
     const bottomMarkup = new TennisObject(
-      0, windowHeight - markupWidth, windowWidth, markupWidth, 0, colorMarkup,
-        "white", "", 1, "", "absolute");
+      0, windowHeight - markupWidth, "", "",  windowWidth, markupWidth, 0, colorMarkup,
+        "white", "", "", 1, "", "absolute");
     tennisSceneObjects.push(bottomMarkup);
-    // const bottomMarkupElement = bottomMarkup.createDomElementFromObject("", mainContainer);
+    // const bottomMarkupElement = bottomMarkup.domElementFromObject("", mainContainer);
 
     //left markup
     const leftMarkup = new TennisObject(
-      0, 0, markupWidth, windowHeight, 0, colorMarkup, "white", "",
-        1, "", 1, "initial", "absolute");
+      0, 0,  "", "", markupWidth, windowHeight, 0,
+        colorMarkup, "white", "", "", 1, "", 1, "initial", "absolute");
     tennisSceneObjects.push(leftMarkup);
-    // const leftMarkupElement = leftMarkup.createDomElementFromObject("", mainContainer);
+    // const leftMarkupElement = leftMarkup.domElementFromObject("", mainContainer);
 
     //right markup
     const rightMarkup = new TennisObject(
-        windowWidth - markupWidth, 0, markupWidth, windowHeight, 0, colorMarkup, "white", "",
-        1, "", 1, "initial", "absolute");
+        "", 0, 0, "",  markupWidth, windowHeight, 0, colorMarkup, "white", "",
+        1, "", "", 1, "initial", "absolute");
     tennisSceneObjects.push(rightMarkup);
-    // const rightMarkupElement = rightMarkup.createDomElementFromObject("", mainContainer);
+    // const rightMarkupElement = rightMarkup.domElementFromObject("", mainContainer);
 
     //net
     const netMarkup = new TennisObject(
-        (windowWidth - markupWidth)/2, 0, markupWidth, windowHeight, 0, colorNet,
-        "white", "", -100, "", "absolute");
+        (windowWidth - markupWidth)/2, 0, "", "",  markupWidth, windowHeight, 0, colorNet,
+        "white", "", "", -100, "", "absolute");
     tennisSceneObjects.push(netMarkup);
-    // const netMarkupElement = netMarkup.createDomElementFromObject("", mainContainer);
+    // const netMarkupElement = netMarkup.domElementFromObject("", mainContainer);
 
     //score left
     const scoreLeft = new TennisObject(
-        (windowWidth)/10, windowHeight/33 - windowHeight/20, windowWidth/10,
-        windowHeight/10, 0, "",
-        colorCount, "20", 500, "000", 0.3, "initial","absolute");
+        windowWidth/4 - windowWidth/10, windowHeight/33 - windowHeight/20, "", "",
+        windowWidth/10, windowHeight/10, 0, "", colorCount,
+        "20", "center", 500, "000", 0.3, "initial",
+        "absolute");
     tennisSceneObjects.push(scoreLeft);
-    // const countLeftElement = scoreLeft.createDomElementFromObject("", mainContainer);
+    // const countLeftElement = scoreLeft.domElementFromObject("", mainContainer);
 
     //score right
     const scoreRight = new TennisObject(
-        windowWidth - (windowWidth)/2.2, windowHeight/33 - windowHeight/20, windowWidth/10,
-        windowHeight/10, 0, "",
-        colorCount, "20", 500, "000",  0.3, "initial", "absolute");
+        "", windowHeight/33 - windowHeight/20, windowWidth/4, "",  windowWidth/10,
+        windowHeight/10, 0, "", colorCount,
+        "20", "center", 500, "000",  0.3, "initial",
+        "absolute");
     tennisSceneObjects.push(scoreRight);
-    // const countRightElement = scoreRight.createDomElementFromObject("", mainContainer);
+    // const countRightElement = scoreRight.domElementFromObject("", mainContainer);
 
     // pause
     const pause = new TennisObject(
-        windowWidth/4, windowHeight/2.5 - windowHeight/15, windowWidth/10,
-        windowHeight/10, 0, "",
-        colorPause, `${windowWidth/100}`, 500, "PAUSE",  1, "none", "absolute");
+        windowWidth/4, windowHeight/2.5 - windowHeight/15, "", "",
+        windowWidth/10, windowHeight/10, 0, "", colorPause,
+        `${windowWidth/100}`, "center", 500, "PAUSE",  1,
+        "none", "absolute");
     tennisSceneObjects.push(pause);
-    // const pauseElement = pause.createDomElementFromObject("", mainContainer);
+    // const pauseElement = pause.domElementFromObject("", mainContainer);
 
     return tennisSceneObjects;
 }
@@ -135,9 +140,7 @@ function drawScene(objects, container) {
     windowHeight = window.innerHeight;
 
     console.log("Draw scene...");
-    objects.forEach(object => {
-        object.createDomElementFromObject("", container);
-    })
+    objects.forEach(object => object.domElementFromObject("", container));
 }
 
 // function clearScene() {
@@ -148,9 +151,13 @@ function drawScene(objects, container) {
 
 function mainEngine () {
     console.log("running Engine");
-    // xBallPosition+=xBallDelta;
-    // yBallPosition+=yBallDelta;
-    // ball.style.top = `${yBallPosition}px`;
+    xBallPosition += xBallDelta;
+    yBallPosition += yBallDelta;
+    // const ball = tennisObjects[0];
+    // console.log(ball);
+    // ball.xPos = `${xBallPosition}px`;
+
     // ball.style.left = `${xBallPosition}px`;
+    // ball.style.top = `${yBallPosition}px`;
     // collisionsWalls(xBallPosition, yBallPosition);
 }

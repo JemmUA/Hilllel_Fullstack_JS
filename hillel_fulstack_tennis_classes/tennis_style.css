@@ -13,12 +13,13 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    /*background-color: darkgreen;*/
     font-size: 15rem;
+    text-align: center;
     color: yellow;
 }
 
 #press_any_key {
     color: white;
     font-size: 3rem;
+    text-align: center;
 }
