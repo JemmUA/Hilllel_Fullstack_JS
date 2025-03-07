@@ -12,6 +12,7 @@ let batHeight = windowHeight/5;
 let xBallPosition = 0;
 let yBallPosition = 0;
 let batWidth = windowWidth/40;
+const colorBall = "tomato";
 const colorTitle = "yellow";
 const colorPressAnyKey = "white";
 const colorLeftBat = "blue";
@@ -42,7 +43,7 @@ function buildScene (mainContainer) {
     //ball
     const ball = new TennisObject(
         "div",windowWidth/2.35,windowHeight/2.75, "", "", ballSize, ballSize, 50,
-        "tomato", "", "", "", "3000", "", 1,
+        colorBall, "", "", "", "3000", "", 1,
         "initial", "absolute");
     tennisSceneObjects.push(ball);
     // const ballElement = ball.domElementFromObject("", mainContainer);
@@ -50,14 +51,14 @@ function buildScene (mainContainer) {
     //left bat
     const leftBat = new TennisObject(
         "div",markupWidth + (batWidth/2), windowHeight/2 - batHeight/2, "", "",  batWidth, batHeight, 0, colorLeftBat,
-        "white", 10, "", 100, "", 1, "initial", "absolute" );
+        "", 10, "", 100, "", 1, "initial", "absolute" );
     tennisSceneObjects.push(leftBat);
     // const leftBatElement = leftBat.domElementFromObject("leftBat", mainContainer);
 
     //right bat
     const rightBat = new TennisObject(
         "div","", windowHeight/2 - batHeight/2, markupWidth + (batWidth/2), "",  batWidth, batHeight, 0, colorRightBat,
-        "white", 10, "",100, "", 1, "initial", "absolute" );
+        "", 10, "",100, "", 1, "initial", "absolute" );
     tennisSceneObjects.push(rightBat);
     // const rightBatElement = rightBat.domElementFromObject("rightBat", mainContainer);
 
@@ -167,7 +168,7 @@ function rebuildScene(tennisSceneObjects) {
 //ball
     tennisSceneObjects[0].setObjectAttributes(
         "div",windowWidth/2.35,windowHeight/2.75, "", "",
-        ballSize, ballSize, 50, "tomato", "", "",
+        ballSize, ballSize, 50, colorBall, "", "",
         "", "3000", "", 1, "initial", "absolute");
 
 //left bat
@@ -278,7 +279,7 @@ function removeDomElements() {
     // domElements.forEach((element, index) => {
     //         if ((index > 6) && (index === domElements.length - 1)) {
     //             console.log(index);
-    //             element.remove();
+    //             element.
     //         }
     //     });
     // console.log(domElements);
