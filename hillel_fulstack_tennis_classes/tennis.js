@@ -27,10 +27,10 @@ const mainContainer = document.querySelector("#mainContainer");
 let tennisObjects = buildScene(mainContainer);
 // console.log(tennisObjects);
 drawScene(tennisObjects, mainContainer);
-
 // let interval = setInterval(mainEngine, frequency);
 
 addEventListener("resize", (event) => {
+    removeDomElements();
     tennisObjects = rebuildScene(tennisObjects);
     drawScene(tennisObjects, mainContainer);
 });
@@ -255,7 +255,7 @@ function rebuildScene(tennisSceneObjects) {
         windowWidth/400, "center", 1000, "Press any key",
         1, "initial", "absolute");
 
-return tennisSceneObjects;
+    return tennisSceneObjects;
 }
 
 function mainEngine () {
@@ -269,4 +269,17 @@ function mainEngine () {
     // ball.style.left = `${xBallPosition}px`;
     // ball.style.top = `${yBallPosition}px`;
     // collisionsWalls(xBallPosition, yBallPosition);
+}
+
+function removeDomElements() {
+    console.log("Remove Dom Elements...");
+    // const domElements = document.querySelectorAll('*');
+    // domElements.forEach((element, index) => console.log(index, element));
+    // domElements.forEach((element, index) => {
+    //         if ((index > 6) && (index === domElements.length - 1)) {
+    //             console.log(index);
+    //             element.remove();
+    //         }
+    //     });
+    // console.log(domElements);
 }
