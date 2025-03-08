@@ -7,20 +7,33 @@
   </head>
   <body>
     <h1>Домашня робота 31. ДЗ 31.1. Асинхронні операції та робота з API в JavaScript.</h1>
-  <label for="inputCity" class="weather">Введіть англійською</label>
 
-  <input type="text" id="inputCity" name="" placeholder="місто" class="weather" required/>
-  <button id="weather" type="submit" class="weather">Погода</button>
-  <br><br>
-  <div id="city" class="weather">Місто</div>
-  <div id="temperature" class="weather">Температура</div>
-  <div id="pressure" class="weather">Тиск</div>
-  <div id="description" class="weather">Опис</div>
-  <div id="humidity" class="weather">Вологість</div>
-  <div id="speed" class="weather">Швидкість вітру</div>
-  <div id="deg" class="weather">Напрям вітру</div>
-  <img class="icon" id="icon" src="" alt="weather icon" title="weather">
+    <div id="mainContainer">
+      <div>
+        <h2>Погода</h2>
+        <label for="inputCity" class="weather">Введіть англійською</label>
+        <input type="text" id="inputCity" name="" placeholder="місто" class="weather" required/>
+        <button id="weather" type="submit" class="weather">Погода</button>
+        <br><br>
+        <div id="city" class="weather">Місто</div>
+        <div id="temperature" class="weather">Температура</div>
+        <div id="pressure" class="weather">Тиск</div>
+        <div id="description" class="weather">Опис</div>
+        <div id="humidity" class="weather">Вологість</div>
+        <div id="speed" class="weather">Швидкість вітру</div>
+        <div id="deg" class="weather">Напрям вітру</div>
+        <img class="icon" id="icon" src="" alt="weather icon" title="weather">
+      </div>
 
-  <script src="script.js"></script>
+      <div>
+        <h2>Пошук поста</h2>
+        <label for="inputPostId" class="post">Введіть № ID поста</label>
+        <input type="text" id="inputPostId" name="" placeholder="id (1-100)" class="post" required/>
+        <button id="findPostButton" type="submit" class="post">Пошук</button>
+
+      </div>
+
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

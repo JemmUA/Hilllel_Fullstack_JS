@@ -21,7 +21,7 @@ const weatherButton = document.getElementById("weather");
 weatherButton.addEventListener("click", () => {
     cityName = document.getElementById("inputCity").value;
     // console.log("City:", cityName);
-    if (cityName && /[A-Za-z]/.test(cityName)) {
+    if (cityName && /[A-Z]/gi.test(cityName)) {
         getWeather();
     } else {
         console.error("Невірний запит, таке місто не існує");
@@ -64,7 +64,20 @@ async function getWeather () {
 // #2 Використовуючи API https://jsonplaceholder.typicode.com/ зробити пошук поста за ід.
 // На сторінку вивести інпут та кнопку Пошук
 // Ід поста має бути введений в інпут (валідація: ід від 1 до 100)
-// Якщо знайдено пост, то вивести на сторінку нижче блок з постом і зробити кнопку для отримання коментарів до посту.
+// Якщо знайдено пост, то ви вести на сторінку нижче блок з постом і зробити кнопку для отримання коментарів до посту.
 // По клику на кнопку коментарі має бути виведені нижче під постом коментарі до цього посту
 // Якщо зробити Пошук нового поста, старий пост та коментарі видаляються зі сторінки
 // Зробити завдання використовуючи проміси, перехопити помилки.
+
+
+    let postId = "";
+    const searchButton = document.getElementById("findPostButton");
+    searchButton.addEventListener("click", () => {
+        postId = document.getElementById("inputPostId").value;
+        if (typeof(number) && postId >=1 && postId <=100) {
+            console.log("Введений ID правильний:", postId);
+            // getPost();
+        } else {
+            console.error("Невірний запит, введений ID не існує");
+        }
+    });
