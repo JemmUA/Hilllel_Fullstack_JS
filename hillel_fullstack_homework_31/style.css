@@ -1,0 +1,15 @@
+body {
+    background: #3377ff;
+}
+.weather {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+.icon {
+    width: 10vw;
+    height: 10vh;
+    &:hover {
+        width: 20vw;
+        height: 20vh;
+    }
+}
