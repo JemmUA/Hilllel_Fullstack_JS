@@ -30,11 +30,11 @@ let tennisObjects = buildScene(mainContainer);
 drawScene(tennisObjects, mainContainer);
 // let interval = setInterval(mainEngine, frequency);
 
-addEventListener("resize", (event) => {
-    removeDomElements();
-    tennisObjects = rebuildScene(tennisObjects);
-    drawScene(tennisObjects, mainContainer);
-});
+// addEventListener("resize", (event) => {
+//     removeDomElements();
+//     tennisObjects = rebuildScene(tennisObjects);
+//     drawScene(tennisObjects, mainContainer);
+// });
 
 function buildScene (mainContainer) {
     console.log("Building scene...");
