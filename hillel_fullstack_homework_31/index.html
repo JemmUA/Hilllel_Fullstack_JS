@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Домашня робота 31. ДЗ 31.1. Асинхронні операції та робота з API в JavaScript.</h1>
+    <h1>Домашня робота 31.1. Асинхронні операції та робота з API в JavaScript.</h1>
 
     <div id="main__container">
       <div id="weather__container">
         <h2>Погода</h2>
-        <label for="inputCity" class="weather">Введіть англійською</label>
-        <input type="text" id="inputCity" name="" placeholder="місто" class="weather" required/>
+        <label for="inputCity" class="weather">Місто</label>
+        <input type="text" id="inputCity" name="" placeholder="місто англійською" class="weather" required/>
         <button id="weather" type="submit" class="weather">Погода</button>
         <br>
         <div id="city" class="weather">Місто</div>
@@ -28,9 +28,16 @@
 
       <div>
         <h2>Пошук поста</h2>
-        <label for="inputPostId" class="post">Введіть № ID поста</label>
+        <label for="inputPostId" class="post">Введіть ID поста</label>
         <input type="text" id="inputPostId" name="" placeholder="id (1-100)" class="post" required/>
         <button id="findPostButton" type="submit" class="post">Пошук</button>
+        <br><br>
+        <div id="postByID" class="post">Пост ID</div>
+        <div id="postTitle" class="post__title">Заголовок</div>
+        <div id="postBody" class="post__body">Пост</div>
+        <button id="searchForComments" type="submit" class="post__comments">Пошук коментарів</button>
+        <div id="comments" class="post__comments">Коментарі</div>
+
       </div>
 
     </div>

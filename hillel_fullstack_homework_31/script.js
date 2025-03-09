@@ -42,10 +42,6 @@ weatherButton.addEventListener("click", () => {
 
 async function getWeather () {
     try {
-        // console.log("City:", cityName);
-        // weatherIcon.classList.toggle("visible");
-        // weatherIcon.classList.toggle("hidden");
-
         const weatherSource = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
         const data = await fetch(weatherSource).then(response => {
             if (!response.ok) {
@@ -89,36 +85,64 @@ async function getWeather () {
 // Якщо зробити Пошук нового поста, старий пост та коментарі видаляються зі сторінки
 // Зробити завдання використовуючи проміси, перехопити помилки.
 
-
-    let postId = "";
+    let postId;
     const searchButton = document.getElementById("findPostButton");
     searchButton.addEventListener("click", () => {
-        postId = document.getElementById("inputPostId").value;
-        if (typeof(number) && postId >=1 && postId <=100) {
-            console.log("Введений ID правильний:", postId);
-            // getPost();
+        postId = Number(document.getElementById("inputPostId").value);
+        console.log("PostID:", postId);
+        console.log("Type of PostID:", typeof postId);
+        if (typeof postId === "number" && postId >= 1 && postId <= 100) {
+            console.log("Введений ID корректний:", postId);
+            getPost();
         } else {
             console.error("Невірний запит, введений ID не існує");
         }
     });
 
-
     async function getPost () {
+
         try {
-            const postSource = `https://jsonplaceholder.typicode.com/`;
-            const data = await fetch(postSource).then(response => {
-                if (!response.ok) {
-                    throw new Error ("Відповідь на запит - невдала");
-                } else {
-                    console.log(response);
-                    return response.json();
-                }
+            // const postSource = `https://jsonplaceholder.typicode.com/`;
+            const postSource = `https://jsonplaceholder.typicode.com/posts/${postId}`;
+            const commentsSource = `https://jsonplaceholder.typicode.com/comments/${postId}`;
+            const comments = await fetch(commentsSource)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error ("Відповідь на запит - невдала");
+                    } else {
+                        console.log("Response:", response);
+                        return response.json();
+                    }
+                    })
+                .then(jsonData => {
+                        console.log("JSON Data:", jsonData);
+                        return jsonData;
+                    });
+                console.log("Коментарі:", comments);
+
+            const data = await fetch(postSource)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error ("Відповідь на запит - невдала");
+                    } else {
+                        console.log("Response:", response);
+                        return response.json();
+                    }})
+                .then(jsonData => {
+                console.log("JSON Data:", jsonData);
+                return jsonData;
             });
             console.log("Data:", data);
+            document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
+            document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
+            document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
+            document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
 
         } catch (error) {
+            console.error("Та шо ж таке? Caught error:", error)
             throw new Error(error);
         } finally {
             console.log("At last - finally again :))");
         }
     }
+

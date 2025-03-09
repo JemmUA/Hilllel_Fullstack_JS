@@ -5,6 +5,7 @@ body {
 #main__container {
     display: flex;
     justify-content: space-around;
+    gap: 100px;
 }
 
 #weather__container {
@@ -24,20 +25,38 @@ body {
 }
 
 #weather__icon {
-    width: 10vw;
-    height: 10vh;
+    width: 15vw;
+    height: 15vh;
 
-    &:hover {
-        width: 20vw;
-        height: 20vh;
-    }
+    /*&:hover {*/
+    /*    width: 30vw;*/
+    /*    height: 30vh;*/
+    /*}*/
 }
 
 .hidden {
     display: none;
 }
 
-
 .visible {
     display: block;
 }
+
+
+.post__body {
+    background-color: #dddddd;
+}
+
+.post__title {
+    background-color: #ffffbb;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.3rem 0 0.3rem 0;
+}
+
+.post__comments {
+    background-color: #77bbdd;
+    margin: 0.3rem 0 0.3rem 0;
+
+}
+
