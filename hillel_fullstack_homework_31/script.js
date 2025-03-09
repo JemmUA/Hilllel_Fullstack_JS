@@ -18,12 +18,22 @@
 
 let cityName = "";
 const weatherButton = document.getElementById("weather");
+const searchImage = document.getElementById("search__image");
+let weatherIcon =     document.getElementById("weather__icon");
 weatherButton.addEventListener("click", () => {
     cityName = document.getElementById("inputCity").value;
     // console.log("City:", cityName);
     if (cityName && /[A-Z]/gi.test(cityName)) {
-        getWeather();
+        searchImage.classList.remove("hidden");
+        searchImage.classList.add("visible");
+        weatherIcon.classList.remove("visible");
+        weatherIcon.classList.add("hidden");
+        // As the request of weather performs very fast I have added timeout (3 seconds) just for demo
+        setTimeout( getWeather, 3000);
+        // getWeather();
     } else {
+        searchImage.classList.add("hidden");
+        searchImage.classList.remove("visible");
         console.error("Невірний запит, таке місто не існує");
     }
 });
@@ -32,7 +42,9 @@ weatherButton.addEventListener("click", () => {
 
 async function getWeather () {
     try {
-        console.log("City:", cityName);
+        // console.log("City:", cityName);
+        // weatherIcon.classList.toggle("visible");
+        // weatherIcon.classList.toggle("hidden");
 
         const weatherSource = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
         const data = await fetch(weatherSource).then(response => {
@@ -51,12 +63,20 @@ async function getWeather () {
     document.getElementById("humidity").innerHTML = "Вологість: " + data.main.humidity + " кг/м3";
     document.getElementById("speed").innerHTML = "Швидкість вітру: " + data.wind.speed + " м/с";
     document.getElementById("deg").innerHTML = "Напрям вітру: " + data.wind.deg + " град.";
-    document.getElementById("icon").src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    document.getElementById("weather__icon").src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    weatherIcon = document.getElementById("weather__icon");
 
     } catch (error) {
         throw new Error(error);
     } finally {
         console.log("At last - finally :))");
+        searchImage.classList.toggle("hidden");
+        searchImage.classList.toggle("visible");
+        console.log(weatherIcon);
+        weatherIcon.classList.remove("hidden");
+        weatherIcon.classList.add("visible");
+        // weatherIcon.classList.toggle("hidden");
+        // weatherIcon.classList.toggle("visible");
     }
 }
 

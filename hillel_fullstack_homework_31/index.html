@@ -8,13 +8,13 @@
   <body>
     <h1>Домашня робота 31. ДЗ 31.1. Асинхронні операції та робота з API в JavaScript.</h1>
 
-    <div id="mainContainer">
-      <div>
+    <div id="main__container">
+      <div id="weather__container">
         <h2>Погода</h2>
         <label for="inputCity" class="weather">Введіть англійською</label>
         <input type="text" id="inputCity" name="" placeholder="місто" class="weather" required/>
         <button id="weather" type="submit" class="weather">Погода</button>
-        <br><br>
+        <br>
         <div id="city" class="weather">Місто</div>
         <div id="temperature" class="weather">Температура</div>
         <div id="pressure" class="weather">Тиск</div>
@@ -22,7 +22,8 @@
         <div id="humidity" class="weather">Вологість</div>
         <div id="speed" class="weather">Швидкість вітру</div>
         <div id="deg" class="weather">Напрям вітру</div>
-        <img class="icon" id="icon" src="" alt="weather icon" title="weather">
+        <img id="search__image" class="hidden" alt="searching image" src="images/earth_transp_backgr.gif">
+        <img class="hidden" id="weather__icon" src="" alt="weather icon" title="weather">
       </div>
 
       <div>
@@ -30,7 +31,6 @@
         <label for="inputPostId" class="post">Введіть № ID поста</label>
         <input type="text" id="inputPostId" name="" placeholder="id (1-100)" class="post" required/>
         <button id="findPostButton" type="submit" class="post">Пошук</button>
-
       </div>
 
     </div>

@@ -2,10 +2,20 @@ body {
     background: #3377ff;
 }
 
-#mainContainer {
-    /*background: green;*/
+#main__container {
     display: flex;
     gap: 100px;
+}
+
+#weather__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#search__image {
+    width: 5vw;
+    height: 5vw;
 }
 
 .weather, .post {
@@ -13,18 +23,21 @@ body {
     font-size: 1rem;
 }
 
-.icon {
+#weather__icon {
     width: 10vw;
     height: 10vh;
+
     &:hover {
         width: 20vw;
         height: 20vh;
     }
+}
+
 .hidden {
     display: none;
 }
 
+
 .visible {
     display: block;
-}
 }
