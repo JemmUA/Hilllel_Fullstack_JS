@@ -101,3 +101,40 @@ async function getWeather () {
             console.error("Невірний запит, введений ID не існує");
         }
     });
+
+
+    // async function getPost () {
+    //     try {
+    //         const weatherSource = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
+    //         const data = await fetch(weatherSource).then(response => {
+    //             if (!response.ok) {
+    //                 throw new Error ("Відповідь на запит - невдала");
+    //             } else {
+    //                 // console.log(response);
+    //                 return response.json();
+    //             }
+    //         });
+    //         // console.log("Data:", data);
+    //         document.getElementById("city").innerHTML = "Місто: " + data.name;
+    //         document.getElementById("temperature").innerHTML = "Температура: " + data.main.temp + " °C";
+    //         document.getElementById("pressure").innerHTML = "Тиск: " + data.main.pressure + " Па";
+    //         document.getElementById("description").innerHTML = "Опис: " + data.weather[0].description;
+    //         document.getElementById("humidity").innerHTML = "Вологість: " + data.main.humidity + " кг/м3";
+    //         document.getElementById("speed").innerHTML = "Швидкість вітру: " + data.wind.speed + " м/с";
+    //         document.getElementById("deg").innerHTML = "Напрям вітру: " + data.wind.deg + " град.";
+    //         document.getElementById("weather__icon").src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    //         weatherIcon = document.getElementById("weather__icon");
+    //
+    //     } catch (error) {
+    //         throw new Error(error);
+    //     } finally {
+    //         console.log("At last - finally :))");
+    //         console.log(weatherIcon);
+    //         searchImage.classList.add("hidden");
+    //         searchImage.classList.remove("visible");
+    //         weatherIcon.classList.add("visible");
+    //         weatherIcon.classList.remove("hidden");
+    //         // weatherIcon.classList.toggle("hidden");
+    //         // weatherIcon.classList.toggle("visible");
+    //     }
+    // }
