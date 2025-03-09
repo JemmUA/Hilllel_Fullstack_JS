@@ -70,11 +70,11 @@ async function getWeather () {
         throw new Error(error);
     } finally {
         console.log("At last - finally :))");
-        searchImage.classList.toggle("hidden");
-        searchImage.classList.toggle("visible");
         console.log(weatherIcon);
-        weatherIcon.classList.remove("hidden");
+        searchImage.classList.add("hidden");
+        searchImage.classList.remove("visible");
         weatherIcon.classList.add("visible");
+        weatherIcon.classList.remove("hidden");
         // weatherIcon.classList.toggle("hidden");
         // weatherIcon.classList.toggle("visible");
     }
