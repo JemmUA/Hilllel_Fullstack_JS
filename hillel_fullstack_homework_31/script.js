@@ -25,11 +25,13 @@ weatherButton.addEventListener("click", () => {
     cityName = document.getElementById("inputCity").value;
     // console.log("City:", cityName);
     if (cityName && /[A-Z]/gi.test(cityName)) {
+        inputCityError.classList.add("hidden");
+        inputCityError.classList.remove("visible");
         searchImage.classList.remove("hidden");
         searchImage.classList.add("visible");
         weatherIcon.classList.remove("visible");
         weatherIcon.classList.add("hidden");
-        // As the request of weather performs very fast I have added timeout (3 seconds) just for demo
+        // As the request of weather performs very fast I have used timeout (3 seconds) just for demo
         setTimeout( getWeather, 3000);
         // getWeather();
     } else {
@@ -46,11 +48,6 @@ weatherButton.addEventListener("click", () => {
 
 async function getWeather () {
     try {
-        inputCityError.classList.add("hidden");
-        inputCityError.classList.remove("visible");
-        weatherIcon.classList.add("hidden");
-        weatherIcon.classList.remove("visible");
-
         const weatherSource = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
         const data = await fetch(weatherSource).then(response => {
             if (!response.ok) {
@@ -105,6 +102,8 @@ async function getWeather () {
         console.log("Type of PostID:", typeof postId);
         if (typeof postId === "number" && postId >= 1 && postId <= 100) {
             console.log("Введений ID корректний:", postId);
+            inputPostError.classList.add("hidden");
+            inputPostError.classList.remove("visible");
             getPost();
         } else {
             inputPostError.classList.add("visible");
@@ -116,19 +115,26 @@ async function getWeather () {
     async function getPost () {
 
         try {
-            inputPostError.classList.add("hidden");
-            inputPostError.classList.remove("visible");
-
             // const postSource = `https://jsonplaceholder.typicode.com/`;
             const postSource = `https://jsonplaceholder.typicode.com/posts/${postId}`;
             const commentsSource = `https://jsonplaceholder.typicode.com/comments/${postId}`;
+
             const comments = await fetch(commentsSource)
                 .then(response => {
                     if (!response.ok) {
+
+                        // document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
+                        // document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
+                        // document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
+                        // document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
+
+
                         inputPostError.classList.add("visible");
                         inputPostError.classList.remove("hidden");
                         throw new Error ("Відповідь на запит - невдала");
                     } else {
+                        inputPostError.classList.add("hidden");
+                        inputPostError.classList.remove("visible");
                         console.log("Response:", response);
                         return response.json();
                     }
@@ -142,8 +148,12 @@ async function getWeather () {
             const data = await fetch(postSource)
                 .then(response => {
                     if (!response.ok) {
+                        inputPostError.classList.add("visible");
+                        inputPostError.classList.remove("hidden");
                         throw new Error ("Відповідь на запит - невдала");
                     } else {
+                        inputPostError.classList.add("hidden");
+                        inputPostError.classList.remove("visible");
                         console.log("Response:", response);
                         return response.json();
                     }})
@@ -151,12 +161,32 @@ async function getWeather () {
                 console.log("JSON Data:", jsonData);
                 return jsonData;
             });
+
+
+            const postById = document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
+            const postTitle = document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
+            const postBody = document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
+            const commentsBody = document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
+
+
+
+
+
             console.log("Data:", data);
             document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
             document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
             document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
             document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
 
+            postById.document.classList.toggle("hidden");
+            postById.document.classList.toggle("visible");
+            postTitle.document.classList.toggle("hidden");
+            postTitle.document.classList.toggle("visible");
+            postBody.document.classList.toggle("hidden");
+            postBody.document.classList.toggle("visible");
+            commentsBody.document.classList.toggle("hidden");
+            commentsBody.document.classList.toggle("visible");
+y
         } catch (error) {
             console.error("Та шо ж таке? Caught error:", error)
             throw new Error(error);
