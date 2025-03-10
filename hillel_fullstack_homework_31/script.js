@@ -17,7 +17,7 @@
 // http://openweathermap.org/img/w/10d.png
 
 let cityName = "";
-let inputCityError = document.getElementById("city_error");
+let inputCityError = document.getElementById("city__error");
 const weatherButton = document.getElementById("weather");
 const searchImage = document.getElementById("search__image");
 let weatherIcon =     document.getElementById("weather__icon");
