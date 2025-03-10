@@ -17,6 +17,7 @@
 // http://openweathermap.org/img/w/10d.png
 
 let cityName = "";
+let inputCityError = document.getElementById("city_error");
 const weatherButton = document.getElementById("weather");
 const searchImage = document.getElementById("search__image");
 let weatherIcon =     document.getElementById("weather__icon");
@@ -34,6 +35,9 @@ weatherButton.addEventListener("click", () => {
     } else {
         searchImage.classList.add("hidden");
         searchImage.classList.remove("visible");
+        inputCityError.classList.add("visible");
+        inputCityError.classList.remove("hidden");
+
         console.error("Невірний запит, таке місто не існує");
     }
 });
@@ -42,6 +46,11 @@ weatherButton.addEventListener("click", () => {
 
 async function getWeather () {
     try {
+        inputCityError.classList.add("hidden");
+        inputCityError.classList.remove("visible");
+        weatherIcon.classList.add("hidden");
+        weatherIcon.classList.remove("visible");
+
         const weatherSource = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
         const data = await fetch(weatherSource).then(response => {
             if (!response.ok) {
@@ -63,6 +72,8 @@ async function getWeather () {
     weatherIcon = document.getElementById("weather__icon");
 
     } catch (error) {
+        inputCityError.classList.toggle("hidden");
+        inputCityError.classList.toggle("visible");
         throw new Error(error);
     } finally {
         console.log("At last - finally :))");
@@ -86,6 +97,7 @@ async function getWeather () {
 // Зробити завдання використовуючи проміси, перехопити помилки.
 
     let postId;
+    let inputPostError = document.getElementById("post__error");
     const searchButton = document.getElementById("findPostButton");
     searchButton.addEventListener("click", () => {
         postId = Number(document.getElementById("inputPostId").value);
@@ -95,6 +107,8 @@ async function getWeather () {
             console.log("Введений ID корректний:", postId);
             getPost();
         } else {
+            inputPostError.classList.add("visible");
+            inputPostError.classList.remove("hidden");
             console.error("Невірний запит, введений ID не існує");
         }
     });
@@ -102,12 +116,17 @@ async function getWeather () {
     async function getPost () {
 
         try {
+            inputPostError.classList.add("hidden");
+            inputPostError.classList.remove("visible");
+
             // const postSource = `https://jsonplaceholder.typicode.com/`;
             const postSource = `https://jsonplaceholder.typicode.com/posts/${postId}`;
             const commentsSource = `https://jsonplaceholder.typicode.com/comments/${postId}`;
             const comments = await fetch(commentsSource)
                 .then(response => {
                     if (!response.ok) {
+                        inputPostError.classList.add("visible");
+                        inputPostError.classList.remove("hidden");
                         throw new Error ("Відповідь на запит - невдала");
                     } else {
                         console.log("Response:", response);
