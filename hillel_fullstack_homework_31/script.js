@@ -24,7 +24,7 @@ let weatherIcon =     document.getElementById("weather__icon");
 weatherButton.addEventListener("click", () => {
     cityName = document.getElementById("inputCity").value;
     // console.log("City:", cityName);
-    if (cityName && /[A-Z\D]/gi.test(cityName)) {
+    if (cityName && /[A-Z]/gi.test(cityName)) {
         inputCityError.classList.add("hidden");
         inputCityError.classList.remove("visible");
         searchImage.classList.remove("hidden");
