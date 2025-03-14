@@ -13,7 +13,7 @@
         <h2>Погода</h2>
         <label for="inputCity" class="weather">Місто</label>
         <input type="text" id="inputCity" name="" placeholder="місто англійською" class="weather" required/>
-        <div id="city__error" class="hidden weather__error">Введіть коректну назву міста англійською</div>
+        <div id="city__error" class="hidden weather__error">(404) Введіть коректну назву міста англійською</div>
         <button id="weather" type="submit" class="weather">Погода</button>
         <br>
         <div id="city" class="weather">Місто</div>
@@ -31,10 +31,10 @@
         <h2>Пошук поста</h2>
         <label for="inputPostId" class="post">Введіть ID поста</label>
         <input type="text" id="inputPostId" name="" placeholder="id (1-100)" class="post" required/>
-        <div id="post__error" class="hidden post__error">Введіть коректний ID поста</div>
         <button id="findPostButton" type="submit" class="post">Пошук</button>
+        <div id="postError" class="hidden post__error">(404) Введіть коректний ID поста</div>
         <br><br>
-        <div id="postByID" class="post hidden">Пост ID</div>
+        <div id="postID" class="post hidden">Пост ID</div>
         <div id="postTitle" class="post__title hidden">Заголовок</div>
         <div id="postBody" class="post__body hidden">Пост</div>
         <button id="searchForCommentsButton" type="submit" class="post__comments hidden">Пошук коментарів</button>

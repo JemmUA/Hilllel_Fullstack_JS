@@ -24,7 +24,6 @@ const searchImage = document.getElementById("search__image");
 let weatherIcon =     document.getElementById("weather__icon");
 weatherButton.addEventListener("click", () => {
 cityName = document.getElementById("inputCity").value;
-    // console.log("City:", cityName);
     if (cityName && /[A-Z]/gi.test(cityName)) {
         weatherLabelsShow(true);
         inputCityErrorShow(false);
@@ -77,7 +76,6 @@ weatherIcon = document.getElementById("weather__icon");
     } finally {
         console.log("At last - finally :))");
         searchImageShow(false);
-        // weatherIconShow(true);
     }
 }
 
@@ -157,26 +155,33 @@ weatherIcon = document.getElementById("weather__icon");
 // Зробити завдання використовуючи проміси, перехопити помилки.
 
     let postId;
-    let inputPostError = document.getElementById("post__error");
+    const inputPostError = document.getElementById("postError");
+    const postIdLabel = document.getElementById("postID");
     const searchButton = document.getElementById("findPostButton");
-    const searchForCommentsButton = document.getElementById("searchForCommentsButton");
+    const postLabel = document.getElementById("postBody");
+    const postTitleLabel = document.getElementById("postTitle");
+    const commentsBodyLabel = document.getElementById("comments");
+
     searchButton.addEventListener("click", () => {
         postId = Number(document.getElementById("inputPostId").value);
         console.log("PostID:", postId);
         console.log("Type of PostID:", typeof postId);
         if (typeof postId === "number" && postId >= 1 && postId <= 100) {
             console.log("Введений ID корректний:", postId);
-            inputPostError.classList.add("hidden");
-            inputPostError.classList.remove("visible");
-            searchForCommentsButton.classList.remove("hidden");
-            searchForCommentsButton.classList.add("visible");
+            inputPostErrorShow(false);
+            searchForCommentsButtonShow(true);
             getPost();
         } else {
-            inputPostError.classList.add("visible");
-            inputPostError.classList.remove("hidden");
+            inputPostErrorShow(true);
+            postIdShow(false);
+            searchForCommentsButtonShow(false);
+            postTitleShow(false);
+            postShow(false);
+            commentsShow(false)
             console.error("Невірний запит, введений ID не існує");
         }
     });
+    const searchForCommentsButton = document.getElementById("searchForCommentsButton");
 
     async function getPost () {
 
@@ -188,19 +193,23 @@ weatherIcon = document.getElementById("weather__icon");
             const comments = await fetch(commentsSource)
                 .then(response => {
                     if (!response.ok) {
-
                         document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
                         document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
                         document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
                         document.getElementById("searchForComments");
                         // document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
 
-                        inputPostError.classList.add("visible");
-                        inputPostError.classList.remove("hidden");
+                        inputPostErrorShow(true);
+                        postIdShow(false);
+                        postShow(false);
+                        postTitleShow(false);
+                        searchForCommentsButtonShow(false);
                         throw new Error ("Відповідь на запит - невдала");
                     } else {
-                        inputPostError.classList.add("hidden");
-                        inputPostError.classList.remove("visible");
+                        inputPostErrorShow(false);
+                        postShow(true);
+                        postTitleShow(true);
+                        searchForCommentsButtonShow(true);
 
                         console.log("Response:", response);
                         return response.json();
@@ -210,17 +219,14 @@ weatherIcon = document.getElementById("weather__icon");
                         console.log("JSON Data:", jsonData);
                         return jsonData;
                     });
-                console.log("Коментарі:", comments);
 
             const data = await fetch(postSource)
                 .then(response => {
                     if (!response.ok) {
-                        inputPostError.classList.add("visible");
-                        inputPostError.classList.remove("hidden");
+                        inputPostErrorShow(true);
                         throw new Error ("Відповідь на запит - невдала");
                     } else {
-                        inputPostError.classList.add("hidden");
-                        inputPostError.classList.remove("visible");
+                        inputPostErrorShow(false);
                         console.log("Response:", response);
                         return response.json();
                     }})
@@ -229,27 +235,19 @@ weatherIcon = document.getElementById("weather__icon");
                 return jsonData;
             });
 
-            console.log("Умови вводу прийняті:");
+            postIdShow(true);
+            postTitleShow(true);
+            postShow(true);
+            commentsShow(false);
 
-            console.log("вкл postById, postTitle, postBody, commentsBody");
-            document.getElementById("postByID").classList.toggle("hidden");
-            document.getElementById("postByID").classList.toggle("visible");
-            document.getElementById("postTitle").classList.toggle("hidden");
-            document.getElementById("postTitle").classList.toggle("visible");
-            document.getElementById("postBody").classList.toggle("hidden");
-            document.getElementById("postBody").classList.toggle("visible");
-
-            const postById = document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
+            const postById = document.getElementById("postID").innerHTML = `Пост № ${postId}`;
             const postTitle = document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
             const postBody = document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
 
             document.getElementById("searchForCommentsButton")
                 .addEventListener("click", () => {
-                    let commentsBody = document.getElementById("comments");
-                    commentsBody.innerHTML = `Коментарі: ` + comments.body;
-                    console.log("Comments:", commentsBody);
-                    commentsBody.classList.remove("hidden");
-                    commentsBody.classList.add("visible");
+                    let commentsBody = commentsBodyLabel.innerHTML = `Коментарі: ` + comments.body;
+                    commentsShow(true);
             });
 
         } catch (error) {
@@ -258,6 +256,65 @@ weatherIcon = document.getElementById("weather__icon");
         } finally {
             console.log("At last - finally again :))");
         }
+    }
 
+    function inputPostErrorShow (show) {
+        if (show) {
+            inputPostError.classList.add("visible");
+            inputPostError.classList.remove("hidden");
+        } else {
+            inputPostError.classList.add("hidden");
+            inputPostError.classList.remove("visible");
+        }
+    }
+
+    function searchForCommentsButtonShow (show) {
+        if (show) {
+            searchForCommentsButton.classList.add("visible");
+            searchForCommentsButton.classList.remove("hidden");
+        } else {
+            searchForCommentsButton.classList.add("hidden");
+            searchForCommentsButton.classList.remove("visible");
+        }
+    }
+
+    function postShow (show) {
+        if (show) {
+            postLabel.classList.add("visible");
+            postLabel.classList.remove("hidden");
+        } else {
+            postLabel.classList.add("hidden");
+            postLabel.classList.remove("visible");
+        }
+    }
+
+    function postTitleShow (show) {
+        if (show) {
+            postTitleLabel.classList.add("visible");
+            postTitleLabel.classList.remove("hidden");
+        } else {
+            postTitleLabel.classList.add("hidden");
+            postTitleLabel.classList.remove("visible");
+        }
+    }
+
+    function postIdShow (show) {
+        if (show) {
+            postIdLabel.classList.add("visible");
+            postIdLabel.classList.remove("hidden");
+        } else {
+            postIdLabel.classList.add("hidden");
+            postIdLabel.classList.remove("visible");
+        }
+    }
+
+    function commentsShow (show) {
+        if (show) {
+            commentsBodyLabel.classList.add("visible");
+            commentsBodyLabel.classList.remove("hidden");
+        } else {
+            commentsBodyLabel.classList.add("hidden");
+            commentsBodyLabel.classList.remove("visible");
+        }
     }
 
