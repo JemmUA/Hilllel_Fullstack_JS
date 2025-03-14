@@ -24,7 +24,7 @@ let weatherIcon =     document.getElementById("weather__icon");
 weatherButton.addEventListener("click", () => {
     cityName = document.getElementById("inputCity").value;
     // console.log("City:", cityName);
-    if (cityName && /[A-Z]/gi.test(cityName)) {
+    if (cityName && /[A-Z\D]/gi.test(cityName)) {
         inputCityError.classList.add("hidden");
         inputCityError.classList.remove("visible");
         searchImage.classList.remove("hidden");
@@ -32,8 +32,8 @@ weatherButton.addEventListener("click", () => {
         weatherIcon.classList.remove("visible");
         weatherIcon.classList.add("hidden");
         // As the request of weather performs very fast I have used timeout (3 seconds) just for demo
-        setTimeout( getWeather, 3000);
-        // getWeather();
+        // setTimeout( getWeather, 3000);
+        getWeather();
     } else {
         searchImage.classList.add("hidden");
         searchImage.classList.remove("visible");
@@ -43,8 +43,6 @@ weatherButton.addEventListener("click", () => {
         console.error("Невірний запит, таке місто не існує");
     }
 });
-// console.log("City:", cityName);
-
 
 async function getWeather () {
     try {
@@ -53,11 +51,9 @@ async function getWeather () {
             if (!response.ok) {
                 throw new Error ("Відповідь на запит - невдала");
             } else {
-            // console.log(response);
             return response.json();
             }
         });
-    // console.log("Data:", data);
     document.getElementById("city").innerHTML = "Місто: " + data.name;
     document.getElementById("temperature").innerHTML = "Температура: " + data.main.temp + " °C";
     document.getElementById("pressure").innerHTML = "Тиск: " + data.main.pressure + " Па";
@@ -74,13 +70,10 @@ async function getWeather () {
         throw new Error(error);
     } finally {
         console.log("At last - finally :))");
-        // console.log(weatherIcon);
         searchImage.classList.add("hidden");
         searchImage.classList.remove("visible");
         weatherIcon.classList.add("visible");
         weatherIcon.classList.remove("hidden");
-        // weatherIcon.classList.toggle("hidden");
-        // weatherIcon.classList.toggle("visible");
     }
 }
 
@@ -96,6 +89,7 @@ async function getWeather () {
     let postId;
     let inputPostError = document.getElementById("post__error");
     const searchButton = document.getElementById("findPostButton");
+    const searchForCommentsButton = document.getElementById("searchForCommentsButton");
     searchButton.addEventListener("click", () => {
         postId = Number(document.getElementById("inputPostId").value);
         console.log("PostID:", postId);
@@ -104,6 +98,8 @@ async function getWeather () {
             console.log("Введений ID корректний:", postId);
             inputPostError.classList.add("hidden");
             inputPostError.classList.remove("visible");
+            searchForCommentsButton.classList.remove("hidden");
+            searchForCommentsButton.classList.add("visible");
             getPost();
         } else {
             inputPostError.classList.add("visible");
@@ -123,11 +119,11 @@ async function getWeather () {
                 .then(response => {
                     if (!response.ok) {
 
-                        // document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
-                        // document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
-                        // document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
+                        document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
+                        document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
+                        document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
+                        document.getElementById("searchForComments");
                         // document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
-
 
                         inputPostError.classList.add("visible");
                         inputPostError.classList.remove("hidden");
@@ -135,6 +131,7 @@ async function getWeather () {
                     } else {
                         inputPostError.classList.add("hidden");
                         inputPostError.classList.remove("visible");
+
                         console.log("Response:", response);
                         return response.json();
                     }
@@ -162,36 +159,49 @@ async function getWeather () {
                 return jsonData;
             });
 
+            console.log("Умови вводу прийняті:");
+            console.log("Умови вводу прийняті:");
+            // document.getElementById("postByID");
+            // document.getElementById("postTitle");
+            // document.getElementById("postBody");
+            // document.getElementById("comments");
+
+            console.log("вкл postById, postTitle, postBody, commentsBody");
+            document.getElementById("postByID").classList.toggle("hidden");
+            document.getElementById("postByID").classList.toggle("visible");
+            document.getElementById("postTitle").classList.toggle("hidden");
+            document.getElementById("postTitle").classList.toggle("visible");
+            document.getElementById("postBody").classList.toggle("hidden");
+            document.getElementById("postBody").classList.toggle("visible");
+            // document.getElementById("comments").classList.toggle("hidden");
+            // document.getElementById("comments").classList.toggle("visible");
+            // postById.document.classList.toggle("visible");
+            // postTitle.document.classList.toggle("hidden");
+            // postTitle.document.classList.toggle("visible");
+            // postBody.document.classList.toggle("hidden");
+            // postBody.document.classList.toggle("visible");
+            // commentsBody.document.classList.toggle("hidden");
+            // commentsBody.document.classList.toggle("visible");
+
 
             const postById = document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
             const postTitle = document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
             const postBody = document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
-            const commentsBody = document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
-
-
-
+            // const commentsBody = document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
 
 
             console.log("Data:", data);
-            document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
-            document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
-            document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
-            document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
 
-            postById.document.classList.toggle("hidden");
-            postById.document.classList.toggle("visible");
-            postTitle.document.classList.toggle("hidden");
-            postTitle.document.classList.toggle("visible");
-            postBody.document.classList.toggle("hidden");
-            postBody.document.classList.toggle("visible");
-            commentsBody.document.classList.toggle("hidden");
-            commentsBody.document.classList.toggle("visible");
-y
         } catch (error) {
             console.error("Та шо ж таке? Caught error:", error)
             throw new Error(error);
         } finally {
             console.log("At last - finally again :))");
         }
+
+        document.getElementById("searchForCommentsButton").addEventListener("click", () => {
+            console.log("kuku");
+        });
+
     }
 
