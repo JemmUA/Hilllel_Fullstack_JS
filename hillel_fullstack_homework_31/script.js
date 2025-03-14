@@ -187,10 +187,15 @@ async function getWeather () {
             const postById = document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
             const postTitle = document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
             const postBody = document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
-            // const commentsBody = document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
 
-
-            console.log("Data:", data);
+            document.getElementById("searchForCommentsButton")
+                .addEventListener("click", () => {
+                    let commentsBody = document.getElementById("comments");
+                    commentsBody.innerHTML = `Коментарі: ` + comments.body;
+                    console.log("Comments:", commentsBody);
+                    commentsBody.classList.remove("hidden");
+                    commentsBody.classList.add("visible");
+            });
 
         } catch (error) {
             console.error("Та шо ж таке? Caught error:", error)
@@ -198,10 +203,6 @@ async function getWeather () {
         } finally {
             console.log("At last - finally again :))");
         }
-
-        document.getElementById("searchForCommentsButton").addEventListener("click", () => {
-            console.log("kuku");
-        });
 
     }
 
