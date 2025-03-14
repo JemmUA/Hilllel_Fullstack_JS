@@ -17,6 +17,7 @@
 // http://openweathermap.org/img/w/10d.png
 
 let cityName = "";
+let city = document.getElementById("city");
 let inputCityError = document.getElementById("city__error");
 const weatherButton = document.getElementById("weather");
 const searchImage = document.getElementById("search__image");
@@ -25,6 +26,7 @@ weatherButton.addEventListener("click", () => {
     cityName = document.getElementById("inputCity").value;
     // console.log("City:", cityName);
     if (cityName && /[A-Z]/gi.test(cityName)) {
+        console.log("SHOW!!!");
         inputCityError.classList.add("hidden");
         inputCityError.classList.remove("visible");
         searchImage.classList.remove("hidden");
@@ -35,14 +37,41 @@ weatherButton.addEventListener("click", () => {
         // setTimeout( getWeather, 3000);
         getWeather();
     } else {
+        console.log("HIDE!!!");
+
         searchImage.classList.add("hidden");
         searchImage.classList.remove("visible");
+        weatherIcon.classList.add("hidden");
+        weatherIcon.classList.remove("visible");
+        //
+        //
+        // city.classList.add("hidden");
+        // city.classList.remove("visible");
+        // inputCityError.classList.add("hidden");
+        // inputCityError.classList.remove("visible");
+        // weatherButton.classList.add("hidden");
+        // weatherButton.classList.remove("visible");
+        // searchImage.classList.add("hidden");
+        // searchImage.classList.remove("visible");
+
+
+
+        // inputCityError.classList.add("hidden");
+        // inputCityError.classList.remove("visible");
+        // searchImage.classList.remove("hidden");
+        // searchImage.classList.add("visible");
+        // weatherIcon.classList.remove("visible");
+        // weatherIcon.classList.add("hidden");
+
+
+
         inputCityError.classList.add("visible");
         inputCityError.classList.remove("hidden");
 
         console.error("Невірний запит, таке місто не існує");
     }
 });
+
 
 async function getWeather () {
     try {

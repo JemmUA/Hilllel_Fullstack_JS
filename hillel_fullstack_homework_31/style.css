@@ -3,9 +3,9 @@ body {
 }
 
 #main__container {
-    display: flex;
-    justify-content: space-around;
-    gap: 100px;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    gap: 5%;
 }
 
 #weather__container {
