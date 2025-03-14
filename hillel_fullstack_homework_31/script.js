@@ -23,88 +23,129 @@ const weatherButton = document.getElementById("weather");
 const searchImage = document.getElementById("search__image");
 let weatherIcon =     document.getElementById("weather__icon");
 weatherButton.addEventListener("click", () => {
-    cityName = document.getElementById("inputCity").value;
+cityName = document.getElementById("inputCity").value;
     // console.log("City:", cityName);
     if (cityName && /[A-Z]/gi.test(cityName)) {
-        console.log("SHOW!!!");
-        inputCityError.classList.add("hidden");
-        inputCityError.classList.remove("visible");
-        searchImage.classList.remove("hidden");
-        searchImage.classList.add("visible");
-        weatherIcon.classList.remove("visible");
-        weatherIcon.classList.add("hidden");
-        // As the request of weather performs very fast I have used timeout (3 seconds) just for demo
+        weatherLabelsShow(true);
+        inputCityErrorShow(false);
+        searchImageShow(true);
+        weatherIconShow(true);
+        // Due to too fast performing weather request I have used timeout (3 seconds) just for demo, to show 3 seconds GIF picture of "searching"
         // setTimeout( getWeather, 3000);
         getWeather();
     } else {
-        console.log("HIDE!!!");
-
-        searchImage.classList.add("hidden");
-        searchImage.classList.remove("visible");
-        weatherIcon.classList.add("hidden");
-        weatherIcon.classList.remove("visible");
-        //
-        //
-        // city.classList.add("hidden");
-        // city.classList.remove("visible");
-        // inputCityError.classList.add("hidden");
-        // inputCityError.classList.remove("visible");
-        // weatherButton.classList.add("hidden");
-        // weatherButton.classList.remove("visible");
-        // searchImage.classList.add("hidden");
-        // searchImage.classList.remove("visible");
-
-
-
-        // inputCityError.classList.add("hidden");
-        // inputCityError.classList.remove("visible");
-        // searchImage.classList.remove("hidden");
-        // searchImage.classList.add("visible");
-        // weatherIcon.classList.remove("visible");
-        // weatherIcon.classList.add("hidden");
-
-
-
-        inputCityError.classList.add("visible");
-        inputCityError.classList.remove("hidden");
-
+        weatherLabelsShow(false);
+        searchImageShow(false);
+        weatherIconShow(false);
+        inputCityErrorShow(true);
         console.error("Невірний запит, таке місто не існує");
     }
 });
-
 
 async function getWeather () {
     try {
         const weatherSource = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
         const data = await fetch(weatherSource).then(response => {
             if (!response.ok) {
+                weatherLabelsShow(false);
+                weatherIconShow(false);
+                inputCityErrorShow(true);
                 throw new Error ("Відповідь на запит - невдала");
             } else {
+                weatherLabelsShow(true);
+                weatherIconShow(true);
+                inputCityErrorShow(false);
             return response.json();
             }
         });
-    document.getElementById("city").innerHTML = "Місто: " + data.name;
-    document.getElementById("temperature").innerHTML = "Температура: " + data.main.temp + " °C";
-    document.getElementById("pressure").innerHTML = "Тиск: " + data.main.pressure + " Па";
-    document.getElementById("description").innerHTML = "Опис: " + data.weather[0].description;
-    document.getElementById("humidity").innerHTML = "Вологість: " + data.main.humidity + " кг/м3";
-    document.getElementById("speed").innerHTML = "Швидкість вітру: " + data.wind.speed + " м/с";
-    document.getElementById("deg").innerHTML = "Напрям вітру: " + data.wind.deg + " град.";
-    document.getElementById("weather__icon").src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-    weatherIcon = document.getElementById("weather__icon");
+
+const city = document.getElementById("city").innerHTML = "Місто: " + data.name;
+const temperature = document.getElementById("temperature").innerHTML = "Температура: " + data.main.temp + " °C";
+const pressure = document.getElementById("pressure").innerHTML = "Тиск: " + data.main.pressure + " Па";
+const description = document.getElementById("description").innerHTML = "Опис: " + data.weather[0].description;
+const humidity = document.getElementById("humidity").innerHTML = "Вологість: " + data.main.humidity + " кг/м3";
+const speed = document.getElementById("speed").innerHTML = "Швидкість вітру: " + data.wind.speed + " м/с";
+const deg = document.getElementById("deg").innerHTML = "Напрям вітру: " + data.wind.deg + " град.";
+document.getElementById("weather__icon").src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+weatherIcon = document.getElementById("weather__icon");
 
     } catch (error) {
-        inputCityError.classList.toggle("hidden");
-        inputCityError.classList.toggle("visible");
+        weatherLabelsShow(false);
+        weatherIconShow(false);
+        inputCityErrorShow(true);
         throw new Error(error);
     } finally {
         console.log("At last - finally :))");
-        searchImage.classList.add("hidden");
-        searchImage.classList.remove("visible");
-        weatherIcon.classList.add("visible");
-        weatherIcon.classList.remove("hidden");
+        searchImageShow(false);
+        // weatherIconShow(true);
     }
 }
+
+    function weatherLabelsShow(show) {
+        if (show) {
+            city.classList.add("visible");
+            city.classList.remove("hidden");
+            temperature.classList.add("visible");
+            temperature.classList.remove("hidden");
+            pressure.classList.add("visible");
+            pressure.classList.remove("hidden");
+            description.classList.add("visible");
+            description.classList.remove("hidden");
+            humidity.classList.add("visible");
+            humidity.classList.remove("hidden");
+            speed.classList.add("visible");
+            speed.classList.remove("hidden");
+            deg.classList.add("visible");
+            deg.classList.remove("hidden");
+        } else {
+            city.classList.add("hidden");
+            city.classList.remove("visible");
+            temperature.classList.add("hidden");
+            temperature.classList.remove("visible");
+            pressure.classList.add("hidden");
+            pressure.classList.remove("visible");
+            description.classList.add("hidden");
+            description.classList.remove("visible");
+            humidity.classList.add("hidden");
+            humidity.classList.remove("visible");
+            speed.classList.add("hidden");
+            speed.classList.remove("visible");
+            deg.classList.add("hidden");
+            deg.classList.remove("visible");
+        }
+    }
+
+    function inputCityErrorShow(show) {
+        if (show) {
+            inputCityError.classList.add("visible");
+            inputCityError.classList.remove("hidden");
+        } else {
+            inputCityError.classList.add("hidden");
+            inputCityError.classList.remove("visible");
+        }
+    }
+
+    function searchImageShow(show) {
+        if (show) {
+            searchImage.classList.add("visible");
+            searchImage.classList.remove("hidden");
+        } else {
+            searchImage.classList.add("hidden");
+            searchImage.classList.remove("visible");
+        }
+    }
+
+    function weatherIconShow(show) {
+        if (show) {
+            weatherIcon.classList.add("visible");
+            weatherIcon.classList.remove("hidden");
+        } else {
+            weatherIcon.classList.add("hidden");
+            weatherIcon.classList.remove("visible");
+        }
+    }
+
+
 
 // За бажанням:
 // #2 Використовуючи API https://jsonplaceholder.typicode.com/ зробити пошук поста за ід.
@@ -189,11 +230,6 @@ async function getWeather () {
             });
 
             console.log("Умови вводу прийняті:");
-            console.log("Умови вводу прийняті:");
-            // document.getElementById("postByID");
-            // document.getElementById("postTitle");
-            // document.getElementById("postBody");
-            // document.getElementById("comments");
 
             console.log("вкл postById, postTitle, postBody, commentsBody");
             document.getElementById("postByID").classList.toggle("hidden");
@@ -202,16 +238,6 @@ async function getWeather () {
             document.getElementById("postTitle").classList.toggle("visible");
             document.getElementById("postBody").classList.toggle("hidden");
             document.getElementById("postBody").classList.toggle("visible");
-            // document.getElementById("comments").classList.toggle("hidden");
-            // document.getElementById("comments").classList.toggle("visible");
-            // postById.document.classList.toggle("visible");
-            // postTitle.document.classList.toggle("hidden");
-            // postTitle.document.classList.toggle("visible");
-            // postBody.document.classList.toggle("hidden");
-            // postBody.document.classList.toggle("visible");
-            // commentsBody.document.classList.toggle("hidden");
-            // commentsBody.document.classList.toggle("visible");
-
 
             const postById = document.getElementById("postByID").innerHTML = `Пост № ${postId}`;
             const postTitle = document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
