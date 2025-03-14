@@ -197,7 +197,6 @@ weatherIcon = document.getElementById("weather__icon");
                         document.getElementById("postTitle").innerHTML = `Заголовок: ` + data.title;
                         document.getElementById("postBody").innerHTML = `Пост: ` + data.body;
                         document.getElementById("searchForComments");
-                        // document.getElementById("comments").innerHTML = `Коментарі: ` + comments.body;
 
                         inputPostErrorShow(true);
                         postIdShow(false);
