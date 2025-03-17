@@ -6,20 +6,18 @@ const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
 const plugins = [cssnano({ preset: 'default' })];
 
-// console.log("GULP!", gulp);
+// console.log("GULP! Rules!", gulp);
 
 // const PATH = {
 //
 // }
 
-
 function scssMin() {
-    return src("./src/**/*.scss")
+    return src("./src/**/*.scss", { sourcemaps: true })
         .pipe(sass()).on("error", sass.logError)
         .pipe(postcss(plugins))
         .pipe(rename({ suffix: '.min' }))
-        // .pipe(dest("./assets"));
-        .pipe(dest("./assets/styles"));
+        .pipe(dest("./assets/styles", { sourcemaps: true }));
 }
 
 function syncInit () {

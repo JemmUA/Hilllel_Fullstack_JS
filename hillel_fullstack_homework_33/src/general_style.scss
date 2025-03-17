@@ -3,12 +3,98 @@
     padding: 5px;
 }
 
-h1 {
-    color: red;
+@media screen and (max-width: 1800px) {
+    h1, h2 {
+        color: darkblue;
+    }
+
+    h1 {
+        font-size: 7rem;
+    }
+
+    h2 {
+        font-size: 5rem;
+    }
+
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #3377ff;
+    }
 }
 
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: forestgreen;
+
+@media screen and (max-width: 1200px) {
+    h1, h2 {
+        color: greenyellow;
+    }
+
+    h1 {
+        font-size: 7rem;
+    }
+
+    h2 {
+        font-size: 5rem;
+    }
+
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: darkgreen;
+    }
 }
 
+@media screen and (max-width: 992px) {
+    h1, h2 {
+        color: cyan;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: indigo;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1, h2 {
+        color: yellow;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #805e14;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h1, h2 {
+        color: aqua;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 0.7rem;
+    }
+
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: crimson;
+    }
+}
