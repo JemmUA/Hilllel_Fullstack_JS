@@ -25,8 +25,8 @@ function watchFiles() {
     syncInit();
     watch("./src/**/*.scss", scss);
     watch("./src/**/*.scss", sync);
-    // watch("./*.html", sync);
-    // watch("./assets/js/**/*.js", sync);
+    watch("./*.html", sync);
+    watch("./src/**/*.js", sync);
 }
 
 // task("scss", scss);
