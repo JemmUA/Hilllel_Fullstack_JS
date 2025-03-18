@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>HW32</title>
-  <link rel="stylesheet" href="common_style.css">
-</head>
-<body>
-  <div id="hw__header">
-    <h1>ДЗ 32.1.</h1>
-    <h2>Інтеграція зовнішнього API для живого пошуку фільмів</h2>
-  </div>
-  <form>
-    <label for="inputMovie" >Look for ...</label>
-    <input type="text" id="inputMovie" name="" placeholder="movie name" required/>
-    <button id="searchButton" type="submit">Search</button>
+  <head>
+    <meta charset="UTF-8">
+    <title>HW32</title>
+    <link rel="stylesheet" href="common_style.css">
+  </head>
 
-  </form>
+  <body>
+    <header id="hw__header">
+      <img id="img__films" src="images/film.svg" alt="image_film">
+      <h1>ДЗ 32.1.</h1>
+      <h2>Інтеграція зовнішнього API для живого пошуку фільмів</h2>
+    </header>
 
-<script src="look_for_movie.js"></script>
-</body>
+    <main>
+      <form>
+        <label for="inputMovie" class="search__movie">I search</label>
+        <input type="text" id="inputMovie" name="" placeholder="movie name" required/>
+        <button id="searchButton" type="submit">Search</button>
+      </form>
+    </main>
+
+    <script src="movies.js"></script>
+  </body>
 </html>

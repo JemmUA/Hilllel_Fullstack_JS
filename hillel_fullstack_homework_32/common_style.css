@@ -1,20 +1,32 @@
+:root {
+    --color__background: blue;
+    --color__title__background: darkblue;
+    --color__title__main: cyan;
+    --color__body__main: yellow;
+}
+
 * {
     margin: 0 auto;
-    padding: 10px;
+    padding: 5px;
 }
 
 #hw__header {
-    background-color: darkblue;
-    border: 5px solid yellow;
+    background-color: var(--color__title__background);
+    border: 10px double var(--color__title__main);
     text-align: center;
+    margin-bottom: 5vh;
+}
+
+#img__films {
+ width: 20vw;
 }
 
 body {
-    background-color: blue;
+    background-color: var(--color__background);
 }
 
 h1, h2 {
-    color: #77bbdd;
+    color: var(--color__title__main);
 }
 
 h1 {
@@ -24,3 +36,9 @@ h1 {
 h2 {
     font-size: 3rem;
 }
+
+.search__movie {
+    font-size: 1.5rem;
+    color: var(--color__body__main);
+}
+
