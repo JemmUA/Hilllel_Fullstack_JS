@@ -1,0 +1,26 @@
+* {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#hw__header {
+    background-color: darkblue;
+    border: 5px solid yellow;
+    text-align: center;
+}
+
+body {
+    background-color: blue;
+}
+
+h1, h2 {
+    color: #77bbdd;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
