@@ -3,7 +3,7 @@
     --color__title__background: darkblue;
     --color__title__main: cyan;
     --color__body__main: yellow;
-    --color__search__request__background: green;
+    --color__search__request__background: darkblue;
     --color__search__result__background: black;
     --color__search__result__text: white;
 }
@@ -45,16 +45,35 @@ h2 {
 }
 
 .search__movie {
+    padding: 2vw;
     font-size: 1.5rem;
     color: var(--color__body__main);
 }
 
 #form__search {
     background-color: var(--color__search__request__background);
-    margin: 5vw 0;
+    margin: 1vw 0;
+    padding: 2vw;
+    border: 10px double var(--color__title__main);
+
 }
 
 #searching__movie__results {
+    padding: 3vw;
+    border: 10px double var(--color__title__main);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+    gap: 2vw;
     background-color: var(--color__search__result__background);
     color: var(--color__search__result__text);
+}
+
+.movie__result {
+    border: 10px double var(--color__title__main);
+}
+
+.movie__title {
+    font-size: 4rem;
 }

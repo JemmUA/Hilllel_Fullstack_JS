@@ -2,13 +2,16 @@
 const API_KEY = '29f0bbd3';
 const API_URL = 'https://www.omdbapi.com/';
 
-
 const searchButtonElement = document.getElementById("searchButton");
-let inputMovie = document.getElementById("inputMovie");
+const inputMovieElement = document.getElementById("inputMovie");
+const searchMovieResultElement = document.getElementById("searching__movie__results");
 searchButtonElement.addEventListener("click", async () => {
-    console.log("Movie?", inputMovie.value);
-    const foundMovie = await searchMovie(inputMovie.value);
+    console.log("Movie? I like to movie it, movie it!!!", inputMovieElement.value);
+    searchMovieResultElement.innerHtml = "";
+    console.log(searchMovieResultElement);
+    const foundMovie = await searchMovie(inputMovieElement.value);
     console.log("Found Movie!:", foundMovie);
+
 });
 
 async function searchMovie(requestString) {
@@ -22,4 +25,8 @@ async function searchMovie(requestString) {
             }
         });
         return dataMovie?.Search;
+    }
+
+    function getMovieHtml (dataMovie) {
+
     }
