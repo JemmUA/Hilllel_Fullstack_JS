@@ -7,22 +7,26 @@
 
 * {
     margin: 0 auto;
-    padding: 5px;
+    padding: 0;
 }
 
 #hw__header {
     background-color: var(--color__title__background);
     border: 10px double var(--color__title__main);
     text-align: center;
-    margin-bottom: 5vh;
+    /*margin: 5vh;*/
+    padding: 5vh;
 }
 
+
+
 #img__films {
- width: 20vw;
+ width: 15vw;
 }
 
 body {
     background-color: var(--color__background);
+    padding: 5vh;
 }
 
 h1, h2 {
@@ -42,3 +46,6 @@ h2 {
     color: var(--color__body__main);
 }
 
+#form__search {
+    margin: 5vh;
+}
