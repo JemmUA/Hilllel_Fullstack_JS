@@ -30,20 +30,7 @@ searchButtonElement.addEventListener("click", async () => {
                 </div>`
                 console.log("movieHtml: ", movieHtml);
                 return movieHtml;
-
-
-
-        //     return `
-        // <div class="movie__result">
-        //     <img
-        //         alt="${movie.Title}"
-        //         src="${posterUrl}"
-        //     >
-        //     <div class="movie__title">${movie.Title}</div>
-        //     <div class="movie__year">${movie.Year}</div>
-        // </div>`
-
-        });
+        }).join("");
         // searchMovieResultElement.innerHTML = foundMovie.map(movie => getMovieHtml(movie).join(""));
         errorMovieSearchElement.innerHTML = "";
 
