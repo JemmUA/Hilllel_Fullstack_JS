@@ -6,6 +6,9 @@
     --color__search__request__background: darkblue;
     --color__search__result__background: black;
     --color__search__result__text: white;
+    --color__search__movie__title: yellow;
+    --color__search__movie__year: blue;
+    --color__search__movie__error: red;
 }
 
 * {
@@ -20,8 +23,6 @@
     /*margin: 5vh;*/
     padding: 5vh;
 }
-
-
 
 #img__films {
  width: 15vw;
@@ -62,18 +63,35 @@ h2 {
     padding: 3vw;
     border: 10px double var(--color__title__main);
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: start;
     gap: 2vw;
     background-color: var(--color__search__result__background);
     color: var(--color__search__result__text);
 }
 
 .movie__result {
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 10px double var(--color__title__main);
 }
 
 .movie__title {
-    font-size: 4rem;
+    text-align: center;
+    color: var(--color__search__movie__title);
+    font-size: 2rem;
+}
+
+.movie__year {
+    text-align: center;
+    color: var(--color__search__movie__year);
+    font-size: 1.7rem;
+}
+
+.searching__movie__error {
+    text-align: center;
+    color: var(--color__search__movie__error);
+    font-size: 3rem;
 }
