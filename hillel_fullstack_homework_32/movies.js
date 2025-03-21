@@ -1,4 +1,3 @@
-// console.log("Movie?");
 const API_KEY = '29f0bbd3';
 const API_URL = 'https://www.omdbapi.com/';
 
@@ -10,13 +9,9 @@ searchButtonElement.addEventListener("click", async () => {
     // console.log("Movie? I like to movie it, movie it!!!", inputMovieElement.value);
     searchMovieResultElement.innerHTML = "";
     errorMovieSearchElement.innerText = "Searching error... repeat late, please";
-    // console.log(searchMovieResultElement);
     const foundMovie = await searchMovie(inputMovieElement.value);
-    // console.log("Found Movie!:", foundMovie);
     try {
-        // searchMovieResultElement.innerHTML = foundMovie.map(movie => getMovieHtml(movie).slice(1, -1));
         searchMovieResultElement.innerHTML = foundMovie.map(movie => {
-            // getMovieHtml(movie);
             const posterUrl = movie.Poster?.startsWith("http") ? movie.Poster : "images/no-image.svg";
 
             const movieHtml = `
@@ -31,13 +26,11 @@ searchButtonElement.addEventListener("click", async () => {
                 console.log("movieHtml: ", movieHtml);
                 return movieHtml;
         }).join("");
-        // searchMovieResultElement.innerHTML = foundMovie.map(movie => getMovieHtml(movie).join(""));
         errorMovieSearchElement.innerHTML = "";
 
     } catch (error) {
         errorMovieSearchElement.innerHTML = `Facepalm: ${error.message}`;
     }
-    // console.log(searchMovieResultElement);
 });
 
 async function searchMovie(requestString) {
@@ -51,37 +44,7 @@ async function searchMovie(requestString) {
                 return response.json();
             }
         });
-    console.log("DataMovie: ",dataMovie);
+    // console.log("DataMovie: ",dataMovie);
     return dataMovie?.Search;
 }
 
-function getMovieHtml(dataMovie) {
-    // console.log("dataMovie: ", dataMovie);
-    const posterUrl = dataMovie.Poster?.startsWith("http") ? dataMovie.Poster : "images/no-image.svg";
-    // console.log("posterUrl: ", posterUrl);
-    // console.log("dataMovie.title: ", dataMovie.Title);
-    // console.log("dataMovie.year: ", dataMovie.Year);
-
-    // const movieHtml = `
-    // <div class="movie__result">
-    //     <img
-    //         alt="${dataMovie.Title}"
-    //         src="${posterUrl}"
-    //     >
-    //     <div class="movie__title">${dataMovie.Title}</div>
-    //     <div class="movie__year">${dataMovie.Year}</div>
-    // </div>`;
-    // console.log("movieHtml: ", movieHtml);
-    // return movieHtml;
-    //
-
-    return `
-        <div class="movie__result">
-            <img 
-                alt="${dataMovie.Title}" 
-                src="${posterUrl}"
-            >
-            <div class="movie__title">${dataMovie.Title}</div>
-            <div class="movie__year">${dataMovie.Year}</div>
-        </div>`
-}

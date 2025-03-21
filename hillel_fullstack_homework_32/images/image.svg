@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW 2018 (64-Bit) -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="210mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 21000 29700"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="35mm" height="31mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3500 3100"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
    <![CDATA[
-    .str0 {stroke:#C5C6C6;stroke-width:300;stroke-miterlimit:22.9256}
-    .fil1 {fill:none}
-    .fil0 {fill:#D9DADA}
+    .str1 {stroke:#FFED00;stroke-width:300;stroke-miterlimit:22.9256}
+    .str0 {stroke:#4D897C;stroke-width:300;stroke-miterlimit:22.9256}
+    .fil3 {fill:#FFED00}
+    .fil0 {fill:#00A0E3}
+    .fil1 {fill:#393185}
+    .fil2 {fill:#4E565A;fill-rule:nonzero}
    ]]>
   </style>
  </defs>
  <g id="Слой_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_2255152792288">
-   <rect class="fil0 str0" x="8962.66" y="12713.54" width="3074.69" height="2606.12"/>
-   <polyline class="fil1 str0" points="12037.35,15140.65 11052.81,13576.98 10168.31,14987.97 9457.55,14045.55 8962.65,14718.62 "/>
-   <circle class="fil0 str0" cx="10010.37" cy="13476.95" r="263.24"/>
-  </g>
+  <rect class="fil0" x="212.66" y="246.94" width="3074.69" height="2606.12"/>
+  <polygon class="fil1 str0" points="3342.43,2800.29 2322.62,1132.18 1406.43,2637.42 670.2,1632.05 157.57,2350.07 157.57,2991.26 3342.44,2991.26 3342.44,2927.28 "/>
+  <path class="fil2" d="M311.15 2819.66l2877.73 0 0 -2539.32 -2877.73 0 0 2539.32zm3033.3 330.34l-3344.43 0 0 -3200 3500 0 0 3200 -155.57 0z"/>
+  <circle class="fil3 str1" cx="1260.37" cy="1010.35" r="263.24"/>
  </g>
 </svg>
