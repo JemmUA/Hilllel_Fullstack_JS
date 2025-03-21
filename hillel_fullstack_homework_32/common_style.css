@@ -7,7 +7,7 @@
     --color__search__result__background: black;
     --color__search__result__text: white;
     --color__search__movie__title: yellow;
-    --color__search__movie__year: blue;
+    --color__search__movie__year: cyan;
     --color__search__movie__error: red;
 }
 
@@ -25,7 +25,7 @@
 }
 
 #img__films {
- width: 15vw;
+ width: 5vw;
 }
 
 body {
@@ -87,7 +87,7 @@ h2 {
 .movie__year {
     text-align: center;
     color: var(--color__search__movie__year);
-    font-size: 1.7rem;
+    font-size: 2rem;
 }
 
 .searching__movie__error {

@@ -9,7 +9,7 @@ const errorMovieSearchElement = document.querySelector(".searching__movie__error
 searchButtonElement.addEventListener("click", async () => {
     // console.log("Movie? I like to movie it, movie it!!!", inputMovieElement.value);
     searchMovieResultElement.innerHTML = "";
-    errorMovieSearchElement.innerHTML = "";
+    errorMovieSearchElement.innerText = "Searching error... repeat late, please";
     // console.log(searchMovieResultElement);
     const foundMovie = await searchMovie(inputMovieElement.value);
     // console.log("Found Movie!:", foundMovie);
@@ -19,18 +19,17 @@ searchButtonElement.addEventListener("click", async () => {
             // getMovieHtml(movie);
             const posterUrl = movie.Poster?.startsWith("http") ? movie.Poster : "images/no-image.svg";
 
-
             const movieHtml = `
-            <div class="movie__result">
-                <img
-                    alt="${movie.Title}"
-                    src="${posterUrl}"
-                >
+                <div class="movie__result">
+                    <img
+                        alt="${movie.Title}"
+                        src="${posterUrl}"
+                    >
                     <div class="movie__title">${movie.Title}</div>
                     <div class="movie__year">${movie.Year}</div>
-            </div>`
-        console.log("movieHtml: ", movieHtml);
-            return movieHtml;
+                </div>`
+                console.log("movieHtml: ", movieHtml);
+                return movieHtml;
 
 
 
@@ -61,7 +60,7 @@ async function searchMovie(requestString) {
             if (!response.ok) {
                 throw new Error("Відповідь на запит невдала: ", response);
             } else {
-                // console.log("Response: ",response);
+                // console.log("Response: ", response);
                 return response.json();
             }
         });
