@@ -1,0 +1,107 @@
+@use "fonts";
+
+:root {
+    --color__background: blue;
+    --color__title__background: darkblue;
+    --color__title__main: cyan;
+    --color__body__main: yellow;
+    --color__search__request__background: darkblue;
+    --color__search__result__background: black;
+    --color__search__result__text: white;
+    --color__search__movie__title: yellow;
+    --color__homework__title: yellow;
+    --color__search__movie__year: cyan;
+    --color__search__movie__error: red;
+    --font__title: "Acme", sans-serif;
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+#hw__header {
+    background-color: var(--color__title__background);
+    border: 10px double var(--color__title__main);
+    text-align: center;
+    padding: 5vh;
+}
+
+#img__films {
+    margin-top: 3vh;
+    width: 10vw;
+}
+
+body {
+    background-color: var(--color__background);
+    padding: 5vh;
+}
+
+h1, h2 {
+    color: var(--color__title__main);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.hw__title {
+    font-family: var(--font__title);
+    font-size: 2rem;
+    color: var(--color__homework__title);
+}
+
+.search__movie {
+    padding: 2vw;
+    font-size: 1.5rem;
+    color: var(--color__body__main);
+}
+
+#form__search {
+    background-color: var(--color__search__request__background);
+    margin: 1vw 0;
+    padding: 2vw;
+    border: 10px double var(--color__title__main);
+
+}
+
+#searching__movie__results {
+    padding: 3vw;
+    border: 10px double var(--color__title__main);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2vw;
+    background-color: var(--color__search__result__background);
+    color: var(--color__search__result__text);
+}
+
+.movie__result {
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 10px double var(--color__title__main);
+}
+
+.movie__title {
+    text-align: center;
+    color: var(--color__search__movie__title);
+    font-size: 2rem;
+}
+
+.movie__year {
+    text-align: center;
+    color: var(--color__search__movie__year);
+    font-size: 2rem;
+}
+
+.searching__movie__error {
+    text-align: center;
+    color: var(--color__search__movie__error);
+    font-size: 3rem;
+}
