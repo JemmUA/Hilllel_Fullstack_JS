@@ -7,7 +7,7 @@ const inputMovieElement = document.getElementById("inputMovie");
 const searchMovieResultElement = document.getElementById("searching__movie__results");
 const errorMovieSearchElement = document.querySelector(".searching__movie__error");
 searchButtonElement.addEventListener("click", async () => {
-    // console.log("Movie? I like to movie it, movie it!!!", inputMovieElement.value);
+    console.log("Movie? I like to movie it, movie it!!!", inputMovieElement.value);
     searchMovieResultElement.innerHTML = "";
     errorMovieSearchElement.innerText = "Searching error... repeat late, please";
     const foundMovie = await searchMovie(inputMovieElement.value);
