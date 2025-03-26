@@ -3,16 +3,11 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    // mode: 'development',
     entry: './src/movies.js',
     output: {
         filename: '[name].bundle.[contenthash].js',
         path: path.resolve(__dirname, 'dist')
-    },
-    target: 'web',
-    devServer: {
-        port: 4200,
-        hot: false
     },
     plugins: [
         new HTMLWebpackPlugin({ template: './src/index.html' }),
