@@ -57,7 +57,7 @@ type User = {
     isActive: boolean
 }
 
-function createUser(name: string, age: number, isActive: boolean = true)  {
+function createUser(name: string, age: number, isActive: boolean = true):User  {
   // code here
     type RequiredUser = Required<User>;
     const user: RequiredUser = {
