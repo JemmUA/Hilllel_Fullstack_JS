@@ -60,13 +60,16 @@ type User = {
 function createUser(name: string, age: number, isActive: boolean = true)  {
   // code here
     type RequiredUser = Required<User>;
-    const user =  new RequiredUser (name, age, isActive);
-
+    const user: RequiredUser = {
+        name: name,
+        age: age,
+        isActive: isActive,
+    }
     return user;
 }
 
-// const newUser = createUser('Анна', 25, true)
-// console.log(newUser)
+const newUser = createUser('Анна', 25, true)
+console.log(newUser)
 
 /*
  * #3
@@ -90,16 +93,23 @@ function createUser(name: string, age: number, isActive: boolean = true)  {
  *
  */
 
-enum OrderStatus {}
+enum OrderStatus {
+    Pending = "Замовлення очікує на обробку",
+    Shipped = "Замовлення було відправлено",
+    Delivered = "Замовлення доставлено",
+    Cancelled = "Замовлення скасовано"
+}
 
-function getOrderStatus() {
+function getOrderStatus(orderStatus: string):string {
   // code here
+    return orderStatus;
 }
 
 // Приклад виклику функції
-// console.log(getOrderStatus(OrderStatus.Pending))
-// console.log(getOrderStatus(OrderStatus.Shipped))
-// console.log(getOrderStatus(OrderStatus.Delivered))
-// console.log(getOrderStatus(OrderStatus.Cancelled))
+console.log(getOrderStatus(OrderStatus.Pending))
+console.log(getOrderStatus(OrderStatus.Shipped))
+console.log(getOrderStatus(OrderStatus.Delivered))
+console.log(getOrderStatus(OrderStatus.Cancelled))
 
 // export { sumArray, createUser, OrderStatus, getOrderStatus }
+console.log("Ave webpack! :)))");

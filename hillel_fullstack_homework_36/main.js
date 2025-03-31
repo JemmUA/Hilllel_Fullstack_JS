@@ -16,23 +16,27 @@ console.log('#19. TypeScript homework example file');
  */
 function sumArray(numbers) {
     // code here
-    //   if (Array.isArray(numbers)) {
-    //   }
     if (numbers.length === 0) {
         return 0;
     }
     else {
-        return numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        return numbers
+            .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     }
 }
 // Вивід до консолі для демонстрації
 console.log(sumArray([1, 2, 3, 4])); // Повинно вивести 10
 console.log(sumArray([])); // Повинно вивести 0
-function createUser() {
-    // code here
+function createUser(name, age, isActive = true) {
+    const user = {
+        name: name,
+        age: age,
+        isActive: isActive,
+    };
+    return user;
 }
-// const newUser = createUser('Анна', 25, true)
-// console.log(newUser)
+const newUser = createUser('Анна', 25, true);
+console.log(newUser);
 /*
  * #3
  *
@@ -56,13 +60,19 @@ function createUser() {
  */
 var OrderStatus;
 (function (OrderStatus) {
+    OrderStatus["Pending"] = "\u0417\u0430\u043C\u043E\u0432\u043B\u0435\u043D\u043D\u044F \u043E\u0447\u0456\u043A\u0443\u0454 \u043D\u0430 \u043E\u0431\u0440\u043E\u0431\u043A\u0443";
+    OrderStatus["Shipped"] = "\u0417\u0430\u043C\u043E\u0432\u043B\u0435\u043D\u043D\u044F \u0431\u0443\u043B\u043E \u0432\u0456\u0434\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E";
+    OrderStatus["Delivered"] = "\u0417\u0430\u043C\u043E\u0432\u043B\u0435\u043D\u043D\u044F \u0434\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043E";
+    OrderStatus["Cancelled"] = "\u0417\u0430\u043C\u043E\u0432\u043B\u0435\u043D\u043D\u044F \u0441\u043A\u0430\u0441\u043E\u0432\u0430\u043D\u043E";
 })(OrderStatus || (OrderStatus = {}));
-function getOrderStatus() {
+function getOrderStatus(orderStatus) {
     // code here
+    return orderStatus;
 }
 // Приклад виклику функції
-// console.log(getOrderStatus(OrderStatus.Pending))
-// console.log(getOrderStatus(OrderStatus.Shipped))
-// console.log(getOrderStatus(OrderStatus.Delivered))
-// console.log(getOrderStatus(OrderStatus.Cancelled))
+console.log(getOrderStatus(OrderStatus.Pending));
+console.log(getOrderStatus(OrderStatus.Shipped));
+console.log(getOrderStatus(OrderStatus.Delivered));
+console.log(getOrderStatus(OrderStatus.Cancelled));
 // export { sumArray, createUser, OrderStatus, getOrderStatus }
+console.log("Ave webpack! :)))");
