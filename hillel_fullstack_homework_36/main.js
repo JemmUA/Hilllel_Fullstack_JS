@@ -1,5 +1,6 @@
 "use strict";
 console.log('#19. TypeScript homework example file');
+console.log("Hello, Type Script!");
 /*
  * #1
  *
