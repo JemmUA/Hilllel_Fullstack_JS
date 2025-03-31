@@ -1,9 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderStatus = void 0;
-exports.sumArray = sumArray;
-exports.createUser = createUser;
-exports.getOrderStatus = getOrderStatus;
 console.log('#19. TypeScript homework example file');
 /*
  * #1
@@ -19,9 +14,20 @@ console.log('#19. TypeScript homework example file');
  * 4. Функція має використовувати метод `reduce` для обчислення суми елементів масиву.
  *
  */
-function sumArray() {
+function sumArray(numbers) {
     // code here
+    //   if (Array.isArray(numbers)) {
+    //   }
+    if (numbers.length === 0) {
+        return 0;
+    }
+    else {
+        return numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    }
 }
+// Вивід до консолі для демонстрації
+console.log(sumArray([1, 2, 3, 4])); // Повинно вивести 10
+console.log(sumArray([])); // Повинно вивести 0
 function createUser() {
     // code here
 }
@@ -50,7 +56,13 @@ function createUser() {
  */
 var OrderStatus;
 (function (OrderStatus) {
-})(OrderStatus || (exports.OrderStatus = OrderStatus = {}));
+})(OrderStatus || (OrderStatus = {}));
 function getOrderStatus() {
     // code here
 }
+// Приклад виклику функції
+// console.log(getOrderStatus(OrderStatus.Pending))
+// console.log(getOrderStatus(OrderStatus.Shipped))
+// console.log(getOrderStatus(OrderStatus.Delivered))
+// console.log(getOrderStatus(OrderStatus.Cancelled))
+// export { sumArray, createUser, OrderStatus, getOrderStatus }

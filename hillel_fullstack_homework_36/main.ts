@@ -15,34 +15,54 @@ console.log('#19. TypeScript homework example file')
  *
  */
 
-function sumArray() {
+function sumArray(numbers: number[]): number {
   // code here
+    if (numbers.length === 0) {
+        return 0;
+    } else {
+        return numbers
+            .reduce((accumulator:number, currentValue :number) =>
+                accumulator + currentValue, 0
+            );
+    }
 }
 
 // Вивід до консолі для демонстрації
-// console.log(sumArray([1, 2, 3, 4])) // Повинно вивести 10
-// console.log(sumArray([])) // Повинно вивести 0
+console.log(sumArray([1, 2, 3, 4])) // Повинно вивести 10
+console.log(sumArray([])) // Повинно вивести 0
 
 /*
  * #2
  *
  * Задача: Розробити функцію createUser, яка створює об'єкт користувача з заданими властивостями.
  *
- * Мета: Створити функцію, що дозволяє легко генерувати нові об'єкти користувачів з переданими атрибутами ім'я, вік та статус активності, використовуючи визначений тип User.
+ * Мета: Створити функцію, що дозволяє легко генерувати нові об'єкти користувачів з переданими атрибутами ім'я,
+ * вік та статус активності, використовуючи визначений тип User.
  *
  * Вимоги до реалізації:
  * 1. Функція повинна приймати три параметри: name (рядок), age (число) та isActive (булеве значення).
- * 2. Функція має повертати об'єкт, що відповідає типу User. Тип User має бути оголошений з використанням ключового слова `type` та включати властивості name, age, та isActive.
- * 3. Об'єкт, що повертається, має мати типи властивостей відповідно до оголошеного типу User: name як string, age як number, isActive як boolean.
- * 4. Визначення типу User має бути сумісним зі структурою об'єкта, який повертається функцією, включно з порядком та наявністю всіх властивостей.
+ * 2. Функція має повертати об'єкт, що відповідає типу User. Тип User має бути оголошений з використанням ключового слова
+ * `type` та включати властивості name, age, та isActive.
+ * 3. Об'єкт, що повертається, має мати типи властивостей відповідно до оголошеного типу User:
+ * name як string, age як number, isActive як boolean.
+ * 4. Визначення типу User має бути сумісним зі структурою об'єкта, який повертається функцією, включно з порядком
+ * та наявністю всіх властивостей.
  * 5. Функція має правильно обробляти випадок, коли isActive не передано, і за замовчуванням вважати цей параметр true.
  *
  */
 
-type User = {}
+type User = {
+    name: string,
+    age: number,
+    isActive: boolean
+}
 
-function createUser() {
+function createUser(name: string, age: number, isActive: boolean = true)  {
   // code here
+    type RequiredUser = Required<User>;
+    const user =  new RequiredUser (name, age, isActive);
+
+    return user;
 }
 
 // const newUser = createUser('Анна', 25, true)
@@ -82,4 +102,4 @@ function getOrderStatus() {
 // console.log(getOrderStatus(OrderStatus.Delivered))
 // console.log(getOrderStatus(OrderStatus.Cancelled))
 
-export { sumArray, createUser, OrderStatus, getOrderStatus }
+// export { sumArray, createUser, OrderStatus, getOrderStatus }
