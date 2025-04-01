@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #003300;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ffff77;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #77ff77;
+}
+
+#ts {
+    color: #00ff00;
+    font-size: 5rem;
+}
