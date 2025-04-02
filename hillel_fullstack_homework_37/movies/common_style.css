@@ -21,7 +21,7 @@
     border: 10px double var(--color__title__main);
     text-align: center;
     /*margin: 5vh;*/
-    padding: 5vh;
+    /*padding: 5vh;*/
 }
 
 #img__films {
@@ -30,7 +30,7 @@
 
 body {
     background-color: var(--color__background);
-    padding: 5vh;
+    /*padding: 5vh;*/
 }
 
 h1, h2 {
@@ -60,7 +60,7 @@ h2 {
 }
 
 #searching__movie__results {
-    padding: 3vw;
+    /*padding: 3vw;*/
     border: 10px double var(--color__title__main);
     display: flex;
     justify-content: space-around;
