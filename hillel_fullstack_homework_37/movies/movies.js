@@ -18,12 +18,14 @@ searchButtonElement.addEventListener("click", () => __awaiter(void 0, void 0, vo
     // console.log("Movie? I like to movie it, movie it!!!", inputMovieElement.value);
     searchMovieResultElement.innerHTML = "";
     errorMovieSearchElement.innerText = "Searching error... repeat late, please";
-    // TODO ANY
     const foundMovie = yield searchMovie(inputMovieElement.value);
+    // console.log(foundMovie);
     try {
         // TODO ANY
+        // searchMovieResultElement.innerHTML = foundMovie.map((movie: Movie) => {
         searchMovieResultElement.innerHTML = foundMovie.map((movie) => {
             var _a;
+            console.log("Movie:", movie);
             const posterUrl = ((_a = movie.Poster) === null || _a === void 0 ? void 0 : _a.startsWith("http")) ? movie.Poster : "images/no-image.svg";
             const movieHtml = `
                 <div class="movie__result">
@@ -34,7 +36,7 @@ searchButtonElement.addEventListener("click", () => __awaiter(void 0, void 0, vo
                     <div class="movie__title">${movie.Title}</div>
                     <div class="movie__year">${movie.Year}</div>
                 </div>`;
-            console.log("movieHtml: ", movieHtml);
+            // console.log("movieHtml: ", movieHtml);
             return movieHtml;
         }).join("");
         errorMovieSearchElement.innerHTML = "";
@@ -51,9 +53,7 @@ function searchMovie(requestString) {
         const dataMovie = yield fetch(searchLink)
             .then(response => {
             if (!response.ok) {
-                // TODO: SOLVE RESPONSE
-                // throw new Error("Відповідь на запит невдала: ", response);
-                throw new Error("Відповідь на запит невдала: ");
+                // throw new Error("Відповідь на запит невдала:", dataMovie);
             }
             else {
                 // console.log("Response: ", response);
@@ -61,6 +61,7 @@ function searchMovie(requestString) {
             }
         });
         // console.log("DataMovie: ",dataMovie);
+        // console.log("DataMovie search: ",dataMovie.Search);
         return dataMovie === null || dataMovie === void 0 ? void 0 : dataMovie.Search;
     });
 }
