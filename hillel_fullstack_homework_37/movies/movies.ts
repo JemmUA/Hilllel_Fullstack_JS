@@ -25,7 +25,7 @@ searchButtonElement.addEventListener("click", async ():Promise<void> => {
     const foundMovie = await searchMovie(inputMovieElement.value);
     // console.log(foundMovie);
     try {
-        // TODO ANY
+        // TODO ANY. Riot in movies...
         // searchMovieResultElement.innerHTML = foundMovie.map((movie: Movie) => {
         searchMovieResultElement.innerHTML = foundMovie.map((movie: any) => {
             console.log("Movie:", movie);
