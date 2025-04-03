@@ -9,12 +9,12 @@ type Movie = {
     Poster: string,
     Title: string,
     Type: string,
-    Year: string
+    Year: string,
     imdbID: string
 }
 type DataMovie = {
     Response: boolean,
-    Search: string[],
+    Search: Movie[],
     totalResults: string
 }
 
@@ -22,13 +22,11 @@ searchButtonElement.addEventListener("click", async ():Promise<void> => {
     // console.log("Movie? I like to movie it, movie it!!!", inputMovieElement.value);
     searchMovieResultElement.innerHTML = "";
     errorMovieSearchElement.innerText = "Searching error... repeat late, please";
-    const foundMovie = await searchMovie(inputMovieElement.value);
+    const foundMovie: Movie[] = await searchMovie(inputMovieElement.value);
     // console.log(foundMovie);
     try {
-        // TODO ANY. Riot in movies...
-        // searchMovieResultElement.innerHTML = foundMovie.map((movie: Movie) => {
-        searchMovieResultElement.innerHTML = foundMovie.map((movie: any) => {
-            console.log("Movie:", movie);
+        searchMovieResultElement.innerHTML = foundMovie.map((movie: Movie) => {
+        //     console.log("Movie:", movie);
             const posterUrl: string | undefined = movie.Poster?.startsWith("http") ? movie.Poster : "images/no-image.svg";
             const movieHtml: string = `
                 <div class="movie__result">
@@ -50,13 +48,12 @@ searchButtonElement.addEventListener("click", async ():Promise<void> => {
     }
 });
 
-async function searchMovie(requestString: string) {
+async function searchMovie(requestString: string):Promise<Movie[]> {
     const searchLink: string = (`${API_URL}?apikey=${API_KEY}&s=${requestString}`);
-    // TODO ANY
     const dataMovie: DataMovie = await fetch(searchLink)
         .then(response => {
             if (!response.ok) {
-                // throw new Error("Відповідь на запит невдала:", dataMovie);
+                throw new Error("Відповідь на запит невдала");
             } else {
                 // console.log("Response: ", response);
                 return response.json();

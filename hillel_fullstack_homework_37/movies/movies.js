@@ -21,11 +21,9 @@ searchButtonElement.addEventListener("click", () => __awaiter(void 0, void 0, vo
     const foundMovie = yield searchMovie(inputMovieElement.value);
     // console.log(foundMovie);
     try {
-        // TODO ANY
-        // searchMovieResultElement.innerHTML = foundMovie.map((movie: Movie) => {
         searchMovieResultElement.innerHTML = foundMovie.map((movie) => {
             var _a;
-            console.log("Movie:", movie);
+            //     console.log("Movie:", movie);
             const posterUrl = ((_a = movie.Poster) === null || _a === void 0 ? void 0 : _a.startsWith("http")) ? movie.Poster : "images/no-image.svg";
             const movieHtml = `
                 <div class="movie__result">
@@ -49,11 +47,10 @@ searchButtonElement.addEventListener("click", () => __awaiter(void 0, void 0, vo
 function searchMovie(requestString) {
     return __awaiter(this, void 0, void 0, function* () {
         const searchLink = (`${API_URL}?apikey=${API_KEY}&s=${requestString}`);
-        // TODO ANY
         const dataMovie = yield fetch(searchLink)
             .then(response => {
             if (!response.ok) {
-                // throw new Error("Відповідь на запит невдала:", dataMovie);
+                throw new Error("Відповідь на запит невдала");
             }
             else {
                 // console.log("Response: ", response);

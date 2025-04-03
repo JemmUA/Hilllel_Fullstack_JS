@@ -3,6 +3,7 @@
     --color__title__background: darkblue;
     --color__title__main: cyan;
     --color__title__highlight: #5588dd;
+    --color__menu__active: red;
     --color__body__main: yellow;
     --color__search__request__background: darkblue;
     --color__search__result__background: black;
@@ -21,8 +22,6 @@
     background-color: var(--color__title__background);
     border: 10px double var(--color__title__main);
     text-align: center;
-    /*margin: 5vh;*/
-    /*padding: 5vh;*/
 }
 
 #img__films {
@@ -103,7 +102,6 @@ h2 {
         background-color: var(--color__title__highlight);
     }
     &:active {
-        color: red;
-
+        color: var(--color__menu__active);
     }
 }
