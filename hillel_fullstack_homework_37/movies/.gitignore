@@ -1,0 +1,15 @@
+# .gitignore template
+
+# folders
+.idea/
+.vscode/
+node_modules/
+dist/
+bild/
+
+# files
+#.DS_Store
+*.log
+*.js.map
+*.d.ts
+.env
