@@ -95,3 +95,14 @@ h2 {
     color: var(--color__search__movie__error);
     font-size: 3rem;
 }
+
+.menu__item {
+    color: var(--color__title__background);
+    &:hover {
+        background-color: var(--color__title__main);
+    }
+    &:active {
+        color: red;
+
+    }
+}
