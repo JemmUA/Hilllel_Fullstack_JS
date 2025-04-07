@@ -1,12 +1,12 @@
 import './App.css'
-import Counter from './assets/components/Counter.tsx'
+import Shelf from './components/Shelf.tsx'
 
 function App() {
 
   return (
       <div>
-        <div>поличка</div>
-        <Counter></Counter>
+        <div id="baking__shelf">Поличка випічки</div>
+        <Shelf></Shelf>
       </div>
   )
 }
