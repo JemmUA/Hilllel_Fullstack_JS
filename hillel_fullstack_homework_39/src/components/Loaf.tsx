@@ -1,10 +1,11 @@
 // import '../../App.css'
-import {FC} from 'react';
+import {FC, ReactNode} from 'react';
 
 interface loafProps {
     state: string,
     changeState: () => void,
-    text: string
+    text: string,
+    children?: ReactNode
 }
 
 const  Loaf: FC<loafProps> = (props) => {
