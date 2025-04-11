@@ -1,6 +1,6 @@
 import '../App.css'
 
-function Towel(props) {
+function Towel(props: any) {
     const {name} = props;
     console.log("Name:", name);
 
