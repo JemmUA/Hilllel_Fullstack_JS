@@ -1,8 +1,9 @@
 import "../css/plate.css"
 
-function Plate() {
+function Plate(props) {
+    // console.log("Children:", children);
     return (
-        <div className="plate">
+        <div className="plate">{props.children}
         </div>
     );
 
