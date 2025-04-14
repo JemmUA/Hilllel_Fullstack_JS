@@ -1,0 +1,8 @@
+.banner__general {
+    margin: 10px;
+    padding: 10px;
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    color: darkgreen;
+    font-weight: bold;
+    background-color: lightgreen;
+}

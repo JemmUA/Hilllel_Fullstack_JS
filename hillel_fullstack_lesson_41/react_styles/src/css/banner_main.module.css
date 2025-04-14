@@ -1,0 +1,10 @@
+.banner__main {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    color: blue;
+    font-weight: bold;
+    background-color: #ffffbb;
+}
+
