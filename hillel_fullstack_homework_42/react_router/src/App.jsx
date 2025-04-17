@@ -43,53 +43,5 @@ const router = createBrowserRouter([
     },
 ]);
 
-// const router = createBrowserRouter([
-//     {
-//     path: "/",
-//     element: <Layout/>
-//     // path: "/",
-//     // element: <Home/>
-//     },
-//     {
-//     path: "/catalog",
-//     element: <Catalog/>
-//     },
-//     {
-//     path: "/aboutus",
-//     element: <AboutUs/>
-//     },
-//     {
-//     path: "/aboutus/partners",
-//     element: <Partners/>
-//     },
-//     {
-//     path: "*",
-//     element: <Error404/>
-//     },
-// ]);
-//
 const App = () => <RouterProvider router={router}/>;
-// function App () {
-//     return (
-//         <RouterProvider router={router}/>
-//     );
-// }
-
-// function App() {
-//
-//   return (
-//       <BrowserRouter>
-//         <div>We work!!!</div>
-//         <Routes>
-//           <Route path="/" element={<Home/>}></Route>
-//           <Route path="/catalog" element={<Catalog/>}></Route>
-//           <Route path="/aboutus" element={<AboutUs/>}></Route>
-//           <Route path="/aboutus/partners" element={<Partners/>}></Route>
-//           <Route path="/*" element={<Error404/>}></Route>
-//
-//         </Routes>
-//       </BrowserRouter>
-//   )
-// }
-
 export default App
