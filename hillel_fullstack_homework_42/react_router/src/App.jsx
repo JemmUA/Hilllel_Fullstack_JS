@@ -9,7 +9,7 @@ import Layout from "./components/Layout.jsx";
 import Contacts from "./components/Contacts.jsx";
 
 const router = createBrowserRouter([
-    {
+        {
     path: "/",
     element: <Layout/>,
     children: [
@@ -44,4 +44,5 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => <RouterProvider router={router}/>;
+
 export default App
