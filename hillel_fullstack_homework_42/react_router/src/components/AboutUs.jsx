@@ -1,13 +1,15 @@
 import React from 'react';
-import MenuGeneral from "./MenuGeneral.jsx";
+import MenuHeader from "./MenuHeader.jsx";
+import {Outlet} from "react-router";
 
 const AboutUs = () => {
     document.title = "About Us";
     return (
         <div>
             <div>
-                <MenuGeneral/>
+                {/*<MenuGeneral/>*/}
                 <div>About us page</div>
+                <Outlet/>
             </div>
         </div>
     );

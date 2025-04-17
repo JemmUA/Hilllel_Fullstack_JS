@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link, NavLink} from "react-router";
 
-const MenuGeneral = () => {
+const MenuFooter = () => {
     return (
         <div>
-            <ul>
+            <ul className="menu--footer">
                 <li>
                     <NavLink to={'/'}>Home</NavLink>
                 </li>
@@ -12,11 +12,17 @@ const MenuGeneral = () => {
                     <NavLink to={'/catalog'}>Catalog</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/aboutus'}>About us</NavLink>
+                    <NavLink to={'/contacts'}>Contacts</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/aboutus'} end>About us</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/aboutus/partners'}>Partners</NavLink>
                 </li>
             </ul>
         </div>
     );
 };
 
-export default MenuGeneral;
+export default MenuFooter;

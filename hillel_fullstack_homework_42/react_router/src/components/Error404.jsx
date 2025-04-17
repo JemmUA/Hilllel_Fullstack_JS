@@ -1,13 +1,14 @@
 import React from 'react';
-import MenuGeneral from "./MenuGeneral.jsx";
+import MenuHeader from "./MenuHeader.jsx";
 
 const Error404 = () => {
+    document.title = "Error";
     return (
         <div>
             <div>
-                <MenuGeneral/>
-                <iv>Error 404</iv>
-                <div>Page not found</div>
+                {/*<MenuGeneral/>*/}
+                <div className="error">Error 404</div>
+                <div className="error">Page not found</div>
             </div>
         </div>
     );

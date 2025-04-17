@@ -1,11 +1,11 @@
 import React from 'react';
-import MenuGeneral from "./MenuGeneral.jsx";
+import MenuHeader from "./MenuHeader.jsx";
 
 function Home(props) {
     document.title = "Home. React. Router.";
     return (
         <div>
-            <MenuGeneral/>
+            {/*<MenuGeneral/>*/}
             <div>Home page</div>
         </div>
     );

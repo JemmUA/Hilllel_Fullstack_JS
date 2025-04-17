@@ -1,15 +1,15 @@
-import React from 'react';
 import MenuHeader from "./MenuHeader.jsx";
-const Catalog = () => {
-    document.title = "Catalog";
+
+const Partners = () => {
+    document.title = "Partners";
     return (
         <div>
             <div>
                 {/*<MenuGeneral/>*/}
-                <div>Catalog page</div>
+                <div>Partners page</div>
             </div>
         </div>
     );
 };
 
-export default Catalog;
+export default Partners;

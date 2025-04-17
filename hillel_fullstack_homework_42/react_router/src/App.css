@@ -1,5 +1,6 @@
 #root {
   max-width: 1280px;
+  width: 90vw;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -42,8 +43,26 @@
 }
 
 .active {
-  color: blue;
+  font-weight: bold;
+  background-color: #44ffff;
   &:hover {
-    background-color: cyan;
+    color: white;
+    background-color: blue;
   }
+}
+
+.menu--header, .menu--footer {
+  background-color: #ddffff;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-size: 1rem;
+}
+
+.container__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+  font-size: 4rem;
 }
