@@ -1,13 +1,16 @@
 import "../css/controlledNick.css"
 import {useState} from "react";
+import React, {useContext} from 'react';
+import {CheckNickRuleContext} from "../App.jsx";
+
 
 export default function ControlledNick() {
     const [nick, setNick] = useState("");
     const [error, setError] = useState("");
+    const regName = useContext(CheckNickRuleContext);
 
     const handleChange = ev => {
         setNick(ev.target.value);
-        const regName = /^[a-z A-Z 0-9]{8,16}$/;
         if (!regName.test(ev.target.value)) {
             setError("Only Latin (8 - 16) letters and numbers are allowed for Nick");
         } else {

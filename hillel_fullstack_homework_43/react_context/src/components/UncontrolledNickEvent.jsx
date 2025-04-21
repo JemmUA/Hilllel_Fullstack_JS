@@ -1,12 +1,14 @@
-import "../css/uncontrolledNickEvent.css"
+import "../css/uncontrolledNickEvent.css";
 import {useRef, useState} from "react";
+import React, {useContext} from 'react';
+import {CheckNickRuleContext} from "../App.jsx";
 
 export default function UncontrolledNickEvent() {
     const [error, setError] = useState("");
     const inputRef = useRef(null);
+    const regName = useContext(CheckNickRuleContext);
 
-    const handleClick = ev => {
-        const regName = /^[a-z A-Z 0-9]{8,16}$/;
+  const handleClick = ()=> {
         if (!regName.test(inputRef.current.value)) {
             setError("Only Latin (8 - 16) letters and numbers are allowed for Nick");
         } else {
