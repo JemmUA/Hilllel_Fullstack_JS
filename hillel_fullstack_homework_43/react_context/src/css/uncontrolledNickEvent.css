@@ -1,0 +1,8 @@
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+#uncontrolledNickButton {
+    margin: 12px;
+}

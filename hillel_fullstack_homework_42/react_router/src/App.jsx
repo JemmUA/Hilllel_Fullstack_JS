@@ -9,7 +9,7 @@ import Layout from "./components/Layout.jsx";
 import Contacts from "./components/Contacts.jsx";
 
 const router = createBrowserRouter([
-        {
+    {
     path: "/",
     element: <Layout/>,
     children: [
@@ -43,6 +43,31 @@ const router = createBrowserRouter([
     },
 ]);
 
+// const router = createBrowserRouter([
+//     {
+//     path: "/",
+//     element: <Layout/>
+//     // path: "/",
+//     // element: <Home/>
+//     },
+//     {
+//     path: "/catalog",
+//     element: <Catalog/>
+//     },
+//     {
+//     path: "/aboutus",
+//     element: <AboutUs/>
+//     },
+//     {
+//     path: "/aboutus/partners",
+//     element: <Partners/>
+//     },
+//     {
+//     path: "*",
+//     element: <Error404/>
+//     },
+// ]);
+//
 const App = () => <RouterProvider router={router}/>;
 
 export default App
