@@ -4,13 +4,9 @@ import {useEffect, useState} from "react";
 function User () {
     const [users, setUsers] = useState([]);
     const [userId, setUserId] = useState(0);
-    const infoAboutUserIdInput = "Ten users are available. Values 1 - 10 present user by Id, rest values - all users.";
+    const infoAboutUserIdInput = "Ten users are available. Values 1 - 10 present user by Id, rest values - all users";
     const requestUsers = async () => {
     try {
-        // console.log("userId:", userId);
-        // if (userId > 0 && userId <= 10) {
-        // }
-
         const requestResult = await fetch(`https://jsonplaceholder.typicode.com/users/${userId > 0 && userId <= 10 ? userId : ""}`)
         .then(response => response.json());
         // console.log("requestResult: ", requestResult);
@@ -31,14 +27,13 @@ function User () {
 
       return (
         <div>
-            <input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>
           <p>{infoAboutUserIdInput}</p>
-            <h2>All (ten) users:</h2>
+          <input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>
+            <h2>All users</h2>
 
             {users.map(user => (
                 <div key={user.id}>
                     <div className="userInfo">
-                        <div>Id: {user.id}</div>
                         <div>Name: {user.name}</div>
                         <div>Email: {user.email}</div>
                         <div>Username: {user.username}</div>
@@ -47,26 +42,24 @@ function User () {
                     </div>
                 </div>
             ))}
-
-
         </div>
     );} else {
-      return (<div>
-        <input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>
-        <p>{infoAboutUserIdInput}</p>
-        <h2>Users #{userId}:</h2>
-
-        <div key={users.id}>
-        <div className="userInfo">
-        <div>Id: {users.id}</div>
-        <div>Name: {users.name}</div>
-        <div>Email: {users.email}</div>
-        <div>Username: {users.username}</div>
-        <div>Phone: {users.phone}</div>
-        <div>Website: {users.website}</div>
-      </div>
-    </div>
-    </div>
+      return (
+        <div>
+          <p>{infoAboutUserIdInput}</p>
+          <input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>
+          <h2>User #{userId}</h2>
+          <div key={users.id}>
+            <div className="userInfo">
+                <div>Id: {users.id}</div>
+                <div>Name: {users.name}</div>
+                <div>Email: {users.email}</div>
+                <div>Username: {users.username}</div>
+                <div>Phone: {users.phone}</div>
+                <div>Website: {users.website}</div>
+            </div>
+          </div>
+        </div>
 
     );
     }
