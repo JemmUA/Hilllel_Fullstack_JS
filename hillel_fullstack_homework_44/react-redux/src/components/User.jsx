@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 function User () {
     const [users, setUsers] = useState([]);
     const [userId, setUserId] = useState(0);
-
+    const infoAboutUserIdInput = "Ten users are available. Values 1 - 10 present user by Id, rest values - all users.";
     const requestUsers = async () => {
     try {
         // console.log("userId:", userId);
@@ -32,8 +32,9 @@ function User () {
       return (
         <div>
             <input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>
-          <p>Ten users are available. Values 1 - 10 present user by Id, rest values - all users.</p>
+          <p>{infoAboutUserIdInput}</p>
             <h2>All (ten) users:</h2>
+
             {users.map(user => (
                 <div key={user.id}>
                     <div className="userInfo">
@@ -52,8 +53,7 @@ function User () {
     );} else {
       return (<div>
         <input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>
-        <p>Ten users are available. Values 1 - 10 present user by Id, rest values - all users.</p>
-
+        <p>{infoAboutUserIdInput}</p>
         <h2>Users #{userId}:</h2>
 
         <div key={users.id}>
