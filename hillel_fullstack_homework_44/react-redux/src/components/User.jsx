@@ -44,21 +44,15 @@ export const storeValue = configureStore({
 })
 
 
-
 function User () {
-  // let userIdR = useSelector((state) => state.setter); // Отримання стану зі Store. counter ми прописали для reducer
-  const dispatch = useDispatch(); // ми маємо дати useDispatch() екшн з
+  const dispatch = useDispatch();
 
-  const handleChanging = (ev) => { // Це event handler, ми маємо викликати dispatch
+  const handleChanging = (ev) => {
     setUserId(ev.target.value);
     console.log("Ev:", ev.target.value);
     console.log("dispatch!!!");
-    dispatch(setValue(ev.target.value)); // ми маємо` дати useDispatch() екшн з
+    dispatch(setValue(ev.target.value));
   }
-
-
-
-
 
 
   const [users, setUsers] = useState([]);
