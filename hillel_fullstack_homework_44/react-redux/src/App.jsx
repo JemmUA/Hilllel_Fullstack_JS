@@ -28,13 +28,15 @@ function App() {
                   <UncontrolledNickEvent/>
               </Plate>
             </CheckNickRuleContext.Provider>
-            <div id="checkBoxContainer">
-                <CheckBox >AAA</CheckBox>
-                <CheckBox >BBB</CheckBox>
-                <CheckBox >CCC</CheckBox>
-                <CheckBox >DDD</CheckBox>
-                <CheckBox >EEE</CheckBox>
-            </div>
+            <Plate>
+              <div id="checkBoxContainer">
+                  <CheckBox >AAA</CheckBox>
+                  <CheckBox >BBB</CheckBox>
+                  <CheckBox >CCC</CheckBox>
+                  <CheckBox >DDD</CheckBox>
+                  <CheckBox >EEE</CheckBox>
+              </div>
+            </Plate>
             <Plate>
               <Provider store={storeValue}>
                 <User></User>

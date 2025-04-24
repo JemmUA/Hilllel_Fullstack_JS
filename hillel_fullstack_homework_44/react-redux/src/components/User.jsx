@@ -4,48 +4,6 @@ import {configureStore} from "@reduxjs/toolkit";
 import {Provider, useDispatch, useSelector} from "react-redux";
 
 
-
-
-// ===============================================================================================================================================
-// ===============================================================================================================================================
-// ===============================================================================================================================================
-
-// // Action types
-// enum ActionType {
-//   INCREMENT = "INCREMENT",
-//   DECREMENT = "DECREMENT"
-// }
-//
-// // Action creators
-// const increment = ()  => ({type: ActionType.INCREMENT});
-// const decrement = ()  => ({type: ActionType.DECREMENT});
-//
-// // Reducer ("Клерк". Функція, що приймає в себе state та action)
-// const counterReducer = (state = 0, action: Action) => {
-//   console.log("Counter reducer:", "State: ", state, "Action: ", action);
-//   switch (action.type) {
-//     case ActionType.INCREMENT:
-//       return ++state;
-//     case ActionType.DECREMENT:
-//       return --state;
-//     default:
-//       return state;
-//   }
-// }
-//
-// // Store
-//
-// const store = configureStore({
-//   reducer: { //необхідний ключ reducer
-//     counter: counterReducer
-//   }
-// })
-
-
-
-// ===============================================================================================================================================
-// ===============================================================================================================================================
-// ===============================================================================================================================================
 const infoAboutUserIdInput = "Ten users are available. Values 1 - 10 present user by Id, rest values - all users";
 
 //
@@ -104,23 +62,23 @@ function User () {
 
 
   const [users, setUsers] = useState([]);
-    const [userId, setUserId] = useState(0);
-    const requestUsers = async () => {
-    try {
-        const requestResult = await fetch(`https://jsonplaceholder.typicode.com/users/${userId > 0 && userId <= 10 ? userId : ""}`)
-        .then(response => response.json());
-        setUsers(requestResult);
-    } catch (error) {
-        // console.error("Request error: ", error, "Try again.");
-        throw new Error("Request error: ", error);
-    } finally {
-        console.log("Request finally.")
+  const [userId, setUserId] = useState(0);
+  const requestUsers = async () => {
+  try {
+      const requestResult = await fetch(`https://jsonplaceholder.typicode.com/users/${userId > 0 && userId <= 10 ? userId : ""}`)
+      .then(response => response.json());
+      setUsers(requestResult);
+  } catch (error) {
+      // console.error("Request error: ", error, "Try again.");
+      throw new Error("Request error: ", error);
+  } finally {
+      console.log("Request finally.")
     }
   }
 
-    useEffect( () => {
-        requestUsers();
-    }, [userId]);
+  useEffect( () => {
+      requestUsers();
+  }, [userId]);
 
 
 
