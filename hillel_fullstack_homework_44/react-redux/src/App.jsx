@@ -5,7 +5,8 @@ import ControlledNick from "./components/ControlledNick.jsx";
 import UncontrolledNickEvent from "./components/UncontrolledNickEvent.jsx";
 import HomeworkHeader from "./components/HomeworkHeader.jsx";
 import Plate from "./components/Plate.jsx";
-import User from "./components/User.jsx";
+import User, {storeValue} from "./components/User.jsx";
+import {Provider} from "react-redux";
 
 export const CheckNickRuleContext = createContext();
 
@@ -35,7 +36,9 @@ function App() {
                 <CheckBox >EEE</CheckBox>
             </div>
             <Plate>
+              <Provider store={storeValue}>
                 <User></User>
+              </Provider>
             </Plate>
         </div>
 

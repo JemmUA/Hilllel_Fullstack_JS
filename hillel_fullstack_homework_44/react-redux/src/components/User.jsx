@@ -55,7 +55,10 @@ const SETVALUE = "SETVALUE";
 
 //
 // // Створення екшна
-const setValue = ()  => ({type: SETVALUE});
+const setValue = (value)  => ({
+  type: SETVALUE,
+  payload: value
+});
 
 
 // // Reducer
@@ -76,7 +79,7 @@ const setValueReducer = (state = 0, action) => {
 
 //
 // // Store
-const storeValue = configureStore({
+export const storeValue = configureStore({
   reducer: { //необхідний ключ reducer
     setter: setValueReducer
   }
@@ -86,12 +89,13 @@ const storeValue = configureStore({
 
 function User () {
   // let userIdR = useSelector((state) => state.setter); // Отримання стану зі Store. counter ми прописали для reducer
-  // const dispatch = useDispatch(); // ми маємо дати useDispatch() екшн з
+  const dispatch = useDispatch(); // ми маємо дати useDispatch() екшн з
 
   const handleChanging = (ev) => { // Це event handler, ми маємо викликати dispatch
+    setUserId(ev.target.value);
     console.log("Ev:", ev.target.value);
     console.log("dispatch!!!");
-    dispatch(setId()); // ми маємо дати useDispatch() екшн з
+    dispatch(setValue(ev.target.value)); // ми маємо` дати useDispatch() екшн з
   }
 
 
@@ -123,10 +127,11 @@ function User () {
   if (Array.isArray(users)) {
 
       return (
-        <Provider store={storeValue}>
+        <>
+        {/*// <Provider store={storeValue}>*/}
           <p>{infoAboutUserIdInput}</p>
-          <input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>
-          {/*<input type="number" value={userId} onChange={handleChanging}/>*/}
+          {/*<input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>*/}
+          <input type="number" value={userId} onChange={handleChanging}/>
           <h2>All users</h2>
 
             {users.map(user => (
@@ -140,13 +145,15 @@ function User () {
                     </div>
                 </div>
             ))}
-        </Provider>
+        {/*</Provider>*/}
+        </>
     );} else {
       return (
-        <Provider store={storeValue}>
+        <>
+        {/*// <Provider store={storeValue}>*/}
           <p>{infoAboutUserIdInput}</p>
-          <input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>
-          {/*<input type="number" value={userId} onChange={handleChanging}/>*/}
+          {/*<input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>*/}
+          <input type="number" value={userId} onChange={handleChanging}/>
           <h2>User #{userId}</h2>
           <div key={users.id}>
             <div className="userInfo">
@@ -158,8 +165,8 @@ function User () {
                 <div>Website: {users.website}</div>
             </div>
           </div>
-        </Provider>
-
+        {/*// </Provider>*/}
+        </>
     );
     }
 
