@@ -137,6 +137,7 @@ function User () {
             {users.map(user => (
                 <div key={user.id}>
                     <div className="userInfo">
+                        <div>Id: {user.id}</div>
                         <div>Name: {user.name}</div>
                         <div>Email: {user.email}</div>
                         <div>Username: {user.username}</div>
