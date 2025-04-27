@@ -14,6 +14,7 @@ const checkBoxSlice = createSlice({
     reducers: {
         invertValue: (state) => {
             state.value = !state.value;
+            console.log("state.value(reducer):", state.value);
         }
     }
 }); // частина стану, екшини і редьюсери цього стану

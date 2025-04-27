@@ -14,8 +14,8 @@ export default function CheckBox (props) {
 
     return (
         <>
-            <div>{checkBoxValue.toString()}</div>
-            <input type="checkbox" onChange={handleCheckValue} />
+            {/*<div>{checkBoxValue.toString()}</div>*/}
+            <input type="checkbox" onChange={handleCheckValue}/>
             <label>{props.children}</label>
         </>
     )

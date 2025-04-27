@@ -25,7 +25,11 @@ function App() {
                 <div id="checkBoxContainer">
                     <Provider store={store}>
                         <h3>Using Redux with radio button</h3>
-                        <CheckBox >AAA</CheckBox>
+                        <CheckBox >Id</CheckBox>
+                        <CheckBox >Name</CheckBox>
+                        <CheckBox >Username</CheckBox>
+                        <CheckBox >Phone</CheckBox>
+                        <CheckBox >Website</CheckBox>
                     </Provider>
                 </div>
             </Plate>
@@ -37,7 +41,9 @@ function App() {
             </CheckNickRuleContext.Provider>
             <Plate>
               <Provider store={storeValue}>
-                <User></User>
+                  <Provider store={store}>
+                    <User></User>
+                  </Provider>
               </Provider>
             </Plate>
         </div>

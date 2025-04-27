@@ -42,7 +42,9 @@ export const storeValue = configureStore({
 
 
 function User () {
-  const dispatch = useDispatch();
+    const checkBoxValue = useSelector( (state) => state.checkBox.value); // state - глобальний стан
+    console.log("checkBoxValue in User:", checkBoxValue);
+    const dispatch = useDispatch();
 
   const handleChanging = (ev) => {
     setUserId(ev.target.value);
@@ -86,7 +88,8 @@ function User () {
             {users.map(user => (
                 <div key={user.id}>
                     <div className="userInfo">
-                        <div>Id: {user.id}</div>
+                        {checkBoxValue ? <div>Id: {user.id}</div> : null}
+                        {/*<div>Id: {user.id}</div>*/}
                         <div>Name: {user.name}</div>
                         <div>Email: {user.email}</div>
                         <div>Username: {user.username}</div>
@@ -95,6 +98,19 @@ function User () {
                     </div>
                 </div>
             ))}
+
+            {/*{users.map(user => (*/}
+            {/*    <div key={user.id}>*/}
+            {/*        <div className="userInfo">*/}
+            {/*            <div>Id: {user.id}</div>*/}
+            {/*            <div>Name: {user.name}</div>*/}
+            {/*            <div>Email: {user.email}</div>*/}
+            {/*            <div>Username: {user.username}</div>*/}
+            {/*            <div>Phone: {user.phone}</div>*/}
+            {/*            <div>Website: {user.website}</div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*))}*/}
         {/*</Provider>*/}
         </>
     );} else {
@@ -107,7 +123,8 @@ function User () {
           <h2>User #{userId}</h2>
           <div key={users.id}>
             <div className="userInfo">
-                <div>Id: {users.id}</div>
+                {checkBoxValue ? <div>Id: {users.id}</div> : null}
+                {/*<div>Id: {users.id}</div>*/}
                 <div>Name: {users.name}</div>
                 <div>Email: {users.email}</div>
                 <div>Username: {users.username}</div>
