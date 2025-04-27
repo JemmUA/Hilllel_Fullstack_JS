@@ -6,18 +6,14 @@ import {Provider, useDispatch, useSelector} from "react-redux";
 
 const infoAboutUserIdInput = "Ten users are available. Values 1 - 10 present user by Id, rest values - all users";
 
-//
 // // Тип екшна
 const SETVALUE = "SETVALUE";
 
-
-//
 // // Створення екшна
 const setValue = (value)  => ({
   type: SETVALUE,
   payload: value
 });
-
 
 // // Reducer
 const setValueReducer = (state = 0, action) => {
@@ -29,6 +25,7 @@ const setValueReducer = (state = 0, action) => {
   //     return state;
   // }
   if (action.type === SETVALUE) {
+      // console.log("action.payload:", action.payload);
     return action.payload;
   } else {
     return state;
@@ -36,7 +33,6 @@ const setValueReducer = (state = 0, action) => {
 }
 
 
-//
 // // Store
 export const storeValue = configureStore({
   reducer: { //необхідний ключ reducer
@@ -51,7 +47,7 @@ function User () {
   const handleChanging = (ev) => {
     setUserId(ev.target.value);
     console.log("Ev:", ev.target.value);
-    console.log("dispatch!!!");
+    // console.log("dispatch!!!");
     dispatch(setValue(ev.target.value));
   }
 

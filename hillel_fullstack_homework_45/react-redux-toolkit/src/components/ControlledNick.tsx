@@ -1,7 +1,7 @@
 import "../css/controlledNick.css"
 import {useState} from "react";
 import React, {useContext} from 'react';
-import {CheckNickRuleContext} from "../App.jsx";
+import {CheckNickRuleContext} from "../App.tsx";
 
 
 export default function ControlledNick() {
