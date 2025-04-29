@@ -13,6 +13,9 @@ export const CheckNickRuleContext = createContext();
 
 function App() {
 
+    const hwNum = "ДЗ 45.1";
+    const hwName = "Рефакторинг існуючого Redux проекту з використанням Redux Toolkit";
+
     // RegEx змінної checkNickRule використовується в компонентах: ControlledNick, UncontrolledNickEvent
     // та передається в них через контекст CheckNickRuleContext
   const checkNickRule = /^[a-z A-Z 0-9]{8,16}$/;
@@ -20,25 +23,25 @@ function App() {
   return (
     <>
         <div>
-            <HomeworkHeader num="ДЗ 45.1" name="Рефакторинг існуючого Redux проекту з використанням Redux Toolkit"/>
-            <Plate>
-                <div id="checkBoxContainer">
-                    <Provider store={store}>
-                        <h3>Using Redux with radio button</h3>
-                        <CheckBox >Id</CheckBox>
-                        <CheckBox >Name</CheckBox>
-                        <CheckBox >Username</CheckBox>
-                        <CheckBox >Phone</CheckBox>
-                        <CheckBox >Website</CheckBox>
-                    </Provider>
-                </div>
-            </Plate>
+            <HomeworkHeader num={hwNum} name={hwName}/>
             <CheckNickRuleContext.Provider value={checkNickRule}>
               <Plate>
                   <ControlledNick/><br/>
                   <UncontrolledNickEvent/>
               </Plate>
             </CheckNickRuleContext.Provider>
+            <Plate>
+                <div id="checkBoxContainer">
+                    <Provider store={store}>
+                        <CheckBox >Id</CheckBox>
+                        {/*<CheckBox >Name</CheckBox>*/}
+                        {/*<CheckBox >Username</CheckBox>*/}
+                        {/*<CheckBox >Phone</CheckBox>*/}
+                        {/*<CheckBox >Website</CheckBox>*/}
+                    </Provider>
+
+                </div>
+            </Plate>
             <Plate>
               <Provider store={storeValue}>
                   <Provider store={store}>
