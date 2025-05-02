@@ -43,7 +43,7 @@ export const storeValue = configureStore({
 
 function User () {
     const checkBoxValue = useSelector( (state) => state.checkBox.value); // state - глобальний стан
-    console.log("checkBoxValue in User:", checkBoxValue);
+    // console.log("checkBoxValue in User:", checkBoxValue);
     const dispatch = useDispatch();
 
   const handleChanging = (ev) => {
@@ -52,6 +52,23 @@ function User () {
     // console.log("dispatch!!!");
     dispatch(setValue(ev.target.value));
   }
+
+
+
+  const handlePlus = (ev) => {
+    // setUserId(ev.target.value++);
+    console.log("Ev+:", ev.target.value);
+    // console.log("dispatch!!!");
+    // dispatch(setValue(ev.target.value));
+  }
+
+  const handleMinus = (ev) => {
+    // setUserId(ev.target.value--);
+    console.log("Ev-:", ev.target.value);
+    // console.log("dispatch!!!");
+    // dispatch(setValue(ev.target.value));
+  }
+
 
 
   const [users, setUsers] = useState([]);
@@ -65,7 +82,7 @@ function User () {
       // console.error("Request error: ", error, "Try again.");
       throw new Error("Request error: ", error);
   } finally {
-      console.log("Request finally.")
+      // console.log("Request finally.")
     }
   }
 
@@ -120,7 +137,12 @@ function User () {
           <p>{infoAboutUserIdInput}</p>
           {/*<input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>*/}
           <input type="number" value={userId} onChange={handleChanging}/>
-          <h2>User #{userId}</h2>
+            <div>
+              <button className="counterIdButton" onClick={handlePlus}>plus</button>
+              <button className="counterIdButton" onClick={handleMinus}>minus</button>
+            </div>
+
+            <h2>User #{userId}</h2>
           <div key={users.id}>
             <div className="userInfo">
                 {checkBoxValue ? <div>Id: {users.id}</div> : null}

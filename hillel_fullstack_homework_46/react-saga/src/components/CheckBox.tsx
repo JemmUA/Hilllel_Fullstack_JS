@@ -6,7 +6,7 @@ export default function CheckBox (props) {
 
     const checkBoxValue = useSelector( (state) => state.checkBox.value); // state - глобальний стан
     const dispatch = useDispatch();
-    console.log("checkBoxValue:", checkBoxValue);
+    // console.log("checkBoxValue:", checkBoxValue);
 
     const handleCheckValue = () => {
       dispatch(invertValue());

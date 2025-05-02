@@ -1,0 +1,1 @@
+export const cryAnything = (cry => console.log(cry));
