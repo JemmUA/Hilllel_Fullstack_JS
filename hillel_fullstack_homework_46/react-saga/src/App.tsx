@@ -13,7 +13,7 @@ export const CheckNickRuleContext = createContext();
 
 function App() {
 
-    const hwNumber = "ДЗ 46.1";
+    const hwNumber = "Домашнє завдання № 46.1";
     const hwName = "Рефакторинг існуючого Redux Toolkit проекту з використанням асинхронних дій";
 
     // RegEx змінної checkNickRule використовується в компонентах: ControlledNick, UncontrolledNickEvent
