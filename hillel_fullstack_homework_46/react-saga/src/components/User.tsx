@@ -2,71 +2,75 @@ import "../css/user.css"
 import {useEffect, useState} from "react";
 import {configureStore} from "@reduxjs/toolkit";
 import {Provider, useDispatch, useSelector} from "react-redux";
+import {minusId, plusId, setId} from "../redux/counterIdSlice.ts";
 
 
 const infoAboutUserIdInput = "Ten users are available. Values 1 - 10 present user by Id, rest values - all users";
-
-// // Тип екшна
-const SETVALUE = "SETVALUE";
-
-// // Створення екшна
-const setValue = (value)  => ({
-  type: SETVALUE,
-  payload: value
-});
-
-// // Reducer
-const setValueReducer = (state = 0, action) => {
-  console.log("State:", state, "Action: ", action);
-  // switch (action.type) {
-  //     case SETVALUE:
-  //     return action.payload;
-  //   default:
-  //     return state;
-  // }
-  if (action.type === SETVALUE) {
-      // console.log("action.payload:", action.payload);
-    return action.payload;
-  } else {
-    return state;
-  }
-}
-
-
-// // Store
-export const storeValue = configureStore({
-  reducer: { //необхідний ключ reducer
-    setter: setValueReducer
-  }
-})
+//
+// // // Тип екшна
+// const SETVALUE = "SETVALUE";
+//
+// // // Створення екшна
+// const setValue = (value)  => ({
+//   type: SETVALUE,
+//   payload: value
+// });
+//
+// // // Reducer
+// const setValueReducer = (state = 0, action) => {
+//   console.log("State:", state, "Action: ", action);
+//   // switch (action.type) {
+//   //     case SETVALUE:
+//   //     return action.payload;
+//   //   default:
+//   //     return state;
+//   // }
+//   if (action.type === SETVALUE) {
+//       // console.log("action.payload:", action.payload);
+//     return action.payload;
+//   } else {
+//     return state;
+//   }
+// }
+//
+//
+// // // Store
+// export const storeValue = configureStore({
+//   reducer: { //необхідний ключ reducer
+//     setter: setValueReducer
+//   }
+// })
 
 
 function User () {
-    const checkBoxValue = useSelector( (state) => state.checkBox.value); // state - глобальний стан
+    const checkBoxValue: boolean = useSelector( (state) => state.checkBox.value); // state - глобальний стан
     // console.log("checkBoxValue in User:", checkBoxValue);
+    const counterIdValue: number = useSelector( (state) => state.counterId.value); // state - глобальний стан
+    console.log("conterIdValue in User:", counterIdValue);
     const dispatch = useDispatch();
+  //
+  // const handleChanging = (ev) => {
+  //   setUserId(ev.target.value);
+  //   console.log("Ev:", ev.target.value);
+  //   // console.log("dispatch!!!");
+  //   dispatch(setValue(ev.target.value));
+  // }
 
-  const handleChanging = (ev) => {
-    setUserId(ev.target.value);
-    console.log("Ev:", ev.target.value);
-    // console.log("dispatch!!!");
-    dispatch(setValue(ev.target.value));
+  const handleChanging = () => {
+      // dispatch(setId());
+      setUserId(counterIdValue);
   }
 
 
 
-  const handlePlus = (ev) => {
-    // setUserId(ev.target.value++);
-    console.log("Ev+:", ev.target.value);
-    // console.log("dispatch!!!");
-    // dispatch(setValue(ev.target.value));
+  const handlePlus = () => {
+      setUserId(counterIdValue);
+      dispatch(plusId());
   }
 
-  const handleMinus = (ev) => {
-    // setUserId(ev.target.value--);
-    console.log("Ev-:", ev.target.value);
-    // console.log("dispatch!!!");
-    // dispatch(setValue(ev.target.value));
+  const handleMinus = () => {
+      setUserId(counterIdValue);
+      dispatch(minusId());
   }
 
 
@@ -99,8 +103,16 @@ function User () {
         {/*// <Provider store={storeValue}>*/}
           <p>{infoAboutUserIdInput}</p>
           {/*<input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>*/}
-          <input type="number" value={userId} onChange={handleChanging}/>
-          <h2>All users</h2>
+          {/*<input type="number" value={userId} onChange={handleChanging}/>*/}
+            <div>
+                <div className="id__plus-minus">
+                    User Id({userId}) +/-:
+                </div>
+                <button className="counterIdButton" onClick={handlePlus}>plus</button>
+                <button className="counterIdButton" onClick={handleMinus}>minus</button>
+            </div>
+
+            <h2>All users</h2>
 
             {users.map(user => (
                 <div key={user.id}>
@@ -136,8 +148,11 @@ function User () {
         {/*// <Provider store={storeValue}>*/}
           <p>{infoAboutUserIdInput}</p>
           {/*<input type="number" value={userId} onChange={ev => setUserId(ev.target.value)}/>*/}
-          <input type="number" value={userId} onChange={handleChanging}/>
+          {/*<input type="number" value={userId} onChange={handleChanging}/>*/}
             <div>
+                <div className="id__plus-minus">
+                    User Id({userId}) +/-:
+                </div>
               <button className="counterIdButton" onClick={handlePlus}>plus</button>
               <button className="counterIdButton" onClick={handleMinus}>minus</button>
             </div>

@@ -10,13 +10,17 @@ const initialState: CounterIDState = {
 
 const counterIdSlice = createSlice({
   name: 'counterId',
-  initialState,
+  initialState: initialState,
   reducers: {
-    increment: (state) => {
+    plusId: (state) => {
       state.value = state.value + 1;
     },
-    decrement: (state) => {
+    minusId: (state) => {
       state.value = state.value - 1;
+    },
+    setId: (state) => {
+      state.value = state.value - 1;
+      console.log("state.value(reducer) in setId:", state.value);
     },
     // add: (state, action: PayloadAction<number>) => {
     //   state.value = state.value + action.payload;
@@ -47,6 +51,6 @@ const counterIdSlice = createSlice({
   }
 })
 
-export const { increment, decrement } = counterIdSlice.actions;
+export const { plusId, minusId, setId } = counterIdSlice.actions;
 // export const {add } = counterIdSlice.actions;
 export default counterIdSlice.reducer;

@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit";
 import checkBoxReducer from './checkBoxSlice.ts';
-import counterIdReducer from './counteIdSlice.ts';
+import counterIdReducer from './counterIdSlice.ts';
 import createSagaMiddleware from 'redux-saga';
 
 // console.log("Store. checkBoxReducer:", checkBoxReducer);

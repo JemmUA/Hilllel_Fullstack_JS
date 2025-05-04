@@ -43,11 +43,11 @@ function App() {
                 </div>
             </Plate>
             <Plate>
-              <Provider store={storeValue}>
+              {/*<Provider store={storeValue}>*/}
                   <Provider store={store}>
-                    <User></User>
+                    <User/>
                   </Provider>
-              </Provider>
+              {/*</Provider>*/}
             </Plate>
         </div>
 

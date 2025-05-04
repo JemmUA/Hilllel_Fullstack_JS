@@ -12,5 +12,17 @@
 
 .counterIdButton {
     margin: 10px;
-    background-color: red;
+    background-color: darkred;
+    &:hover {
+        background-color: red;
+    }
+    &:active {
+        background-color: orange;
+    }
+}
+
+.id__plus-minus {
+    color: magenta;
+    font-size: 2rem;
+    font-weight: bold;
 }
