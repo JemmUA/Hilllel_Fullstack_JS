@@ -2,7 +2,7 @@ import {all, put, takeEvery } from 'redux-saga/effects';
 import {cryAnything, pauseForSaga} from '../../shared/utilites.ts';
 import {decrementAsync, incrementAsync, minusId, plusId} from './counterIdSlice.ts';
 
-const delayDuration = 20;
+const delayDuration = 1000;
 
 function* plusIdSaga () {
     yield cryAnything(`Wow! +   Delay: ${delayDuration} ms`);
