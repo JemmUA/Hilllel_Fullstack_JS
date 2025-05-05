@@ -106,12 +106,17 @@ function User () {
           {/*<input type="number" value={userId} onChange={handleChanging}/>*/}
             <div>
                 <div className="id__plus-minus">
+
                     User Id({userId}) +/-:
                 </div>
                 <button className="counterIdButton" onClick={handlePlus}>plus</button>
                 <button className="counterIdButton" onClick={handleMinus}>minus</button>
             </div>
-
+            <div>
+                    <button className="counterIdButtonSaga" onClick={handlePlus}>Saga plus</button>
+                    <button className="counterIdButtonSaga" onClick={handleMinus}>Saga minus</button>
+            </div>
+            <hr className="split__line" />
             <h2>All users</h2>
 
             {users.map(user => (
@@ -156,7 +161,11 @@ function User () {
               <button className="counterIdButton" onClick={handlePlus}>plus</button>
               <button className="counterIdButton" onClick={handleMinus}>minus</button>
             </div>
-
+            <div>
+                <button className="counterIdButtonSaga" onClick={handlePlus}>Saga plus</button>
+                <button className="counterIdButtonSaga" onClick={handleMinus}>Saga minus</button>
+            </div>
+            <hr className="split__line" />
             <h2>User #{userId}</h2>
           <div key={users.id}>
             <div className="userInfo">

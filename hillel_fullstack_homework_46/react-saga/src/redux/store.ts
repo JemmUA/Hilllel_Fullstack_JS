@@ -2,8 +2,8 @@ import {configureStore} from "@reduxjs/toolkit";
 import checkBoxReducer from './checkBoxSlice.ts';
 import counterIdReducer from './counterIdSlice.ts';
 import createSagaMiddleware from 'redux-saga';
+import rootSaga from "./counterId_Saga.ts";
 
-// console.log("Store. checkBoxReducer:", checkBoxReducer);
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
@@ -16,7 +16,7 @@ export const store = configureStore({
     }
 });
 
-// sagaMiddleware.run();
+sagaMiddleware.run(rootSaga);
 
 export type RootState = ReturnType<typeof store.getState>; // тип для state
 export type AppDispatch = typeof store.dispatch; // тип для dispatch

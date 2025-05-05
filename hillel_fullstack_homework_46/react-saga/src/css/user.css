@@ -21,8 +21,24 @@
     }
 }
 
+.counterIdButtonSaga {
+    margin: 10px;
+    background-color: darkgreen;
+    &:hover {
+        background-color: green;
+    }
+    &:active {
+        background-color: lightgreen;
+    }
+}
+
 .id__plus-minus {
     color: magenta;
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: bold;
+}
+
+.split__line {
+    margin: 10px;
+    border-color: blue;
 }
