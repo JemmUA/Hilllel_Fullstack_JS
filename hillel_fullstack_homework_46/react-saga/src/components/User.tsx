@@ -2,7 +2,7 @@ import "../css/user.css"
 import {useEffect, useState} from "react";
 import {configureStore} from "@reduxjs/toolkit";
 import {Provider, useDispatch, useSelector} from "react-redux";
-import {minusId, plusId, setId} from "../redux/counterIdSlice.ts";
+import {decrementAsync, incrementAsync, minusId, plusId, setId} from "../redux/counterIdSlice.ts";
 
 
 const infoAboutUserIdInput = "Ten users are available. Values 1 - 10 present user by Id, rest values - all users";
@@ -46,7 +46,7 @@ function User () {
     const checkBoxValue: boolean = useSelector( (state) => state.checkBox.value); // state - глобальний стан
     // console.log("checkBoxValue in User:", checkBoxValue);
     const counterIdValue: number = useSelector( (state) => state.counterId.value); // state - глобальний стан
-    console.log("conterIdValue in User:", counterIdValue);
+    console.log("counterIdValue in User:", counterIdValue);
     const dispatch = useDispatch();
   //
   // const handleChanging = (ev) => {
@@ -71,6 +71,14 @@ function User () {
   const handleMinus = () => {
       setUserId(counterIdValue);
       dispatch(minusId());
+  }
+
+  const handleSagaPlus = () => {
+      dispatch(incrementAsync());
+  }
+
+  const handleSagaMinus = () => {
+      dispatch(decrementAsync());
   }
 
 
@@ -113,8 +121,8 @@ function User () {
                 <button className="counterIdButton" onClick={handleMinus}>minus</button>
             </div>
             <div>
-                    <button className="counterIdButtonSaga" onClick={handlePlus}>Saga plus</button>
-                    <button className="counterIdButtonSaga" onClick={handleMinus}>Saga minus</button>
+                <button className="counterIdButtonSaga" onClick={handleSagaPlus}>Saga plus</button>
+                <button className="counterIdButtonSaga" onClick={handleSagaMinus}>Saga minus</button>
             </div>
             <hr className="split__line" />
             <h2>All users</h2>
@@ -162,8 +170,8 @@ function User () {
               <button className="counterIdButton" onClick={handleMinus}>minus</button>
             </div>
             <div>
-                <button className="counterIdButtonSaga" onClick={handlePlus}>Saga plus</button>
-                <button className="counterIdButtonSaga" onClick={handleMinus}>Saga minus</button>
+                <button className="counterIdButtonSaga" onClick={handleSagaPlus}>Saga plus</button>
+                <button className="counterIdButtonSaga" onClick={handleSagaMinus}>Saga minus</button>
             </div>
             <hr className="split__line" />
             <h2>User #{userId}</h2>

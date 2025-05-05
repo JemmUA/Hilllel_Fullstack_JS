@@ -21,8 +21,8 @@ const counterIdSlice = createSlice({
     // add: (state, action: PayloadAction<number>) => {
     //   state.value = state.value + action.payload;
     // },
-    plusIdSagaAsync: () => {},
-    minusIdSagaAsync: () => {},
+    incrementAsync: () => {},
+    decrementAsync: () => {},
   // },
   // extraReducers: (builder) => {
   //   builder

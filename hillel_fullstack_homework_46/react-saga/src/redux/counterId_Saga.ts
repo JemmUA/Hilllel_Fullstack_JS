@@ -2,16 +2,18 @@ import {all, put, takeEvery } from 'redux-saga/effects';
 import {cryAnything, pauseForSaga} from '../../shared/utilites.ts';
 import {decrementAsync, incrementAsync, minusId, plusId} from './counterIdSlice.ts';
 
+const delayDuration = 20;
+
 function* plusIdSaga () {
-    yield pauseForSaga(3000);
-    yield cryAnything("Wow!+");
+    yield cryAnything(`Wow! +   Delay: ${delayDuration} ms`);
+    yield pauseForSaga(delayDuration);
     yield put(plusId());
 
 }
 
 function* minusIdSaga () {
-    yield pauseForSaga(2000);
-    yield cryAnything("Wow!-");
+    yield cryAnything(`Wow! -   Delay: ${delayDuration} ms`);
+    yield pauseForSaga(delayDuration);
     yield put(minusId());
 
 }
