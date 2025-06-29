@@ -1,21 +1,35 @@
 import express from 'express';
+import {articles} from "./articles.js";
 
 const PORT = 3039;
 const app = express();
 
-//================ PUG ==============
-// app.set('view engine', 'pug');
-// app.get('/', (req, res) => {
-//   const data = {title: 'Main page with PUG', message: "Hello, big world! ))", content: 'My content on PUG...'};
-//   res.render('index', data);
-// });
+console.log(articles);
 
-//================ EJS ==============
-app.set('view engine', 'ejs');
-app.get('/', (req, res) => {
-  const data = {title: 'Main page with EJS', message: "Hello,  great world! ))", content: 'My content on EJS...'};
-  res.render('index', data);
+app.set('view engine', 'pug');
+app.get('/articles', (req, res) => {
+  // const data = {title: 'Main page with PUG', message: "Hello, big world! ))", content: 'My content on PUG...'};
+  let articlesText = '';
+  articles.forEach((art, id) => articlesText += art.title + '\n' + art.text);
+  const data = {title: 'PUG', message: "Articles", content: articlesText};
+  res.status(200).render('index', data);
 });
+
+app.get('/articles/:id', (req, res) => {
+
+  const articleId = Number(req.params.id);
+  console.log(articleId);
+
+  if (articleId < 1 || articleId > articles.length) {
+    console.log("NAN");
+    res.status(404).render('index', '404');
+  } else {
+  const data = {title: 'PUG', message: articles[articleId - 1 ].title,
+    content: articles[articleId - 1 ].text};
+  res.status(200).render('index', data);
+  }
+});
+
 
 
 app.listen(PORT, () => {
