@@ -23,7 +23,8 @@ app.get('/articles/:id', (req, res) => {
     // ||
     &&
   // (articles.find((art) => art.id === articleId).id === articleId)
-    (articleId > 0 && articleId < 10)
+  //   (articleId > 0 && articleId < 10)
+    (articleId > 0 && articleId <= articles.length)
   )
   {
         console.log(`article id #${articleId} found`);
