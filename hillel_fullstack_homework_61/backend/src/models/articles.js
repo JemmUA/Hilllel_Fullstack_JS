@@ -45,3 +45,28 @@ export const articles = [
         text: 'text .9 9 9. text'
     },
 ]
+
+export const getAllArticles = ((req,res, articles) => {
+    let articlesText = '';
+    articles.forEach(art => articlesText += art.title + ' <br> ' + art.text + '<br> <br> ');
+    const data = {title: 'PUG | All articles', articlesPageTitle: "Статті", articles: articlesText};
+    res.status(200).render('articles', data);
+});
+
+export const getArticleById = ((req, res, articles, articleId) => {
+    console.log(`article id #${articleId} found`);
+    const data = {
+        title: 'PUG',
+        artTitle: articles[articleId - 1].title,
+        artText: articles[articleId - 1].text
+    }
+    res.status(200).render('index', data);
+});
+
+export const error404 = (req, res) => {
+    const error = 'Панікуйте вже - 404 ;))';
+    console.error(error);
+    const data = {title: 'PUG | Error 404', error: error};
+    res.status(404).render('error404', data);
+}
+
