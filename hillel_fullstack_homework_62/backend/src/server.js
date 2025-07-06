@@ -1,5 +1,6 @@
 import express from 'express';
 import {articles, getArticleById, getAllArticles, error404} from "../models/articles.js";
+// import cookieParser from 'cookie-parser';
 
 const PORT = 3039;
 const app = express();
@@ -7,6 +8,11 @@ const app = express();
 console.log(articles);
 
 app.set('view engine', 'pug');
+
+// app.use(cookieParser());
+// console.log('Cookies:', req.cookies);
+
+app.use(express.static('public'));
 
 app.get('/articles', (req, res) => {
     getAllArticles(req, res, articles);
