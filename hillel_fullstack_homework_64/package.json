@@ -1,0 +1,21 @@
+{
+  "name": "mongodb",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "devmon": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
