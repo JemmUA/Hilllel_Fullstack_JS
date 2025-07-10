@@ -10,7 +10,7 @@ console.log('MONGO DB');
 // console.log(process.env.MONGO_CONNECTION);
 // console.log(process.env.PORT);
 
-const PORT = process.env.PORT || 3033;
+const PORT = process.env.PORT;
 const MONGODB_CONNECTION = process.env.MONGO_CONNECTION;
 const CURR_DB_NAME = process.env.MONGO_DB_NAME;
 let currentDatabase;
@@ -33,7 +33,7 @@ app.get('/', async (req, res) => {
 app.get('/users', async (req, res) => {
   const usersCollection = currentDatabase.collection('users'); // Object moviesCollection for working with the collection
   console.log('Users Collection:', usersCollection);
-  const users = await usersCollection.find().skip(1).limit(3).toArray();
+  const users = await usersCollection.find().skip(1).limit(10).toArray();
   res.json(users);
 });
 
