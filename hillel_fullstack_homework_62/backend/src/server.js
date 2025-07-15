@@ -14,6 +14,10 @@ app.set('view engine', 'pug');
 
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+  res.send('<h1>Main Page</h1> <hr> Kuku');
+})
+
 app.get('/articles', (req, res) => {
     getAllArticles(req, res, articles);
 });
