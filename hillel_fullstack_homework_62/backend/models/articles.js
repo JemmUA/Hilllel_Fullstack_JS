@@ -74,7 +74,7 @@ export const error404 = (req, res) => {
     const error = 'Панікуйте вже - 404 ;))';
     console.error(error);
     const data = {
-        favicon: '<link rel="icon" href="/catti_logo.ico">',
+        favicon: '<link rel="icon" href="/catti_logo.svg">',
         title: 'PUG | Error 404',
         error: error};
     res.status(404).render('error404', data);
