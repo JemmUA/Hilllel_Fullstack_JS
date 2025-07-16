@@ -49,13 +49,21 @@ export const articles = [
 export const getAllArticles = ((req,res, articles) => {
     let articlesText = '';
     articles.forEach((art, artN) => {
+        // articlesText +=
+        //     '<h3>' + art.title + '</h3>'
+        //     + art.text + '<br> ' +
+        //     '<input type="button" onclick="location.href=\`articles\`;" value="To article" />' +
+        //     '<input type="button" onclick="location.href=\`articles\${artN + 1}`;" value="To article (artN)" />' +
+        //     '<input type="button" onclick="location.href=\`articles\${art.id}`;" value="To article (art.id)" />' +
+        //     '<hr>';
+
         articlesText +=
-            '<h3>' + art.title + '</h3>'
-            + art.text + '<br> ' +
-            '<input type="button" onclick="location.href=\`articles\`;" value="To article" />' +
-            '<input type="button" onclick="location.href=\`articles\${artN + 1}`;" value="To article (artN)" />' +
-            '<input type="button" onclick="location.href=\`articles\${art.id}`;" value="To article (art.id)" />' +
-            '<hr>';
+          '<h3>' + art.title + '</h3>'
+          + art.text + '<br> ' +
+          `<h4><a href="/articles/${art.id}">Перейти до статті</a></h4>` +
+          `<input type="button" onclick="handleTransitionToArticle(${art.id})" value="To article (handle)" />` + `<hr>` +
+          `<input type="button" onclick="location.href='articles/${artN + 1}'" value="To article (artN)" />` + `<hr>`;
+
         console.log("artId: ", art.id, typeof(art.id));
         console.log("artN: ", artN+1, typeof(artN));
       }
@@ -89,3 +97,7 @@ export const error404 = (req, res) => {
     res.status(404).render('error404', data);
 }
 
+const handleTransitionToArticle = (articleId) => {
+    console.log("AAAAAAAAAAAAAAAAAA", articleId);
+    // app.get('/', (req, res) => {
+}
