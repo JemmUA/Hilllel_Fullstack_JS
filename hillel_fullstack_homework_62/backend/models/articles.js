@@ -48,9 +48,18 @@ export const articles = [
 
 export const getAllArticles = ((req,res, articles) => {
     let articlesText = '';
-    articles.forEach(art => articlesText +=
-      '<h3>' + art.title + '</h3>'
-      + art.text + '<br> <hr> ');
+    articles.forEach((art, artN) => {
+        articlesText +=
+            '<h3>' + art.title + '</h3>'
+            + art.text + '<br> ' +
+            '<input type="button" onclick="location.href=\`articles\`;" value="To article" />' +
+            '<input type="button" onclick="location.href=\`articles\${artN + 1}`;" value="To article (artN)" />' +
+            '<input type="button" onclick="location.href=\`articles\${art.id}`;" value="To article (art.id)" />' +
+            '<hr>';
+        console.log("artId: ", art.id, typeof(art.id));
+        console.log("artN: ", artN+1, typeof(artN));
+      }
+    );
     const data = {
         favicon: '<link rel="icon" href="/catti_logo.ico">',
         title: 'PUG | All articles',
