@@ -14,9 +14,6 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  // res.send('<h1>Main Page</h1> <hr> Kuku');
-  // res.send(createHtmlPage(`lll`,`aaa`));
-  // res.send(createHtmlPage('Main page', `hhhh`));
   res.send(createHtmlPage('Main page', `
     <h4><a href="/registration">Registration</a></h4>
     <h4><a href="/login">Loginning</a></h4>

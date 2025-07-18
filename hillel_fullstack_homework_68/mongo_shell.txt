@@ -1,0 +1,22 @@
+КОМАНДИ MONGO SHELL
+
+show dbs - показати бази данних
+use <name> - підключитися до бази данних
+cls - очистити екран
+show collections - показати колекції
+db.getCollectionInfos() - отримати інформацію по колекціям
+getCollectionNames() - показати колекції
+db.help() - допомога
+db. + Tab (або подвійний Tab) - допомога
+
+клавіша Tab або подвійний Tab - допомагає продовжити/підібрати команду
+
+db.<collection_name>.help() - допомога по доступним діям для певної колекції
+db.createCollection("name") - створення нової колекції
+db.<name>.drop() - видалення колекції по імені в поточній bd
+db.dropDatabase() - видалення поточної колекції
+
+db.theaters.find().skip(1).limit(5).forEach(t => console.log(t.location)) - пошук у поточній db, колекції theaters, локації: 5 знаходжень починаючи з другого
+db.theaters.find({theaterId:1012}) - знайти театр по theaterId
+
+
