@@ -1,22 +1,31 @@
-КОМАНДИ MONGO SHELL
+Homework Mongo Shell
+================================
 
-show dbs - показати бази данних
-use <name> - підключитися до бази данних
-cls - очистити екран
-show collections - показати колекції
-db.getCollectionInfos() - отримати інформацію по колекціям
-getCollectionNames() - показати колекції
-db.help() - допомога
-db. + Tab (або подвійний Tab) - допомога
+1.
+use studentDB
 
-клавіша Tab або подвійний Tab - допомагає продовжити/підібрати команду
+2.
+db.createCollection("assignments")
 
-db.<collection_name>.help() - допомога по доступним діям для певної колекції
-db.createCollection("name") - створення нової колекції
-db.<name>.drop() - видалення колекції по імені в поточній bd
-db.dropDatabase() - видалення поточної колекції
+3.
+db.assignments.insertMany([
+    {name : "Василь", subject : "Історія", score : 88 },
+    {name : "Ольга", subject : "Математика", score : 95 },
+    {name : "Сергій", subject : "Географія", score : 75 },
+    {name : "Вадим", subject : "Хімія", score : 99 },
+    {name : "Микола", subject : "Фізика", score : 78 }
+])
 
-db.theaters.find().skip(1).limit(5).forEach(t => console.log(t.location)) - пошук у поточній db, колекції theaters, локації: 5 знаходжень починаючи з другого
-db.theaters.find({theaterId:1012}) - знайти театр по theaterId
+4.
+db.assignments.find({ score : {$gt : 80}})
 
+5.
+db.assignments.updateMany({ score : {$lt : 85}}, {$inc: {score : 5}})
+
+6.
+db.assignments.find().sort({score : 1}).limit(1)
+db.assignments.deleteOne()
+
+7.
+db.assignments.find({}, { name : 1, score : 1, _id : 0})
 
