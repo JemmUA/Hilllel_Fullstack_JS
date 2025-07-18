@@ -23,8 +23,8 @@ db.assignments.find({ score : {$gt : 80}})
 db.assignments.updateMany({ score : {$lt : 85}}, {$inc: {score : 5}})
 
 6.
-db.assignments.find().sort({score : 1}).limit(1)
-db.assignments.deleteOne()
+const studentLowScore = db.assignments.find().sort({score : 1}).limit(1).next()
+db.assignments.deleteOne({_id: new ObjectId(studentLowScore._id)})
 
 7.
 db.assignments.find({}, { name : 1, score : 1, _id : 0})
