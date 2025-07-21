@@ -1,7 +1,7 @@
 import express from 'express';
 import {articles, getArticleById, getAllArticles, error404} from "../models/articles.js";
 import cookieParser from 'cookie-parser';
-// import bcrypt from 'bcrypt';
+import bcrypt from 'bcrypt';
 
 const PORT = 3039;
 const app = express();
@@ -66,10 +66,18 @@ app.get('/articles/:id', (req, res) => {
 
 // POST
 app.post('/registration', async (req, res) => {
-  console.log('username: ', username);
-  console.log('password: ', password);
 
-  if (!username || !password) {
+  // res.send('post');
+  // console.log(req.body);
+  // console.log(req.body.username);
+  // console.log(req.body.password);
+  const userName = req.body.username;
+  const password = req.body.password;
+
+  console.log('User name: ', userName);
+  console.log('Password: ', password);
+
+  if (!userName || !password) {
     return res.status(400).send('Username and Password are required for registration');
   }
 
@@ -80,7 +88,7 @@ app.post('/registration', async (req, res) => {
   const salt = await bcrypt.genSalt(5);
   const hashPass = await bcrypt.hash(password, salt);
 
-  users.push({username, hashPass});
+  users.push({userName, hashPass});
   res.send('Success. User registered.');
 });
 
