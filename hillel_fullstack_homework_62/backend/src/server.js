@@ -35,9 +35,21 @@ app.get('/registration', (req, res) => {
     <form method="post" action="/registration">
       <input name="username" required placeholder="name"/>
       <input name="password" type="password" required placeholder="pass"/>
+      <input name="repeatPassword" type="password" required placeholder="repeat pass"/>
       <button>Register</button>
     </form>
     `));
+});
+
+app.get('/login', (req,res) => {
+  res.send(createHtmlPage('Login',`
+    <form method="post" action="/login">
+      <input name="username" required placeholder="name"/>
+      <input name="password" type="password" required placeholder="pass"/>
+      <button>Login</button>
+    </form>
+
+  `));
 });
 
 app.get('/secured', (req, res) => {
@@ -66,32 +78,40 @@ app.get('/articles/:id', (req, res) => {
 
 // POST
 app.post('/registration', async (req, res) => {
-
-  // res.send('post');
-  // console.log(req.body);
-  // console.log(req.body.username);
-  // console.log(req.body.password);
   const userName = req.body.username;
   const password = req.body.password;
+  const repeatPassword = req.body.repeatPassword;
 
   console.log('User name: ', userName);
   console.log('Password: ', password);
+  console.log('Repeat password: ', repeatPassword);
 
   if (!userName || !password) {
     return res.status(400).send('Username and Password are required for registration');
   }
 
-  if (users.find(user => user.username === username)) {
+  if (users.find(user => user.userName === userName)) {
     return res.status(400).send('User already exists');
   }
 
   const salt = await bcrypt.genSalt(5);
   const hashPass = await bcrypt.hash(password, salt);
 
-  users.push({userName, hashPass});
-  res.send('Success. User registered.');
-});
+  if (password === repeatPassword) {
+    users.push({userName, hashPass});
+    console.log('Registered users:', users);
+    res.send(`<h4>Success!</h4> <h2>${userName}</h2> <p>Registered. Welcome :)</p>`);
+  } else {
+    res.status(400).send('Passwords don\'t match');
+  }
 
+  });
+
+app.post('/login', async (req, res) => {
+  const { userName, password } = req.body;
+
+  res.send('Loginning...');
+})
 
 //
 
