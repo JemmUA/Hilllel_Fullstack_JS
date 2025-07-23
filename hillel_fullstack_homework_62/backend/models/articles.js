@@ -62,6 +62,7 @@ export const getAllArticles = ((req,res, articles) => {
     );
     const data = {
         favicon: '<link rel="icon" href="/catti_logo.ico">',
+        backTransition:  `<a href="/">до додому )))</a>`,
         title: 'PUG | All articles',
         articlesPageTitle: "Статті",
         articles: articlesText};
@@ -72,6 +73,7 @@ export const getArticleById = ((req, res, articles, articleId) => {
     console.log(`article id #${articleId} found`);
     const data = {
         favicon: '<link rel="icon" href="/catti_logo.ico">',
+        backTransition:  `<a href="/">до додому )))</a>`,
         title: 'PUG',
         artTitle: articles[articleId - 1].title,
         artText: articles[articleId - 1].text
@@ -85,11 +87,7 @@ export const error404 = (req, res) => {
     const data = {
         favicon: '<link rel="icon" href="/catti_logo.ico">',
         title: 'PUG | Error 404',
+        backTransition:  `<a href="/">до додому )))</a>`,
         error: error};
     res.status(404).render('error404', data);
 }
-
-// const handleTransitionToArticle = (articleId) => {
-//     console.log("AAAAAAAAAAAAAAAAAA", articleId);
-//     // app.get('/', (req, res) => {
-// }

@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     <h4><a href="/articles">Articles</a></h4>
     <h4><a href="/pages">Demo of static files</a></h4>
     <h4><a href="/secured">Secured page</a></h4>
-`));
+`,  ``));
 });
 
 app.get('/registration', (req, res) => {
@@ -38,7 +38,7 @@ app.get('/registration', (req, res) => {
       <input name="repeatPassword" type="password" required placeholder="repeat pass"/>
       <button>Register</button>
     </form>
-    `));
+    `, `<a href="/">до додому )))</a>`));
 });
 
 app.get('/login', (req,res) => {
@@ -49,11 +49,11 @@ app.get('/login', (req,res) => {
       <button>Login</button>
     </form>
 
-  `));
+  `, `<a href="/">до додому )))</a>`));
 });
 
 app.get('/secured', (req, res) => {
-  res.send(createHtmlPage('Secured page', "Interesting content :)"))
+  res.send(createHtmlPage('Secured page', "Interesting content :)", `<a href="/">до додому )))</a>`))
 
 });
 
@@ -133,8 +133,9 @@ function checkAuthorisation(req, res, next) {
   console.log('Cookies:', req.cookies.token);
 }
 
-function createHtmlPage (title, content) {
+function createHtmlPage (title, content, transition) {
   return `
+    ${transition}
     <!DOCTYPE html>
     <html lang="en">
       <head>
