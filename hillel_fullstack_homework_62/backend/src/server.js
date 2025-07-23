@@ -2,9 +2,15 @@ import express from 'express';
 import {articles, getArticleById, getAllArticles, error404} from "../models/articles.js";
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
+import jwt from "jsonwebtoken";
+
+dotenv.config();
 
 const PORT = 3039;
 const app = express();
+const GOHOME = process.env.GOHOME;
+const SECRET_KEY = process.env.SECRET_KEY;
 
 const users = [];
 
@@ -23,10 +29,11 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.send(createHtmlPage('Main page', `
     <h4><a href="/registration">Registration</a></h4>
-    <h4><a href="/login">Loginning</a></h4>
+    <h4><a href="/login">Login</a></h4>
     <h4><a href="/articles">Articles</a></h4>
     <h4><a href="/pages">Demo of static files</a></h4>
     <h4><a href="/secured">Secured page</a></h4>
+    <h4><a href="/logout">Logout</a></h4>
 `,  ``));
 });
 
@@ -38,7 +45,7 @@ app.get('/registration', (req, res) => {
       <input name="repeatPassword" type="password" required placeholder="repeat pass"/>
       <button>Register</button>
     </form>
-    `, `<a href="/">до додому )))</a>`));
+    `, `${GOHOME}`));
 });
 
 app.get('/login', (req,res) => {
@@ -48,20 +55,19 @@ app.get('/login', (req,res) => {
       <input name="password" type="password" required placeholder="pass"/>
       <button>Login</button>
     </form>
-
-  `, `<a href="/">до додому )))</a>`));
+  `, `${GOHOME}`));
 });
 
-app.get('/secured', (req, res) => {
-  res.send(createHtmlPage('Secured page', "Interesting content :)", `<a href="/">до додому )))</a>`))
+app.get('/secured', isAuthenticated, (req, res) => {
+  res.send(createHtmlPage('Secured page', "Interesting content :)<br><img src =\"/catti_logo.svg\" title=\"cat\" alt =\"catti_logo\">", `${GOHOME}`))
 
 });
 
-app.get('/articles', (req, res) => {
+app.get('/articles', isAuthenticated, (req, res) => {
     getAllArticles(req, res, articles);
 });
 
-app.get('/articles/:id', (req, res) => {
+app.get('/articles/:id', isAuthenticated, (req, res) => {
     const articleId = Number(req.params.id);
     console.log(articleId);
 
@@ -76,6 +82,14 @@ app.get('/articles/:id', (req, res) => {
   }
 });
 
+app.get('/logout', (req, res) => {
+  res.clearCookie('token');
+
+  console.log('logged out');
+  res.send(createHtmlPage('Logged out', ``,`${GOHOME}`));
+  // setTimeout(() => res.redirect('/login'), 1000);
+});
+
 // POST
 app.post('/registration', async (req, res) => {
   const userName = req.body.username;
@@ -87,22 +101,23 @@ app.post('/registration', async (req, res) => {
   console.log('Repeat password: ', repeatPassword);
 
   if (!userName || !password) {
-    return res.status(400).send('Username and Password are required for registration');
+    return res.status(400).send(`<p>${GOHOME}</p>Username and Password are required for registration`);
   }
 
   if (users.find(user => user.userName === userName)) {
-    return res.status(400).send('User already exists');
+    return res.status(400).send(`<p>${GOHOME}</p>User already exists`);
   }
 
   const salt = await bcrypt.genSalt(5);
+  console.log('Salt: ', salt);
   const hashPass = await bcrypt.hash(password, salt);
 
   if (password === repeatPassword) {
     users.push({userName, hashPass});
     console.log('Registered users:', users);
-    res.send(`<h4>Success!</h4> <h2>${userName}</h2> <p>Registered. Welcome :)</p>`);
+    res.send(`${GOHOME}<h4>Success!</h4> <h2>${userName}</h2> <p>Registered. Welcome :)</p>`);
   } else {
-    res.status(400).send('Passwords don\'t match');
+    res.status(400).send(`<p>${GOHOME}</p>Passwords don't match`);
   }
 
   });
@@ -110,17 +125,35 @@ app.post('/registration', async (req, res) => {
 app.post('/login', async (req, res) => {
   const userName = req.body.username;
   const password = req.body.password;
+  console.log('password: ', password);
 
-  users.find(user => {
+
+  users.find(async user => {
     if (user.userName === userName) {
     console.log('user found');
     console.log(user.userName, userName);
-    res.send(`User <b>${userName}</b> logged in`);
+
+      if (await bcrypt.compare(password, user.hashPass)) {
+        console.log('password is valid');
+
+        const token = jwt.sign(
+          {userName: user.userName},
+          SECRET_KEY,
+          {expiresIn: '3h'}
+        );
+        console.log('Token: ',token);
+
+        res.cookie('token', token, {httpOnly: true});
+
+        res.send(`<p>${GOHOME}</p>User <b>${userName}</b> logged in`);
+      }else {
+        return res.status(400).send(`<p>${GOHOME}</p>Something went wrong`);
+      }
 
     } else {
       console.log('user not found');
       console.log(user.userName, userName)
-      res.send(`User <b>${userName}</b> not found. Please, register`);
+      return res.send(`<p>${GOHOME}</p>User <b>${userName}</b> not found. Please, register`);
     }
   });
 
@@ -129,8 +162,25 @@ app.post('/login', async (req, res) => {
 
 //
 
-function checkAuthorisation(req, res, next) {
-  console.log('Cookies:', req.cookies.token);
+function isAuthenticated (req, res, next) {
+  const token = req.cookies.token;
+  console.log('token (secured page): ', token);
+
+  if (!token) {
+    return res.status(401).send(`<p>${GOHOME}</p>There is no token for authentication`)
+  }
+
+  try {
+    const payload = jwt.verify(token, SECRET_KEY);
+    const user = users.find(user => user.userName === payload.userName);
+    if (!user) {
+      return res.status(401).send(`<p>${GOHOME}</p>User is not found`);
+    }
+    req.user = user;
+    next();
+  } catch (error) {
+    return res.status(401).send(`<p>${GOHOME}</p>Unauthorized - invalid or expired token`);
+  }
 }
 
 function createHtmlPage (title, content, transition) {
