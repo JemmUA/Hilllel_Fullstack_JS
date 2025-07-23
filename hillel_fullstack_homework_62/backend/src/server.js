@@ -108,10 +108,24 @@ app.post('/registration', async (req, res) => {
   });
 
 app.post('/login', async (req, res) => {
-  const { userName, password } = req.body;
+  const userName = req.body.username;
+  const password = req.body.password;
 
-  res.send('Loginning...');
-})
+  users.find(user => {
+    if (user.userName === userName) {
+    console.log('user found');
+    console.log(user.userName, userName);
+    res.send(`User <b>${userName}</b> logged in`);
+
+    } else {
+      console.log('user not found');
+      console.log(user.userName, userName)
+      res.send(`User <b>${userName}</b> not found. Please, register`);
+    }
+  });
+
+});
+
 
 //
 
