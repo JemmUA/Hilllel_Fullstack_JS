@@ -11,18 +11,31 @@ const PORT = 3039;
 const app = express();
 const GOHOME = process.env.GOHOME;
 const SECRET_KEY = process.env.SECRET_KEY;
-
 const users = [];
 
 console.log(articles);
 
 app.set('view engine', 'pug');
-
 app.use(cookieParser());
-
 app.use(express.urlencoded({ extended: true}));
-
 app.use(express.static('public'));
+
+
+// Cookies
+app.get('/set-cookies', isAuthenticated, (req, res) => {
+  res.cookie('superuser', 'cat', {maxAge: 3600000, httpOnly: true});
+  // res.send('Cookies set');
+  res.send(createHtmlPage('Cookies set',`
+    `, `${GOHOME}`));
+});
+
+app.get('/get-cookies', isAuthenticated, (req, res) => {
+  const cookies = req.cookies.superuser;
+  // res.send(cookies);
+  res.send(createHtmlPage('Get Cookies',`
+    <h1>Cookies of superuser: ${cookies}</h1>
+    `, `${GOHOME}`));
+});
 
 // GET
 
@@ -33,6 +46,8 @@ app.get('/', (req, res) => {
     <h4><a href="/articles">Articles</a></h4>
     <h4><a href="/pages">Demo of static files</a></h4>
     <h4><a href="/secured">Secured page</a></h4>
+    <h4><a href="/set-cookies">Set cookies</a></h4>
+    <h4><a href="/get-cookies">Get cookies</a></h4>
     <h4><a href="/logout">Logout</a></h4>
 `,  ``));
 });
@@ -167,7 +182,7 @@ function isAuthenticated (req, res, next) {
   console.log('token (secured page): ', token);
 
   if (!token) {
-    return res.status(401).send(`<p>${GOHOME}</p>There is no token for authentication`)
+    return res.status(401).send(`<p>${GOHOME}</p>There is no token for authentication. Please, login.`)
   }
 
   try {
