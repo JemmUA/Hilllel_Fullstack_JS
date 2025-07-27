@@ -146,13 +146,13 @@ app.get('/', (req, res) => {
   res.send(createHtmlPage('Main page', `
     <h4><a href="/registration">Registration</a></h4>
     <h4><a href="/login">Login</a></h4>
-    <h4><a href="/login-passport">Login Passport</a></h4>
+    <h4><a href="/login-passport">Login (Passport)</a></h4>
     <h4><a href="/articles">Articles</a></h4>
     <h4><a href="/pages">Demo of static files</a></h4>
     <h4><a href="/secured">Secured page</a></h4>
     <h4><a href="/set-cookies">Set cookies</a></h4>
     <h4><a href="/get-cookies">Get cookies</a></h4>
-    <h4><a href="/logout-passport">Logout (passport)</a></h4>
+    <h4><a href="/logout-passport">Logout (Passport)</a></h4>
     <h4><a href="/logout">Logout</a></h4>
 `,  ``));
 });
