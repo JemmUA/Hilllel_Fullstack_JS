@@ -317,6 +317,13 @@ app.post('/login', async (req, res) => {
 
 //
 
+// const isAuthenticated = (req, res, next) => {
+//   if (req.isAuthenticated()) {
+//     return next();
+//   }
+//   res.status(401).send(createHtmlPage('Access denied', `<h4>Please, <a href='/login'>login </a> for access</h4>`,`${GOHOME}`));
+// }
+
 function isAuthenticated (req, res, next) {
   const token = req.cookies.token;
   console.log('token (secured page): ', token);
