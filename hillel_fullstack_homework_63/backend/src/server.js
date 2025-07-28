@@ -34,7 +34,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true})); // work out the form and set data into body
 app.use(express.static('public'));
 
-// like a database
+// As a database
 const userData = [
   {
     id: 1,
@@ -51,7 +51,6 @@ const userData = [
     userName: 'a',
     password: 'a'
   },
-
 ]
 
 
@@ -94,6 +93,20 @@ passport.deserializeUser(function (id, done) {
   // supposing - user found
   const user = userData.find(user => user.id === id);
   done(null, {id: 1, name: user}); // set user to req.user
+});
+
+
+// Route for count
+app.get('/session', (req, res) => {
+  let visit_time = 'times';
+  if (!req.session.page_views) {
+    req.session.page_views = 1;
+    visit_time = 'time';
+  } else {
+    req.session.page_views++;
+  }
+  res.send(`${GOHOME}<h1>Page visited ${req.session.page_views} ${visit_time}</h1>`);
+
 });
 
 // route for passport login
@@ -168,6 +181,7 @@ app.get('/', (req, res) => {
     <h4><a href="/login">Login</a></h4>
     <h4><a href="/login-passport">Login (Passport)</a></h4>
     <h4><a href="/articles">Articles</a></h4>
+    <h4><a href="/session">Session</a></h4>
     <h4><a href="/pages">Demo of static files</a></h4>
     <h4><a href="/secured">Secured page</a></h4>
     <h4><a href="/set-cookies">Set cookies</a></h4>
