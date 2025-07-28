@@ -58,6 +58,12 @@ const userData = [
 
 // adjusting strategy Passport
 passport.use(new localStrategy(
+  // defining not default names for passport's parameters
+  {
+    usernameField: 'userName',
+    passwordField: 'password'
+  },
+  //
   function (userName, password, done) {
     //to database or another service
     const user = userData.find(user => user.userName === userName);
@@ -102,21 +108,35 @@ app.get('/login-passport', (req, res) => {
 });
 
 app.post('/login-passport',
-  passport.authenticate('local', { failureRedirect: '/'}),
+  passport.authenticate('local', { failureRedirect: '/'}), // This middleware runs strategy or redirects in case of failure
   function (req, res) {
-    console.log(req.body);
-    console.log(req.user);
+    console.log('Passport has logged in');
+    console.log('req.body: ', req.body);
+    console.log('req.user: ', req.user);
+
+
+    const token = jwt.sign(
+      {userName: req.user.userName},
+      SECRET_KEY,
+      {expiresIn: '3h'}
+    );
+    console.log('Token: ',token);
+
+    res.cookie('token', token, {httpOnly: true});
+
+
     res.redirect('/secured');
   }
 );
 
-app.get('/logout-passport', (req, res) => {
-  // console.log('logout passport');
+app.get('/logout-passport', (req, res, next) => {
+  console.log('logout passport');
 
   req.logout(error => {
     if (error) {
       return next(error);
     }
+    res.clearCookie('token');
     res.redirect('/');
   });
 
@@ -294,7 +314,8 @@ function isAuthenticated (req, res, next) {
   try {
     const payload = jwt.verify(token, SECRET_KEY);
     const user = users.find(user => user.userName === payload.userName);
-    if (!user) {
+    const userPassport = userData.find(user => user.userName === payload.userName);
+    if (!user && !userPassport) {
       return res.status(401).send(`<p>${GOHOME}</p>User is not found`);
     }
     req.user = user;
